@@ -28,15 +28,15 @@ shopping_car = {}
 # 该处代码使用了很多次，所以就建了一个方法
 
 
-def print_info(shopping_car):
+def print_info(shopp_car):
     print("\033[41;1m ------------------shop history------------------- \033[0m")
     # 因为字典是无序的，不能保证salary放在前面，所以循环两次，保证输出的顺序
-    for key in shopping_car:
+    for key in shopp_car:
         if key == "salary" or key == "left_salary":
-            print(key, shopping_car[key])
-    for key in shopping_car:
+            print(key, shopp_car[key])
+    for key in shopp_car:
         if key != "salary" and key != "left_salary":
-            print(key, shopping_car[key]["price"], shopping_car[key]["count"])
+            print(key, shopp_car[key]["price"], shopp_car[key]["count"])
     print("\033[41;1m ------------------shop history------------------- \033[0m")
 
 
