@@ -16,12 +16,15 @@ def load_db():
     all_staff_db = {}
     f = open(file=SOURCE_FILE, mode="r", encoding="utf-8")
     for line in f:
-        staff_id, name, age, phone, dept, enrolled_date = line.split(",")
-        all_staff_db[phone] = {"staff_id": staff_id, "name": name, "age": age, "phone": phone,
-                               "dept": dept, "enrolled_date": enrolled_date}
+        # 后面有空行的时候回报错，预防空行的报错问题
+        if len(line.strip()) > 0:
+            staff_id, name, age, phone, dept, enrolled_date = line.split(",")
+            all_staff_db[phone] = {"staff_id": staff_id, "name": name, "age": age, "phone": phone,
+                                   "dept": dept, "enrolled_date": enrolled_date}
     return all_staff_db
 
 
+# 修改后的数据保存到文件中
 def save_db(new_staff_db):
     f = open(file=NEW_SOURCE_FILE, mode="w", encoding="utf-8")
     for phone, one_staff_info in new_staff_db.items():
@@ -41,6 +44,7 @@ def save_db(new_staff_db):
     os.rename(NEW_SOURCE_FILE, SOURCE_FILE)
 
 
+# 输出提示信息
 def print_info(info, log_type="info"):
     if log_type == "info":
         print("\033[32;1m %s \033[0m" % info)
@@ -48,6 +52,7 @@ def print_info(info, log_type="info"):
         print("\033[31;1m %s \033[0m" % info)
 
 
+# where后的条件是'>',查找符合条件的数据
 def gt_data(where_column, value, all_staff_db, gt_data_return):
 
     if value.isdigit():
@@ -59,6 +64,7 @@ def gt_data(where_column, value, all_staff_db, gt_data_return):
     print_info("the value after where condition '>' must bu a number", "error")
 
 
+# where后的条件是'<',查找符合条件的数据
 def lt_data(where_column, value, all_staff_db, lt_data_return):
 
     if value.isdigit():
@@ -70,6 +76,7 @@ def lt_data(where_column, value, all_staff_db, lt_data_return):
     print_info("the value after where condition '<' must be a number", "error")
 
 
+# where后的条件是'=',查找符合条件的数据
 def eq_data(where_column, value, all_staff_db, eq_data_return):
 
     for phone in all_staff_db:
@@ -79,6 +86,7 @@ def eq_data(where_column, value, all_staff_db, eq_data_return):
     return eq_data_return
 
 
+# where后的条件是'like',查找符合条件的数据
 def like_data(where_column, value, all_staff_db, eq_data_return):
 
     for phone in all_staff_db:
@@ -87,7 +95,7 @@ def like_data(where_column, value, all_staff_db, eq_data_return):
     return eq_data_return
 
 
-# 找出符合where条件的数据
+# 找出符合where条件的数据，然后进行增删改查
 def where_condition_data(input_sql, all_staff_db):
     condition_list = {
         ">": gt_data,
@@ -118,6 +126,7 @@ def where_condition_data(input_sql, all_staff_db):
         print_info("your input sql is illegal!", "error")
 
 
+# 查找符合条件的数据
 def find_condition(where_data, input_sql, all_staff_db):
     # find age from staff_db where age = 3
     # find age,name from staff_db where age = 3
@@ -128,6 +137,7 @@ def find_condition(where_data, input_sql, all_staff_db):
         columns = input_sql.split()[1]
         header = columns.split(",")
     for column in header:
+        # 验证列是否存在
         if column not in COLUMNS:
             print_info("find column %s is not exist" % column, "error")
             return None
@@ -144,6 +154,7 @@ def find_condition(where_data, input_sql, all_staff_db):
     print_info("匹配到%s条数据!" % len(final_many_data))
 
 
+# 删除数据库中的数据
 def del_condition(where_data, input_sql, all_staff_db):
     for phone in where_data:
         del all_staff_db[phone]
@@ -151,6 +162,7 @@ def del_condition(where_data, input_sql, all_staff_db):
     print_info("匹配到%s条数据!" % len(where_data))
 
 
+# 更新数据库
 def update_condition(where_data, input_sql, all_staff_db):
     # update staff_table set dept="Market" where dept = "IT"
     # set_condition = 'dept="Market"'
@@ -203,8 +215,8 @@ def verify_sql(condition,input_sql):
             print_info("find sql example:find age,name from staff_table", "error")
             return False
     elif condition == 'update':
-        if re.match("update[ ]+[^ ]+[ ]+set[ ]+[^ ]+[ ]+where.*", input_sql) is None:
-            print_info("update sql example:update staff_table set age='33' where dept = 'Market'", "error")
+        if re.match("update[ ]+[^ ]+[ ]+set[ ]+.*[=].*[ ]+where.*", input_sql) is None:
+            print_info("update sql example:'update staff_table set age=33 where dept = Market'", "error")
             return False
     elif condition == 'del':
         if re.match("del[ ]+from[ ]+[^ ]+[ ]+where.*", input_sql) is None:
@@ -236,6 +248,7 @@ def main():
             # 'dept': 'HR', 'enrolled_date': '2015-01-07\n'}}
         else:
             where_data = all_staff_db
+
         if where_data is None:
             continue
         for condition in condition_list:
