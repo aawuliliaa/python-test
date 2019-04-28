@@ -54,34 +54,34 @@ def print_info(info, log_type="info"):
 
 # where后的条件是'>',查找符合条件的数据
 def gt_data(where_column, value, all_staff_db, gt_data_return):
-
-    if value.isdigit():
-        for phone in all_staff_db:
-            if int(all_staff_db[phone][where_column]) > int(value):
+    # 只有age字段是Int类型，能进行大小比较
+    if value.isdigit() and where_column == "age":
+        for phone, one_staff_info in all_staff_db.items():
+            if int(one_staff_info[where_column]) > int(value):
                 gt_data_return[phone] = all_staff_db[phone]
         return gt_data_return
     # 如果>后面不是数字
-    print_info("the value after where condition '>' must bu a number", "error")
+    print_info("the type of %s in table after where condition '>' is not int" % where_column, "error")
 
 
 # where后的条件是'<',查找符合条件的数据
 def lt_data(where_column, value, all_staff_db, lt_data_return):
-
-    if value.isdigit():
-        for phone in all_staff_db:
-            if int(all_staff_db[phone][where_column]) < int(value):
+    # 只有age字段是Int类型，能进行大小比较
+    if value.isdigit() and where_column == "age":
+        for phone, one_staff_info in all_staff_db.items():
+            if int(one_staff_info[where_column]) < int(value):
                 lt_data_return[phone] = all_staff_db[phone]
         return lt_data_return
     # 如果<后面不是数字
-    print_info("the value after where condition '<' must be a number", "error")
+    print_info("the value of %s in table after where condition '<' is not int" % where_column, "error")
 
 
 # where后的条件是'=',查找符合条件的数据
 def eq_data(where_column, value, all_staff_db, eq_data_return):
 
-    for phone in all_staff_db:
+    for phone, one_staff_info in all_staff_db.items():
 
-        if all_staff_db[phone][where_column] == value:
+        if one_staff_info[where_column] == value:
             eq_data_return[phone] = all_staff_db[phone]
     return eq_data_return
 
@@ -89,8 +89,8 @@ def eq_data(where_column, value, all_staff_db, eq_data_return):
 # where后的条件是'like',查找符合条件的数据
 def like_data(where_column, value, all_staff_db, eq_data_return):
 
-    for phone in all_staff_db:
-        if value in all_staff_db[phone][where_column]:
+    for phone, one_staff_info in all_staff_db.items():
+        if value in one_staff_info[where_column]:
             eq_data_return[phone] = all_staff_db[phone]
     return eq_data_return
 
@@ -240,20 +240,23 @@ def main():
         }
 
         all_staff_db = load_db()
-        input_sql = input("please input your sql:")
+        input_sql = input("please input your sql[input q to exit]:")
         if "where" in input_sql:
             where_data = where_condition_data(input_sql, all_staff_db)
             # please input your sql:select age from staff_db where name=Jack Wang
             # where_data {'13451024608': {'id': '2', 'name': 'Jack Wang', 'age': '18', 'phone': '13451024608',
             # 'dept': 'HR', 'enrolled_date': '2015-01-07\n'}}
+        elif input_sql == "q":
+            break
         else:
             where_data = all_staff_db
-
+        # 当验证列不存在的时候，会输出错误提示，函数返回值为None，这时就不要进行下面的代码了，直接进行
         if where_data is None:
             continue
         for condition in condition_list:
 
             if input_sql.startswith(condition):
+                # 输入的sql符合基本的sql标准，才允许查询
                 if verify_sql(condition, input_sql):
                     condition_list[condition](where_data, input_sql, all_staff_db)
                     break

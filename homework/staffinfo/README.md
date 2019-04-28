@@ -88,4 +88,8 @@ pip install -r requirements.txt
 ![](.README_images/f36b7502.png)
 ![](.README_images/196e5d68.png)
 ![](.README_images/2edc8c2c.png)
+![](.README_images/451bf484.png)
+![](.README_images/68aab811.png)
+![](.README_images/beb1fe09.png)
 # 5.流程图
+![](.README_images/员工信息-增删改查.jpg)
