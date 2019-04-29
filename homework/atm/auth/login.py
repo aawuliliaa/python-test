@@ -28,7 +28,10 @@ def welcome():
         print_info(menu)
         your_choice = input("please input one number for your choice:").strip()
         if your_choice in menu_list:
-            menu_list[your_choice]()
+            user_data = menu_list[your_choice]()
+            if user_data is not None:
+                shopping_or_atm(user_data)
+
         else:
             print_info("your input is illegal!", "error")
             continue
@@ -78,6 +81,7 @@ def user_login():
     else:
         # len(user_data) > 0 只有用户存在时，user_data才不为空
         # user_data 为空就不需要设置lock_status了
+        print_info("you have tried too many times!", "error")
         if len(user_data) > 0:
             # {'user_name': 'vita', 'password': '1234567', 'lock_status': 'yes'}
             user_data = set_lock_status(user_name, user_data, lock_status)
@@ -85,7 +89,7 @@ def user_login():
 
             save_db(login_user_file, user_data)
         # 条件不符合，返回None
-        exit()
+        return None
 
 
 def shopping_or_atm(user_data):
@@ -157,7 +161,7 @@ def add_new_user():
 
             save_db(new_user_db_file, new_user)
             print_info("add new user success!")
-            break
+            return None
 
 
 # 修改额度
@@ -174,7 +178,7 @@ def modify_credit():
                 user_data["credit"] = credit
                 save_db(user_db_file, user_data)
                 print_info("update credit successful!")
-                break
+                return None
             else:
                 print_info("you can just input one number!")
                 continue
