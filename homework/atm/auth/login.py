@@ -28,6 +28,7 @@ def welcome():
         print_info(menu)
         your_choice = input("please input one number for your choice:").strip()
         if your_choice in menu_list:
+
             user_data = menu_list[your_choice]()
             if user_data is not None:
                 shopping_or_atm(user_data)
@@ -97,24 +98,27 @@ def shopping_or_atm(user_data):
     给出提示信息，用于选择是进行shopping操作还是进行atm操作
     :return:
     """
-    info = """
-    welcome come to this system!
-    1.for shopping
-    2.for atm 
-    3.exit
-    """
-    choice_list = {
-        "1": shopping_run,
-        "2": atm_run,
-        "3": exit
-    }
-    print_info(info)
-    your_choice = input("please input your choice:").strip()
-    if your_choice.isdigit() and your_choice in choice_list:
-        choice_list[your_choice](user_data)
+    while 1:
+        info = """
+        welcome come to this system!
+        1.for shopping
+        2.for atm 
+        3.exit
+        """
+        choice_list = {
+            "1": shopping_run,
+            "2": atm_run,
+            "3": exit
+        }
+        print_info(info)
+        your_choice = input("please input your choice:").strip()
+        if your_choice.isdigit() and your_choice in choice_list:
 
-    else:
-        print_info("your input must be a number showed before!", "error")
+            choice_list[your_choice](user_data)
+
+        else:
+            print_info("your input must be a number showed before!", "error")
+            continue
 
 
 def lock_or_not(user_name, login_user):
