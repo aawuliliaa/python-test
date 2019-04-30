@@ -179,7 +179,7 @@ def add_new_user():
                 continue
             password = input("please input password:").strip()
             if len(user_name) == 0 or len(password) == 0:
-                print_info("username or password can not be null!")
+                print_info("username or password can not be null!", "error")
                 continue
             enroll_date = time.strftime("%Y-%m-%d", time.gmtime())
             # 2024-04-27 14:11:20.520427转换为字符串后，在进行切割，得到年月日
@@ -214,8 +214,8 @@ def modify_credit():
                 print_info("update credit successful!")
                 return None
             else:
-                print_info("you can just input one number!")
+                print_info("you can just input one number!", "error")
                 continue
         else:
-            print_info("user is not exist!")
+            print_info("user is not exist!", "error")
             continue

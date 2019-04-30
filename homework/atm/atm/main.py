@@ -44,7 +44,7 @@ def atm_run(user_data):
                 exit()
             choice_list[your_choice](user_data)
         else:
-            print_info("your input is illegal!")
+            print_info("your input is illegal!", "error")
 
 
 def show_account_info(user_data):

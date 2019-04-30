@@ -37,7 +37,7 @@ def shopping_run(user_data):
             choice_list[your_choice](user_data)
 
         else:
-            print_info("your input must be a number as showed before!","error")
+            print_info("your input must be a number as showed before!", "error")
 
 
 def shopping(user_data):
@@ -109,4 +109,4 @@ def show_shopping_history(user_data):
             print_info("%s,%s,%s" % (goods_name, goods_price, goods_count))
         print_info("************shop history****************")
     else:
-        print_info("this user has never shopped something!")
+        print_info("this user has never shopped something!", "error")

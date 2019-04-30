@@ -38,5 +38,7 @@ python版本3.6.2
 ![](.README_images/a24da688.png)
 ![](.README_images/0d8c7055.png)
 ![](.README_images/525fac16.png)
+![](.README_images/9f19c421.png)
+![](.README_images/cd0d9178.png)
 
 # 5.程序流程图
