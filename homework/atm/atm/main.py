@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author: vita
-
-
 from utils.print_log import print_info
 from utils.login_decorator import login_required
 from atm.transaction import transaction
@@ -24,6 +22,7 @@ def atm_run(user_data):
            4.  转账
            5.  账单
            6.  退出
+           ------- Bank ---------
            '''
         choice_list = {
             "1": show_account_info,

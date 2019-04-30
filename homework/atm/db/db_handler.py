@@ -4,6 +4,8 @@
 
 import json
 
+# 因为要给atm和shop用，所以就放在db模块中了
+
 
 def save_db(file, data):
     """
@@ -12,7 +14,7 @@ def save_db(file, data):
     :param data:
     :return:
     """
-    with open(file, "w", encoding="utf-8") as f:
+    with open(file, "w", encoding="UTF-8") as f:
         json.dump(data, f)
 
 
@@ -22,6 +24,6 @@ def load_db(file):
     :param file:
     :return:
     """
-    with open(file, "r", encoding="utf-8") as f:
+    with open(file, "r", encoding="UTF-8") as f:
         data = json.load(f)
     return data

@@ -27,3 +27,4 @@ def transaction(user_data, money, tran_type):
         logger = return_logger_obj("transaction_log")
         logger.info("account:%s   action:%s    amount:%s   interest:%s" %
                     (user_data["user_name"], tran_type, money, interest))
+    return True
