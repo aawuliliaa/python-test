@@ -206,16 +206,22 @@ def modify_credit():
         user_db_file = os.path.join(settings.DATABASE["path"], '%s/%s.json' %
                                     (settings.DATABASE["name"], user_name))
         if os.path.exists(user_db_file):
-            credit = input("please input your new credit:").strip()
-            if credit.isdigit():
-                user_data = load_db(user_db_file)
-                user_data["credit"] = credit
-                save_db(user_db_file, user_data)
-                print_info("update credit successful!")
-                return None
+            user_data = load_db(user_db_file)
+            input_password = input("please input the password:").strip()
+            real_password = user_data["password"]
+            if input_password == real_password:
+                credit = input("please input your new credit:").strip()
+                if credit.isdigit():
+                    user_data = load_db(user_db_file)
+                    user_data["credit"] = credit
+                    save_db(user_db_file, user_data)
+                    print_info("update credit successful!")
+                    return None
+                else:
+                    print_info("you can just input one number!", "error")
+                    continue
             else:
-                print_info("you can just input one number!", "error")
-                continue
+                print_info("your password is not correct!", "error")
         else:
             print_info("user is not exist!", "error")
             continue

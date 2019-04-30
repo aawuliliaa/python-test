@@ -38,3 +38,6 @@
 2019-04-30 10:16:51,017 - transaction_log - INFO - account:ww   action:repay    amount:900.0   interest:0.0
 2019-04-30 10:16:51,017 - transaction_log - INFO - account:ww   action:repay    amount:900.0   interest:0.0
 2019-04-30 10:16:51,017 - transaction_log - INFO - account:ww   action:repay    amount:900.0   interest:0.0
+2019-04-30 11:31:16,867 - transaction_log - INFO - account:vv   action:consume    amount:10.0   interest:0.0
+2019-04-30 11:31:20,201 - transaction_log - INFO - account:vv   action:consume    amount:10.0   interest:0.0
+2019-04-30 11:31:20,201 - transaction_log - INFO - account:vv   action:consume    amount:10.0   interest:0.0
