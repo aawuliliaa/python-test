@@ -4,12 +4,10 @@
 
 import json
 
-# 因为要给atm和shop用，所以就放在db模块中了
-
 
 def save_db(file, data):
     """
-    保存内容到文件中
+    保存内容到文件中，因为要给atm和shop用，所以就放在db模块中了
     :param file:
     :param data:
     :return:

@@ -12,6 +12,11 @@ import os
 
 @login_required
 def atm_run(user_data):
+    """
+    atm程序的入口，可以进行一些转账，还款的操作
+    :param user_data:
+    :return:
+    """
     while 1:
 
         choice = '''
@@ -30,12 +35,13 @@ def atm_run(user_data):
             "3": withdraw,
             "4": transfer,
             "5": show_bill,
-            "6": exit
+            "6": "exit"
         }
         print_info(choice)
         your_choice = input("please input your choice:").strip()
         if your_choice in choice_list:
-
+            if choice_list[your_choice] == "exit":
+                exit()
             choice_list[your_choice](user_data)
         else:
             print_info("your input is illegal!")
@@ -54,8 +60,12 @@ def show_account_info(user_data):
     print_info("*************account info***************")
 
 
-# 还款功能
 def repay(user_data):
+    """
+    还款功能
+    :param user_data:
+    :return:
+    """
     repay_money = input("input money you want to repay:").strip()
     # 匹配数字，包含小数，因为"12.23".isdigit()是false,这里通过正则表达式来进行匹配
     if re.match("^[0-9]+[.]?[0-9]*$", repay_money):
@@ -65,8 +75,12 @@ def repay(user_data):
         print_info("your input is illegal!", "error")
 
 
-# 取款
 def withdraw(user_data):
+    """
+    取款
+    :param user_data:
+    :return:
+    """
     withdraw_money = input("input money you want to withdraw:").strip()
     # 匹配数字，包含小数，因为"12.23".isdigit()是false,这里通过正则表达式来进行匹配
     if re.match("^[0-9]+[.]?[0-9]*$", withdraw_money):
@@ -76,8 +90,12 @@ def withdraw(user_data):
         print_info("the money your input is illegal!", "error")
 
 
-# 转账
 def transfer(user_data):
+    """
+    转账
+    :param user_data:
+    :return:
+    """
     transfer_user_name = input("input the user name you want to transfer:").strip()
     transfer_money = input("input the money you want to transfer:").strip()
     transfer_user_file = os.path.join(settings.DATABASE["path"], '%s/%s.json' %
@@ -96,10 +114,15 @@ def transfer(user_data):
 
 
 def show_bill(user_data):
+    """
+    显示当前登录人的账单
+    :param user_data:
+    :return:
+    """
     transaction_log_file = settings.LOG_TYPES["transaction_log"]
     f = open(file=transaction_log_file, mode="r", encoding="utf-8")
     for line in f:
         # 取出当前登录用户的账单
         if line.split("account:")[1].split("action")[0].strip() == user_data["user_name"]:
             print_info(line)
-    #print_info(transaction_log_data)
+

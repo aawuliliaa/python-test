@@ -2,22 +2,30 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 
-# 只有用户登录了，才允许执行方法，否则，要从头开始，执行manage.py中的main
-
 
 def login_required(func):
+    """
+    只有用户登录了，才允许执行方法，否则，要从头开始，执行manage.py中的main
+    :param func:
+    :return:
+    """
     def inner(*args, **kwargs):
         if args[0]["login"] == "yes":
             func(*args, **kwargs)
         else:
-            #manage.main()
+            # manage.main()
             print("you must login first")
 
     return inner
 
-# 测试装饰器方法
+
 @login_required
 def test_dec(data):
+    """
+    测试装饰器方法
+    :param data:
+    :return:
+    """
     print(data)
 
 

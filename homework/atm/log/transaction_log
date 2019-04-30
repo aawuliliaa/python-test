@@ -27,3 +27,14 @@
 2019-04-29 23:19:38,088 - transaction_log - INFO - account:vita   action:withdraw    amount:1999.0   interest:99.95
 2019-04-29 23:19:38,088 - transaction_log - INFO - account:vita   action:withdraw    amount:1999.0   interest:99.95
 2019-04-29 23:24:17,307 - transaction_log - INFO - account:vita   action:withdraw    amount:1999.0   interest:99.95
+2019-04-30 09:48:30,345 - transaction_log - INFO - account:vita   action:consume    amount:1999.0   interest:0.0
+2019-04-30 10:14:40,924 - transaction_log - INFO - account:vita   action:repay    amount:1000.0   interest:0.0
+2019-04-30 10:15:32,890 - transaction_log - INFO - account:vita   action:withdraw    amount:400.0   interest:20.0
+2019-04-30 10:15:32,890 - transaction_log - INFO - account:vita   action:withdraw    amount:400.0   interest:20.0
+2019-04-30 10:16:51,015 - transaction_log - INFO - account:vita   action:transfer    amount:900.0   interest:45.0
+2019-04-30 10:16:51,015 - transaction_log - INFO - account:vita   action:transfer    amount:900.0   interest:45.0
+2019-04-30 10:16:51,015 - transaction_log - INFO - account:vita   action:transfer    amount:900.0   interest:45.0
+2019-04-30 10:16:51,017 - transaction_log - INFO - account:ww   action:repay    amount:900.0   interest:0.0
+2019-04-30 10:16:51,017 - transaction_log - INFO - account:ww   action:repay    amount:900.0   interest:0.0
+2019-04-30 10:16:51,017 - transaction_log - INFO - account:ww   action:repay    amount:900.0   interest:0.0
+2019-04-30 10:16:51,017 - transaction_log - INFO - account:ww   action:repay    amount:900.0   interest:0.0

@@ -3,15 +3,19 @@
 # Author: vita
 from conf import settings
 from atm.main import atm_run
-from db.db_handler import save_db, load_db
 from shopping.main import shopping_run
-import os
+from db.db_handler import save_db, load_db
 from utils.print_log import return_logger_obj, print_info
+import os
 import time
 import datetime
 
 
 def welcome():
+    """
+    程序最初的入口函数，可以选择登录，添加账户，修改额度等操作
+    :return:
+    """
     while 1:
         menu = '''
         1.登录
@@ -32,29 +36,32 @@ def welcome():
             user_data = menu_list[your_choice]()
             if user_data is not None:
                 shopping_or_atm(user_data)
-
+            else:
+                break
         else:
             print_info("your input is illegal!", "error")
             continue
 
 
 def user_login():
+    """
+    用户登录程序，允许用户登录三次，一个用户三次登录错误，会锁定账户
+    :return:
+    """
     login_user = []
     lock_status = True
     login_times = 0
     user_data = {}
     user_name = ""
     login_user_file = ""
-    """
-    提示用户登录。
-    :return:
-    """
+
     while login_times < 3:
         logger = return_logger_obj("login_log")
         user_name = input("please input your name:").strip()
         password = input("please input your password:").strip()
         # login_user_file = E:\PythonProject\python-test\homework\atm/db\accounts/vita.json
-        login_user_file = os.path.join(settings.DATABASE["path"], '%s/%s.json' % (settings.DATABASE["name"], user_name))
+        login_user_file = os.path.join(settings.DATABASE["path"], '%s/%s.json' %
+                                       (settings.DATABASE["name"], user_name))
         if os.path.isfile(login_user_file):
 
             # 从文件中取出数据
@@ -66,14 +73,14 @@ def user_login():
                     user_data["login"] = "yes"
                     return user_data
                 else:
-                    print_info("Account [%s] has been locked!" % user_name)
+                    print_info("Account [%s] has been locked!" % user_name, "error")
             else:
-                # print("\033[31;1mPassword of [%s] does not correct!\033[0m" % user_name)
+
                 print_info("Password of [%s] does not correct!" % user_name, "error")
                 logger.error("Password of [%s] does not correct!" % user_name)
 
         else:
-            # print("\033[31;1mAccount [%s] does not exist!\033[0m" % user_name)
+
             print_info("Account [%s] does not exist!" % user_name, "error")
             logger.error("Account [%s] does not exist!" % user_name)
 
@@ -100,20 +107,23 @@ def shopping_or_atm(user_data):
     """
     while 1:
         info = """
+        ********************shopping or atm*******************
         welcome come to this system!
         1.for shopping
         2.for atm 
         3.exit
+        ********************shopping or atm*******************
         """
         choice_list = {
             "1": shopping_run,
             "2": atm_run,
-            "3": exit
+            "3": "exit"
         }
         print_info(info)
         your_choice = input("please input your choice:").strip()
         if your_choice.isdigit() and your_choice in choice_list:
-
+            if choice_list[your_choice] == "exit":
+                exit()
             choice_list[your_choice](user_data)
 
         else:
@@ -122,6 +132,13 @@ def shopping_or_atm(user_data):
 
 
 def lock_or_not(user_name, login_user):
+    """
+    主要用于判断本次登录用户和上一次登录用户是否相同，如果不同，lock_status标志位设置为False
+    后面用该标志位设定是否锁定用户
+    :param user_name:
+    :param login_user:
+    :return:
+    """
     # user_name = user_data["user_name"]
     if len(login_user) == 0:
         login_user.append(user_name)
@@ -129,8 +146,14 @@ def lock_or_not(user_name, login_user):
         lock_status = False
 
 
-# 锁定用户
 def set_lock_status(user_name, user_data, lock_status):
+    """
+    条件符合，就锁定账户
+    :param user_name:
+    :param user_data:
+    :param lock_status:
+    :return:
+    """
     # 用于判断最后一次登录的用户是否存在
     # len(user_data) > 0 只有用户存在时，user_data才不为空
     if lock_status is True and user_data["lock_status"] == "no":
@@ -139,6 +162,10 @@ def set_lock_status(user_name, user_data, lock_status):
 
 
 def add_new_user():
+    """
+    添加新用户，输入用户名和密码，其余信息是添加的时候就默认的
+    :return:
+    """
     # 这些值在申请信用卡的时候已经是默认的了
     new_user = {"lock_status": "no", "credit": 15000, "left_credit": 15000, "repay_day": 22}
     your_choice = input("do you want to add a new uer[YES/NO]?:").strip().lower()
@@ -148,7 +175,7 @@ def add_new_user():
             new_user_db_file = os.path.join(settings.DATABASE["path"], '%s/%s.json' %
                                             (settings.DATABASE["name"], user_name))
             if os.path.exists(new_user_db_file):
-                print_info("this user has already exist!","error")
+                print_info("this user has already exist!", "error")
                 continue
             password = input("please input password:").strip()
             if len(user_name) == 0 or len(password) == 0:
@@ -168,13 +195,16 @@ def add_new_user():
             return None
 
 
-# 修改额度
 def modify_credit():
+    """
+    修改用户额度操作
+    :return:
+    """
     while 1:
         user_name = input("please input user name you want to change credit:").strip()
 
         user_db_file = os.path.join(settings.DATABASE["path"], '%s/%s.json' %
-                                        (settings.DATABASE["name"], user_name))
+                                    (settings.DATABASE["name"], user_name))
         if os.path.exists(user_db_file):
             credit = input("please input your new credit:").strip()
             if credit.isdigit():

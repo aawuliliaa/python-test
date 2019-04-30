@@ -3,13 +3,18 @@
 # Author: vita
 
 from conf import settings
-import os
-from db.db_handler import load_db, save_db
 from utils.print_log import print_info
 from atm.transaction import transaction
+from db.db_handler import load_db, save_db
+import os
 
 
 def shopping_run(user_data):
+    """
+    购物的入口程序
+    :param user_data:
+    :return:
+    """
     while True:
         info = '''
         ***************shopping choice****************
@@ -22,17 +27,25 @@ def shopping_run(user_data):
         choice_list = {
             "1": shopping,
             "2": show_shopping_history,
-            "3": exit
+            "3": "exit"
         }
         your_choice = input("please input your choice:").strip()
 
         if your_choice in choice_list:
+            if choice_list[your_choice] == "exit":
+                exit()
             choice_list[your_choice](user_data)
+
         else:
             print_info("your input must be a number as showed before!","error")
 
 
 def shopping(user_data):
+    """
+    购物程序，调用transaction函数进行结账
+    :param user_data:
+    :return:
+    """
     file = os.path.join(settings.GOODS_DATABASE["path"], '%s/%s.json' % (settings.GOODS_DATABASE["name"], "goods"))
     goods_data = load_db(file)
     print_info("***************goods info**************** ")
@@ -42,7 +55,7 @@ def shopping(user_data):
     if your_choice.isdigit() and int(your_choice) < len(goods_data):
         your_choice = int(your_choice)
         goods_price = goods_data[your_choice]["price"]
-        if transaction(user_data, goods_price, "withdraw"):
+        if transaction(user_data, goods_price, "consume"):
             goods_name = goods_data[your_choice]["name"]
             save_to_shop_history(user_data, goods_name, goods_price)
     else:
@@ -50,6 +63,13 @@ def shopping(user_data):
 
 
 def save_to_shop_history(user_data, goods_name, goods_price):
+    """
+    购物完成，保存到购物信息中
+    :param user_data:
+    :param goods_name:
+    :param goods_price:
+    :return:
+    """
     user_name = user_data["user_name"]
     file = os.path.join(settings.GOODS_DATABASE["path"], '%s/shop_history_%s.json' %
                         (settings.GOODS_DATABASE["name"], user_name))
@@ -75,6 +95,7 @@ def save_to_shop_history(user_data, goods_name, goods_price):
 
 
 def show_shopping_history(user_data):
+    """展示购物历史信息"""
     user_name = user_data["user_name"]
     file = os.path.join(settings.GOODS_DATABASE["path"], '%s/shop_history_%s.json' %
                         (settings.GOODS_DATABASE["name"], user_name))
