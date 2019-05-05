@@ -6,9 +6,11 @@ from conf import settings
 from utils.print_log import print_info
 from atm.transaction import transaction
 from db.db_handler import load_db, save_db
+from utils.login_decorator import login_required
 import os
 
 
+@login_required
 def shopping_run(user_data):
     """
     购物的入口程序
