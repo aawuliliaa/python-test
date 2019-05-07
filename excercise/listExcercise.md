@@ -103,6 +103,22 @@ E:\PythonProject\python-test\venvP3\Scripts\python.exe E:/PythonProject/python-t
 16 2
 
 Process finished with exit code 0
+
+
+names = ['old_driver', '珊珊', ['boy', 'girl']]
+
+for i in enumerate(names):
+    print(i)
+for index, i in enumerate(names):
+    print(index, i)
+
+E:\PythonProject\python-test\venvP3\Scripts\python.exe E:/PythonProject/python-test/BasicGrammer/test.py
+(0, 'old_driver')
+(1, '珊珊')
+(2, ['boy', 'girl'])
+0 old_driver
+1 珊珊
+2 ['boy', 'girl']
 ```
 
 
