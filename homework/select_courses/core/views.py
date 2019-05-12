@@ -14,8 +14,11 @@ from core.course import Course
 class View:
     account = Account()
     school_obj = School()
+
     def __init__(self):
         pass
+    # 登录的时候，会设置这个变量，后面获取用户的对象，都从这里获取
+    # 保存登录状态
     user_data = {
                  'is_authenticated': False,
                  'account_data': None,
@@ -31,6 +34,7 @@ class View:
                 if account_data is not None and account_data.user_type == user_type:
                     if account_data.password == password and account_data.username == username:
                         print_info("login success!")
+                        # 保存登录用户的对象到user_data中
                         self.user_data["is_authenticated"] = True
                         self.user_data["account_data"] = account_data
                         return True
@@ -54,11 +58,12 @@ class View:
             }
             print_info("%s logout successful!" % username)
 
+
 class AdminView(View):
-    user_data = {
-                 'is_authenticated': False,
-                 'account_data': None,
-                 }
+    # user_data = {
+    #              'is_authenticated': False,
+    #              'account_data': None,
+    #              }
     admin_account = AdminAccount()
 
     class_obj = Class()
@@ -72,6 +77,7 @@ class AdminView(View):
                    }
 
     def __init__(self):
+        # 运行程序就会默认创建一个管理员账户
         self.create_admin_account()
 
     def login(self, user_type):
@@ -90,7 +96,6 @@ class AdminView(View):
         admin_account_obj = self.admin_account.setter(ADMIN_NAME, ADMIN_PASSWORD, "admin")
         if admin_account_obj:
             # 设置成功，说明admin是第一次登录，需要保存到文件中
-            #
             db_handler_obj = DbHandler("admin", "admin", admin_account_obj)
             db_handler_obj.save_to_db()
 
@@ -203,7 +208,7 @@ class AdminView(View):
             if os.path.exists(school_path) and associate_school_name:
                 school_data = self.school_obj.getter(associate_school_name, None)
                 self.teacher_obj = self.teacher_obj.teacher_setter(teacher_name, teacher_password,
-                                                           "teacher", associate_school_name)
+                                                                   "teacher", associate_school_name)
                 if self.teacher_obj:
                     school_data["teacher"][teacher_name] = self.teacher_obj
                     school_db_handler_obj = SchoolDbHandler(associate_school_name, school_data)
@@ -336,6 +341,7 @@ class StudentView(View):
             else:
                 print_info("this school not exist", "error")
                 exit_flag = False
+
     def show_student_info(self):
         exit_flag = True
         while exit_flag:
@@ -358,9 +364,11 @@ class StudentView(View):
 
 class TeacherView(View):
     def __init__(self):
+        super(TeacherView,self).__init__()
         self.class_choice = None
-
+        # 从学校的文件中，获取相关数据，后面用于修改和展示
         self.school_data = None
+
     def show_classes(self):
         exit_flag = True
         while exit_flag:
@@ -372,6 +380,7 @@ class TeacherView(View):
                 class_info += "\n"
             print_info(class_info)
             exit_flag = False
+
     def choose_class(self):
         exit_flag = True
         while exit_flag:
@@ -387,6 +396,7 @@ class TeacherView(View):
                 school_data = self.school_obj.getter(associate_school_name, None)
                 self.school_data = school_data
                 exit_flag = False
+
     def list_student(self):
         exit_flag = True
         while exit_flag:
@@ -401,6 +411,7 @@ class TeacherView(View):
             else:
                 print_info("you must choose one class first!", "error")
                 exit_flag = False
+
     def set_student_record(self):
         exit_flag = True
         while exit_flag:

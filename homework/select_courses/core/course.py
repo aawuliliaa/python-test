@@ -4,6 +4,9 @@
 
 
 class Course(object):
+    """
+    课程类
+    """
     def __init__(self):
         self.course_name = None
         self.period = None

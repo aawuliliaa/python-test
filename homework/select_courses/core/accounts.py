@@ -25,9 +25,7 @@ class Account(object):
         :return:
         """
         if self.__check_user(username, user_type):
-
             db_handler = DbHandler(username, user_type, None)
-
             account_data = db_handler.get_data_from_db()
             return account_data
 
@@ -68,6 +66,9 @@ class Account(object):
 
 
 class AdminAccount(Account):
+    """
+    管理员账户
+    """
     def __init__(self):
         super(AdminAccount, self).__init__()
 
@@ -80,8 +81,11 @@ class AdminAccount(Account):
 
 
 class StudentAccount(Account):
+    """
+    学生账户
+    """
     def __init__(self):
-        super(StudentAccount,self).__init__()
+        super(StudentAccount, self).__init__()
         self.associate_school_name = None
         self.associate_course_name = None
         self.associate_course_price = None
@@ -95,8 +99,6 @@ class StudentAccount(Account):
             return set_result
 
         return False
-
-
 
 
 class TeacherAccount(Account):

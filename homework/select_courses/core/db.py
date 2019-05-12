@@ -14,9 +14,8 @@ class DbHandler(object):
         self.data = data
 
     def save_to_db(self):
-        #print(self.file)
+        # print(self.file)
         with open(self.file, "wb") as f:
-
             pickle.dump(self.data, f)
 
     def get_data_from_db(self):

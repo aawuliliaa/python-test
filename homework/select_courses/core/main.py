@@ -10,6 +10,11 @@ admin_view = AdminView()
 
 
 def login_required(func):
+    """
+    装饰器，只有登录之后才能进行后面的操作
+    :param func:
+    :return:
+    """
     def inner(*args, **kwargs):
         if isinstance(args[0], TeacherView):
             if args[0].login("teacher"):
@@ -35,6 +40,10 @@ def interactive(menu, menu_list):
 
 
 def homepage():
+    """
+    登录的首页
+    :return:
+    """
     menu = """
     =============欢迎进入选课系统===============
     
@@ -51,7 +60,7 @@ def homepage():
         "1": "student_login(student_view)",
         "2": "teacher_login(teacher_view)",
         "3": "admin_login(admin_view)",
-        "4": "system_exit"
+        "4": "system_exit()"
     }
     interactive(menu, menu_list)
 
@@ -139,16 +148,20 @@ def student_login(obj):
     }
     interactive(menu,menu_list)
 
+
 def register(obj):
     obj.register()
+
 
 @login_required
 def choose_course(obj):
     obj.choose_course()
 
+
 @login_required
 def show_student_info(obj):
     obj.show_student_info()
+
 
 @login_required
 def teacher_login(obj):
@@ -176,18 +189,32 @@ def teacher_login(obj):
         "5": "log_out(teacher_view)"
     }
     interactive(menu, menu_list)
+
+
 def show_classes(obj):
     obj.show_classes()
+
+
 def choose_class(obj):
     obj.choose_class()
+
+
 def list_student(obj):
     obj.list_student()
+
+
 def set_student_record(obj):
     obj.set_student_record()
+
+
 def log_out(obj):
     obj.log_out()
     homepage()
+
+
 def backup():
     homepage()
+
+
 def run():
     homepage()
