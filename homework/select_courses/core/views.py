@@ -60,10 +60,7 @@ class View:
 
 
 class AdminView(View):
-    # user_data = {
-    #              'is_authenticated': False,
-    #              'account_data': None,
-    #              }
+
     admin_account = AdminAccount()
 
     class_obj = Class()
