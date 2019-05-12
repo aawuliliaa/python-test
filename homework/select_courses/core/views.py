@@ -13,7 +13,7 @@ from core.course import Course
 
 class View:
     account = Account()
-
+    school_obj = School()
     def __init__(self):
         pass
     user_data = {
@@ -60,7 +60,7 @@ class AdminView(View):
                  'account_data': None,
                  }
     admin_account = AdminAccount()
-    school_obj = School()
+
     class_obj = Class()
     course_obj = Course()
     teacher_obj = TeacherAccount()
@@ -105,13 +105,16 @@ class AdminView(View):
             school_country = input("please input school country:").strip()
             school_city = input("please input school city:").strip()
             if school_name and school_country and school_city:
-
-                school_obj = self.school_obj.setter(school_name, school_country, school_city)
-                self.school_data["school"] = school_obj
-                school_db_handler_obj = SchoolDbHandler(school_name, self.school_data)
-                school_db_handler_obj.save_to_db()
-                print_info("you have add this school to the file successful!")
-                exit_flag = False
+                school_path = "%s/%s" % (SCHOOL_PATH, school_name)
+                if os.path.exists(school_path) and school_name:
+                    print_info("this school has already exist!", "error")
+                else:
+                    school_obj = self.school_obj.setter(school_name, school_country, school_city)
+                    self.school_data["school"] = school_obj
+                    school_db_handler_obj = SchoolDbHandler(school_name, self.school_data)
+                    school_db_handler_obj.save_to_db()
+                    print_info("you have add this school to the file successful!")
+                    exit_flag = False
             else:
                 print_info("your input is illegal", "error")
                 exit_flag = False
@@ -128,7 +131,7 @@ class AdminView(View):
             associate_course_name = input("please input associate course name:").strip()
             associate_teacher_name = input("please input associate teacher name:").strip()
             school_path = "%s/%s" % (SCHOOL_PATH, associate_school_name)
-            if os.path.exists(school_path):
+            if os.path.exists(school_path) and associate_school_name:
 
                 school_data = self.school_obj.getter(associate_school_name, None)
                 # print_info(school_data)
@@ -142,6 +145,14 @@ class AdminView(View):
                     self.class_obj = self.class_obj.setter(class_name, associate_course_name,
                                                            associate_school_name, associate_teacher_name)
                     school_data["class"][class_name] = self.class_obj
+                    # 课程对象也与班级联系起来，用于展示该教该课程的班级有哪些，可展示出来供用户选择
+                    school_data["course"][associate_course_name].associate_class_names.append(class_name)
+                    # 创建班级的时候，分配了老师，这里为了后面展示该老师管理哪些班级，把班级信息加入到老师对象中
+                    teacher_obj = school_data["teacher"][associate_teacher_name]
+                    teacher_obj.classes.append(class_name)
+                    db_handler_obj = DbHandler(teacher_obj.username, "teacher", teacher_obj)
+                    db_handler_obj.save_to_db()
+
                     school_db_handler_obj = SchoolDbHandler(associate_school_name, school_data)
                     school_db_handler_obj.save_to_db()
                     print_info("you have add this class to the school file successful!")
@@ -162,7 +173,7 @@ class AdminView(View):
             price = input("please input price:").strip()
             associate_school_name = input("please input associate school name:").strip()
             school_path = "%s/%s" % (SCHOOL_PATH, associate_school_name)
-            if os.path.exists(school_path):
+            if os.path.exists(school_path) and associate_school_name:
                 if period.isdigit() and price.isdigit():
                     school_data = self.school_obj.getter(associate_school_name, None)
                     self.course_obj = self.course_obj.setter(course_name, period, price, associate_school_name)
@@ -189,7 +200,7 @@ class AdminView(View):
             teacher_password = input("please input teacher password:").strip()
             associate_school_name = input("please input associate school name:").strip()
             school_path = "%s/%s" % (SCHOOL_PATH, associate_school_name)
-            if os.path.exists(school_path):
+            if os.path.exists(school_path) and associate_school_name:
                 school_data = self.school_obj.getter(associate_school_name, None)
                 self.teacher_obj = self.teacher_obj.teacher_setter(teacher_name, teacher_password,
                                                            "teacher", associate_school_name)
@@ -199,7 +210,7 @@ class AdminView(View):
                     school_db_handler_obj.save_to_db()
                     db_handler_obj = DbHandler(teacher_name, "teacher", self.teacher_obj)
                     db_handler_obj.save_to_db()
-                    # print_info("you have create this teacher and add this teacher to the school file successful!")
+                    print_info("you have create this teacher and add this teacher to the school file successful!")
                     exit_flag = False
                 else:
                     # 为FALSE，说明老师已经存在了
@@ -215,31 +226,29 @@ class AdminView(View):
             school_info = ""
             school_name = input("please input school name you want to show:").strip()
             school_path = "%s/%s" % (SCHOOL_PATH, school_name)
-            if os.path.exists(school_path):
+            if os.path.exists(school_path) and school_name:
                 school_data = self.school_obj.getter(school_name, None)
                 for class_name in school_data["class"]:
-                    school_info += "class_name:"
-                    school_info += class_name
-                    school_info += "  associate_course_name:"
-                    school_info += school_data["class"][class_name].associate_course_name
-                    school_info += "  associate_teacher_name:"
-                    school_info += school_data["class"][class_name].associate_teacher_name
+                    school_info += "class_name:%s" % class_name
+                    school_info += "  associate_course_name:%s" % \
+                                   school_data["class"][class_name].associate_course_name
+                    school_info += "  associate_teacher_name:%s" % \
+                                   school_data["class"][class_name].associate_teacher_name
                     school_info += "\n"
                 for course_name in school_data["course"]:
-                    school_info += "course_name:"
-                    school_info += course_name
-                    school_info += "  period:"
-                    school_info += school_data["course"][course_name].period
-                    school_info += "  rice:"
-                    school_info += school_data["course"][course_name].price
+                    school_info += "course_name:%s" % course_name
+                    school_info += "  period:%s" % school_data["course"][course_name].period
+                    school_info += "  rice:%s" % school_data["course"][course_name].price
+                    school_info += "  associate_class_names:%s" % \
+                                   str(school_data["course"][course_name].associate_class_names)
                     school_info += "\n"
                 for teacher_name in school_data["teacher"]:
-                    school_info += "teacher_name:"
-                    school_info += teacher_name
+
+                    school_info += "teacher_name:%s" % teacher_name
+                    school_info += " classes managed: %s" % str(school_data["teacher"][teacher_name].classes)
                     school_info += "\n"
                 for student_name in school_data["student"]:
-                    school_info += "student_name:"
-                    school_info += student_name
+                    school_info += "student_name:%s" % student_name
                     school_info += "\n"
                 print_info(school_info)
                 exit_flag = False
@@ -258,8 +267,8 @@ class StudentView(View):
         """
         exit_flag = True
         while exit_flag:
-            username = input("please input username:").strip()
-            password = input("please input password:").strip()
+            username = input("please input new username:").strip()
+            password = input("please input new password:").strip()
             if username and password:
                 student_obj = self.student_obj.setter(username, password, "student")
                 if student_obj:
@@ -273,9 +282,142 @@ class StudentView(View):
             else:
                 print_info("username or password can not be null!", "error")
                 exit_flag = False
+
     def choose_course(self):
-        input("please choose one school first!")
+        exit_flag = True
+        while exit_flag:
+            course_info = "=====the course listed below is for your choose====\n"
+            associate_school_name = input("please choose one school first!").strip()
+            if os.path.exists("%s/%s" % (SCHOOL_PATH, associate_school_name)) and associate_school_name:
+                school_data = self.school_obj.getter(associate_school_name, None)
+                for course_name in school_data["course"]:
+
+                    course_info += course_name
+                    course_info += school_data["course"][course_name].price
+                    course_info += "\n"
+                # 列出该学校下可供选择的课程有哪些
+                print_info(course_info)
+                associate_course_name = input("please input course:").strip()
+                associate_course_price = input("please input course price:").strip()
+                if associate_course_name not in school_data["course"] or \
+                        associate_course_price != school_data["course"][associate_course_name].price:
+                    print_info("your input course name not exist or price is not right!", "error")
+                    exit_flag = False
+                else:
+                    # 课程对象：course_name:python  period:6  rice:9000  associate_class_names:['python12']
+                    # 列出在所选的课程下，有哪些班级供选择
+                    course_obj = school_data["course"][associate_course_name]
+                    class_info = "=====the class listed below is for your choose====\n"
+                    for class_name in course_obj.associate_class_names:
+
+                        class_info += class_name
+                        class_info += "\n"
+                    print_info(class_info)
+                    associate_class_name = input("please input class name:").strip()
+                    if associate_class_name not in course_obj.associate_class_names:
+                        print_info("your input is illegal!", "error")
+                        exit_flag = False
+                    else:
+                        # 老师自动分配
+                        student_obj = self.user_data["account_data"]
+                        student_obj.associate_course_name = associate_course_name
+                        student_obj.associate_class_name = associate_class_name
+                        student_obj.associate_school_name = associate_school_name
+                        student_obj.associate_course_price = associate_course_price
+                        school_data["student"][student_obj.username] = student_obj
+                        # 学生选好了班级后，就把学生的名字加入班级对象下的students中，后面用于展示该班级中的学生
+                        school_data["class"][associate_class_name].students.append(student_obj.username)
+                        db_handler_obj = DbHandler(student_obj.username, "student", student_obj)
+                        db_handler_obj.save_to_db()
+                        school_db_handler_obj = SchoolDbHandler(associate_school_name, school_data)
+                        school_db_handler_obj.save_to_db()
+                        print_info("you have update user info to db file and school file!")
+                        exit_flag = False
+            else:
+                print_info("this school not exist", "error")
+                exit_flag = False
+    def show_student_info(self):
+        exit_flag = True
+        while exit_flag:
+            student_obj = self.user_data["account_data"]
+            student_info = ""
+            student_info += "username:%s \n" % student_obj.username
+            if student_obj.associate_school_name:
+                student_info += "associate_school_name:%s \n" % student_obj.associate_school_name
+            if student_obj.associate_course_name:
+                student_info += "associate_course_name:%s \n" % student_obj.associate_course_name
+            if student_obj.associate_course_price:
+                student_info += "associate_course_price:%s \n" % student_obj.associate_course_price
+            if student_obj.associate_class_name:
+                student_info += "associate_class_name:%s \n" % student_obj.associate_class_name
+            if student_obj.record:
+                student_info += "record:%s\n" % student_obj.record
+            print_info(student_info)
+            exit_flag = False
 
 
 class TeacherView(View):
-    pass
+    def __init__(self):
+        self.class_choice = None
+
+        self.school_data = None
+    def show_classes(self):
+        exit_flag = True
+        while exit_flag:
+            teacher_obj = self.user_data["account_data"]
+            class_info = ""
+            for class_name in teacher_obj.classes:
+
+                class_info += class_name
+                class_info += "\n"
+            print_info(class_info)
+            exit_flag = False
+    def choose_class(self):
+        exit_flag = True
+        while exit_flag:
+            class_choice = input("please choose one class you want to manage:").strip()
+            if class_choice not in self.user_data["account_data"].classes:
+                print_info("your input class not exist!", "error")
+                exit_flag = False
+            else:
+                self.class_choice = class_choice
+                print_info("you have choose %s class successful!" % class_choice)
+                teacher_obj = self.user_data["account_data"]
+                associate_school_name = teacher_obj.associate_school_name
+                school_data = self.school_obj.getter(associate_school_name, None)
+                self.school_data = school_data
+                exit_flag = False
+    def list_student(self):
+        exit_flag = True
+        while exit_flag:
+            if self.class_choice:
+                student_info = ""
+
+                for student_name in self.school_data["class"][self.class_choice].students:
+                    student_info += student_name
+                    student_info += "\n"
+                print_info(student_info)
+                exit_flag = False
+            else:
+                print_info("you must choose one class first!", "error")
+                exit_flag = False
+    def set_student_record(self):
+        exit_flag = True
+        while exit_flag:
+            student_name = input("please input student name:").strip()
+            student_record = input("please set record:").strip()
+            if student_name not in self.school_data["student"]:
+                print_info("the student not exist!", "error")
+                exit_flag = False
+            elif not student_record.isdigit():
+                print_info("record can just be a number!", "error")
+                exit_flag = False
+            else:
+                student_obj = self.school_data["student"][student_name]
+                student_obj.record = student_record
+                db_handler_obj = DbHandler(student_obj.username, "student", student_obj)
+                db_handler_obj.save_to_db()
+                school_db_handler_obj = SchoolDbHandler(student_obj.associate_school_name, self.school_data)
+                school_db_handler_obj.save_to_db()
+                print_info("set record successful!")
+                exit_flag = False

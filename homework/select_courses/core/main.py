@@ -49,7 +49,7 @@ def homepage():
     # 后面使用eval()来进行解析
     menu_list = {
         "1": "student_login(student_view)",
-        "2": "",
+        "2": "teacher_login(teacher_view)",
         "3": "admin_login(admin_view)",
         "4": "system_exit"
     }
@@ -122,22 +122,20 @@ def student_login(obj):
     :return:
     """
     menu = """
-    ===============欢迎进学员登录===============
+    ===============欢迎学员登录===================
 
                    1. 注册账号
-                   2. 选择课程并付费
-                   3. 选择班级
-                   4. 展示学员信息
-                   5. 退出
+                   2. 选择课程-班级-并付费
+                   3. 展示学员信息
+                   4. 退出
                
     ==============================================
     """
     menu_list = {
         "1": "register(student_view)",
         "2": "choose_course(student_view)",
-        "3": "choose_class(student_view)",
-        "4": "show_student_info(student_view)",
-        "5": "logout(student_view)"
+        "3": "show_student_info(student_view)",
+        "4": "backup()"
     }
     interactive(menu,menu_list)
 
@@ -147,8 +145,49 @@ def register(obj):
 @login_required
 def choose_course(obj):
     obj.choose_course()
+
+@login_required
+def show_student_info(obj):
+    obj.show_student_info()
+
+@login_required
+def teacher_login(obj):
+    """
+    讲师视图， 讲师可管理自己的班级， 上课时选择班级， 查看班级学员列表 ， 修改所管理的学员的成绩
+    :param obj:
+    :return:
+    """
+    menu = """
+    =================欢迎老师登录=================
+
+                   1. 查看管理的班级
+                   2. 选择班级
+                   3. 列出班级中学生
+                   4. 设置学生成绩
+                   4. 退出
+
+    ==============================================
+    """
+    menu_list = {
+        "1": "show_classes(teacher_view)",
+        "2": "choose_class(teacher_view)",
+        "3": "list_student(teacher_view)",
+        "4": "set_student_record(teacher_view)",
+        "5": "log_out(teacher_view)"
+    }
+    interactive(menu, menu_list)
+def show_classes(obj):
+    obj.show_classes()
+def choose_class(obj):
+    obj.choose_class()
+def list_student(obj):
+    obj.list_student()
+def set_student_record(obj):
+    obj.set_student_record()
 def log_out(obj):
     obj.log_out()
+    homepage()
+def backup():
     homepage()
 def run():
     homepage()

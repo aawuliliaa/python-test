@@ -84,8 +84,10 @@ class StudentAccount(Account):
         super(StudentAccount,self).__init__()
         self.associate_school_name = None
         self.associate_course_name = None
+        self.associate_course_price = None
         self.associate_class_name = None
         self.associate_teacher_name = None
+        self.record = None
 
     def setter(self, username, password, user_type):
         set_result = super(StudentAccount, self).setter(username, password, user_type)
@@ -94,14 +96,7 @@ class StudentAccount(Account):
 
         return False
 
-    def student_associate_setter(self, associate_school_name,
-                                 associate_course_name, associate_class_name, associate_teacher_name):
 
-        self.associate_school_name = associate_school_name
-        self.associate_course_name = associate_course_name
-        self.associate_class_name = associate_class_name
-        self.associate_teacher_name = associate_teacher_name
-        return self
 
 
 class TeacherAccount(Account):
@@ -112,6 +107,8 @@ class TeacherAccount(Account):
     def __init__(self):
         super(TeacherAccount, self).__init__()
         self.associate_school_name = None
+        # 创建班级的时候，分配了老师，假设一个老师管理好几个班级，所以这里用[]，可列出班级供老师选择
+        self.classes = []
 
     def teacher_setter(self, username, password, user_type,  associate_school_name):
         set_result = super(TeacherAccount, self).setter(username, password, user_type)

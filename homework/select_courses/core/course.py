@@ -9,6 +9,8 @@ class Course(object):
         self.period = None
         self.price = None
         self.associate_school_name = None
+        # 教授这个课程的可能有多个班级，因为人太多啦。哈哈
+        self.associate_class_names = []
 
     def setter(self, course_name, period, price, associate_school_name):
         self.course_name = course_name
