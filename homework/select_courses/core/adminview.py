@@ -19,6 +19,7 @@ class AdminView(View):
     class_obj = Class()
     course_obj = Course()
     teacher_obj = TeacherAccount()
+    # 学校的时候使用
     school_data = {'school': None,
                    'course': {},
                    'class': {},
@@ -170,6 +171,10 @@ class AdminView(View):
                 exit_flag = False
 
     def show_school_info(self):
+        """
+        展示学校信息
+        :return:
+        """
         exit_flag = True
         while exit_flag:
             school_info = ""

@@ -40,6 +40,10 @@ class StudentView(View):
                 exit_flag = False
 
     def choose_course(self):
+        """
+        选择课程
+        :return:
+        """
         exit_flag = True
         while exit_flag:
             course_info = "=====the course listed below is for your choose====\n"
@@ -94,6 +98,10 @@ class StudentView(View):
                 exit_flag = False
 
     def show_student_info(self):
+        """
+        展示学生信息
+        :return:
+        """
         exit_flag = True
         while exit_flag:
             student_obj = self.user_data["account_data"]

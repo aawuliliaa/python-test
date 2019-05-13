@@ -14,11 +14,18 @@ class DbHandler(object):
         self.data = data
 
     def save_to_db(self):
-        # print(self.file)
+        """
+        保存数据到文件中
+        :return:
+        """
         with open(self.file, "wb") as f:
             pickle.dump(self.data, f)
 
     def get_data_from_db(self):
+        """
+        获取数据
+        :return:
+        """
         with open(self.file, "rb") as f:
             self.data = pickle.load(f)
             return self.data
