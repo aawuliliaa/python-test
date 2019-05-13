@@ -12,7 +12,4 @@ ACCOUNT_PATH = {'student': "%s/db/accounts/student" % BASE_DIR,
 SCHOOL_PATH = "%s/db/school" % BASE_DIR
 ADMIN_NAME = "admin"
 ADMIN_PASSWORD = "admin"
-LOG_LEVEL = logging.INFO
-LOG_TYPES = {
-    "access_log": "%s/log" % BASE_DIR
-     }
+

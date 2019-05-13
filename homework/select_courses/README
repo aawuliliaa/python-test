@@ -24,6 +24,7 @@ python版本3.6.2
 ```
 管理员账号密码[admin|admin]
 普通账户的信息在db/accounts/student和teacher下，密码我设置的都是123
+程序运行结果的"测试后，查看学校信息"可查看到当前的课程，班级，学生信息
 ```
 # 4.程序的运行效果
 ![](.README_images/f4d8af2c.png)
@@ -47,6 +48,9 @@ python版本3.6.2
 ![](.README_images/af009097.png)
 ![](.README_images/ee2a1b80.png)
 ![](.README_images/4b7006ed.png)
+测试后，查看学校信息
+![](.README_images/70d2e2ec.png)
+![](.README_images/898934f2.png)
 # 5.程序流程图
 
 ![](.README_images/流程图.jpg)

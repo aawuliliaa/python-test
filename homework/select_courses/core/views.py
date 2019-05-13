@@ -11,13 +11,12 @@ class View:
     school_obj = School()
 
     def __init__(self):
+        # 登录的时候，会设置这个变量，后面获取用户的对象，都从这里获取
+        # 保存登录状态
         self.user_data = {
                  'is_authenticated': False,
                  'account_data': None,
                  }
-        #pass
-    # 登录的时候，会设置这个变量，后面获取用户的对象，都从这里获取
-    # 保存登录状态
 
     def login(self, user_type):
         exit_flag = True
