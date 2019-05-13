@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 import os
-import logging
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ACCOUNT_PATH = {'student': "%s/db/accounts/student" % BASE_DIR,

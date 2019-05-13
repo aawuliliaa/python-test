@@ -32,19 +32,11 @@ class AdminView(View):
         # 运行程序就会默认创建一个管理员账户
         self.create_admin_account()
 
-    def login(self, user_type):
+    def create_admin_account(self):
         """
-        装饰器调用方法，必须先登录才能进行操作
-        :param user_type:
+        第一次登录，就创建管理员账号
         :return:
         """
-        if super(AdminView, self).login(user_type):
-            return True
-        else:
-            return False
-
-    def create_admin_account(self):
-        # 第一次登录，就创建管理员账号
         admin_account_obj = self.admin_account.setter(ADMIN_NAME, ADMIN_PASSWORD, "admin")
         if admin_account_obj:
             # 设置成功，说明admin是第一次登录，需要保存到文件中

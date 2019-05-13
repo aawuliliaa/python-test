@@ -54,7 +54,7 @@ class Account(object):
         """
         用于验证账户是否存在，由于用户类型不同，存在不同的路径，所以要传两个参数
         用户的账户文件是以用户名命名
-        :param self:
+        :param :
         :param username:
         :param user_type:
         :return:

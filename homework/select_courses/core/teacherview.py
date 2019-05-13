@@ -14,6 +14,10 @@ class TeacherView(View):
         self.school_data = None
 
     def show_classes(self):
+        """
+        列出所管理的班级有哪些
+        :return:
+        """
         exit_flag = True
         while exit_flag:
             teacher_obj = self.user_data["account_data"]
@@ -26,6 +30,10 @@ class TeacherView(View):
             exit_flag = False
 
     def choose_class(self):
+        """
+        选择班级
+        :return:
+        """
         exit_flag = True
         while exit_flag:
             class_choice = input("please choose one class you want to manage:").strip()
@@ -42,6 +50,10 @@ class TeacherView(View):
                 exit_flag = False
 
     def list_student(self):
+        """
+        列出选择的班级中的学生
+        :return:
+        """
         exit_flag = True
         while exit_flag:
             if self.class_choice:
@@ -60,6 +72,10 @@ class TeacherView(View):
                 exit_flag = False
 
     def set_student_record(self):
+        """
+        设置学生成绩
+        :return:
+        """
         exit_flag = True
         while exit_flag:
             student_name = input("please input student name:").strip()

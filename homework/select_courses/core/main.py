@@ -79,7 +79,7 @@ def system_exit():
 def admin_login(obj):
     """
     管理视图，创建讲师， 创建班级，创建课程
-    :param obj:
+    :param :
     :return:
     """
 
@@ -129,7 +129,7 @@ def show_school_info(obj):
 def student_login(obj):
     """
     学员视图， 可以注册， 交学费， 选择班级, 显示学员的选课信息
-    :param obj:
+    :param :
     :return:
     """
     menu = """
@@ -148,7 +148,7 @@ def student_login(obj):
         "3": "show_student_info(student_view)",
         "4": "log_out(student_view)"
     }
-    interactive(menu,menu_list)
+    interactive(menu, menu_list)
 
 
 def register(obj):
@@ -169,7 +169,7 @@ def show_student_info(obj):
 def teacher_login(obj):
     """
     讲师视图， 讲师可管理自己的班级， 上课时选择班级， 查看班级学员列表 ， 修改所管理的学员的成绩
-    :param obj:
+    :param :
     :return:
     """
     menu = """

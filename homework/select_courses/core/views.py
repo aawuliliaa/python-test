@@ -19,6 +19,11 @@ class View:
                  }
 
     def login(self, user_type):
+        """
+        登录函数
+        :param user_type:
+        :return:
+        """
         exit_flag = True
         while exit_flag:
             if not self.user_data["is_authenticated"]:
