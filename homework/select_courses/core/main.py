@@ -2,7 +2,9 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 
-from core.views import StudentView, TeacherView, AdminView
+from core.adminview import AdminView
+from core.teacherview import TeacherView
+from core.studentview import StudentView
 from utils.print_log import print_info
 teacher_view = TeacherView()
 student_view = StudentView()
@@ -144,7 +146,7 @@ def student_login(obj):
         "1": "register(student_view)",
         "2": "choose_course(student_view)",
         "3": "show_student_info(student_view)",
-        "4": "backup()"
+        "4": "log_out(student_view)"
     }
     interactive(menu,menu_list)
 
@@ -177,7 +179,7 @@ def teacher_login(obj):
                    2. 选择班级
                    3. 列出班级中学生
                    4. 设置学生成绩
-                   4. 退出
+                   5. 退出
 
     ==============================================
     """
@@ -209,10 +211,6 @@ def set_student_record(obj):
 
 def log_out(obj):
     obj.log_out()
-    homepage()
-
-
-def backup():
     homepage()
 
 

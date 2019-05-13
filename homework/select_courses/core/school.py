@@ -12,6 +12,7 @@ class School:
         self.school_name = None
         self.school_country = None
         self.school_city = None
+        # 用于保存该学校中的班级，课程，老师等所有信息
         self.school_data = None
 
     def setter(self, school_name, school_country, school_city):
@@ -34,13 +35,8 @@ class School:
                     'course': {'PY': <lib.courses.Courses object at 0x0000022CF266A208>},
                     'class': {'python': <lib.classes.Classes object at 0x0000022CF266A358>},
                     'teacher': {'vita': <lib.accounts.Accounts object at 0x0000022CF266A470>},
-                    'student': {'lili': {'account_id': '777bbb7869ae8193249f8ff7d3e59afe',
-                     'is_authenticated': True,
-                     'account_data': <lib.accounts.StudentAccounts object at 0x0000022CF266A550>,
-                     'student_data': {'school': 'SH', 'course': ['PY'],
-                                     'class': ['python'],
-                                     'teacher': ['vita']},
-                                     'study_record': None}}}
+                    'student': {'lyly': <lib.accounts.StudentAccounts object at 0x0000022CF266A550>},
+                     }
         :param school_name:
         :param school_data:
         :return:

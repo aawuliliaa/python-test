@@ -59,7 +59,7 @@ class Account(object):
         :param user_type:
         :return:
         """
-        if os.path.exists("%s/%s" % (settings.ACCOUNT_PATH[user_type], username)):
+        if len(username) != 0 and os.path.exists("%s/%s" % (settings.ACCOUNT_PATH[user_type], username)):
             return True
 
         return False
