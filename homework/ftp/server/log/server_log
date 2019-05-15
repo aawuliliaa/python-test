@@ -1,0 +1,51 @@
+2019-05-15 12:54:55,778 - server_log - ERROR - error
+2019-05-15 13:00:09,798 - server_log - ERROR - 
+        [python run_server.py start] to start ftp server!
+        [python run_server.py stop] to stop ftp server!
+        
+2019-05-15 13:03:37,678 - server_log - ERROR - 
+        [python run_server.py start] to start ftp server!
+        [python run_server.py stop] to stop ftp server!
+        
+2019-05-15 14:10:34,757 - server_log - INFO - 
+        [python run_server.py start] to start ftp server!
+        [python run_server.py stop] to stop ftp server!
+        
+2019-05-15 16:49:33,052 - server_log - ERROR - client connect:
+2019-05-15 16:49:53,337 - server_log - ERROR - user not exist
+2019-05-15 16:49:53,337 - server_log - ERROR - user not exist
+2019-05-15 17:06:52,523 - server_log - ERROR - client connect:
+2019-05-15 17:08:42,717 - server_log - ERROR - client connect:
+2019-05-15 17:08:49,056 - server_log - ERROR - user vita not exist
+2019-05-15 17:08:49,056 - server_log - ERROR - user vita not exist
+2019-05-15 17:14:11,955 - server_log - ERROR - client connect:
+2019-05-15 17:18:02,144 - server_log - ERROR - client connect:
+2019-05-15 17:18:06,006 - server_log - ERROR - your password is not correct
+2019-05-15 17:18:06,006 - server_log - ERROR - your password is not correct
+2019-05-15 17:24:18,212 - server_log - ERROR - client connect:
+2019-05-15 17:28:17,044 - server_log - ERROR - client connect:
+2019-05-15 17:28:30,011 - server_log - ERROR - your password is not correct
+2019-05-15 17:28:30,011 - server_log - ERROR - your password is not correct
+2019-05-15 17:28:37,948 - server_log - ERROR - your password is not correct
+2019-05-15 17:28:37,948 - server_log - ERROR - your password is not correct
+2019-05-15 17:28:37,948 - server_log - ERROR - your password is not correct
+2019-05-15 17:28:37,951 - server_log - ERROR - client does not input anything!
+2019-05-15 17:28:37,951 - server_log - ERROR - client does not input anything!
+2019-05-15 17:28:37,951 - server_log - ERROR - client does not input anything!
+2019-05-15 17:28:37,951 - server_log - ERROR - client does not input anything!
+2019-05-15 17:28:45,952 - server_log - ERROR - client connect:
+2019-05-15 17:28:45,952 - server_log - ERROR - client connect:
+2019-05-15 17:28:45,952 - server_log - ERROR - client connect:
+2019-05-15 17:28:45,952 - server_log - ERROR - client connect:
+2019-05-15 17:28:45,952 - server_log - ERROR - client connect:
+2019-05-15 17:28:50,961 - server_log - ERROR - client does not input anything!
+2019-05-15 17:28:50,961 - server_log - ERROR - client does not input anything!
+2019-05-15 17:28:50,961 - server_log - ERROR - client does not input anything!
+2019-05-15 17:28:50,961 - server_log - ERROR - client does not input anything!
+2019-05-15 17:28:50,961 - server_log - ERROR - client does not input anything!
+2019-05-15 17:28:50,961 - server_log - ERROR - client does not input anything!
+2019-05-15 17:30:20,685 - server_log - ERROR - client connect:
+2019-05-15 17:30:28,264 - server_log - ERROR - client does not input anything!
+2019-05-15 17:30:28,264 - server_log - ERROR - client does not input anything!
+2019-05-15 17:35:44,807 - server_log - ERROR - client connect:
+2019-05-15 17:57:48,394 - server_log - ERROR - client connect:
