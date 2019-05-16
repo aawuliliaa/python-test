@@ -5,6 +5,7 @@ import socket
 import json
 import os
 import configparser
+import subprocess
 from conf import settings
 from utils.print_write_log import print_info
 
@@ -14,7 +15,13 @@ class FtpServer(object):
     STATUS_CODE = {
         "100": "login success!",
         "101": "your password is not correct",
-        "102": "user not exist"
+        "102": "user not exist",
+        "200": "file download starting!",
+        "201": "the file you download is not exist!",
+        "300": "ready to list dir!",
+        "400": "ready to change dir!",
+        "401": "dir not exist!",
+        "402": "you do not have permission to that dir!"
     }
 
     def __init__(self):
@@ -23,6 +30,7 @@ class FtpServer(object):
         self.client_addr = None
         self.accounts = self.load_accounts()
         self.user_current_dir = None
+        self.user_home_dir = None
     @staticmethod
     def load_accounts():
         """
@@ -45,13 +53,15 @@ class FtpServer(object):
         while True:
             print("waiting client to connect!")
             self.request_conn_obj, self.client_addr = self.server_socket_obj.accept()
-
-            print_info("client connect:", self.client_addr)
+            # self.client_addr是个元组('127.0.0.1','13850')
+            print_info("client connect:ip:%s port:%s" % (self.client_addr[0], self.client_addr[1]))
             try:
                 self.handle_client_request()
-            except OSError as e:
+                # 客户端输入quit退出程序时，服务端的
+            except Exception as e:
                 print(e)
-            print("%s client closed connection!" % self.client_addr)
+
+            print_info("client closed connection!ip:%s port:%s" % (self.client_addr[0], self.client_addr[1]))
 
     def get_response_from_client(self):
         """
@@ -77,8 +87,13 @@ class FtpServer(object):
         while True:
             client_request_cmd = self.get_response_from_client()
             action_type = client_request_cmd["action_type"]
+            # 客户端传过来quit退出程序，这里退出接受消息的循环，到达接受其他用户请求的循环层
+            if action_type == "quit":
+                break
+
             if hasattr(self, action_type):
                 func = getattr(self, action_type)
+
                 func(client_request_cmd)
 
     def send_certain_size_response(self, response_code, **kwargs):
@@ -117,7 +132,8 @@ class FtpServer(object):
         if username in self.accounts:
             real_password = self.accounts[username]["password"]
             if password == real_password:
-                self.user_current_dir = os.path.join(settings.ACCOUNT_FILE, username)
+                self.user_current_dir = os.path.join(settings.USER_HOME_DIR, username)
+                self.user_home_dir = os.path.join(settings.USER_HOME_DIR, username)
                 self.send_certain_size_response("100")
 
             else:
@@ -127,11 +143,87 @@ class FtpServer(object):
             print_info("user %s not exist" % username, "error")
             self.send_certain_size_response("102")
 
-    def put(self):
-        pass
-    def get(self):
-        pass
-    def ls(self):
-        pass
-    def cd(self):
-        pass
+    def put(self, client_request_cmd):
+        file_total_size = client_request_cmd["file_total_size"]
+        file_name = client_request_cmd["file_name"]
+        file_abs_path = os.path.join(self.user_current_dir, file_name)
+        received_file_size = 0
+        f = open(file_abs_path, "wb")
+        while received_file_size < file_total_size:
+            left_file_size = file_total_size-received_file_size
+            if left_file_size < self.MSG_SIZE:
+                data = self.request_conn_obj.recv(left_file_size)
+                # 这样操作是不可以的len(data)!=left_file_size
+                # received_file_size += left_file_size
+            else:
+                data = self.request_conn_obj.recv(self.MSG_SIZE)
+                # received_file_size += self.MSG_SIZE
+            received_file_size += len(data)
+            f.write(data)
+
+        f.close()
+        print_info("file received done")
+
+    def get(self, client_request_cmd):
+        """
+        从服务端下载文件
+        :param client_request_cmd:
+        :return:
+        """
+        # 客户端上传的相对路径get a/b/test.txt，相对路径与用户当前所在路径想拼
+        file_relative_path = client_request_cmd["file_relative_path"]
+        # 绝对路径
+        file_abs_path = os.path.join(self.user_current_dir, file_relative_path)
+        if os.path.exists(file_abs_path):
+            file_total_size = os.path.getsize(file_abs_path)
+            self.send_certain_size_response("200", file_total_size=file_total_size)
+            f = open(file_abs_path, "rb")
+            for line in f:
+                self.request_conn_obj.send(line)
+            f.close()
+            print_info("file transfer successful!")
+
+        else:
+            print_info(self.STATUS_CODE["201"])
+            self.send_certain_size_response("201")
+
+    def ls(self, client_request_cmd):
+        """
+        列出当前目录下的内容
+        :param client_request_cmd:
+        :return:
+        """
+        print(self.user_current_dir)
+        cmd_obj = subprocess.Popen("dir %s" % self.user_current_dir, shell=True,
+                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout = cmd_obj.stdout.read()
+        stderr = cmd_obj.stderr.read()
+        cmd_result = stdout+stderr
+        if len(cmd_result) == 0:
+            cmd_result = "empty dir".encode("gbk")
+        cmd_result_total_size = len(cmd_result)
+        self.send_certain_size_response("300", cmd_result_total_size=cmd_result_total_size)
+        self.request_conn_obj.sendall(cmd_result)
+
+    def cd(self, client_request_cmd):
+        target_path = client_request_cmd["target_path"]
+        # E:\PythonProject\python-test\homework\ftp\server\home\vita\test\..\..使用abspath能去掉..
+        # 变为E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+        dir_abs_path = os.path.abspath(os.path.join(self.user_current_dir, target_path))
+        print_info(dir_abs_path)
+        if os.path.isdir(dir_abs_path):
+            if dir_abs_path.startswith(self.user_home_dir):
+                client_terminal_display_dir = dir_abs_path.replace(self.user_home_dir, "")
+                self.send_certain_size_response("400", client_terminal_display_dir=client_terminal_display_dir)
+                print_info(self.STATUS_CODE["400"])
+                self.user_current_dir = dir_abs_path
+                print_info("dir change success!")
+            else:
+                # 输出无权限
+                self.send_certain_size_response("402")
+                print_info(self.STATUS_CODE["402"])
+        else:
+            # 输出目录不存在
+            self.send_certain_size_response("401")
+            print_info(self.STATUS_CODE["401"])
+
