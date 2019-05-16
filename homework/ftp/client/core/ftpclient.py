@@ -26,6 +26,10 @@ class FtpClient(object):
         self.left_quota = None
 
     def verify_args(self):
+        """
+        用户登录要加-s -P参数
+        :return:
+        """
         parser = optparse.OptionParser()
         # python.exe run_client.py -s 127.0.0.1 -P 9999
         # (<Values at 0x1b9dd3a5128: {'server': '127.0.0.1', 'port': '9999'}>, [])
@@ -74,6 +78,10 @@ class FtpClient(object):
                     func()
 
     def create_user(self):
+        """
+        新建用户，同时在服务端Home目录下创建家目录，并设置用户磁盘空间大小
+        :return:
+        """
         exit_flag = True
         while exit_flag:
             new_user_name = input("please input new user name:").strip()
@@ -101,6 +109,10 @@ class FtpClient(object):
                 exit_flag = False
 
     def login(self):
+        """
+        用户登录方法
+        :return:
+        """
         if self.auth():
             while True:
                 # 用户输入ls, get file ,put file,cd dir
@@ -117,6 +129,12 @@ class FtpClient(object):
 
     @staticmethod
     def verify_client_cmd_list(client_cmd_list, exact_arg_num):
+        """
+        验证用户输入是否符合标准
+        :param client_cmd_list:
+        :param exact_arg_num:
+        :return:
+        """
         if len(client_cmd_list) != exact_arg_num:
             return False
         return True
@@ -213,6 +231,11 @@ class FtpClient(object):
 
     @staticmethod
     def file_md5_value(file_asb_path):
+        """
+        用于验证文件的准确性，返回文件md5值
+        :param file_asb_path:
+        :return:
+        """
         cmd_obj = subprocess.Popen(
             "certutil -hashfile %s MD5" % file_asb_path,
             shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
