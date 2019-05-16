@@ -1,0 +1,165 @@
+2019-05-16 12:32:58,487 - server_log - INFO - client connect:ip:127.0.0.1 port:1119
+2019-05-16 12:54:49,899 - server_log - INFO - client connect:ip:127.0.0.1 port:1490
+2019-05-16 12:55:04,930 - server_log - INFO - file received done
+2019-05-16 12:55:04,930 - server_log - INFO - file received done
+2019-05-16 13:02:35,839 - server_log - INFO - client connect:ip:127.0.0.1 port:1625
+2019-05-16 13:02:49,664 - server_log - INFO - file transfer successful!
+2019-05-16 13:02:49,664 - server_log - INFO - file transfer successful!
+2019-05-16 13:03:55,445 - server_log - INFO - client connect:ip:127.0.0.1 port:1648
+2019-05-16 13:04:08,531 - server_log - INFO - file transfer successful!
+2019-05-16 13:04:08,531 - server_log - INFO - file transfer successful!
+2019-05-16 13:04:17,054 - server_log - INFO - file is same with client,file received done
+2019-05-16 13:04:17,054 - server_log - INFO - file is same with client,file received done
+2019-05-16 13:04:17,054 - server_log - INFO - file is same with client,file received done
+2019-05-16 14:00:58,933 - server_log - INFO - client connect:ip:127.0.0.1 port:2869
+2019-05-16 14:01:26,382 - server_log - INFO - client closed connection!ip:127.0.0.1 port:2869
+2019-05-16 14:01:26,382 - server_log - INFO - client closed connection!ip:127.0.0.1 port:2869
+2019-05-16 14:07:13,565 - server_log - INFO - client connect:ip:127.0.0.1 port:2984
+2019-05-16 14:07:27,019 - server_log - INFO - client closed connection!ip:127.0.0.1 port:2984
+2019-05-16 14:07:27,019 - server_log - INFO - client closed connection!ip:127.0.0.1 port:2984
+2019-05-16 14:09:23,471 - server_log - INFO - client connect:ip:127.0.0.1 port:3020
+2019-05-16 14:09:29,435 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3020
+2019-05-16 14:09:29,435 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3020
+2019-05-16 14:10:09,109 - server_log - INFO - client connect:ip:127.0.0.1 port:3034
+2019-05-16 14:10:16,711 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3034
+2019-05-16 14:10:16,711 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3034
+2019-05-16 14:12:37,731 - server_log - INFO - client connect:ip:127.0.0.1 port:3084
+2019-05-16 14:12:44,712 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3084
+2019-05-16 14:12:44,712 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3084
+2019-05-16 14:13:46,278 - server_log - INFO - client connect:ip:127.0.0.1 port:3101
+2019-05-16 14:13:52,709 - server_log - INFO - user create success!
+2019-05-16 14:13:52,709 - server_log - INFO - user create success!
+2019-05-16 14:18:54,741 - server_log - INFO - client connect:ip:127.0.0.1 port:3183
+2019-05-16 14:19:07,081 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3183
+2019-05-16 14:19:07,081 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3183
+2019-05-16 14:19:11,956 - server_log - INFO - client connect:ip:127.0.0.1 port:3187
+2019-05-16 14:19:11,956 - server_log - INFO - client connect:ip:127.0.0.1 port:3187
+2019-05-16 14:19:11,956 - server_log - INFO - client connect:ip:127.0.0.1 port:3187
+2019-05-16 14:19:13,495 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3187
+2019-05-16 14:19:13,495 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3187
+2019-05-16 14:19:13,495 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3187
+2019-05-16 14:19:13,495 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3187
+2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
+2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
+2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
+2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
+2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
+2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
+2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
+2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
+2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
+2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
+2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
+2019-05-16 14:22:51,777 - server_log - INFO - client connect:ip:127.0.0.1 port:3253
+2019-05-16 14:23:08,016 - server_log - INFO - user already exist!
+2019-05-16 14:23:08,016 - server_log - INFO - user already exist!
+2019-05-16 14:23:17,093 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3253
+2019-05-16 14:23:17,093 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3253
+2019-05-16 14:23:17,093 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3253
+2019-05-16 14:39:52,425 - server_log - INFO - client connect:ip:127.0.0.1 port:3680
+2019-05-16 14:40:03,166 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3680
+2019-05-16 14:40:03,166 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3680
+2019-05-16 14:41:18,853 - server_log - INFO - client connect:ip:127.0.0.1 port:3702
+2019-05-16 14:41:25,829 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3702
+2019-05-16 14:41:25,829 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3702
+2019-05-16 14:47:34,352 - server_log - INFO - client connect:ip:127.0.0.1 port:3799
+2019-05-16 14:47:42,508 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3799
+2019-05-16 14:47:42,508 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3799
+2019-05-16 14:51:18,292 - server_log - INFO - client connect:ip:127.0.0.1 port:3888
+2019-05-16 14:51:25,815 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3888
+2019-05-16 14:51:25,815 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3888
+2019-05-16 14:53:14,901 - server_log - INFO - client connect:ip:127.0.0.1 port:3923
+2019-05-16 14:54:14,627 - server_log - INFO - user create success!
+2019-05-16 14:54:14,627 - server_log - INFO - user create success!
+2019-05-16 15:03:14,143 - server_log - INFO - client connect:ip:127.0.0.1 port:4293
+2019-05-16 15:04:33,271 - server_log - INFO - client closed connection!ip:127.0.0.1 port:4293
+2019-05-16 15:04:33,271 - server_log - INFO - client closed connection!ip:127.0.0.1 port:4293
+2019-05-16 15:13:24,937 - server_log - INFO - client connect:ip:127.0.0.1 port:4752
+2019-05-16 15:13:33,963 - server_log - INFO - user create success!
+2019-05-16 15:13:33,963 - server_log - INFO - user create success!
+2019-05-16 15:46:02,317 - server_log - INFO - client connect:ip:127.0.0.1 port:5318
+2019-05-16 15:46:02,323 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5318
+2019-05-16 15:46:02,323 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5318
+2019-05-16 15:47:32,290 - server_log - INFO - client connect:ip:127.0.0.1 port:5342
+2019-05-16 15:47:32,290 - server_log - INFO - client connect:ip:127.0.0.1 port:5342
+2019-05-16 15:47:32,290 - server_log - INFO - client connect:ip:127.0.0.1 port:5342
+2019-05-16 15:47:38,502 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5342
+2019-05-16 15:47:38,502 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5342
+2019-05-16 15:47:38,502 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5342
+2019-05-16 15:47:38,502 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5342
+2019-05-16 15:48:15,611 - server_log - INFO - client connect:ip:127.0.0.1 port:5353
+2019-05-16 15:48:20,027 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5353
+2019-05-16 15:48:20,027 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5353
+2019-05-16 15:52:11,011 - server_log - INFO - client connect:ip:127.0.0.1 port:5453
+2019-05-16 15:53:02,796 - server_log - INFO - client connect:ip:127.0.0.1 port:5502
+2019-05-16 15:53:07,759 - server_log - INFO - login success!
+2019-05-16 15:53:07,759 - server_log - INFO - login success!
+2019-05-16 15:55:57,473 - server_log - INFO - client connect:ip:127.0.0.1 port:5548
+2019-05-16 15:56:10,986 - server_log - INFO - login success!
+2019-05-16 15:56:10,986 - server_log - INFO - login success!
+2019-05-16 15:59:50,638 - server_log - INFO - client connect:ip:127.0.0.1 port:5611
+2019-05-16 15:59:56,303 - server_log - INFO - login success!
+2019-05-16 15:59:56,303 - server_log - INFO - login success!
+2019-05-16 16:00:05,518 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:00:05,518 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:00:05,518 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:29,547 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:29,547 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:29,547 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:29,547 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done

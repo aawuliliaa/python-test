@@ -4,8 +4,10 @@
 import socket
 import json
 import os
+import re
 import configparser
 import subprocess
+import hashlib
 from conf import settings
 from utils.print_write_log import print_info
 
@@ -21,7 +23,9 @@ class FtpServer(object):
         "300": "ready to list dir!",
         "400": "ready to change dir!",
         "401": "dir not exist!",
-        "402": "you do not have permission to that dir!"
+        "402": "you do not have permission to that dir!",
+        "500": "user create success!",
+        "501": "user already exist!"
     }
 
     def __init__(self):
@@ -31,6 +35,10 @@ class FtpServer(object):
         self.accounts = self.load_accounts()
         self.user_current_dir = None
         self.user_home_dir = None
+        self.hash = hashlib.md5()
+        self.username = None
+        self.left_quota = None
+
     @staticmethod
     def load_accounts():
         """
@@ -55,11 +63,11 @@ class FtpServer(object):
             self.request_conn_obj, self.client_addr = self.server_socket_obj.accept()
             # self.client_addr是个元组('127.0.0.1','13850')
             print_info("client connect:ip:%s port:%s" % (self.client_addr[0], self.client_addr[1]))
-            try:
-                self.handle_client_request()
+            # try:
+            self.handle_client_request()
                 # 客户端输入quit退出程序时，服务端的
-            except Exception as e:
-                print(e)
+            # except Exception as e:
+            #     print(e)
 
             print_info("client closed connection!ip:%s port:%s" % (self.client_addr[0], self.client_addr[1]))
 
@@ -120,6 +128,38 @@ class FtpServer(object):
         # 这里一定是self.request_conn_obj，不是self.server_socket_obj
         self.request_conn_obj.send(bytes_response_data)
 
+    def create_user(self, client_request_cmd):
+        """
+        创建新用户，验证用户是否存在，同时在home目录下创建文件夹
+        :param client_request_cmd:
+        :return:
+        """
+
+        new_user_name = client_request_cmd["new_user_name"]
+        new_user_password = client_request_cmd["new_user_password"]
+        # 用户输入的是G，保存到文件中是B，字节，便于后面比较大小
+        # 要转换为str才能保存到ini文件中，由于用户可能输入小数，所以用float
+        user_quota = str(float(client_request_cmd["user_quota"].replace("G", ""))*1024*1024*1024)
+        # 保存字节到文件中
+
+        self.hash.update(new_user_password.encode())
+        # 加密后的密码
+        new_user_password = self.hash.hexdigest()
+        # 新加的用户，在用户家目录下创建目录
+        new_user_home_dir = os.path.join(settings.USER_HOME_DIR, new_user_name)
+        if self.accounts.has_section(new_user_name):
+            print_info(self.STATUS_CODE["501"])
+            self.send_certain_size_response("501")
+        else:
+            self.accounts.add_section(new_user_name)
+            self.accounts.set(new_user_name, "password", new_user_password)
+            self.accounts.set(new_user_name, "quota", user_quota)
+            self.accounts.set(new_user_name, "left_quota", user_quota)
+            self.accounts.write((open(settings.ACCOUNT_FILE, "w")))
+            self.send_certain_size_response("500")
+            os.mkdir(new_user_home_dir)
+            print_info(self.STATUS_CODE["500"])
+
     def auth(self, client_request_cmd):
         """
         用户登录验证
@@ -128,13 +168,18 @@ class FtpServer(object):
         """
         username = client_request_cmd["username"]
         password = client_request_cmd["password"]
-
+        self.hash.update(password.encode())
+        # 加密后的密码
+        password = self.hash.hexdigest()
         if username in self.accounts:
             real_password = self.accounts[username]["password"]
             if password == real_password:
                 self.user_current_dir = os.path.join(settings.USER_HOME_DIR, username)
                 self.user_home_dir = os.path.join(settings.USER_HOME_DIR, username)
-                self.send_certain_size_response("100")
+                self.username = username
+                self.left_quota = int(self.accounts[username]["left_quota"])
+                self.send_certain_size_response("100", left_quota=self.left_quota)
+                print_info(self.STATUS_CODE["100"])
 
             else:
                 print_info("your password is not correct", "error")
@@ -143,9 +188,28 @@ class FtpServer(object):
             print_info("user %s not exist" % username, "error")
             self.send_certain_size_response("102")
 
+    @staticmethod
+    def file_md5_value(file_asb_path):
+        cmd_obj = subprocess.Popen(
+            "certutil -hashfile %s MD5" % file_asb_path,
+            shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout = cmd_obj.stdout.read()
+        # stderr = cmd_obj.stderr.read()
+        # print(stdout.decode("gbk"))
+        file_md5_value = re.findall("[0-9a-zA-Z]{32}", stdout.decode("gbk"))[0]
+        return file_md5_value
+
     def put(self, client_request_cmd):
+        """
+        处理文件上传,包含md5验证
+        :param client_request_cmd:
+        :return:
+        """
         file_total_size = client_request_cmd["file_total_size"]
+
         file_name = client_request_cmd["file_name"]
+        # 源文件的md5值
+        source_file_md5 = client_request_cmd["file_md5_value"]
         file_abs_path = os.path.join(self.user_current_dir, file_name)
         received_file_size = 0
         f = open(file_abs_path, "wb")
@@ -162,7 +226,17 @@ class FtpServer(object):
             f.write(data)
 
         f.close()
-        print_info("file received done")
+        # 用户的剩余磁盘空间减去文件大小
+        self.left_quota -= file_total_size
+        self.accounts[self.username]["left_quota"] = str(self.left_quota)
+        self.accounts.write((open(settings.ACCOUNT_FILE, "w")))
+        file_md5_value = self.file_md5_value(file_abs_path)
+        # 验证文件是否和客户端一样
+        if file_md5_value == source_file_md5:
+            print_info("file is same with client,file received done")
+        else:
+            print_info("file is not same with client!", "error")
+
 
     def get(self, client_request_cmd):
         """
@@ -176,7 +250,9 @@ class FtpServer(object):
         file_abs_path = os.path.join(self.user_current_dir, file_relative_path)
         if os.path.exists(file_abs_path):
             file_total_size = os.path.getsize(file_abs_path)
-            self.send_certain_size_response("200", file_total_size=file_total_size)
+            # 获取源文件的md5值
+            file_md5_value = self.file_md5_value(file_abs_path)
+            self.send_certain_size_response("200", file_total_size=file_total_size, file_md5_value=file_md5_value)
             f = open(file_abs_path, "rb")
             for line in f:
                 self.request_conn_obj.send(line)
