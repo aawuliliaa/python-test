@@ -6,5 +6,6 @@ import logging
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOG_LEVEL = logging.INFO
 LOG_TYPES = {
-    "client_log": "%s/log/server_log" % BASE_DIR
+    "client_log": "%s/log/client_log" % BASE_DIR
      }
+FILE_STORAGE_PATH = "%s/file_storage" % BASE_DIR
