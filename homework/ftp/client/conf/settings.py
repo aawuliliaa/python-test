@@ -9,3 +9,4 @@ LOG_TYPES = {
     "client_log": "%s/log/client_log" % BASE_DIR
      }
 FILE_STORAGE_PATH = "%s/file_storage" % BASE_DIR
+TMP_FILE_PATH = "%s/tmp" % BASE_DIR

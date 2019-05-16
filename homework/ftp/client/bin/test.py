@@ -2,4 +2,10 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 import os
-print(os.path.abspath("E:\PythonProject\python-test\homework\ftp\server\home\vita\test\..\.."))
+import string
+# 字节
+#data = "0.98G".replace("[G]","").replace(".","").isdigit()
+data = "0.98G".replace("G","")
+
+print(float(data)*1024*1024)
+#1M*1024*1024

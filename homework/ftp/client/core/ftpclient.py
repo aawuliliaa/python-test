@@ -5,6 +5,8 @@ import socket
 import optparse
 import json
 import os
+import re
+import subprocess
 from utils.print_write_log import print_info
 from conf import settings
 
@@ -21,6 +23,7 @@ class FtpClient(object):
         self.terminal_display = None
         self.verify_args()
         self.connect_to_server()
+        self.left_quota = None
 
     def verify_args(self):
         parser = optparse.OptionParser()
@@ -49,6 +52,55 @@ class FtpClient(object):
         与用户交互的方法
         :return:
         """
+        exit_flag = True
+        while exit_flag:
+            info = """
+            1.创建用户
+            2.登录
+            3.退出
+            """
+            choice_list = {
+                "1": "create_user",
+                "2": "login",
+                "3": "quit"
+            }
+            print_info(info)
+            your_choice = input("please input your choice:").strip()
+            if your_choice in choice_list:
+                if choice_list[your_choice] == "quit":
+                    self.quit([])
+                else:
+                    func = getattr(self, choice_list[your_choice])
+                    func()
+
+    def create_user(self):
+        exit_flag = True
+        while exit_flag:
+            new_user_name = input("please input new user name:").strip()
+            new_user_password = input("please set user password:").strip()
+            user_quota = input("please set user quota[G]:").strip()
+            # 验证用户的输入是否标准
+            # 其中用户配额，由于单位过多，所以这里只能存G，服务端会进行转换为字节
+            # 这里会验证用户配额输入的否标准
+            if new_user_name and new_user_password and user_quota.endswith("G") \
+                    and user_quota.replace("G", "").replace(".", "").isdigit():
+                self.send_certain_size_msg("create_user",
+                                           new_user_name=new_user_name,
+                                           new_user_password=new_user_password,
+                                           user_quota=user_quota)
+                response_data = self.get_response_from_server()
+                if response_data["response_code"] == "500":
+                    print_info(response_data["response_msg"])
+                    exit_flag = False
+                else:
+                    print_info(response_data["response_msg"])
+                    exit_flag = False
+
+            else:
+                print_info("your input is illegal!")
+                exit_flag = False
+
+    def login(self):
         if self.auth():
             while True:
                 # 用户输入ls, get file ,put file,cd dir
@@ -74,6 +126,7 @@ class FtpClient(object):
         退出客户端,用户只能输入quit，所以len(cmd_list)==0
         :return:
         """
+
         if self.verify_client_cmd_list(client_cmd_list, 0):
             self.send_certain_size_msg("quit")
             print_info("%s waiting for you come again! bye bye!" % self.username)
@@ -107,6 +160,7 @@ class FtpClient(object):
                     print_info(response_data["response_msg"])
                     self.terminal_display = "[%s]" % username
                     self.username = username
+                    self.left_quota = response_data["left_quota"]
                     return True
                 else:
                     print_info(response_data["response_msg"], "error")
@@ -157,6 +211,17 @@ class FtpClient(object):
                       flush=True)
                 last_percent = current_percent  # 把本次循环的percent赋值给last
 
+    @staticmethod
+    def file_md5_value(file_asb_path):
+        cmd_obj = subprocess.Popen(
+            "certutil -hashfile %s MD5" % file_asb_path,
+            shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout = cmd_obj.stdout.read()
+        # stderr = cmd_obj.stderr.read()
+        # print(stdout.decode("gbk"))
+        file_md5_value = re.findall("[0-9a-zA-Z]{32}", stdout.decode("gbk"))[0]
+        return file_md5_value
+
     def put(self, client_cmd_list):
         """
         这里就只允许用户上传所在系统的任意文件，但是需要写出绝对路径
@@ -165,22 +230,28 @@ class FtpClient(object):
         """
         if self.verify_client_cmd_list(client_cmd_list, 1):
             file_abs_path = client_cmd_list[0]
+            # 获取md5值，用于验证数据的准确性
+            file_md5_value = self.file_md5_value(file_abs_path)
             if os.path.isfile(file_abs_path):
                 file_total_size = os.path.getsize(file_abs_path)
                 # 先把文件的信息发送到服务端，然后在发送文件的内容
-                file_name = os.path.basename(file_abs_path)
-                self.send_certain_size_msg("put", file_total_size=file_total_size, file_name=file_name)
-                f = open(file_abs_path, "rb")
-                finished_file_size = 0
-                progress_generator = self.progress_bar(file_total_size)
-                progress_generator.__next__()
-                for line in f:
-                    self.client_socket_obj.send(line)
-                    finished_file_size += len(line)
-                    progress_generator.send(finished_file_size)
-                f.close()
-                print_info("\nfile transfer finished!")
-
+                if self.left_quota > file_total_size:
+                    file_name = os.path.basename(file_abs_path)
+                    self.send_certain_size_msg("put", file_total_size=file_total_size, file_name=file_name,
+                                               file_md5_value=file_md5_value)
+                    f = open(file_abs_path, "rb")
+                    finished_file_size = 0
+                    progress_generator = self.progress_bar(file_total_size)
+                    progress_generator.__next__()
+                    for line in f:
+                        self.client_socket_obj.send(line)
+                        finished_file_size += len(line)
+                        progress_generator.send(finished_file_size)
+                    f.close()
+                    self.left_quota -= file_total_size
+                    print_info("\nfile transfer finished!")
+                else:
+                    print_info("left quota is not enough!")
             else:
                 print_info("your put file is not a file!")
         else:
@@ -188,7 +259,7 @@ class FtpClient(object):
 
     def get(self, client_cmd_list):
         """
-        从服务端下载文件，保存到客户端的file_storage路径下
+        从服务端下载文件，保存到客户端的file_storage路径下，包含md5验证
         :param client_cmd_list:
         :return:
         """
@@ -196,12 +267,14 @@ class FtpClient(object):
             # get a/b/test.txt会从服务端的当前所在路径下的a/b/中获取test.txt
             file_relative_path = client_cmd_list[0]
             file_name = os.path.basename(file_relative_path)
+            # 存放文件的路径，放在storage下
             file_storage_path = os.path.join(settings.FILE_STORAGE_PATH, file_name)
             self.send_certain_size_msg("get",  file_relative_path=file_relative_path)
             response_data = self.get_response_from_server()
             if response_data["response_code"] == "200":
                 print_info(response_data["response_msg"])
                 file_total_size = response_data["file_total_size"]
+                source_file_md5_value = response_data["file_md5_value"]
                 f = open(file_storage_path, "wb")
                 received_file_size = 0
                 progress_bar = self.progress_bar(file_total_size)
@@ -218,8 +291,13 @@ class FtpClient(object):
                     received_file_size += len(data)
                     progress_bar.send(received_file_size)
                     f.write(data)
-                print_info("file download successful!")
+
                 f.close()
+                file_md5_value = self.file_md5_value(file_storage_path)
+                if source_file_md5_value == file_md5_value:
+                    print_info("\n file is same with sever,file download successful!")
+                else:
+                    print_info("\n file is not same with server!", "error")
             else:
                 print_info(response_data["response_msg"])
         else:
