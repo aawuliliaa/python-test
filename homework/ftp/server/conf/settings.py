@@ -11,4 +11,4 @@ LOG_TYPES = {
 FTP_SERVER_HOST = "127.0.0.1"
 FTP_SERVER_PORT = 9999
 ACCOUNT_FILE = "%s/conf/account.ini" % BASE_DIR
-USER_HOME_DIR = "%s\home" % BASE_DIR
+USER_HOME_DIR = "%s/home" % BASE_DIR

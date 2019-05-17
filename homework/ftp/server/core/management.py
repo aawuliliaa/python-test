@@ -33,6 +33,7 @@ class Management(object):
             else:
                 self.__print_help_msg()
 
+    @staticmethod
     def __print_help_msg(self):
         """
         打印启动的帮助信息,只是内部使用，不对外使用，可以设置为隐藏函数
@@ -44,11 +45,13 @@ class Management(object):
         """
         print_info(help_msg)
 
-    def start(self):
+    @staticmethod
+    def start():
         ftp_server_obj = FtpServer()
         ftp_server_obj.keep_running()
 
-    def stop(self):
+    @staticmethod
+    def stop():
         cmd_obj = subprocess.Popen('tasklist|findstr "python"', shell=True, stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE)
         stdout = cmd_obj.stdout.read()

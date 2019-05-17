@@ -1,165 +1,625 @@
-2019-05-16 12:32:58,487 - server_log - INFO - client connect:ip:127.0.0.1 port:1119
-2019-05-16 12:54:49,899 - server_log - INFO - client connect:ip:127.0.0.1 port:1490
-2019-05-16 12:55:04,930 - server_log - INFO - file received done
-2019-05-16 12:55:04,930 - server_log - INFO - file received done
-2019-05-16 13:02:35,839 - server_log - INFO - client connect:ip:127.0.0.1 port:1625
-2019-05-16 13:02:49,664 - server_log - INFO - file transfer successful!
-2019-05-16 13:02:49,664 - server_log - INFO - file transfer successful!
-2019-05-16 13:03:55,445 - server_log - INFO - client connect:ip:127.0.0.1 port:1648
-2019-05-16 13:04:08,531 - server_log - INFO - file transfer successful!
-2019-05-16 13:04:08,531 - server_log - INFO - file transfer successful!
-2019-05-16 13:04:17,054 - server_log - INFO - file is same with client,file received done
-2019-05-16 13:04:17,054 - server_log - INFO - file is same with client,file received done
-2019-05-16 13:04:17,054 - server_log - INFO - file is same with client,file received done
-2019-05-16 14:00:58,933 - server_log - INFO - client connect:ip:127.0.0.1 port:2869
-2019-05-16 14:01:26,382 - server_log - INFO - client closed connection!ip:127.0.0.1 port:2869
-2019-05-16 14:01:26,382 - server_log - INFO - client closed connection!ip:127.0.0.1 port:2869
-2019-05-16 14:07:13,565 - server_log - INFO - client connect:ip:127.0.0.1 port:2984
-2019-05-16 14:07:27,019 - server_log - INFO - client closed connection!ip:127.0.0.1 port:2984
-2019-05-16 14:07:27,019 - server_log - INFO - client closed connection!ip:127.0.0.1 port:2984
-2019-05-16 14:09:23,471 - server_log - INFO - client connect:ip:127.0.0.1 port:3020
-2019-05-16 14:09:29,435 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3020
-2019-05-16 14:09:29,435 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3020
-2019-05-16 14:10:09,109 - server_log - INFO - client connect:ip:127.0.0.1 port:3034
-2019-05-16 14:10:16,711 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3034
-2019-05-16 14:10:16,711 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3034
-2019-05-16 14:12:37,731 - server_log - INFO - client connect:ip:127.0.0.1 port:3084
-2019-05-16 14:12:44,712 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3084
-2019-05-16 14:12:44,712 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3084
-2019-05-16 14:13:46,278 - server_log - INFO - client connect:ip:127.0.0.1 port:3101
-2019-05-16 14:13:52,709 - server_log - INFO - user create success!
-2019-05-16 14:13:52,709 - server_log - INFO - user create success!
-2019-05-16 14:18:54,741 - server_log - INFO - client connect:ip:127.0.0.1 port:3183
-2019-05-16 14:19:07,081 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3183
-2019-05-16 14:19:07,081 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3183
-2019-05-16 14:19:11,956 - server_log - INFO - client connect:ip:127.0.0.1 port:3187
-2019-05-16 14:19:11,956 - server_log - INFO - client connect:ip:127.0.0.1 port:3187
-2019-05-16 14:19:11,956 - server_log - INFO - client connect:ip:127.0.0.1 port:3187
-2019-05-16 14:19:13,495 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3187
-2019-05-16 14:19:13,495 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3187
-2019-05-16 14:19:13,495 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3187
-2019-05-16 14:19:13,495 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3187
-2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
-2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
-2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
-2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
-2019-05-16 14:20:10,531 - server_log - INFO - client connect:ip:127.0.0.1 port:3206
-2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
-2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
-2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
-2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
-2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
-2019-05-16 14:20:16,255 - server_log - INFO - user already exist!
-2019-05-16 14:22:51,777 - server_log - INFO - client connect:ip:127.0.0.1 port:3253
-2019-05-16 14:23:08,016 - server_log - INFO - user already exist!
-2019-05-16 14:23:08,016 - server_log - INFO - user already exist!
-2019-05-16 14:23:17,093 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3253
-2019-05-16 14:23:17,093 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3253
-2019-05-16 14:23:17,093 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3253
-2019-05-16 14:39:52,425 - server_log - INFO - client connect:ip:127.0.0.1 port:3680
-2019-05-16 14:40:03,166 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3680
-2019-05-16 14:40:03,166 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3680
-2019-05-16 14:41:18,853 - server_log - INFO - client connect:ip:127.0.0.1 port:3702
-2019-05-16 14:41:25,829 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3702
-2019-05-16 14:41:25,829 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3702
-2019-05-16 14:47:34,352 - server_log - INFO - client connect:ip:127.0.0.1 port:3799
-2019-05-16 14:47:42,508 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3799
-2019-05-16 14:47:42,508 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3799
-2019-05-16 14:51:18,292 - server_log - INFO - client connect:ip:127.0.0.1 port:3888
-2019-05-16 14:51:25,815 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3888
-2019-05-16 14:51:25,815 - server_log - INFO - client closed connection!ip:127.0.0.1 port:3888
-2019-05-16 14:53:14,901 - server_log - INFO - client connect:ip:127.0.0.1 port:3923
-2019-05-16 14:54:14,627 - server_log - INFO - user create success!
-2019-05-16 14:54:14,627 - server_log - INFO - user create success!
-2019-05-16 15:03:14,143 - server_log - INFO - client connect:ip:127.0.0.1 port:4293
-2019-05-16 15:04:33,271 - server_log - INFO - client closed connection!ip:127.0.0.1 port:4293
-2019-05-16 15:04:33,271 - server_log - INFO - client closed connection!ip:127.0.0.1 port:4293
-2019-05-16 15:13:24,937 - server_log - INFO - client connect:ip:127.0.0.1 port:4752
-2019-05-16 15:13:33,963 - server_log - INFO - user create success!
-2019-05-16 15:13:33,963 - server_log - INFO - user create success!
-2019-05-16 15:46:02,317 - server_log - INFO - client connect:ip:127.0.0.1 port:5318
-2019-05-16 15:46:02,323 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5318
-2019-05-16 15:46:02,323 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5318
-2019-05-16 15:47:32,290 - server_log - INFO - client connect:ip:127.0.0.1 port:5342
-2019-05-16 15:47:32,290 - server_log - INFO - client connect:ip:127.0.0.1 port:5342
-2019-05-16 15:47:32,290 - server_log - INFO - client connect:ip:127.0.0.1 port:5342
-2019-05-16 15:47:38,502 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5342
-2019-05-16 15:47:38,502 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5342
-2019-05-16 15:47:38,502 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5342
-2019-05-16 15:47:38,502 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5342
-2019-05-16 15:48:15,611 - server_log - INFO - client connect:ip:127.0.0.1 port:5353
-2019-05-16 15:48:20,027 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5353
-2019-05-16 15:48:20,027 - server_log - INFO - client closed connection!ip:127.0.0.1 port:5353
-2019-05-16 15:52:11,011 - server_log - INFO - client connect:ip:127.0.0.1 port:5453
-2019-05-16 15:53:02,796 - server_log - INFO - client connect:ip:127.0.0.1 port:5502
-2019-05-16 15:53:07,759 - server_log - INFO - login success!
-2019-05-16 15:53:07,759 - server_log - INFO - login success!
-2019-05-16 15:55:57,473 - server_log - INFO - client connect:ip:127.0.0.1 port:5548
-2019-05-16 15:56:10,986 - server_log - INFO - login success!
-2019-05-16 15:56:10,986 - server_log - INFO - login success!
-2019-05-16 15:59:50,638 - server_log - INFO - client connect:ip:127.0.0.1 port:5611
-2019-05-16 15:59:56,303 - server_log - INFO - login success!
-2019-05-16 15:59:56,303 - server_log - INFO - login success!
-2019-05-16 16:00:05,518 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:00:05,518 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:00:05,518 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:29,547 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:29,547 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:29,547 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:29,547 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:35,835 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,051 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:37,994 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:39,281 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:40,884 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:42,741 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
-2019-05-16 16:01:45,764 - server_log - INFO - file is same with client,file received done
+2019-05-17 11:54:14,779 - server_log - INFO - client connect:ip:127.0.0.1 port:8160
+2019-05-17 11:54:42,650 - server_log - INFO - user create success!
+2019-05-17 11:54:42,650 - server_log - INFO - user create success!
+2019-05-17 11:56:49,512 - server_log - ERROR - your password is not correct
+2019-05-17 11:56:49,512 - server_log - ERROR - your password is not correct
+2019-05-17 11:56:49,512 - server_log - ERROR - your password is not correct
+2019-05-17 12:08:06,215 - server_log - INFO - client connect:ip:127.0.0.1 port:8272
+2019-05-17 12:08:16,760 - server_log - INFO - user create success!
+2019-05-17 12:08:16,760 - server_log - INFO - user create success!
+2019-05-17 12:10:06,485 - server_log - INFO - client connect:ip:127.0.0.1 port:8291
+2019-05-17 12:10:11,259 - server_log - INFO - login success!
+2019-05-17 12:10:11,259 - server_log - INFO - login success!
+2019-05-17 12:17:53,168 - server_log - INFO - client connect:ip:127.0.0.1 port:8375
+2019-05-17 12:18:09,139 - server_log - INFO - login success!
+2019-05-17 12:18:09,139 - server_log - INFO - login success!
+2019-05-17 12:18:24,291 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 12:18:24,291 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 12:18:24,291 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 12:18:24,292 - server_log - INFO - ready to change dir!
+2019-05-17 12:18:24,292 - server_log - INFO - ready to change dir!
+2019-05-17 12:18:24,292 - server_log - INFO - ready to change dir!
+2019-05-17 12:18:24,292 - server_log - INFO - ready to change dir!
+2019-05-17 12:18:24,292 - server_log - INFO - dir change success!
+2019-05-17 12:18:24,292 - server_log - INFO - dir change success!
+2019-05-17 12:18:24,292 - server_log - INFO - dir change success!
+2019-05-17 12:18:24,292 - server_log - INFO - dir change success!
+2019-05-17 12:18:24,292 - server_log - INFO - dir change success!
+2019-05-17 12:24:24,350 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 12:24:24,350 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 12:24:24,350 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 12:24:24,350 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 12:24:24,350 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 12:24:24,350 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 12:24:24,351 - server_log - INFO - ready to change dir!
+2019-05-17 12:24:24,351 - server_log - INFO - ready to change dir!
+2019-05-17 12:24:24,351 - server_log - INFO - ready to change dir!
+2019-05-17 12:24:24,351 - server_log - INFO - ready to change dir!
+2019-05-17 12:24:24,351 - server_log - INFO - ready to change dir!
+2019-05-17 12:24:24,351 - server_log - INFO - ready to change dir!
+2019-05-17 12:24:24,351 - server_log - INFO - ready to change dir!
+2019-05-17 12:24:24,351 - server_log - INFO - dir change success!
+2019-05-17 12:24:24,351 - server_log - INFO - dir change success!
+2019-05-17 12:24:24,351 - server_log - INFO - dir change success!
+2019-05-17 12:24:24,351 - server_log - INFO - dir change success!
+2019-05-17 12:24:24,351 - server_log - INFO - dir change success!
+2019-05-17 12:24:24,351 - server_log - INFO - dir change success!
+2019-05-17 12:24:24,351 - server_log - INFO - dir change success!
+2019-05-17 12:24:24,351 - server_log - INFO - dir change success!
+2019-05-17 12:25:12,428 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home
+2019-05-17 12:25:12,428 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home
+2019-05-17 12:25:12,428 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home
+2019-05-17 12:25:12,428 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home
+2019-05-17 12:25:12,428 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home
+2019-05-17 12:25:12,428 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home
+2019-05-17 12:25:12,428 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home
+2019-05-17 12:25:12,428 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home
+2019-05-17 12:25:12,428 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:25:12,429 - server_log - INFO - you do not have permission to that dir!
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,870 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test.txt
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:26:06,871 - server_log - INFO - dir not exist!
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:33,977 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:46,780 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:27:59,401 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8375
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:05,771 - server_log - INFO - client connect:ip:127.0.0.1 port:8499
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:10,330 - server_log - INFO - login success!
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:28:57,650 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:29:00,071 - server_log - INFO - file is same with client,file received done
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:55,433 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8499
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:34:56,918 - server_log - INFO - client connect:ip:127.0.0.1 port:8593
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:35:02,021 - server_log - INFO - login success!
+2019-05-17 12:36:28,310 - server_log - INFO - client connect:ip:127.0.0.1 port:8625
+2019-05-17 12:36:33,408 - server_log - ERROR - user vita not exist
+2019-05-17 12:36:33,408 - server_log - ERROR - user vita not exist
+2019-05-17 12:37:46,638 - server_log - ERROR - user 1 not exist
+2019-05-17 12:37:46,638 - server_log - ERROR - user 1 not exist
+2019-05-17 12:37:46,638 - server_log - ERROR - user 1 not exist
+2019-05-17 12:39:15,512 - server_log - INFO - client connect:ip:127.0.0.1 port:8653
+2019-05-17 12:39:19,302 - server_log - INFO - login success!
+2019-05-17 12:39:19,302 - server_log - INFO - login success!
+2019-05-17 12:41:21,035 - server_log - INFO - client connect:ip:127.0.0.1 port:8674
+2019-05-17 12:41:24,624 - server_log - ERROR - user vita not exist
+2019-05-17 12:41:24,624 - server_log - ERROR - user vita not exist
+2019-05-17 12:42:29,584 - server_log - INFO - client connect:ip:127.0.0.1 port:8688
+2019-05-17 12:42:36,973 - server_log - INFO - login success!
+2019-05-17 12:42:36,973 - server_log - INFO - login success!
+2019-05-17 12:45:11,269 - server_log - INFO - file transfer successful!
+2019-05-17 12:45:11,269 - server_log - INFO - file transfer successful!
+2019-05-17 12:45:11,269 - server_log - INFO - file transfer successful!
+2019-05-17 12:45:20,265 - server_log - INFO - file transfer successful!
+2019-05-17 12:45:20,265 - server_log - INFO - file transfer successful!
+2019-05-17 12:45:20,265 - server_log - INFO - file transfer successful!
+2019-05-17 12:45:20,265 - server_log - INFO - file transfer successful!
+2019-05-17 12:46:41,598 - server_log - INFO - the file you download is not exist!
+2019-05-17 12:46:41,598 - server_log - INFO - the file you download is not exist!
+2019-05-17 12:46:41,598 - server_log - INFO - the file you download is not exist!
+2019-05-17 12:46:41,598 - server_log - INFO - the file you download is not exist!
+2019-05-17 12:46:41,598 - server_log - INFO - the file you download is not exist!
+2019-05-17 12:48:20,612 - server_log - INFO - client connect:ip:127.0.0.1 port:8739
+2019-05-17 12:48:24,854 - server_log - INFO - login success!
+2019-05-17 12:48:24,854 - server_log - INFO - login success!
+2019-05-17 12:48:47,956 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\jdk.zip file re_get success
+2019-05-17 12:48:47,956 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\jdk.zip file re_get success
+2019-05-17 12:48:47,956 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\jdk.zip file re_get success
+2019-05-17 12:49:44,924 - server_log - INFO - client connect:ip:127.0.0.1 port:8758
+2019-05-17 12:49:48,419 - server_log - INFO - login success!
+2019-05-17 12:49:48,419 - server_log - INFO - login success!
+2019-05-17 12:50:03,178 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\jdk.zip file re_get success
+2019-05-17 12:50:03,178 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\jdk.zip file re_get success
+2019-05-17 12:50:03,178 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\jdk.zip file re_get success
+2019-05-17 12:50:54,909 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8758
+2019-05-17 12:50:54,909 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8758
+2019-05-17 12:50:54,909 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8758
+2019-05-17 12:50:54,909 - server_log - INFO - client closed connection!ip:127.0.0.1 port:8758
+2019-05-17 13:18:56,966 - server_log - INFO - client connect:ip:127.0.0.1 port:8937
+2019-05-17 13:19:01,280 - server_log - INFO - login success!
+2019-05-17 13:19:01,280 - server_log - INFO - login success!
+2019-05-17 13:20:13,753 - server_log - INFO - client connect:ip:127.0.0.1 port:8954
+2019-05-17 13:20:18,394 - server_log - INFO - login success!
+2019-05-17 13:20:18,394 - server_log - INFO - login success!
+2019-05-17 14:07:27,456 - server_log - INFO - client connect:ip:127.0.0.1 port:9198
+2019-05-17 14:07:31,264 - server_log - INFO - login success!
+2019-05-17 14:07:31,264 - server_log - INFO - login success!
+2019-05-17 14:09:32,405 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9198
+2019-05-17 14:09:32,405 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9198
+2019-05-17 14:09:32,405 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9198
+2019-05-17 14:09:34,215 - server_log - INFO - client connect:ip:127.0.0.1 port:9212
+2019-05-17 14:09:34,215 - server_log - INFO - client connect:ip:127.0.0.1 port:9212
+2019-05-17 14:09:34,215 - server_log - INFO - client connect:ip:127.0.0.1 port:9212
+2019-05-17 14:09:34,215 - server_log - INFO - client connect:ip:127.0.0.1 port:9212
+2019-05-17 14:09:39,632 - server_log - INFO - login success!
+2019-05-17 14:09:39,632 - server_log - INFO - login success!
+2019-05-17 14:09:39,632 - server_log - INFO - login success!
+2019-05-17 14:09:39,632 - server_log - INFO - login success!
+2019-05-17 14:09:39,632 - server_log - INFO - login success!
+2019-05-17 14:12:28,423 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9212
+2019-05-17 14:12:28,423 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9212
+2019-05-17 14:12:28,423 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9212
+2019-05-17 14:12:28,423 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9212
+2019-05-17 14:12:28,423 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9212
+2019-05-17 14:12:28,423 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9212
+2019-05-17 14:12:30,023 - server_log - INFO - client connect:ip:127.0.0.1 port:9228
+2019-05-17 14:12:30,023 - server_log - INFO - client connect:ip:127.0.0.1 port:9228
+2019-05-17 14:12:30,023 - server_log - INFO - client connect:ip:127.0.0.1 port:9228
+2019-05-17 14:12:30,023 - server_log - INFO - client connect:ip:127.0.0.1 port:9228
+2019-05-17 14:12:30,023 - server_log - INFO - client connect:ip:127.0.0.1 port:9228
+2019-05-17 14:12:30,023 - server_log - INFO - client connect:ip:127.0.0.1 port:9228
+2019-05-17 14:12:30,023 - server_log - INFO - client connect:ip:127.0.0.1 port:9228
+2019-05-17 14:12:35,663 - server_log - INFO - login success!
+2019-05-17 14:12:35,663 - server_log - INFO - login success!
+2019-05-17 14:12:35,663 - server_log - INFO - login success!
+2019-05-17 14:12:35,663 - server_log - INFO - login success!
+2019-05-17 14:12:35,663 - server_log - INFO - login success!
+2019-05-17 14:12:35,663 - server_log - INFO - login success!
+2019-05-17 14:12:35,663 - server_log - INFO - login success!
+2019-05-17 14:12:35,663 - server_log - INFO - login success!
+2019-05-17 14:32:22,868 - server_log - INFO - client connect:ip:127.0.0.1 port:9302
+2019-05-17 14:32:36,007 - server_log - ERROR - your password is not correct
+2019-05-17 14:32:36,007 - server_log - ERROR - your password is not correct
+2019-05-17 14:32:42,126 - server_log - INFO - login success!
+2019-05-17 14:32:42,126 - server_log - INFO - login success!
+2019-05-17 14:32:42,126 - server_log - INFO - login success!
+2019-05-17 14:32:48,879 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:32:48,879 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:32:48,879 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:32:48,879 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:32:56,716 - server_log - INFO - file transfer successful!
+2019-05-17 14:32:56,716 - server_log - INFO - file transfer successful!
+2019-05-17 14:32:56,716 - server_log - INFO - file transfer successful!
+2019-05-17 14:32:56,716 - server_log - INFO - file transfer successful!
+2019-05-17 14:32:56,716 - server_log - INFO - file transfer successful!
+2019-05-17 14:32:56,733 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9302
+2019-05-17 14:32:56,733 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9302
+2019-05-17 14:32:56,733 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9302
+2019-05-17 14:32:56,733 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9302
+2019-05-17 14:32:56,733 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9302
+2019-05-17 14:32:56,733 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9302
+2019-05-17 14:33:44,359 - server_log - INFO - client connect:ip:127.0.0.1 port:9307
+2019-05-17 14:33:44,359 - server_log - INFO - client connect:ip:127.0.0.1 port:9307
+2019-05-17 14:33:44,359 - server_log - INFO - client connect:ip:127.0.0.1 port:9307
+2019-05-17 14:33:44,359 - server_log - INFO - client connect:ip:127.0.0.1 port:9307
+2019-05-17 14:33:44,359 - server_log - INFO - client connect:ip:127.0.0.1 port:9307
+2019-05-17 14:33:44,359 - server_log - INFO - client connect:ip:127.0.0.1 port:9307
+2019-05-17 14:33:44,359 - server_log - INFO - client connect:ip:127.0.0.1 port:9307
+2019-05-17 14:33:48,082 - server_log - INFO - login success!
+2019-05-17 14:33:48,082 - server_log - INFO - login success!
+2019-05-17 14:33:48,082 - server_log - INFO - login success!
+2019-05-17 14:33:48,082 - server_log - INFO - login success!
+2019-05-17 14:33:48,082 - server_log - INFO - login success!
+2019-05-17 14:33:48,082 - server_log - INFO - login success!
+2019-05-17 14:33:48,082 - server_log - INFO - login success!
+2019-05-17 14:33:48,082 - server_log - INFO - login success!
+2019-05-17 14:33:54,185 - server_log - INFO - file transfer successful!
+2019-05-17 14:33:54,185 - server_log - INFO - file transfer successful!
+2019-05-17 14:33:54,185 - server_log - INFO - file transfer successful!
+2019-05-17 14:33:54,185 - server_log - INFO - file transfer successful!
+2019-05-17 14:33:54,185 - server_log - INFO - file transfer successful!
+2019-05-17 14:33:54,185 - server_log - INFO - file transfer successful!
+2019-05-17 14:33:54,185 - server_log - INFO - file transfer successful!
+2019-05-17 14:33:54,185 - server_log - INFO - file transfer successful!
+2019-05-17 14:33:54,185 - server_log - INFO - file transfer successful!
+2019-05-17 14:34:24,792 - server_log - INFO - client connect:ip:127.0.0.1 port:9309
+2019-05-17 14:34:28,717 - server_log - INFO - login success!
+2019-05-17 14:34:28,717 - server_log - INFO - login success!
+2019-05-17 14:34:41,038 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:34:41,038 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:34:41,038 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:35:14,348 - server_log - INFO - client connect:ip:127.0.0.1 port:9315
+2019-05-17 14:35:18,016 - server_log - INFO - login success!
+2019-05-17 14:35:18,016 - server_log - INFO - login success!
+2019-05-17 14:35:36,132 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\jdk.zip file re_get success
+2019-05-17 14:35:36,132 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\jdk.zip file re_get success
+2019-05-17 14:35:36,132 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\jdk.zip file re_get success
+2019-05-17 14:35:46,411 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9315
+2019-05-17 14:35:46,411 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9315
+2019-05-17 14:35:46,411 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9315
+2019-05-17 14:35:46,411 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9315
+2019-05-17 14:36:45,923 - server_log - INFO - client connect:ip:127.0.0.1 port:9319
+2019-05-17 14:36:55,305 - server_log - INFO - user create success!
+2019-05-17 14:36:55,305 - server_log - INFO - user create success!
+2019-05-17 14:37:00,073 - server_log - INFO - login success!
+2019-05-17 14:37:00,073 - server_log - INFO - login success!
+2019-05-17 14:37:00,073 - server_log - INFO - login success!
+2019-05-17 14:37:05,873 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9319
+2019-05-17 14:37:05,873 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9319
+2019-05-17 14:37:05,873 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9319
+2019-05-17 14:37:05,873 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9319
+2019-05-17 14:37:07,460 - server_log - INFO - client connect:ip:127.0.0.1 port:9321
+2019-05-17 14:37:07,460 - server_log - INFO - client connect:ip:127.0.0.1 port:9321
+2019-05-17 14:37:07,460 - server_log - INFO - client connect:ip:127.0.0.1 port:9321
+2019-05-17 14:37:07,460 - server_log - INFO - client connect:ip:127.0.0.1 port:9321
+2019-05-17 14:37:07,460 - server_log - INFO - client connect:ip:127.0.0.1 port:9321
+2019-05-17 14:37:11,610 - server_log - INFO - login success!
+2019-05-17 14:37:11,610 - server_log - INFO - login success!
+2019-05-17 14:37:11,610 - server_log - INFO - login success!
+2019-05-17 14:37:11,610 - server_log - INFO - login success!
+2019-05-17 14:37:11,610 - server_log - INFO - login success!
+2019-05-17 14:37:11,610 - server_log - INFO - login success!
+2019-05-17 14:37:14,159 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:14,159 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:14,159 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:14,159 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:14,159 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:14,159 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:14,159 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:14,160 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:14,160 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:14,160 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:14,160 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:14,160 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:14,160 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:14,160 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:14,160 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:14,161 - server_log - INFO - dir change success!
+2019-05-17 14:37:14,161 - server_log - INFO - dir change success!
+2019-05-17 14:37:14,161 - server_log - INFO - dir change success!
+2019-05-17 14:37:14,161 - server_log - INFO - dir change success!
+2019-05-17 14:37:14,161 - server_log - INFO - dir change success!
+2019-05-17 14:37:14,161 - server_log - INFO - dir change success!
+2019-05-17 14:37:14,161 - server_log - INFO - dir change success!
+2019-05-17 14:37:14,161 - server_log - INFO - dir change success!
+2019-05-17 14:37:14,161 - server_log - INFO - dir change success!
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:21,820 - server_log - INFO - file is same with client,file received done
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,382 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,383 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:41,384 - server_log - INFO - dir change success!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:48,218 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,235 - server_log - INFO - E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,236 - server_log - INFO - ready to change dir!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:53,237 - server_log - INFO - dir change success!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:37:58,338 - server_log - INFO - the file you download is not exist!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:01,298 - server_log - INFO - file transfer successful!
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:38:03,816 - server_log - INFO - client closed connection!ip:127.0.0.1 port:9321
+2019-05-17 14:39:38,552 - server_log - INFO - 
+        [python run_server.py start] to start ftp server!
+        [python run_server.py stop] to stop ftp server!
+        
