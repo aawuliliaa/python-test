@@ -1,3 +1,8 @@
+```
+11，29题用到了case，when流程控制
+26题用到了函数
+27，29题新招数
+```
 # 1.准备数据
 ```
 
@@ -384,68 +389,261 @@ select student.sid,student.sname from student inner join score
 on student.sid=score.student_id
 group by student.sid,student.sname  -- 按照学生分组
 having count(score.course_id)<(select count(*) from course)-- 学生有成绩的课程数<总课程数的学生
-
-
 ```
 ![](.readme_images/346b5392.png)
 ![](.readme_images/4f2dece1.png)
 ![](.readme_images/9f78c43f.png)
 # 22、查询至少有一门课与学号为“1”的同学所学相同的同学的学号和姓名；
 ```
-
+-- 查询至少有一门课与学号为“1”的同学所学相同的同学的学号和姓名
+-- 包含学号为1的学生本人
+select student.sid,student.sname 
+from student inner join score
+on student.sid=score.student_id
+where score.course_id in   -- 查询学了学号为1的学生的课的其他学生信息
+(select course_id from score where student_id=1)-- 查询出学号为1的学生所学的课
+group by student.sid,student.sname  -- 按照学生来分组，由于查出的学生和ID是有重复的，分组后只查询出一条
 ```
+![](.readme_images/5db9cd12.png)
+![](.readme_images/d0816892.png)
 # 23、查询至少学过学号为“1”同学所选课程中任意一门课的其他同学学号和姓名；
 ```
-
+-- 查询至少有一门课与学号为“1”的同学所学相同的同学的学号和姓名
+select student.sid,student.sname 
+from student inner join score
+on student.sid=score.student_id
+where score.course_id in   -- 查询学了学号为1的学生的课的其他学生信息
+(select course_id from score where student_id=1)-- 查询出学号为1的学生所学的课
+and student.sid != 1  -- 去掉学号为1的学生本人
+group by student.sid,student.sname  -- 按照学生来分组，由于查出的学生和ID是有重复的，分组后只查询出一条
 ```
+![](.readme_images/27cc72c6.png)
+![](.readme_images/71653ebc.png)
+![](.readme_images/85eed6fc.png)
 # 24、查询和“2”号同学学习的课程完全相同的其他同学的学号和姓名；
 ```
+-- 查询和“2”号同学学习的课程完全相同的其他同学的学号和姓名
+select student.sid,student.sname 
+from student inner join score
+on student.sid=score.student_id
+where score.course_id in    -- 查询学习了2号学生课程的其他学生信息
+(select course_id from score where student_id=2) -- 查询出二号学生学的课程
+and score.student_id != 2  -- 排出2号学生本人
+group by student.sid,student.sname  -- 按照学生id和姓名分组
+having count(course_id)=(select count(*) from score where student_id=2)-- 课程数与2号学生所学课程数相同
+```
+![](.readme_images/812a1b76.png)
+![](.readme_images/b13ef7d4.png)
+![](.readme_images/6a032440.png)
+# 25、删除学习“张三”老师课的score表记录；
+```
+-- 删除学习“张三”老师课的score表记录
+delete from score where score.course_id in -- 删除学习了张三老师课的score记录
+(select course.cid from course inner join teacher
+on course.teacher_id=teacher.tid
+where teacher.tname='张三')  -- 查询张三老师教了课的课程id
+```
+![](.readme_images/0207bce3.png)
+![](.readme_images/e0443e97.png)
+# 26、向score表中插入一些记录，这些记录要求符合以下条件：①没有上过编号“2”课程的同学学号；②插入“2”号课程的平均成绩；
+```
+
+-- 26、向score表中插入一些记录，这些记录要求符合以下条件
+-- ①没有上过编号“2”课程的同学学号；②插入“2”号课程的平均成绩；
+INSERT INTO score(student_id, course_id, score)
+SELECT t1.sid, '2' AS cid, t2.avg_score  -- 插入的数据，cid全为2
+FROM 
+    (SELECT student.sid
+    FROM student LEFT JOIN score ON student.sid = score.student_id
+    WHERE course_id != 2 OR course_id is null
+    group by student.sid) AS t1, -- 由于这里查询出的数据可能有重复，通过group by去重
+    (SELECT IFNULL(AVG(score), 0) as 'avg_score'
+    FROM score
+    WHERE course_id = '2') AS t2
+ORDER BY sid
+
 
 ```
-25、删除学习“张三”老师课的score表记录；
+![](.readme_images/720f239d.png)
+![](.readme_images/0251a83b.png)
+# 27、按平均成绩从低到高显示所有学生的“语文”、“数学”、“英语”三门的课程成绩，按如下形式显示： 学生ID,语文,数学,英语,课程数和平均分；
+```
+"1.方法一：存在缺陷"
+-- 按平均成绩从低到高显示所有学生的“语文”、“数学”、“英语”三门的课程成绩，
+-- 按如下形式显示： 学生ID,语文,数学,英语,课程数和平均分
+-- 由于这里没有语文，数据，英语，这里使用 “生物，物理，体育"
+-- 这里 学生1号没有学体育，这样join之后，后面的列全部为0了
+select SW.student_id,IFNULL(sw,0)sw,IFNULL(wl,0)wl,IFNULL(ty,0)ty,IFNULL(course_count,0)course_count,IFNULL(avg_score,0)avg_score from
+-- 每个学生生物的成绩
+(select student_id,score as sw from score  inner join course on score.course_id=course.cid where cname='生物')SW
+left join 
+-- 每个学生物理的成绩
+(select student_id,score as wl from score  inner join course on score.course_id=course.cid where cname='物理')WL
+on SW.student_id=WL.student_id
+left join
+-- 每个学生体育的成绩
+(select student_id,score as ty from score  inner join course on score.course_id=course.cid where cname='体育')TY
+on WL.student_id=TY.student_id
+left join
+-- 每个学生的课程数
+(select student_id,count(course_id) course_count from score group by student_id)COURSE_COUNT
+on TY.student_id=COURSE_COUNT.student_id
+left join
+-- 每个学生的所有课程的平均成绩
+(select student_id,avg(score) avg_score from score group by student_id)AVG_SCORE
+on COURSE_COUNT.student_id=AVG_SCORE.student_id
+order by avg_score asc
+
+"2.有效方法"
+SELECT
+        sc.student_id,
+        IFNULL((select score.score from score left join course on score.course_id = course.cid where course.cname = '体育' and score.student_id = sc.student_id),0) as yw,
+        IFNULL((select score.score from score left join course on score.course_id = course.cid where course.cname = '生物' and score.student_id = sc.student_id),0) as sx,
+        IFNULL((select score.score from score left join course on score.course_id = course.cid where course.cname = '体育' and score.student_id = sc.student_id),0) as yy,
+        COUNT(sc.course_id),
+        AVG(sc.score)
+FROM score AS sc
+GROUP BY sc.student_id
+ORDER BY avg(sc.score) ASC;
+```
+![](.readme_images/ad635856.png)
+![](.readme_images/89256c1c.png)
+![](.readme_images/ef9b6cf8.png)
+# 28、查询各科成绩最高和最低的分：以如下形式显示：课程ID，最高分，最低分；
+```
+-- 查询各科成绩最高和最低的分：以如下形式显示：课程ID，最高分，最低分
+-- 这里我们只从score表中查，没有在score表中的科目我们就不管了，实际情况根据用户需求定
+select course_id,max(score),min(score) from score group by course_id
+```
+![](.readme_images/f6a723de.png)
+
+# 29、按各科平均成绩从低到高和及格率的百分数从高到低顺序；
+```
+-- 按各科平均成绩从低到高和及格率的百分数从高到低顺序；
+select course_id,avg(score) avg_score,
+(select count(*) from score s where  s.course_id=sco.course_id and s.score>=60)/
+(select count(*) from score s where s.course_id=sco.course_id) percent   -- 根据27题的方法算出每个course_id的合格率
+from score sco
+group by course_id -- sql语句执行顺序，先执行group by,然后执行select 
+order by avg_score asc,percent desc  -- 按照平均成绩升序，及格率降序
+
+"方法二"
+select course_id,avg(score) avg_score,
+		sum(case when score.score>60 then 1 else 0 end)/count(1)*100 as percent
+from
+		score
+group by
+		course_id
+order by
+		avg_score asc,
+		percent desc;
+```
+![](.readme_images/66b22072.png)
+![](.readme_images/861007e3.png)
+![](.readme_images/6e6c0101.png)
+# 30、课程平均分从高到低显示（显示任课老师）；
+```
+-- 课程平均分从高到低显示（显示任课老师）
+select course.cid,avg(score.score) avg_score ,teacher.tname
+from score inner join course
+on score.course_id=course.cid
+inner join teacher
+on course.teacher_id=teacher.tid
+group by course.cid,teacher.tname -- 由于要显示老师名，所以加到了group by里
+order by avg_score desc          -- .注意，这里可能一个老师教多个课程，但是按照(course.cid,teacher.tname)两个加在一起分组
+                                 -- 两列值相同才是同一组
+```
+![](.readme_images/cf32b9f3.png)
+![](.readme_images/70cdc8e9.png)
+![](.readme_images/f4445e59.png)
+# 31、查询各科成绩前三名的记录(不考虑成绩并列情况) ；
 ```
 
 ```
-26、向score表中插入一些记录，这些记录要求符合以下条件：①没有上过编号“2”课程的同学学号；②插入“2”号课
-程的平均成绩；
+# 32、查询每门课程被选修的学生数；
+```
+-- 查询每门课程被选修的学生数
+select course.cid,count(sid) from course -- 这里不能使用count(*),因为有一行就是一条数据，没有学生选课时，count(*)为0是不对的
+left join score-- 因为有的课程没有被学生选择，所以使用left join
+on course.cid=score.course_id
+group by course.cid
+```
+![](.readme_images/68d7522f.png)
+![](.readme_images/728aced9.png)
+![](.readme_images/7f8813d9.png)
+# 33、查询选修了2门以上课程的全部学生的学号和姓名；
 ```
 
 ```
-27、按平均成绩从低到高显示所有学生的“语文”、“数学”、“英语”三门的课程成绩，按如下形式显示： 学生ID,语文,
-数学,英语,课程数和平均分；
+# 34、查询男生、女生的人数，按倒序排列；
 ```
 
 ```
-28、查询各科成绩最高和最低的分：以如下形式显示：课程ID，最高分，最低分；
+# 35、查询姓“张”的学生名单；
 ```
 
 ```
-29、按各科平均成绩从低到高和及格率的百分数从高到低顺序；
+# 36、查询同名同姓学生名单，并统计同名人数；
 ```
 
 ```
-30、课程平均分从高到低显示（现实任课老师）；
+# 37、查询每门课程的平均成绩，结果按平均成绩升序排列，平均成绩相同时，按课程号降序排列；
 ```
 
 ```
-31、查询各科成绩前三名的记录(不考虑成绩并列情况) ；
-32、查询每门课程被选修的学生数；
-33、查询选修了2门以上课程的全部学生的学号和姓名；
-34、查询男生、女生的人数，按倒序排列；
-35、查询姓“张”的学生名单；
-36、查询同名同姓学生名单，并统计同名人数；
-37、查询每门课程的平均成绩，结果按平均成绩升序排列，平均成绩相同时，按课程号降序排列；
-38、查询课程名称为“数学”，且分数低于60的学生姓名和分数；
-39、查询课程编号为“3”且课程成绩在80分以上的学生的学号和姓名；
-40、求选修了课程的学生人数
-41、查询选修“王五”老师所授课程的学生中，成绩最高和最低的学生姓名及其成绩；
-42、查询各个课程及相应的选修人数；
-43、查询不同课程但成绩相同的学生的学号、课程号、学生成绩；
-44、查询每门课程成绩最好的前两名学生id和姓名；
-45、检索至少选修两门课程的学生学号；
-46、查询没有学生选修的课程的课程号和课程名；
-47、查询没带过任何班级的老师id和姓名；
-48、查询有两门以上课程超过80分的学生id及其平均成绩；
-49、检索“3”课程分数小于60，按分数降序排列的同学学号；
-50、删除编号为“2”的同学的“1”课程的成绩；
-51、查询同时选修了物理课和生物课的学生id和姓名；
+# 38、查询课程名称为“数学”，且分数低于60的学生姓名和分数；
+```
+
+```
+# 39、查询课程编号为“3”且课程成绩在80分以上的学生的学号和姓名；
+```
+
+```
+# 40、求选修了课程的学生人数
+```
+
+```
+# 41、查询选修“王五”老师所授课程的学生中，成绩最高和最低的学生姓名及其成绩；
+```
+
+```
+# 42、查询各个课程及相应的选修人数；
+```
+
+```
+# 43、查询不同课程但成绩相同的学生的学号、课程号、学生成绩；
+```
+
+```
+# 44、查询每门课程成绩最好的前两名学生id和姓名；
+```
+
+```
+# 45、检索至少选修两门课程的学生学号；
+```
+
+```
+# 46、查询没有学生选修的课程的课程号和课程名；
+```
+
+```
+# 47、查询没带过任何班级的老师id和姓名；
+```
+
+```
+# 48、查询有两门以上课程超过80分的学生id及其平均成绩；
+```
+
+```
+# 49、检索“3”课程分数小于60，按分数降序排列的同学学号；
+```
+
+```
+# 50、删除编号为“2”的同学的“1”课程的成绩；
+```
+
+```
+# 51、查询同时选修了物理课和生物课的学生id和姓名；
+```
+
+```
