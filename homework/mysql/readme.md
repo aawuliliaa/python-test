@@ -295,40 +295,110 @@ where grade_id is null or grade_id not in (5,6)
 ```
 ![](.readme_images/20e4c7cb.png)
 ![](.readme_images/839285b2.png)
-
+![](.readme_images/7e25a96b.png)
 # 16、查询学过“张三”老师所教的所有课的同学的学号、姓名；
 ```
+-- 查询学过“张三”老师所教的所有课的同学的学号、姓名
+select student.sid,student.sname from student inner join score
+on student.sid=score.student_id
+where score.course_id in    -- 查询出学习了张三老师课的学生
+(select cid from course inner join teacher
+on course.teacher_id=teacher.tid
+where teacher.tname='张三')  -- 查询张三老师教的课,course_id 为2,4
+group by student.sid,student.sname
+having count(score.course_id)=                  -- 在学习过张三老师课的学生中，找出所有课都学过的学生
+(select count(*) from course inner join teacher -- 这里是查询出张三老师教过几门课
+on course.teacher_id=teacher.tid
+where teacher.tname='张三')   
 
 ```
+![](.readme_images/fc6a636b.png)
+![](.readme_images/901ed124.png)
+![](.readme_images/e70269ac.png)
 # 17、查询带过超过2个班级的老师的id和姓名；
 ```
-
+-- 查询带过超过2个班级的老师的id和姓名
+select tea.tid,tea.tname
+from teacher tea inner join teacher2cls t2c
+on tea.tid=t2c.tid
+group by tea.tid,tea.tname -- 由于要列出老师的id,和姓名，所以要以这两列分组，只有在分组中的列才能select查询
+having count(cid)>=2 -- 由于我这里没有老师带过超过两个班级，我这里就没用>2,就使用>=2来显示结果
 ```
+![](.readme_images/ffd4bb08.png)
+![](.readme_images/183a1b81.png)
+![](.readme_images/ea965e8f.png)
 # 18、查询课程编号“2”的成绩比课程编号“1”课程低的所有同学的学号、姓名；
 ```
-
+-- 查询课程编号“2”的成绩比课程编号“1”成绩低的所有同学的学号、姓名
+select stu.sid,stu.sname
+from student stu inner join 
+(select score score1,student_id  from score where course_id=1)score1_info-- 查询出所有学生课程编号1的成绩
+on stu.sid=score1_info.student_id
+inner join 
+(select score score2,student_id from score where course_id=2)score2_info-- 查询出所有学生课程编号2的成绩
+on score1_info.student_id=score2_info.student_id
+where score1_info.score1>score2_info.score2  -- 筛选出课程1成绩>课程2成绩的学生
 ```
+![](.readme_images/5999d232.png)
+![](.readme_images/1139a9cf.png)
+![](.readme_images/171710f2.png)
 # 19、查询所带班级数最多的老师id和姓名；
 ```
+-- 查询所带班级数最多的老师id和姓名
+select tea.tid,tea.tname,count(t2c.cid) count_cid
+from teacher tea inner join teacher2cls t2c
+on tea.tid=t2c.tid
+group by tea.tid,tea.tname      -- 按照老师的id和姓名分组
+order by count_cid desc limit 1 -- 查询带班级数最多的一个老师
+                                -- 由于order by的执行顺序在select后，所以这里可以使用列别名
+```
+![](.readme_images/dd0501e0.png)
+![](.readme_images/372f7a00.png)
+![](.readme_images/2c19a9d1.png)
+```
+做到目前为止，已经有近10个题目用到了老师的名字，所以给teacher.tname创建一个索引
+create index tname_index on teacher(tname);
+```
+![](.readme_images/033dc5f4.png)
+# 20、查询有课程成绩小于60分的同学的学号、姓名；
+```
+-- 查询有课程成绩小于60分的同学的学号、姓名
+select student.sid,student.sname 
+from student inner join score
+on student.sid=score.student_id
+where score<60   -- 查询成绩小于60的所有学生
+group by student.sid,student.sname  -- 由于上面有重复的学生id和名字，所以通过group by分组，取出魅族的第一个
+```
+![](.readme_images/dbc34336.png)
+![](.readme_images/f5c1570c.png)
+```
+由于多处用到了sname,这里为sname也创建一个索引
+create index sname_index on student(sname);
+```
+![](.readme_images/c65b8f29.png)
+# 21、查询没有学全所有课的同学的学号、姓名；
+```
+-- 查询没有学全所有课的同学的学号、姓名
+-- 没有选课的学生排出在外了
+select student.sid,student.sname from student inner join score
+on student.sid=score.student_id
+group by student.sid,student.sname  -- 按照学生分组
+having count(score.course_id)<(select count(*) from course)-- 学生有成绩的课程数<总课程数的学生
+
 
 ```
-20、查询有课程成绩小于60分的同学的学号、姓名；
+![](.readme_images/346b5392.png)
+![](.readme_images/4f2dece1.png)
+![](.readme_images/9f78c43f.png)
+# 22、查询至少有一门课与学号为“1”的同学所学相同的同学的学号和姓名；
 ```
 
 ```
-21、查询没有学全所有课的同学的学号、姓名；
+# 23、查询至少学过学号为“1”同学所选课程中任意一门课的其他同学学号和姓名；
 ```
 
 ```
-22、查询至少有一门课与学号为“1”的同学所学相同的同学的学号和姓名；
-```
-
-```
-23、查询至少学过学号为“1”同学所选课程中任意一门课的其他同学学号和姓名；
-```
-
-```
-24、查询和“2”号同学学习的课程完全相同的其他同学的学号和姓名；
+# 24、查询和“2”号同学学习的课程完全相同的其他同学的学号和姓名；
 ```
 
 ```
