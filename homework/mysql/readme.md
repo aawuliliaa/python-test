@@ -2,6 +2,7 @@
 11，29题用到了case，when流程控制
 26题用到了函数
 27，29题新招数
+41题方法二：自己写不出来
 ```
 # 1.准备数据
 ```
@@ -558,8 +559,16 @@ order by avg_score desc          -- .注意，这里可能一个老师教多个�
 ![](.readme_images/f4445e59.png)
 # 31、查询各科成绩前三名的记录(不考虑成绩并列情况) ；
 ```
-
+-- 查询各科成绩前三名的记录(不考虑成绩并列情况)
+select sco.course_id,
+(select score from score where score.course_id=sco.course_id order by score desc limit 1)firt_score,-- 按成绩降序第一条
+(select score from score where score.course_id=sco.course_id order by score desc limit 1,1)second_score,-- 按成绩降序第二条
+(select score from score where score.course_id=sco.course_id order by score desc limit 2,1)third_score -- 按成绩降序第三条
+from score sco
+group by sco.course_id
 ```
+![](.readme_images/a16c69b9.png)
+![](.readme_images/6b4d7e39.png)
 # 32、查询每门课程被选修的学生数；
 ```
 -- 查询每门课程被选修的学生数
@@ -573,40 +582,138 @@ group by course.cid
 ![](.readme_images/7f8813d9.png)
 # 33、查询选修了2门以上课程的全部学生的学号和姓名；
 ```
-
+-- 查询选修了2门以上课程的全部学生的学号和姓名
+select student.sid,student.sname,count(score.course_id) 
+from student left join score 
+on student.sid=score.student_id
+group by student.sid,student.sname -- 按照学生id和名字分组，因为要列出这两个列
+having count(score.course_id)>2 -- 这里使用count(score.course_id)比较准确，因为可能有的学生没有成绩，为null
 ```
+![](.readme_images/b94ab821.png)
+![](.readme_images/696bc89e.png)
 # 34、查询男生、女生的人数，按倒序排列；
 ```
-
+-- 查询男生、女生的人数，按倒序排列
+select gender,count(sid) person_num 
+from student group by gender 
+order by person_num desc
 ```
+![](.readme_images/ca4af5b9.png)
+![](.readme_images/fcc3369f.png)
 # 35、查询姓“张”的学生名单；
 ```
-
+-- 查询姓“张”的学生名单
+select * from student where sname like '张%'
 ```
+![](.readme_images/0bf6a817.png)
+![](.readme_images/cf45046a.png)
 # 36、查询同名同姓学生名单，并统计同名人数；
 ```
-
+-- 查询同名同姓学生名单，并统计同名人数
+explain
+select sname,count(*) 
+from student 
+group by sname 
+having count(*)>=2-- 按照学生名字分组，每组中>=2条数据
 ```
+![](.readme_images/615b976e.png)
+![](.readme_images/f8b7978c.png)
 # 37、查询每门课程的平均成绩，结果按平均成绩升序排列，平均成绩相同时，按课程号降序排列；
 ```
-
+-- 查询每门课程的平均成绩，结果按平均成绩升序排列，平均成绩相同时，按课程号降序排列；
+select  course.cid,IFNULL(avg(score.score),0) avg_score -- 这里吧课程表也加入进来，可能有的课程没有学生选
+from course left join score
+on score.course_id=course.cid
+group by course.cid   -- 要按照course.cid分组，不能按照score.course_id分组，因为course表中的课程才是最全的
+order by avg_score asc,course.cid desc
 ```
+![](.readme_images/493d6d10.png)
+![](.readme_images/644bba71.png)
 # 38、查询课程名称为“数学”，且分数低于60的学生姓名和分数；
 ```
-
+-- 查询课程名称为“数学”，且分数低于60的学生姓名和分数
+-- 没有数学，我这里以生物来显示数据
+select student.sname,score.score 
+from student left join score
+on student.sid=score.student_id
+left join course 
+on score.course_id=course.cid   -- 由于需要学生名，课程名，成绩，所以需要三张表
+where course.cname='生物' and score.score<60
 ```
+![](.readme_images/09866405.png)
+![](.readme_images/c00e8dee.png)
 # 39、查询课程编号为“3”且课程成绩在80分以上的学生的学号和姓名；
 ```
-
+-- 查询课程编号为“3”且课程成绩在80分以上的学生的学号和姓名
+select student.sid,student.sname 
+from student left join score
+on student.sid=score.student_id  -- 由于需要学生姓名和成绩，所以需要学生表和成绩表
+where score.course_id=3 and score.score>80
 ```
+![](.readme_images/0834b70e.png)
+![](.readme_images/14369f22.png)
 # 40、求选修了课程的学生人数
 ```
-
+-- 求选修了课程的学生人数
+select count(distinct student.sid)  -- 由于一个学生可能学了多个课程，所以学生姓名首重复的
+from student left join score
+on student.sid=score.student_id
+where score.course_id is not null  -- 可能有的学生没有选课，则course_id为null
 ```
+![](.readme_images/e8875ba0.png)
+![](.readme_images/d281a2f3.png)
+![](.readme_images/4c72a34a.png)
 # 41、查询选修“王五”老师所授课程的学生中，成绩最高和最低的学生姓名及其成绩；
 ```
+-- 查询选修“王五”老师所授课程的学生中，成绩最高和最低的学生姓名及其成绩
+-- 王五老师没有学生，这里假设李四
+(select student.sname,score.score from student left join score
+on student.sid=score.student_id
+left join course
+on score.course_id=course.cid
+left join teacher
+on course.teacher_id=teacher.tid
+where teacher.tname='李四'
+order by score.score desc limit 1) -- 成绩最高的学生信息
+union
+(select student.sname,score.score from student left join score
+on student.sid=score.student_id
+left join course
+on score.course_id=course.cid
+left join teacher
+on course.teacher_id=teacher.tid
+where teacher.tname='李四'
+order by score.score asc limit 1) -- 成绩最低的信息
 
+
+
+-- 查询选修“王五”老师所授课程的学生中，成绩最高和最低的学生姓名及其成绩
+-- 王五老师没有学生，这里假设李四
+select student.sid,student.sname,t2.course_id,t2.score,t2.max_score,t2.min_score from student
+                inner join (
+                    select score.student_id,score.course_id,score.score,t1.max_score,t1.min_score
+                        from score,
+                        (
+                        select course_id,max(score) as max_score,min(score) as min_score
+                        from score
+                        where course_id in (
+                            select cid from course
+                            inner join teacher on course.teacher_id = teacher.tid
+                        where teacher.tname = '李四'
+                        )
+                    group by course_id
+                    ) as t1
+                where score.course_id = t1.course_id
+                    and score.score in(
+                        max_score,
+                        min_score
+                    )
+                    
+                )as t2 on student.sid  = t2.student_id;
 ```
+![](.readme_images/483e8607.png)
+![](.readme_images/f25d8a15.png)
+
 # 42、查询各个课程及相应的选修人数；
 ```
 
