@@ -716,41 +716,114 @@ select student.sid,student.sname,t2.course_id,t2.score,t2.max_score,t2.min_score
 
 # 42、查询各个课程及相应的选修人数；
 ```
-
+-- 查询各个课程及相应的选修人数
+select course.cid,count(score.student_id) student_count -- 有的course没有学生，所以count(score.student_id)才是准确的
+from course left join score  -- 由于要查每个课程，所以使用course left join,取course表中所有数据
+on course.cid=score.course_id
+group by course.cid  -- 按照课程分组
 ```
+![](.readme_images/a8ee3b91.png)
+![](.readme_images/6f0ccb84.png)
 # 43、查询不同课程但成绩相同的学生的学号、课程号、学生成绩；
 ```
-
+-- 查询不同课程但成绩相同的学生的学号、课程号、学生成绩
+select score1.student_id,score1.course_id,score1.score 
+from score score1 inner join score score2
+on score1.sid=score2.sid
+where score1.score=score2.score -- 查询出成绩相同的信息
+and score1.course_id != score2.course_id -- 课程不同
 ```
+![](.readme_images/95fee874.png)
+![](.readme_images/99ebee0e.png)
+![](.readme_images/8b05fec8.png)
 # 44、查询每门课程成绩最好的前两名学生id和姓名；
 ```
-
+-- 查询每门课程成绩最好的前两名学生id和姓名
+select sco.course_id,
+-- 按照成绩排序，不管成绩是否相同，取第一个
+(select student_id from score where score.course_id=sco.course_id order by score desc limit 1) max_student_id,
+-- 根据上面取出的学生id,查学生名字
+(select sname from student where sid=max_student_id)max_student_name,
+-- 按照成绩排序，不管成绩是否相同，取第二个
+(select student_id from score where score.course_id=sco.course_id order by score desc limit 2,1) second_student_id,
+-- 根据上面取出的学生id,查学生名字
+(select sname from student where sid=second_student_id)second_student_name
+from score sco group by sco.course_id-- 这里我们只取有学生选的课程的信息，所以只从score表中取了
+-- sql的执行顺序是限制性group by,然后执行select中的选项，所以在select中可以使用sco.course_id
 ```
+![](.readme_images/3f6f4258.png)
+![](.readme_images/818aa027.png)
 # 45、检索至少选修两门课程的学生学号；
 ```
-
+-- 检索至少选修两门课程的学生学号 
+select score.student_id,count(score.course_id)   -- 只让显示学号，所以只用score表就可以了
+from  score
+group by score.student_id -- 按照学生分组，看每个学生的选课书
+having count(score.course_id)>=2-- 这里是按照学生分组，课程数>=2
 ```
+![](.readme_images/954f2960.png)
+![](.readme_images/eff30635.png)
 # 46、查询没有学生选修的课程的课程号和课程名；
 ```
-
+-- 查询没有学生选修的课程的课程号和课程名
+select course.cid,course.cname 
+from course left join score
+on course.cid=score.course_id
+where score.student_id is null  -- 没有学生选修的课，student_id为null
+group by course.cid,course.cname
 ```
+![](.readme_images/a1193b0d.png)
+![](.readme_images/cec40211.png)
 # 47、查询没带过任何班级的老师id和姓名；
 ```
-
+-- 查询没带过任何班级的老师id和姓名
+select teacher.tid,teacher.tname 
+from teacher left join teacher2cls -- 需要老师的姓名，所以需要老师表
+on teacher.tid=teacher2cls.tid
+where teacher2cls.cid is null-- 没带过课的老师，teacher2cls.cid为Null
 ```
+
+![](.readme_images/ed432459.png)
+![](.readme_images/e87f41ce.png)
+![](.readme_images/dd5a0848.png)
 # 48、查询有两门以上课程超过80分的学生id及其平均成绩；
 ```
-
+-- 查询有两门以上课程超过80分的学生id及其平均成绩
+select student_id,avg(score) from score where score>80 -- 先找到超过80分的学生信息
+group by student_id
+having count(1)>2   -- 按照学生分组，每组中>2
 ```
+![](.readme_images/10f7660d.png)
+![](.readme_images/f10d321a.png)
+![](.readme_images/7594abea.png)
 # 49、检索“3”课程分数小于60，按分数降序排列的同学学号；
 ```
-
+-- 检索“3”课程分数小于60，按分数降序排列的同学学号
+select score.student_id from score where score.course_id=3 -- 先找出课程号为3的数据
+and score.score<60 -- 找出分数<60
+order by score.score desc -- 按照分数降序排序
 ```
+![](.readme_images/65805afc.png)
+![](.readme_images/7a1e5d95.png)
+![](.readme_images/ec379593.png)
 # 50、删除编号为“2”的同学的“1”课程的成绩；
 ```
-
+-- 删除编号为“2”的同学的“1”课程的成绩
+delete from score where score.student_id=2 and score.course_id=1
 ```
+![](.readme_images/8f40a7ce.png)
+![](.readme_images/c055b28b.png)
+![](.readme_images/9e4dfc0c.png)
 # 51、查询同时选修了物理课和生物课的学生id和姓名；
 ```
-
+-- 查询同时选修了物理课和生物课的学生id和姓名
+select student.sid,student.sname from student inner join score
+on student.sid=score.student_id
+inner join course
+on score.course_id=course.cid
+where course.cname in('物理','生物')-- 查询选修了物理或生物的学生信息
+group by student.sid,student.sname -- 按照学生id和姓名分组，因为要显示id和名字
+having count(*)=2 -- 要同时选秀了物理和生物的学生
 ```
+![](.readme_images/713828fe.png)
+![](.readme_images/11fe253f.png)
