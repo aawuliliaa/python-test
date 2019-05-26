@@ -727,15 +727,13 @@ group by course.cid  -- 按照课程分组
 # 43、查询不同课程但成绩相同的学生的学号、课程号、学生成绩；
 ```
 -- 查询不同课程但成绩相同的学生的学号、课程号、学生成绩
-select score1.student_id,score1.course_id,score1.score 
-from score score1 inner join score score2
-on score1.sid=score2.sid
-where score1.score=score2.score -- 查询出成绩相同的信息
-and score1.course_id != score2.course_id -- 课程不同
+select s1.student_id,s1.course_id,s1.score
+from score as s1 inner join score as s2
+on s1.student_id = s2.student_id
+where
+s1.course_id != s2.course_id  -- 课程不同
+and s1.score = s2.score; -- 查询出成绩相同的信息
 ```
-![](.readme_images/95fee874.png)
-![](.readme_images/99ebee0e.png)
-![](.readme_images/8b05fec8.png)
 # 44、查询每门课程成绩最好的前两名学生id和姓名；
 ```
 -- 查询每门课程成绩最好的前两名学生id和姓名
