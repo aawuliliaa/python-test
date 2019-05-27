@@ -34,7 +34,7 @@ class Management(object):
                 self.__print_help_msg()
 
     @staticmethod
-    def __print_help_msg(self):
+    def __print_help_msg():
         """
         打印启动的帮助信息,只是内部使用，不对外使用，可以设置为隐藏函数
         :return:

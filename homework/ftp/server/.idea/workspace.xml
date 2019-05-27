@@ -2,27 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2d8a5ab-46fb-4c15-9cf8-393834f361fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/035453e3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/0ed88999.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/300d502c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/3b0f86e4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/48f1a5cd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/4ccf287f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/5a30b206.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/5adcaa0a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/5f47d94b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/6791cec4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/7bc427d7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/b7bacbe6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/c06e9919.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/d5553c2b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/daf1e30e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/e093d2dd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/f2039443.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/fb770287.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../excercise/.6.网络socket_images/3e81093c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../excercise/.6.网络socket_images/f2acb499.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../excercise/.6.网络socket_images/fb121eca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/vita/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/vita/test/14a31e06-8032-11e9-90ce-14abc56d4c4a-test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../staffinfo/staff_table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../staffinfo/staff_table.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../atm/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../atm/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/core/ftpclient.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/core/ftpclient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/log/client_log" beforeDir="false" afterPath="$PROJECT_DIR$/../client/log/client_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/tmp/shelve_db.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../client/tmp/shelve_db.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/account.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf/account.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/ftpserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/ftpserver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/management.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/server_log" beforeDir="false" afterPath="$PROJECT_DIR$/log/server_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../select_courses/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../select_courses/Readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,57 +34,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/run_server.py">
+        <entry file="file://$PROJECT_DIR$/core/mythread.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+            <state relative-caret-position="-76">
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="35" />
               <folding>
-                <element signature="e#60#69#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/management.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-35">
-              <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-              <folding>
-                <element signature="e#60#77#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/print_write_log.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
-              <folding>
-                <element signature="e#60#74#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/account.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding>
-                <element signature="e#60#74#0" expanded="true" />
+                <element signature="e#60#76#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,10 +48,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/ftpserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="396" column="51" lean-forward="true" selection-start-line="396" selection-start-column="51" selection-end-line="396" selection-end-column="51" />
+            <state relative-caret-position="95">
+              <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
               <folding>
                 <element signature="e#60#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#60#74#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,6 +77,7 @@
       <find>self.user_current_dir</find>
       <find>202</find>
       <find>self.left_quota</find>
+      <find>self.username</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -127,11 +96,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="126" />
-    <option name="y" value="61" />
-    <option name="width" value="1695" />
-    <option name="height" value="966" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="472" />
+    <option name="y" value="10" />
+    <option name="width" value="1130" />
+    <option name="height" value="713" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -152,28 +121,7 @@
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="vita" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
@@ -192,11 +140,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -216,7 +165,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="run_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="run_server" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -258,6 +207,7 @@
       <workItem from="1557999605466" duration="7990000" />
       <workItem from="1558014070952" duration="6345000" />
       <workItem from="1558020565258" duration="14550000" />
+      <workItem from="1558919032412" duration="11590000" />
     </task>
     <task id="LOCAL-00001" summary="ftp">
       <created>1557921009801</created>
@@ -322,24 +272,37 @@
       <option name="project" value="LOCAL" />
       <updated>1558077674253</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ftp">
+      <created>1558926220742</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558926220742</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ftp">
+      <created>1558929901447</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1558929901447</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76304000" />
+    <option name="totallyTimeSpent" value="87894000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16518219" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19271255" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2504472" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.31663686" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Python Console" order="4" weight="0.32874015" />
+      <window_info anchor="bottom" id="Python Console" order="4" weight="0.32737032" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32874015" />
@@ -377,7 +340,7 @@
     <entry file="file://$PROJECT_DIR$/home/vita/test1.txt1558000956.452725" />
     <entry file="file://$PROJECT_DIR$/conf/account.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="190">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
@@ -392,6 +355,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/management.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+          <folding>
+            <element signature="e#60#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/run_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -402,30 +375,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/mythread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="e#60#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/conf/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="266">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#60#74#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/management.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-          <folding>
-            <element signature="e#60#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/ftpserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="396" column="51" lean-forward="true" selection-start-line="396" selection-start-column="51" selection-end-line="396" selection-end-column="51" />
+        <state relative-caret-position="95">
+          <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
           <folding>
             <element signature="e#60#73#0" expanded="true" />
           </folding>

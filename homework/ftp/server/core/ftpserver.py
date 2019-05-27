@@ -48,7 +48,8 @@ class FtpServer(object):
 
         # self.username = None
         # self.left_quota = None
-        self.pool = MyThread(10)
+        self.pool = MyThread(settings.MAX_WORKERS)
+        # 多线程编程时，用户的信息就不能放在全局，由于有多个线程，所以以线程名为key，放在字典中
         self.user_info = {}
 
     @staticmethod
@@ -115,7 +116,8 @@ class FtpServer(object):
             if action_type == "quit":
                 # 退出时，删除信息
                 del self.user_info[currentThread().name]
-                self.pool.get_thread()
+                # 退出一个链接，再放进去一个
+                self.pool.put_thread()
                 break
             try:
                 if hasattr(self, action_type):
