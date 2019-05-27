@@ -113,12 +113,17 @@ class FtpServer(object):
             action_type = client_request_cmd["action_type"]
             # 客户端传过来quit退出程序，这里退出接受消息的循环，到达接受其他用户请求的循环层
             if action_type == "quit":
+                # 退出时，删除信息
+                del self.user_info[currentThread().name]
+                self.pool.get_thread()
                 break
+            try:
+                if hasattr(self, action_type):
+                    func = getattr(self, action_type)
 
-            if hasattr(self, action_type):
-                func = getattr(self, action_type)
-
-                func(client_request_cmd, request_conn_obj)
+                    func(client_request_cmd, request_conn_obj)
+            except Exception as e:
+                print(e)
 
     def send_certain_size_response(self, response_code, request_conn_obj, **kwargs):
         """
@@ -452,11 +457,8 @@ class FtpServer(object):
         target_path = client_request_cmd["target_path"]
         # E:\PythonProject\python-test\homework\ftp\server\home\vita\test\..\..使用abspath能去掉..
         # 变为E:\PythonProject\python-test\homework\ftp\server\home\vita\test
-        target_abs_path = os.path.join(user_current_dir, target_path)
-        if target_abs_path.endswith("."):
-            target_abs_path = target_abs_path.split(".")[0]
-        # else:
-        #    dir_abs_path = os.path.abspath(os.path.join(user_current_dir, target_path))
+
+        target_abs_path = os.path.abspath(os.path.join(user_current_dir, target_path))
         print_info(target_abs_path)
         if os.path.isdir(target_abs_path):
             if target_abs_path.startswith(user_home_dir):
