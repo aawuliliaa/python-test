@@ -15,7 +15,7 @@ class MyThread:
         :param maxsize:  队列的数量
         """
         self.maxsize = maxsize
-        self.q=queue.Queue(maxsize)  # 初始化一个队列对象
+        self.q = queue.Queue(maxsize)  # 初始化一个队列对象
         # 在队列中先存放maxsize个队列对象。这一步就做到了线程池的作用。
         for i in range(maxsize):
             self.q.put(threading.Thread)  # 在队列中先存放线程对象
