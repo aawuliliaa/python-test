@@ -245,6 +245,7 @@ class FtpClient(object):
         :param file_asb_path:
         :return:
         """
+
         cmd_obj = subprocess.Popen(
             "certutil -hashfile %s MD5" % file_asb_path,
             shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -340,7 +341,7 @@ class FtpClient(object):
                 os.rename(file_storage_path_download, finally_file_storage_path)
                 del self.shelve_obj[source_server_file_abs_path]
                 # 文件下载成功，把用于断点续传消息记录的该文件消息删除
-                self.verify_file_md5(source_file_md5_value,finally_file_storage_path)
+                self.verify_file_md5(source_file_md5_value, finally_file_storage_path)
             else:
                 print_info(response_data["response_msg"])
         else:

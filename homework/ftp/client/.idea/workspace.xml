@@ -2,27 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f145bd02-3f77-441e-ba36-08a3883eb3a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/035453e3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/0ed88999.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/300d502c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/3b0f86e4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/48f1a5cd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/4ccf287f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/5a30b206.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/5adcaa0a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/5f47d94b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/6791cec4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/7bc427d7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/b7bacbe6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/c06e9919.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/d5553c2b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/daf1e30e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/e093d2dd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/f2039443.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.Readme_images/fb770287.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../excercise/.6.网络socket_images/3e81093c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../excercise/.6.网络socket_images/f2acb499.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../excercise/.6.网络socket_images/fb121eca.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../staffinfo/staff_table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../staffinfo/staff_table.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../atm/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../atm/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/ftpclient.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/ftpclient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/client_log" beforeDir="false" afterPath="$PROJECT_DIR$/log/client_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/shelve_db.dat" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/shelve_db.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../select_courses/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../select_courses/Readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/run_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="247">
               <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#61#70#0" expanded="true" />
@@ -47,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/ftpclient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4999">
-              <caret line="139" column="20" lean-forward="true" selection-start-line="139" selection-start-column="20" selection-end-line="139" selection-end-column="20" />
+            <state relative-caret-position="-903">
+              <caret line="349" column="8" selection-start-line="349" selection-start-column="8" selection-end-line="349" selection-end-column="8" />
               <folding>
                 <element signature="e#60#73#0" expanded="true" />
               </folding>
@@ -59,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
+            <state relative-caret-position="190">
               <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
               <folding>
                 <element signature="e#60#69#0" expanded="true" />
@@ -71,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/print_write_log.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
+            <state relative-caret-position="114">
               <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
             </state>
           </provider>
@@ -109,11 +101,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="133" />
-    <option name="y" value="109" />
-    <option name="width" value="1695" />
-    <option name="height" value="966" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="472" />
+    <option name="y" value="10" />
+    <option name="width" value="1130" />
+    <option name="height" value="713" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -149,6 +141,11 @@
             <path>
               <item name="client" type="b2602c69:ProjectViewProjectNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="file_storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -163,8 +160,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -326,6 +324,7 @@
       <workItem from="1557999607414" duration="13079000" />
       <workItem from="1558014073415" duration="6391000" />
       <workItem from="1558020539416" duration="15198000" />
+      <workItem from="1558922953384" duration="7623000" />
     </task>
     <task id="LOCAL-00001" summary="ftp">
       <created>1557920972875</created>
@@ -387,13 +386,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87956000" />
+    <option name="totallyTimeSpent" value="95579000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
-    <editor active="true" />
+    <frame x="315" y="7" width="753" height="475" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16275303" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.48196247" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -407,7 +405,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5018657" side_tool="true" weight="0.53149605" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49813432" visible="true" weight="0.1431127" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49813432" visible="true" weight="0.40117994" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -451,33 +449,11 @@
     <entry file="file://$PROJECT_DIR$/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/print_write_log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/stop.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-          <folding>
-            <element signature="e#61#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/stop.py" />
+    <entry file="file://$PROJECT_DIR$/bin/test.py" />
     <entry file="file://$PROJECT_DIR$/bin/run_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="247">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#61#70#0" expanded="true" />
@@ -487,7 +463,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
+        <state relative-caret-position="190">
           <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding>
             <element signature="e#60#69#0" expanded="true" />
@@ -495,10 +471,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/print_write_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/ftpclient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4999">
-          <caret line="139" column="20" lean-forward="true" selection-start-line="139" selection-start-column="20" selection-end-line="139" selection-end-column="20" />
+        <state relative-caret-position="-903">
+          <caret line="349" column="8" selection-start-line="349" selection-start-column="8" selection-end-line="349" selection-end-column="8" />
           <folding>
             <element signature="e#60#73#0" expanded="true" />
           </folding>

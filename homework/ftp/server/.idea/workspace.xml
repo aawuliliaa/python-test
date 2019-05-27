@@ -5,8 +5,6 @@
       <change afterPath="$PROJECT_DIR$/../../../excercise/.6.网络socket_images/3e81093c.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../excercise/.6.网络socket_images/f2acb499.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../excercise/.6.网络socket_images/fb121eca.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/vita/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/vita/test/14a31e06-8032-11e9-90ce-14abc56d4c4a-test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicGrammer/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../atm/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../atm/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/client.iml" afterDir="false" />
@@ -15,14 +13,7 @@
       <change beforePath="$PROJECT_DIR$/../client/core/ftpclient.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/core/ftpclient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/log/client_log" beforeDir="false" afterPath="$PROJECT_DIR$/../client/log/client_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/tmp/shelve_db.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../client/tmp/shelve_db.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/account.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf/account.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/ftpserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/ftpserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/management.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/server_log" beforeDir="false" afterPath="$PROJECT_DIR$/log/server_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../select_courses/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../select_courses/Readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -207,7 +198,7 @@
       <workItem from="1557999605466" duration="7990000" />
       <workItem from="1558014070952" duration="6345000" />
       <workItem from="1558020565258" duration="14550000" />
-      <workItem from="1558919032412" duration="11590000" />
+      <workItem from="1558919032412" duration="11678000" />
     </task>
     <task id="LOCAL-00001" summary="ftp">
       <created>1557921009801</created>
@@ -286,11 +277,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558929901447</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ftp">
+      <created>1558930847001</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1558930847001</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87894000" />
+    <option name="totallyTimeSpent" value="87982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -299,7 +297,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19271255" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.31663686" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.22361359" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="4" weight="0.32737032" />
