@@ -10,6 +10,8 @@
 # 2.程序启动方式
 ```
 使用浏览器浏览index.html
+主要是使用谷歌浏览器测试的
 ```
 # 3.程序的运行效果
+![](.readme_images/63b947cc.png)
 ![](.readme_images/f4275e74.png)
