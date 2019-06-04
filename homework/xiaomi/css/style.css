@@ -1,0 +1,409 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.site-topbar{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /*由于是最上层，所以可以给父元素设置高度*/
+    height: 40px;
+    background-color: #333333;
+    /*em会继承父级元素的字体大小*/
+    font-size: 12px;
+    color: #b0b0b0;
+    z-index: 30;
+
+}
+/*设置一个1226px的盒子，居中*/
+.container{
+    width: 1226px;
+    margin: 0px auto;
+}
+.site-topbar
+.topbar-nav{
+    float: left;
+    height: 40px;
+
+}
+.site-topbar
+a:hover{
+    cursor: pointer;
+
+    color: white;
+}
+.site-topbar
+.sep{
+    margin: 0 0.25em;
+    color: #424242;
+
+}
+.site-topbar
+a{
+    line-height: 40px;
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+    color: #b0b0b0;
+}
+.site-topbar
+.topbar-cart{
+    width: 120px;
+    height: 40px;
+    margin-left: 15px;
+    float: right;
+}
+.site-topbar
+.topbar-info{
+    line-height: 40px;
+    float: right;
+}
+.site-topbar
+.topbar-info
+.link{
+    padding: 0 5px;
+    text-align: center;
+    float: left;
+}
+.site-topbar
+.message{
+    padding: 0 10px;
+}
+
+.site-topbar
+.cart-mini-num{
+    margin-left: -4px;
+}
+.site-topbar .cart-mini{
+    position: relative;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #424242;
+}
+.site-topbar .topbar-info .link,.site-topbar .topbar-info .message, .site-topbar .topbar-info .sep {
+    float: left;
+}
+.site-header{
+    height: 100px;
+}
+.site-header
+.header-logo{
+    float: left;
+    width: 62px;
+    margin-top: 22px;
+}
+.site-header
+.logo{
+    display: block;
+    width: 55px;
+    height: 55px;
+
+    background: url("../images/mi-logo.png") no-repeat #ff6700 50% 50%;
+    float: left;
+}
+.site-header
+.header-nav{
+    width: 850px;
+    float:left
+}
+.site-header
+.nav-list{
+    float: left;
+    width: 820px;
+    height: 88px;
+    padding: 12px 0 0 30px;
+    font-size: 16px;
+}
+.site-header
+.nav-category{
+    float: left;
+    width: 127px;
+    height: 88px;
+    padding-right: 15px;
+}
+.site-header
+.nav-item{
+    float: left;
+}
+ul{
+    list-style: none;
+}
+.site-header
+.nav-item
+.link{
+    display: block;
+    padding: 26px 10px 38px;
+    color: #333333;
+    text-decoration: none;
+}
+.site-header
+.nav-item
+.link
+.text:hover{
+    color: #ff6700;
+}
+.site-header
+.header-search{
+    position: relative;
+    float: right;
+    width: 296px;
+    margin-top: 25px;
+}
+.site-header
+.search-text{
+    position: absolute;
+    top: 0px;
+    right: 51px;
+    width: 223px;
+    height: 48px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 48px;
+
+}
+.site-header
+.search-btn{
+    position: absolute;
+    right:0;
+    top: 0px;
+    width: 52px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    font-size: 24px;
+    line-height: 24px;
+    color: #616161;
+    background: #fff;
+}
+.site-header
+i{
+    position: absolute;
+    top: 19px;
+    right: 19px;
+}
+input[type="submit"]:hover{
+    background-color: #ff6700;
+
+    cursor: pointer;
+}
+
+.site-header
+.search-hot-words{
+    position: absolute;
+    top: 14px;
+    right: 62px;
+    text-align: right;
+
+}
+.site-header
+.search-hot-words
+a{
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    background: #e0e0e0;
+    color: #757575;
+    text-decoration: none;
+}
+.site-header
+.search-hot-words
+a:hover{
+    background-color: #ff6700;
+}
+.home-hero-container{
+    position: relative;
+}
+.home-hero{
+    position: relative;
+    margin-bottom: 26px;
+}
+.home-hero-slider{
+    position: relative;
+    height: 460px;
+    overflow: hidden;
+
+}
+.home-hero-slider
+.site-category{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 234px;
+    height: 460px;
+    font-size: 14px;
+
+}
+.home-hero-slider
+.site-category
+.site-category-list{
+    padding: 20px 0;
+    border: 0;
+    color: #ffffff;
+    background: rgba(0,0,0,0.6);
+}
+.home-hero-slider
+.site-category
+.title{
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    height: 42px;
+    line-height: 42px;
+    color: white;
+}
+.home-hero-slider
+.site-category
+.title:hover{
+    background-color: #ff6700;
+    cursor: pointer;
+}
+.home-hero-slider
+.site-category
+.title
+i{
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+}
+/*图片比盒子大，但是这样可以把整个图片显示在盒子中*/
+.slide{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+
+}
+.ui-controls-direction
+a{
+    position: absolute;
+    width: 41px;
+    height: 69px;
+    /*竖向居中*/
+    top:50%;
+    margin-top: -35px;
+
+}
+.ui-controls-direction
+a:hover{
+    background-color: #757575;
+}
+.ui-controls-direction
+.ui-next{
+    position: absolute;
+    right: 0px;
+    background: url("../images/icon-slides.png") no-repeat -125px 50%;
+}
+.ui-controls-direction
+.ui-prev{
+    position: absolute;
+    left: 234px;
+    background: url("../images/icon-slides.png") no-repeat -84px 50%;
+}
+.home-hero-sub{
+
+    margin-top: 14px;
+    height: 170px;
+}
+.home-hero-sub
+.span4{
+    float: left;
+    width: 234px;
+    height: 170px;
+}
+.home-hero-sub
+.span5{
+    width: 978px;
+    height: 170px;
+    min-height: 1px;
+    margin-left: 14px;
+    float: left;
+}
+.home-promo-list
+.first{
+    display: inline-block;
+    float: left;
+    width: 316px;
+    height: 170px;
+}
+.home-promo-list
+.item{
+    display: inline-block;
+    float: left;
+    width: 316px;
+    height: 170px;
+    margin-left: 14px;
+}
+.home-channel-list{
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+    background: #5f5750;
+}
+.home-channel-list
+a{
+    display: block;
+    text-decoration: none;
+    padding-top: 18px;
+    /*设置标签的字体和图形的颜色*/
+    color: rgba(255,255,255,0.7);;
+}
+.home-channel-list
+li{
+    position: relative;
+    float: left;
+    width: 70px;
+    height: 82px;
+    padding: 0 3px;
+}
+.home-channel-list
+i{
+    display: block;
+    height: 24px;
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 24px;
+}
+/*十字花*/
+.home-channel-list li:before {
+    top: -1px;
+    left: 6px;
+    width: 64px;
+    height: 1px;
+}
+.home-channel-list li:before, .home-channel-list li:after {
+    position: absolute;
+    content: "";
+    background: #665e57;
+}
+.home-channel-list li:after {
+    top: 6px;
+    left: 0;
+    width: 1px;
+    height: 70px;
+}
+
+/*没有这个属性，会把背景颜色覆盖掉*/
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.home-banner-box{
+    height: 120px;
+    margin: 2px 0 42px;
+
+}
+.home-banner-box
+img{
+    height: 100%;
+    width: 100%;
+}
