@@ -70,8 +70,7 @@ a{
     padding: 0 10px;
 }
 /*购物车中商品数量样式*/
-.site-topbar
-.cart-mini-num{
+.site-topbar .cart-mini-num{
     margin-left: -4px;
 }
 /*购物车*/
@@ -92,14 +91,12 @@ a{
     height: 100px;
 }
 /*搜索行的logo*/
-.site-header
-.header-logo{
+.site-header .header-logo{
     float: left;
     width: 62px;
     margin-top: 22px;
 }
-.site-header
-.logo{
+.site-header .logo{
     display: block;
     width: 55px;
     height: 55px;
@@ -108,13 +105,11 @@ a{
     float: left;
 }
 /*超链接盒子处*/
-.site-header
-.header-nav{
+.site-header .header-nav{
     width: 850px;
     float:left
 }
-.site-header
-.nav-list{
+.site-header .nav-list{
     float: left;
     width: 820px;
     height: 88px;
@@ -122,16 +117,14 @@ a{
     font-size: 16px;
 }
 /*盒子最前的空白处*/
-.site-header
-.nav-category{
+.site-header .nav-category{
     float: left;
     width: 127px;
     height: 88px;
     padding-right: 15px;
 }
 /*盒子中的连接项目*/
-.site-header
-.nav-item{
+.site-header .nav-item{
     float: left;
 }
 /*取消ul的默认样式*/
@@ -139,34 +132,27 @@ ul{
     list-style: none;
 }
 /*设置连接处的字体和边框样式*/
-.site-header
-.nav-item
-.link{
+.site-header .nav-item .link{
     display: block;
     padding: 26px 10px 38px;
     color: #333333;
     text-decoration: none;
 }
 /*鼠标浮动时样式*/
-.site-header
-.nav-item
-.link
-.text:hover{
+.site-header .nav-item .link .text:hover{
     color: #ff6700;
 }
 /*搜索处*/
-.site-header
-.header-search{
+.site-header .header-search{
     position: relative;
     float: right;
     width: 296px;
     margin-top: 25px;
 }
 /*搜索框处的内容输入*/
-.site-header
-.search-text{
+.site-header .search-text{
     position: absolute;
-    top: 0px;
+    top: 0;
     right: 51px;
     width: 223px;
     height: 48px;
@@ -177,8 +163,7 @@ ul{
 
 }
 /*搜索按钮*/
-.site-header
-.search-btn{
+.site-header .search-btn{
     position: absolute;
     right:0;
     top: 0;
@@ -191,8 +176,7 @@ ul{
     background: #fff;
 }
 /*搜索图标*/
-.site-header
-i{
+.site-header i{
     position: absolute;
     top: 19px;
     right: 19px;
@@ -204,17 +188,14 @@ input[type="submit"]:hover{
     cursor: pointer;
 }
 /*搜索框中的默认内容*/
-.site-header
-.search-hot-words{
+.site-header .search-hot-words{
     position: absolute;
     top: 14px;
     right: 62px;
     text-align: right;
 
 }
-.site-header
-.search-hot-words
-a{
+.site-header .search-hot-words a{
     display: inline-block;
     margin-left: 5px;
     padding: 0 5px;
@@ -224,9 +205,7 @@ a{
     text-decoration: none;
 }
 /*搜索框中的默认内容*，鼠标悬浮样式*/
-.site-header
-.search-hot-words
-a:hover{
+.site-header .search-hot-words a:hover{
     background-color: #ff6700;
 }
 /*轮播图处，包含多个大盒子*/
@@ -244,8 +223,7 @@ a:hover{
     overflow: hidden;
 
 }
-.home-hero-slider
-.site-category{
+.home-hero-slider .site-category{
     position: absolute;
     top: 0;
     left: 0;
@@ -255,18 +233,14 @@ a:hover{
 
 }
 /*左侧的选择项*/
-.home-hero-slider
-.site-category
-.site-category-list{
+.home-hero-slider .site-category .site-category-list{
     padding: 20px 0;
     border: 0;
     color: #ffffff;
     background: rgba(0,0,0,0.6);
 }
 /*左侧的选择项字体样式*/
-.home-hero-slider
-.site-category
-.title{
+.home-hero-slider .site-category .title{
     text-decoration: none;
     position: relative;
     display: block;
@@ -276,17 +250,12 @@ a:hover{
     color: white;
 }
 /*最左侧字体鼠标悬浮时样式*/
-.home-hero-slider
-.site-category
-.title:hover{
+.home-hero-slider .site-category .title:hover{
     background-color: #ff6700;
     cursor: pointer;
 }
 /*最左侧字体后面的>号*/
-.home-hero-slider
-.site-category
-.title
-i{
+.home-hero-slider .site-category .title i{
     position: absolute;
     top: 12px;
     right: 20px;
@@ -303,8 +272,7 @@ i{
 
 }
 /*轮播图处的向左，向后*/
-.ui-controls-direction
-a{
+.ui-controls-direction a{
     position: absolute;
     width: 41px;
     height: 69px;
@@ -314,20 +282,17 @@ a{
 
 }
 /*<>鼠标悬浮的样式*/
-.ui-controls-direction
-a:hover{
+.ui-controls-direction a:hover{
     background-color: #757575;
 }
 /*向后的样式*/
-.ui-controls-direction
-.ui-next{
+.ui-controls-direction .ui-next{
     position: absolute;
     right: 0;
     background: url("../images/icon-slides.png") no-repeat -125px 50%;
 }
 /*向前的样式*/
-.ui-controls-direction
-.ui-prev{
+.ui-controls-direction .ui-prev{
     position: absolute;
     left: 234px;
     background: url("../images/icon-slides.png") no-repeat -84px 50%;
@@ -339,15 +304,13 @@ a:hover{
     height: 170px;
 }
 /*此处共六个选项*/
-.home-hero-sub
-.span4{
+.home-hero-sub .span4{
     float: left;
     width: 234px;
     height: 170px;
 }
 /*span5处共三个图片*/
-.home-hero-sub
-.span5{
+.home-hero-sub .span5{
     width: 978px;
     height: 170px;
     min-height: 1px;
@@ -355,15 +318,13 @@ a:hover{
     float: left;
 }
 /*图片处样式*/
-.home-promo-list
-.first{
+.home-promo-list .first{
     display: inline-block;
     float: left;
     width: 316px;
     height: 170px;
 }
-.home-promo-list
-.item{
+.home-promo-list .item{
     display: inline-block;
     float: left;
     width: 316px;
@@ -377,16 +338,14 @@ a:hover{
     text-align: center;
     background: #5f5750;
 }
-.home-channel-list
-a{
+.home-channel-list a{
     display: block;
     text-decoration: none;
     padding-top: 18px;
     /*设置标签的字体和图形的颜色*/
     color: rgba(255,255,255,0.7);;
 }
-.home-channel-list
-li{
+.home-channel-list li{
     position: relative;
     float: left;
     width: 70px;
@@ -394,8 +353,7 @@ li{
     padding: 0 3px;
 }
 /*左侧六个图标的样式*/
-.home-channel-list
-i{
+.home-channel-list i{
     display: block;
     height: 24px;
     margin-bottom: 4px;
@@ -435,26 +393,20 @@ i{
 
 }
 /*Redmi 7A图片，图片整个放在img框中*/
-.home-banner-box
-img{
+.home-banner-box img{
     height: 100%;
     width: 100%;
 }
 /*服务支持处信息*/
-.site-footer
-.footer-service{
+.site-footer .footer-service{
     padding: 27px 0;
     border-bottom: 1px solid #e0e0e0;
 }
 /*退换货，包邮出样式*/
-.site-footer
-.list-service
-li:first-child{
+.site-footer .list-service li:first-child{
     border-left: 0;
 }
-.site-footer
-.list-service
-li{
+.site-footer .list-service li{
     float: left;
     width: 19.8%;
     height: 25px;
@@ -463,43 +415,32 @@ li{
     text-align: center;
     border-left: 1px solid #e0e0e0;
 }
-.site-footer
-.list-service
-a{
+.site-footer .list-service a{
     color: #616161;
 }
-.site-footer
-.footer-links{
+.site-footer .footer-links{
     padding: 40px 0;
 }
 /*帮助中心，服务支持等列表的样式，每个项目有三项*/
-.footer-links
-.col-links{
+.footer-links .col-links{
     float: left;
     width: 160px;
     height: 112px;
 }
-.footer-links
-.col-links
-dt{
+.footer-links .col-links dt{
     margin: -1px 0 26px;
     font-size: 14px;
     line-height: 1.25;
     color: #424242;
 }
-.footer-links
-.col-links
-dd{
+.footer-links .col-links dd{
     margin: 10px 0 0;
     font-size: 12px;
 }
-.footer-links
-.col-links
-a{
+.footer-links .col-links a{
     color: #757575;
 }
-.footer-links
-.col-contact{
+.footer-links .col-contact{
     float: right;
     width: 251px;
     height: 112px;
@@ -508,24 +449,18 @@ a{
     color: #616161;
 }
 /*右侧电话号*/
-.footer-links
-.col-contact
-.phone{
+.footer-links .col-contact .phone{
     margin: 0 0 5px;
     font-size: 22px;
     color: #ff6700;
 }
 /*电话通话的时间标注*/
-.footer-links
-.col-contact
-p{
+.footer-links .col-contact p{
     margin: 0 0 16px;
     font-size: 12px;
 }
 /*联系客服处*/
-.footer-links
-.col-contact
-.btn-line-primary{
+.footer-links .col-contact .btn-line-primary{
     display: inline-block;
     width: 118px;
     height: 28px;
@@ -537,17 +472,12 @@ p{
 
 }
 /*联系客户处鼠标悬浮样式*/
-.footer-links
-.col-contact
-.btn-line-primary:hover{
+.footer-links .col-contact .btn-line-primary:hover{
     background-color: #ff6700;
     color: white;
 }
 /*联系客服中的小图标*/
-.footer-links
-.col-contact
-.btn-line-primary
-i{
+.footer-links .col-contact .btn-line-primary i{
     font-size: 12px;
 }
 /*认证处信息*/
@@ -556,21 +486,18 @@ i{
     font-size: 12px;
     background: #fafafa;
 }
-.site-info
-.container{
+.site-info .container{
     position: relative;
 }
 /*最低处的小米黑科技*/
-.site-info
-.slogan{
+.site-info .slogan{
     margin: 30px auto 0;
     width: 267px;
     height: 19px;
     background: url("../images/slogan2016.png") no-repeat ;
 }
 /*logo图片*/
-.site-info
-.logo{
+.site-info .logo{
     width: 57px;
     height: 57px;
     margin-right: 10px;
@@ -580,33 +507,25 @@ i{
     left: 0;
 }
 /*认证处的认证信息*/
-.site-info
-.info-text{
+.site-info .info-text{
     color: #b0b0b0;
     padding-left: 67px;
 }
 /*认证信息处的导航*/
-.site-info
-.info-text
-.sites
-a{
+.site-info .info-text .sites a{
     line-height: 18px;
     color: #757575;
 }
-.site-info
-a:hover{
+.site-info a:hover{
     color: #ff6700;
 }
-.site-info
-.info-links{
+.site-info .info-links{
     height: 28px;
     margin: 4px 0 0;
     padding-left: 67px;
 }
 /*下方的认证图片*/
-.site-info
-.info-links
-img{
+.site-info .info-links img{
     width: auto;
     height: 28px;
     margin-left: 0;
@@ -618,87 +537,59 @@ img{
     padding-top: 22px;
     background: #f5f5f5;
 }
-.page-main
-.home-brick-box{
+.page-main .home-brick-box{
     height: 686px;
     margin-bottom: 8px;
 }
 /*图片上方的字体信息*/
-.page-main
-.home-brick-box
-.box-hd{
+.page-main .home-brick-box .box-hd{
     position: relative;
     height: 58px;
 }
 /*手机字体样式*/
-.page-main
-.home-brick-box
-.box-hd
-.title{
+.page-main .home-brick-box .box-hd .title{
     font-size: 22px;
     font-weight: 200;
     line-height: 58px;
     color: #333333;
 }
 /*查看全部处样式*/
-.page-main
-.home-brick-box
-.box-hd
-.more{
+.page-main .home-brick-box .box-hd .more{
     position: absolute;
     top: 0;
     right: 0;
 }
-.page-main
-.home-brick-box
-.box-hd
-.more-link{
+.page-main .home-brick-box .box-hd .more-link{
     font-size: 16px;
     line-height: 58px;
     color: #424242;
 }
 /*查看全部的鼠标悬浮*/
-.page-main
-.home-brick-box
-.box-hd
-.more-link:hover{
+.page-main .home-brick-box .box-hd .more-link:hover{
     color: #ff6700;
 }
 /*下方图片*/
-.page-main
-.span6{
+.page-main .span6{
     width: 234px;
     float: left;
 }
 /*左侧图片*/
-.page-main
-.box-bd
-.span6
-img{
+.page-main .box-bd .span6 img{
     width: 100%;
     height: 100%;
 }
 /*右侧图片展出处*/
-.page-main
-.box-bd
-.span7{
+.page-main .box-bd .span7{
     float: left;
 
     width: 978px;
 }
-.page-main
-.box-bd
-.span7
-.brick-list{
+.page-main .box-bd .span7 .brick-list{
     width: 992px;
     height: 614px;
 }
 /*每项图片的样式*/
-.page-main
-.box-bd
-.span7
-.brick-list
-.brick-item{
+.page-main .box-bd .span7 .brick-list .brick-item{
     height: 260px;
     padding: 20px 0;
     position: relative;
@@ -709,43 +600,23 @@ img{
     background: #ffffff;
 }
 /*每项图片宽高*/
-.page-main
-.box-bd
-.span7
-.brick-list
-.brick-item
-.figure-img{
+.page-main .box-bd .span7 .brick-list .brick-item .figure-img{
     height: 160px;
     width: 160px;
     margin: 0 auto 18px;
 }
-.page-main
-.box-bd
-.span7
-.brick-list
-.brick-item
-.figure-img
-img{
+.page-main .box-bd .span7 .brick-list .brick-item .figure-img img{
     height: 100%;
     width: 100%;
 }
 /*图片上的字体样式*/
-.page-main
-.box-bd
-.span7
-.brick-list
-.title
-a{
+.page-main .box-bd .span7 .brick-list .title a{
     color: #333333;
     font-size: 14px;
     font-weight: 400;
 
 }
-.page-main
-.box-bd
-.span7
-.brick-list
-.title{
+.page-main .box-bd .span7 .brick-list .title{
     text-align: center;
 }
 /*图片上的描述信息*/
@@ -757,32 +628,19 @@ a{
     color: #b0b0b0;
 }
 /*图片上的价格信息*/
-.page-main
-.box-bd
-.span7
-.brick-list
-.price{
+.page-main .box-bd .span7 .brick-list .price{
     margin: 0 10px 14px;
     text-align: center;
     color: #ff6700;
     font-size: 12px;
 }
 /*图片上旧价格删除*/
-.page-main
-.box-bd
-.span7
-.brick-list
-.price
-del{
+.page-main .box-bd .span7 .brick-list .price del{
     color: #b0b0b0;
     text-decoration: line-through;
 }
 /*图片上方中间的信息*/
-.page-main
-.box-bd
-.span7
-.brick-list
-.flag{
+.page-main .box-bd .span7 .brick-list .flag{
     position: absolute;
     top: 0;
     left: 50%;
@@ -795,19 +653,11 @@ del{
     font-size: 12px;
 }
 /*新品背景是绿色*/
-.page-main
-.box-bd
-.span7
-.brick-list
-.flag-new{
+.page-main .box-bd .span7 .brick-list .flag-new{
     background-color: #83c44e;
 }
 /*打折产品背景是红色*/
-.page-main
-.box-bd
-.span7
-.brick-list
-.flag-saleoff{
+.page-main .box-bd .span7 .brick-list .flag-saleoff{
     background-color: #e53935;
 }
 /*右侧固定栏*/
@@ -820,13 +670,11 @@ del{
     width: 27px;
 
 }
-.home-right-bar
-.bar-top{
+.home-right-bar .bar-top{
     border-top: 1px solid #f5f5f5;
 
 }
-.home-right-bar
-.bar-sort{
+.home-right-bar .bar-sort{
     width: 25px;
     height: 39px;
     position: relative;
@@ -835,27 +683,21 @@ del{
     border-top: none;
 }
 /*固定栏，小图标存放处*/
-.home-right-bar
-.bar-img{
+.home-right-bar .bar-img{
     width: 20px;
     height: 20px;
     padding-top: 9px;
     margin:0 0 0 2px;
 }
-.home-right-bar
-.bar-sort:hover{
+.home-right-bar .bar-sort:hover{
     color: #ff6700;
     cursor: pointer;
 }
-.home-right-bar
-.bar-top
-a{
+.home-right-bar .bar-top a{
     color:#424242 ;
 }
 /*返回顶部处标签，鼠标悬浮样式,a标签不同，设置父标签不管用，要设置到标签上才管用*/
-.home-right-bar
-.bar-top
-a:hover{
+.home-right-bar .bar-top a:hover{
     color:#ff6700 ;
     cursor: pointer;
 }
