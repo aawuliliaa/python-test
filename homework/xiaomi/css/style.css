@@ -181,7 +181,7 @@ ul{
 .search-btn{
     position: absolute;
     right:0;
-    top: 0px;
+    top: 0;
     width: 52px;
     height: 48px;
     border: 1px solid #e0e0e0;
@@ -247,8 +247,8 @@ a:hover{
 .home-hero-slider
 .site-category{
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 234px;
     height: 460px;
     font-size: 14px;
@@ -296,8 +296,8 @@ i{
 /*图片比盒子大，但是这样可以把整个图片显示在盒子中*/
 .slide{
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
 
@@ -322,7 +322,7 @@ a:hover{
 .ui-controls-direction
 .ui-next{
     position: absolute;
-    right: 0px;
+    right: 0;
     background: url("../images/icon-slides.png") no-repeat -125px 50%;
 }
 /*向前的样式*/
@@ -450,7 +450,7 @@ img{
 .site-footer
 .list-service
 li:first-child{
-    border-left: 0px;
+    border-left: 0;
 }
 .site-footer
 .list-service
@@ -470,7 +470,7 @@ a{
 }
 .site-footer
 .footer-links{
-    padding: 40px 0px;
+    padding: 40px 0;
 }
 /*帮助中心，服务支持等列表的样式，每个项目有三项*/
 .footer-links
@@ -552,7 +552,7 @@ i{
 }
 /*认证处信息*/
 .site-info{
-    padding: 30px 0px;
+    padding: 30px 0;
     font-size: 12px;
     background: #fafafa;
 }
@@ -563,7 +563,7 @@ i{
 /*最低处的小米黑科技*/
 .site-info
 .slogan{
-    margin: 30px auto 0px;
+    margin: 30px auto 0;
     width: 267px;
     height: 19px;
     background: url("../images/slogan2016.png") no-repeat ;
@@ -609,7 +609,7 @@ a:hover{
 img{
     width: auto;
     height: 28px;
-    margin-left: 0px;
+    margin-left: 0;
     margin-bottom: 15px;
 }
 
@@ -646,8 +646,8 @@ img{
 .box-hd
 .more{
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
 }
 .page-main
 .home-brick-box
