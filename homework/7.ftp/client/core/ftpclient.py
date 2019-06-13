@@ -37,8 +37,8 @@ class FtpClient(object):
         parser = optparse.OptionParser()
         # python.exe run_client.py -s 127.0.0.1 -P 9999
         # (<Values at 0x1b9dd3a5128: {'server': '127.0.0.1', 'port': '9999'}>, [])
-        parser.add_option("-s", "--server", dest="server", help="ftp server ip")
-        parser.add_option("-P", "--port", dest="port", help="ftp server port")
+        parser.add_option("-s", "--server", dest="server", help="7.ftp server ip")
+        parser.add_option("-P", "--port", dest="port", help="7.ftp server port")
         self.options, self.args = parser.parse_args()
         # {'server': None, 'port': None} <class 'optparse.Values'> []
         # print(self.options,type(self.options),self.args)
@@ -218,7 +218,7 @@ class FtpClient(object):
             msg_data["fill"] = msg_data["fill"].zfill(self.MSG_SIZE-len(bytes_msg_data))
             bytes_msg_data = json.dumps(msg_data).encode("utf-8")
         self.client_socket_obj.send(bytes_msg_data)
-        print_info("your commands has send to ftp server successful!")
+        print_info("your commands has send to 7.ftp server successful!")
 
     @staticmethod
     def progress_bar(file_total_size, last_percent=0):

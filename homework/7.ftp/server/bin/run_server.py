@@ -9,6 +9,6 @@ sys.path.append(BASE_DIR)
 
 if __name__ == '__main__':
     from core.management import Management
-    # 默认不加参数时，sys.argv=['E:/PythonProject/python-test/homework/ftp/server/bin/run_server.py']
+    # 默认不加参数时，sys.argv=['E:/PythonProject/python-test/homework/7.ftp/server/bin/run_server.py']
     manage_obj = Management(sys.argv)
     manage_obj.run()

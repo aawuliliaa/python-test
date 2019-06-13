@@ -9,7 +9,7 @@ from utils.print_write_log import print_info
 
 class Management(object):
     def __str__(self):
-        return "to manage ftp server"
+        return "to manage 7.ftp server"
 
     def __init__(self, sys_args):
         # 用于接收脚本的参数
@@ -40,8 +40,8 @@ class Management(object):
         :return:
         """
         help_msg = """
-        [python run_server.py start] to start ftp server!
-        [python run_server.py stop] to stop ftp server!
+        [python run_server.py start] to start 7.ftp server!
+        [python run_server.py stop] to stop 7.ftp server!
         """
         print_info(help_msg)
 

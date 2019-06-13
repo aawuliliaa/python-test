@@ -457,8 +457,8 @@ class FtpServer(object):
         print("------", self.user_info)
 
         target_path = client_request_cmd["target_path"]
-        # E:\PythonProject\python-test\homework\ftp\server\home\vita\test\..\..使用abspath能去掉..
-        # 变为E:\PythonProject\python-test\homework\ftp\server\home\vita\test
+        # E:\PythonProject\python-test\homework\7.ftp\server\home\vita\test\..\..使用abspath能去掉..
+        # 变为E:\PythonProject\python-test\homework\7.ftp\server\home\vita\test
 
         target_abs_path = os.path.abspath(os.path.join(user_current_dir, target_path))
         print_info(target_abs_path)
