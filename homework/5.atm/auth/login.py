@@ -59,7 +59,7 @@ def user_login():
         logger = return_logger_obj("login_log")
         user_name = input("please input your name:").strip()
         password = input("please input your password:").strip()
-        # login_user_file = E:\PythonProject\python-test\homework\atm/db\accounts/vita.json
+        # login_user_file = E:\PythonProject\python-test\homework\5.atm/db\accounts/vita.json
         login_user_file = os.path.join(settings.DATABASE["path"], '%s/%s.json' %
                                        (settings.DATABASE["name"], user_name))
         if os.path.isfile(login_user_file):
@@ -107,12 +107,12 @@ def shopping_or_atm(user_data):
     """
     while 1:
         info = """
-        ********************shopping or atm*******************
+        ********************shopping or 5.atm*******************
         welcome come to this system!
         1.for shopping
-        2.for atm 
+        2.for 5.atm 
         3.exit
-        ********************shopping or atm*******************
+        ********************shopping or 5.atm*******************
         """
         choice_list = {
             "1": shopping_run,

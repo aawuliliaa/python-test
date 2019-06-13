@@ -103,12 +103,12 @@ def show_shopping_history(user_data):
                         (settings.GOODS_DATABASE["name"], user_name))
     if os.path.exists(file):
         shopping_history_data = load_db(file)
-        print_info("************shop history****************")
+        print_info("************1.shop history****************")
         for goods_name in shopping_history_data:
 
             goods_price = shopping_history_data[goods_name]["price"]
             goods_count = shopping_history_data[goods_name]["count"]
             print_info("%s,%s,%s" % (goods_name, goods_price, goods_count))
-        print_info("************shop history****************")
+        print_info("************1.shop history****************")
     else:
         print_info("this user has never shopped something!", "error")
