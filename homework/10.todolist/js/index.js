@@ -21,6 +21,7 @@ function addToRunning() {
     //把运行中的数目加1，展示到页面中
     let runningCountTag = document.getElementById('runningCount');
     runningCountTag.innerText=local_storage_data["runningListCount"];
+    addToRunningTag.value="";
 }
 
 //创建一个下面的标签
@@ -176,6 +177,7 @@ function load() {
                 runningList.appendChild(item);
                 //添加到已经完成的列表中
             }else if(list_item[item_id]["isRunning"] === false) {
+                item.firstChild.checked=true;
                 doneList.appendChild(item);
             }
         }

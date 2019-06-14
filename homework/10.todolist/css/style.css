@@ -49,7 +49,7 @@ body{
 /*父相子绝，便于设置子元素的相对父元素的位置*/
 h2{
     position: relative;
-    margin: 19.2px 0;
+    margin: 19px 0;
 }
 /*设置  正在运行  已经完成 的数目*/
 .listCount{
@@ -116,6 +116,7 @@ li a{
     text-decoration: none;
     color: #999999;
 }
+/*编辑内容时，会创建一个Input标签，设置改标签的样式*/
 li p input {
     top: 3px;
     left: 40px;
@@ -124,4 +125,8 @@ li p input {
     line-height: 14px;
     text-indent: 5px;
     font-size: 14px;
+}
+#doneList li{
+    /*不透明级别*/
+    opacity: 0.5
 }

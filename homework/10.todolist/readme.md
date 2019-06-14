@@ -9,6 +9,9 @@
 # 2.程序启动方式
 ```
 使用谷歌浏览器运行index.html
+本次代码，每个标签的创建和删除都着重采用appendChild(),removeChild()来进行操作
 ```
 # 3.程序运行效果
+![](.readme_images/6be8403e.png)
 # 4.流程图
+![](.readme_images/todolist.jpg)
