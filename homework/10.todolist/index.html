@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="header ">
+    <div class="container">
+        <p>ToDoList</p>
+<!--        添加onchange事件，加入到正在进行列表中-->
+        <input type="text" value="" placeholder="添加ToDo" onchange="addToRunning()" id="addToRunning">
+    </div>
+</div>
+<div class="container">
+    <h2>
+        正在进行
+        <span class="listCount" id="runningCount">0</span>
+    </h2>
+    <ul class="list-content" id="runningList">
+
+    </ul>
+    <h2>
+        已经完成
+        <span class="listCount" id="doneCount">0</span>
+    </h2>
+    <ul class="list-content" id="doneList">
+
+    </ul>
+</div>
+<div class="footer">
+
+</div>
+<script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>
