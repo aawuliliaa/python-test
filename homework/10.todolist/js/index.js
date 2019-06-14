@@ -41,7 +41,7 @@ function createLiItem(p_innerText,p_guid) {
     input_tag.setAttribute('onchange',`move('${p_guid}')`);
     //设置P标签并设置属性
     let p_tag = document.createElement('p');
-    p_tag.setAttribute('onclick','edit()');
+    p_tag.setAttribute('onclick',`edit('${p_guid}')`);
     p_tag.setAttribute('id',p_guid);
     p_tag.innerText=p_innerText;
     //设置a标签，并设置属性
@@ -124,6 +124,35 @@ function move(li_id) {
     //列出运行中和完成的数目
     showListCount();
 }
+//编辑列表中的内容
+function edit(p_id) {
+    //加载localStorage中的数据
+    let list_item = load_list_item();
+    let p_tag = document.getElementById(p_id);
+    let p_tag_inner_text=p_tag.innerText;
+    //我也使用一次innerHTML创建标签
+    p_tag.innerHTML=`<input type="text" id="edit-${p_id}">`;
+    //新加一个编辑标签，是input标签
+    let edit_input_tag = document.getElementById(`edit-${p_id}`);
+    //设置input标签中的默认内容
+    edit_input_tag.value=p_tag_inner_text;
+    //获得焦点
+    edit_input_tag.focus();
+    //失去焦点时的事件
+    edit_input_tag.onblur = function () {
+        if (edit_input_tag.value.length===0){
+            alert("你什么都没有输入呀，忘记了吧！");
+        }else{
+            list_item[p_id]["pTagValue"]=edit_input_tag.value;
+            //移除刚刚新加的input标签
+            p_tag.removeChild(edit_input_tag);
+            //设置好新编辑的内容
+            p_tag.innerHTML = edit_input_tag.value;
+            //保存到localStorage中
+            saveToLocalStorage(list_item);
+        }
+    }
+}
 //列出运行中和完成的数目
 function showListCount() {
     //展示已经完成的数据和正在运行中的数目
@@ -154,6 +183,7 @@ function load() {
     }
     showListCount();
 }
+
 //最底层的clear按钮,清除所有列表中的项
 function clear() {
     let list_item = load_list_item();
@@ -175,5 +205,6 @@ function clear() {
     //列出运行中和完成的数目
     showListCount();
 }
+
 //重新刷新页面，调用load方法，展示数据
 window.onload=load;

@@ -23,7 +23,7 @@ body{
     margin: 0 auto;
 }
 /*设置header中ToDoList的字体样式*/
-.header .container p{
+.header .container label{
     float: left;
     width: 100px;
     line-height: 50px;
@@ -115,4 +115,13 @@ li a{
 .footer a{
     text-decoration: none;
     color: #999999;
+}
+li p input {
+    top: 3px;
+    left: 40px;
+    width: 70%;
+    height: 20px;
+    line-height: 14px;
+    text-indent: 5px;
+    font-size: 14px;
 }
