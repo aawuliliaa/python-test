@@ -99,7 +99,7 @@ function remove(li_id) {
     //列出运行中和完成的数目
     showListCount();
 }
-
+//移动，进行中====已经完成  互相移动
 function move(li_id) {
     let runningList = document.getElementById('runningList');
     let doneList = document.getElementById('doneList');
@@ -120,12 +120,10 @@ function move(li_id) {
         list_item['doneListCount']-=1;
         list_item['runningListCount']+=1;
     }
-
     saveToLocalStorage(list_item);
     //列出运行中和完成的数目
     showListCount();
 }
-
 //列出运行中和完成的数目
 function showListCount() {
     //展示已经完成的数据和正在运行中的数目
@@ -154,6 +152,27 @@ function load() {
         }
 
     }
+    showListCount();
+}
+//最底层的clear按钮,清除所有列表中的项
+function clear() {
+    let list_item = load_list_item();
+    let runningList = document.getElementById('runningList');
+    let doneList = document.getElementById('doneList');
+    for (let item_id in list_item){
+        if (list_item.hasOwnProperty(item_id)){
+
+            let li_cleared_tag = document.getElementById(`li-${item_id}`);
+            if(list_item[item_id]["isRunning"]){
+                runningList.removeChild(li_cleared_tag);
+            }else if(list_item[item_id]["isRunning"] === false){
+                doneList.removeChild(li_cleared_tag);
+            }
+        }
+    }
+    let data={"runningListCount":0,"doneListCount":0};
+    saveToLocalStorage(data);
+    //列出运行中和完成的数目
     showListCount();
 }
 //重新刷新页面，调用load方法，展示数据
