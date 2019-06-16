@@ -106,7 +106,7 @@ $(function() {
      //    });
 });
 
-//保存数据到localStorage中
+//保存数据到localStorage中，这些主要用于存储数据，
 //保存到浏览器中，用于刷新浏览器或重新加载浏览器，展示数据使用
 function saveToLocalStorage(data) {
     localStorage.setItem("list_item", JSON.stringify(data));
