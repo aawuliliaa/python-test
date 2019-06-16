@@ -36,6 +36,4 @@ pull-lef,pull-right用于排版
 ![](.readme_images/3b9acf9f.png)
 
 # 4.程序设计流程图
-```
-
-```
+![](.readme_images/chouti.jpg)
