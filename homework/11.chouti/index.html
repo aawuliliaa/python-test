@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--bootstrap3中文文档中，注明
+Bootstrap 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 HTML5 文档类型。
+在你项目中的每个页面都要参照下面的格式进行设置-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 以最高的ie 浏览器 渲染  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <!-- 官网中说明：
+     为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>抽屉新热榜</title>
+    <link rel="icon" href="./images/chouti.ico">
+        <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--bootstrap官网中，组件-导航条处代码，对其进行的修改,带有my-**的类，是自己设置的-->
+<!--导航处-->
+<nav class="navbar navbar-default my-navbar">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header ">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="./images/logo.png" alt=""></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+          <li class="active"><a href="#">全部<span class="sr-only">(current)</span></a></li>
+          <li><a href="#">42区</a></li>
+          <li><a href="#">段子</a></li>
+          <li><a href="#">图片</a></li>
+          <li><a href="#">挨踢1024</a></li>
+          <li><a href="#">你问我答</a></li>
+          <li><a href="#">视频</a></li>
+
+      </ul>
+          <form class="navbar-form navbar-right">
+              <div class="form-group">
+                  <div class="input-group">
+                    <!--从官网：表单--添加额外的图标处复制过来-->
+                      <label for="inputGroupSuccess3" class="sr-only"></label>
+                      <input type="text" class="form-control" id="inputGroupSuccess3" aria-describedby="inputGroupSuccess3Status" placeholder="Search">
+<!--                    这里的搜索图片是我自己加进去的，-->
+                      <span class="input-group-addon "><img src="./images/view.png" alt=""  class="my-addon-img"></span>
+
+                  </div>
+               </div>
+
+          </form>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"  data-toggle="modal" data-target="#loginModal">登录</a></li>
+          <li><a href="#"  data-toggle="modal" data-target="#registerModal">注册</a></li>
+
+
+      </ul>
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--导航下方的内容处-->
+<div class="container my-container">
+<!--    栅格系统-->
+    <div class="row">
+        <div class="col-md-8">
+<!--            下方的胶囊组-->
+            <div >
+                <ul class="nav nav-pills">
+                    <li role="presentation" class="active"><a href="#">最热</a></li>
+                    <li role="presentation"><a href="#">发现</a></li>
+                    <li role="presentation"><a href="#">人类发布</a></li>
+                </ul>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="#">顺时排序</a></li>
+                    <li role="presentation"><a href="#">24小时</a></li>
+                    <li role="presentation"><a href="#">3天</a></li>
+                    <li role="presentation">
+                        <button type="button" class="btn btn-success" aria-label="Left Align" data-toggle="modal" data-target="#publishModal">
+                            <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true">发布</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+<!--            发布模态框-->
+            <!-- Modal -->
+            <div class="modal fade" id="publishModal" tabindex="-1" role="dialog" aria-labelledby="publishModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="publishModalLabel">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--            登录模态框-->
+            <!-- Modal  官网复制，修改-->
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="loginModalLabel">登录</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal">
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <label for="inputEmail"></label>
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <label for="inputPassword"></label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> Remember me
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default">Sign in</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--            注册模态框-->
+            <!-- Modal 官网复制，修改-->
+            <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="registerModalLabel">注册</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal">
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> Remember me
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default">Register in</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<!--            评论1-->
+            <div class="list-group">
+                <a href="#" class="list-group-item my-comment-a">
+                    <div class="pull-left">
+                        <h5>
+                            如何直观解释“魂系列”游戏的难度魅力和探索感？&nbsp;&nbsp
+                            <small>
+                                -www.yystv,cn &nbsp;42区
+                            </small>
+                        </h5>
+                        <small>魂系列的探索流程就是一个不断缩小危险区的过程。</small>
+                        <p class="my-comment-bottom-info">
+                            <span title="推荐" class="span1"><span>1</span></span>
+                            <span title="评论" class="span2"><span>1</span></span>
+                            <span title="加入私藏" class="span3"><span><small>私藏</small></span></span>
+                            <span class="span4"><img src="./images/small-img.jpg" alt=""></span>
+                            <span class="span5"><small>alice</small></span>
+                            <span class="span6"><small>8分钟前</small></span>
+                            <span class="span7"><small>发布</small></span>
+                        </p>
+                    </div>
+                    <div class="pull-right" >
+                        <img src="./images/1.jpg" alt="" class="my-comment-img">
+                    </div>
+                </a>
+                <div class="panel panel-default my-comment">
+                      <div class="panel-heading">
+                          最热评论 <span>(2)</span>
+                          <button type="button" class="close my-comment-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+                      <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">wew</li>
+                            <li class="list-group-item">wew</li>
+                        </ul>
+                          <div class="form-inline">
+                              <label for="my-text-id"></label>
+                              <textarea name="" id="my-text-id" rows="2" cols="80" class="form-control"></textarea>
+                              <button type="button" class="btn btn-info">评论</button>
+                          </div>
+
+                      </div>
+                </div>
+            </div>
+            <!--            评论2-->
+            <div class="list-group">
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+                <div class="panel panel-default" role="tabpanel">
+                      <div class="panel-heading">
+                          最热评论 <span>(2)</span>
+                          <button type="button" class="close my-comment-close" data-dismiss="tabpanel" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+                      <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">wew</li>
+                            <li class="list-group-item">wew</li>
+                        </ul>
+                          <div class="form-inline">
+                              <label for="my-text-id2"></label>
+                              <textarea name="" id="my-text-id2" rows="2" cols="80" class="form-control"></textarea>
+                              <button type="button" class="btn btn-info">评论</button>
+                          </div>
+
+                      </div>
+                    </div>
+            </div>
+            <!--分页，官网中复制-->
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+        </div>
+<!--        页面右侧的图片等信息-->
+        <div class="col-md-4">
+            <a href=""><img src="./images/report.png" alt=""></a>
+            <a href="" class="my-report-children"><img src="./images/report_children.png" alt=""></a>
+            <div class="my-question">
+                <img src="./images/view.png" alt="">
+                <a href="">如何避免自己被封号</a>
+            </div>
+            <a href="" ><img src="./images/homepage_download.png" alt=""></a>
+            <div class="my-hour">
+                24小时全部 <span>TOP 10</span>
+            </div>
+<!--            官网中：面板内容panel-->
+            <div class="panel panel-primary">
+          <!-- Default panel contents -->
+            <div class="panel-heading">最热榜</div>
+
+              <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge pull-left">123</span>
+                        现在这个社会把我们这些小姐妹都逼成啥样了
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge pull-left">53</span>
+                        小姐姐眼睛迷死人
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge pull-left">23</span>
+                        非常形象了
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge pull-left">13</span>
+                        @成都交警：5月13日18时20分许， 此事故造成3车受损，3人轻伤。
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge pull-left">12</span>
+                        “她的样子那么妩媚，即使一个不懂美的奥秘的人见了，一定也会惊叹不止。”​
+                    </li>
+                </ul>
+            </div>
+            <a href=""><img src="./images/img-footer.jpg" alt=""></a>
+        </div>
+<!--        回到顶部-->
+        <a href="#" class="my-move-top"></a>
+    </div>
+
+</div>
+
+        <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="./bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<!--引入自己的js脚本-->
+<script src="./js/index.js"></script>
+</body>
+</html>

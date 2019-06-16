@@ -1,0 +1,134 @@
+/*设置body的背景色*/
+body{
+    background-color: #ededed;
+}
+/*设置导航处的背景色*/
+.my-navbar{
+    background-color: #2459A2;
+}
+/*设置搜索图标的大小*/
+.my-addon-img{
+    width: 20px;
+}
+/*下面这个标签选择路径都是从默认设置中复制的，F12查看的，只是修改了默认的颜色和背景色*/
+/*设置处于active状态的a标签的字体颜色和背景色，覆盖默认的颜色*/
+.navbar-default .navbar-nav > .active > a{
+    color: #FFFFFF;
+    background-color: #204982 ;
+}
+/*下面这个标签选择路径都是从默认设置中复制的，F12查看的，只是修改了默认的颜色和背景色*/
+/*处理导航栏处的字体色，覆盖默认的颜色*/
+.navbar-default .navbar-nav > li > a{
+    color: #FFFFFF;
+}
+/*设置背景色，并将整个盒子向上移动20px*/
+.my-container{
+    margin-top: -20px;
+    background-color: #FFFFFF;
+}
+/*设置为行内快标签，才能放置到一行中，默认是没有放在一行的*/
+.col-md-8 .nav-pills{
+    display: inline-block;
+}
+/*设置右侧两个小图片之间的距离*/
+.my-report-children{
+    margin-left: 12px;
+}
+/*设置如何避免自己被封号样式*/
+.my-question{
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #337ab7;
+}
+/*右侧时间样式*/
+.my-hour{
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+}
+/*设置TOP 10为红色*/
+.my-hour span{
+    color: red;
+}
+/*设置评论区a标签的样式*/
+a.my-comment-a{
+    display: block;
+    height: 120px
+}
+/*设置评论区的图片样式*/
+img.my-comment-img{
+    height: 64px ;
+    width: 64px  ;
+    margin-right: 10px  ;
+    margin-top: 10px  ;
+}
+/*评论区的文章标题，设置黑色*/
+h5{
+    color: black ;
+}
+/*距离上面内容的距离*/
+p.my-comment-bottom-info{
+    padding-top: 15px;
+}
+/*推荐*/
+p span.span1{
+    background: url("../images/icon_18_118.png") no-repeat 8px -40px ;
+    display: inline-block;
+    width: 42px;
+    height: 18px;
+}
+p span span{
+    margin-left: 30px
+}
+/*评论*/
+p span.span2{
+    background: url("../images/icon_18_118.png") no-repeat 8px -99px ;
+    display: inline-block;
+    width: 42px;
+    height: 18px;
+}
+/*收藏*/
+p span.span3{
+    background: url("../images/icon_18_118.png") no-repeat 8px -159px ;
+    display: inline-block;
+    width: 60px;
+    height: 18px;
+}
+p span.span4{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+}
+p span.span4 img{
+    width: 100%;
+    height: 100%;
+}
+/*时间*/
+p span.span6{
+    color: #ff6700;
+    margin-left: 10px;
+}
+/*发布*/
+p span.span7{
+    margin-left: 10px;
+}
+/*评论区默认是隐藏的*/
+div .my-comment{
+    display: none;
+}
+/*回到顶部按钮*/
+.my-move-top{
+    background: url("../images/move_top.png") no-repeat;
+    display: inline-block;
+    height: 38px;
+    width: 38px;
+    margin-top: -39px;
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+}
