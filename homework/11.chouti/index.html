@@ -105,14 +105,23 @@ Bootstrap 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 H
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="publishModalLabel">Modal title</h4>
+                    <h4 class="modal-title" id="publishModalLabel">发布信息</h4>
                   </div>
                   <div class="modal-body">
-                    ...
+                      <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">标题</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="标题">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">摘要</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="摘要">
+                          </div>
+                        </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                      <button type="button" class="btn btn-primary my-publish" data-dismiss="modal">发布</button>
                   </div>
                 </div>
               </div>
@@ -223,8 +232,8 @@ Bootstrap 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 H
                         </h5>
                         <small>魂系列的探索流程就是一个不断缩小危险区的过程。</small>
                         <p class="my-comment-bottom-info">
-                            <span title="推荐" class="span1"><span>1</span></span>
-                            <span title="评论" class="span2"><span>1</span></span>
+                            <span title="推荐" class="span1" id="recommend-qwq-121"><span>0</span></span>
+                            <span title="评论" class="span2"><span>0</span></span>
                             <span title="加入私藏" class="span3"><span><small>私藏</small></span></span>
                             <span class="span4"><img src="./images/small-img.jpg" alt=""></span>
                             <span class="span5"><small>alice</small></span>
@@ -236,49 +245,27 @@ Bootstrap 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 H
                         <img src="./images/1.jpg" alt="" class="my-comment-img">
                     </div>
                 </a>
+<!--                评论区，默认隐藏-->
                 <div class="panel panel-default my-comment">
                       <div class="panel-heading">
-                          最热评论 <span>(2)</span>
+                          最热评论 (<span>0</span>)
                           <button type="button" class="close my-comment-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                       </div>
                       <div class="panel-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">wew</li>
-                            <li class="list-group-item">wew</li>
-                        </ul>
+                          <ul class="list-group">
+                          </ul>
                           <div class="form-inline">
                               <label for="my-text-id"></label>
                               <textarea name="" id="my-text-id" rows="2" cols="80" class="form-control"></textarea>
-                              <button type="button" class="btn btn-info">评论</button>
+                              <button type="button" class="btn btn-info commit-my-comment" data-dismiss="modal">评论</button>
                           </div>
 
                       </div>
                 </div>
             </div>
-            <!--            评论2-->
-            <div class="list-group">
-                <a href="#" class="list-group-item">Vestibulum at eros</a>
-                <div class="panel panel-default" role="tabpanel">
-                      <div class="panel-heading">
-                          最热评论 <span>(2)</span>
-                          <button type="button" class="close my-comment-close" data-dismiss="tabpanel" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      </div>
-                      <div class="panel-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">wew</li>
-                            <li class="list-group-item">wew</li>
-                        </ul>
-                          <div class="form-inline">
-                              <label for="my-text-id2"></label>
-                              <textarea name="" id="my-text-id2" rows="2" cols="80" class="form-control"></textarea>
-                              <button type="button" class="btn btn-info">评论</button>
-                          </div>
 
-                      </div>
-                    </div>
-            </div>
             <!--分页，官网中复制-->
-            <nav aria-label="Page navigation">
+            <nav aria-label="Page navigation" class="my-pagination">
               <ul class="pagination">
                 <li>
                   <a href="#" aria-label="Previous">
