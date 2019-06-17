@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>百度换肤</title>
+	<title>08 百度换肤</title>
 	<style type="text/css">
 		*{
 			padding: 0;
@@ -65,15 +65,16 @@
 		</ul>
 	</div>
 	<script type="text/javascript">
-		let img_tags = document.getElementsByTagName('img');
-		let skin_tag = document.getElementById('skin');
-		for(let index=0;index<img_tags.length;index++){
-		    img_tags[index].onmouseover=function () {
-		        let img_path = img_tags[index].getAttribute('src');
-                skin_tag.style.backgroundImage=`url(${img_path})`;
-            }
-        }
+		// 1.获取对应的图片
+		var  skin = document.getElementById('skin');
+		var allItems = document.getElementsByTagName('li');
+		for(var i = 0; i < allItems.length; i++){
+			allItems[i].index = i + 1;
+			allItems[i].onclick = function(){
+				skin.style.backgroundImage = ` url('images/skin${this.index}.jpg')`
+			}
+		}
 	</script>
-
+	
 </body>
 </html>

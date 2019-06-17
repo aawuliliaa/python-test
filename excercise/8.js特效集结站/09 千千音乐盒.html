@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09 千千音乐盒</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#panel{
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			width: 400px;
+			padding: 20px;
+			margin: 100px auto;
+		}
+		.panel-footer{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="panel">
+	        <div class="panel-title">
+	            <h3>千千音乐盒</h3>
+	            <hr>
+	        </div>
+	        <div class="panel-content">
+	            <input type="checkbox">漂洋过海来看你 <br>
+	            <input type="checkbox">一眼万年<br>
+	            <input type="checkbox">后来 <br>
+	            <input type="checkbox">没那么简单 <br>
+	            <input type="checkbox">如果你要离去 <br>
+	            <input type="checkbox">恋恋风尘 <br>
+	            <input type="checkbox">南山南 <br>
+	            <input type="checkbox">涛声依旧 <br>
+	            <input type="checkbox">可惜不是你 <br>
+	        </div>
+	        <div class="panel-footer">
+	            <hr>
+	            <button id="allSelect">全选</button>
+	            <button id="cancelSelect">取消选中</button>
+	            <button id="reverseSelect">反选</button>
+	        </div>
+   	 </div>
+   	 <script type="text/javascript">
+   	 	function $(id){
+			return typeof id === 'string' ? document.getElementById(id) : null;
+		}
+		// 1.获取所有的复选框
+		var inputs = document.getElementsByTagName('input');
+		// 2.全选
+		$('allSelect').onclick = function(){
+			for(var i = 0; i < inputs.length; i ++){
+				inputs[i].checked = true;
+			}
+		}
+		// 3.取消选中
+		$('cancelSelect').onclick = function(){
+			for(var i = 0; i < inputs.length; i ++){
+				inputs[i].checked = false;
+			}
+		}
+
+		// 4.反选
+		$('reverseSelect').onclick = function(){
+			for(var i = 0; i < inputs.length; i ++){
+				inputs[i].checked  =  !inputs[i].checked;
+				/*
+				if(inputs[i].checked){
+					inputs[i].checked = false;
+				}else{
+					inputs[i].checked = true;
+				}
+				*/
+			}
+		}
+   	 </script>
+</body>
+</html>

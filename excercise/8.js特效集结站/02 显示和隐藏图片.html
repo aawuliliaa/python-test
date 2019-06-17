@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显示和隐藏图片</title>
+</head>
+<body>
+	<button id="btn">隐藏</button>
+	<br>
+	<img src="images/img01.jpg" id="new">
+	<script type="text/javascript">
+		// 1.获取事件源
+		var obtn = document.getElementById('btn');
+		var newImg = document.getElementsByTagName('img')[0];
+		// var isShow = true;
+		// 2.绑定事件
+		obtn.onclick = function(){
+			// 3.事件驱动程序
+			if(obtn.innerHTML === '隐藏'){
+				newImg.style.display = 'none';
+				obtn.innerHTML = '显示';
+				// isShow = false;
+			}else{
+				newImg.style.display = 'block';
+				obtn.innerHTML = '隐藏';
+				// isShow = true;
+			}
+		}
+
+	</script>
+	
+</body>
+</html>

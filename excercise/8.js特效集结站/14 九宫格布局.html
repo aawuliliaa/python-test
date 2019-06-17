@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14 九宫格布局</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap{
+            overflow: hidden;
+        }
+        #wrap .item{
+            width: 248px;
+            height: 360px;
+            font-size: 13px;
+        }
+        #wrap .item .title{
+            width: 248px;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .imgContainer{
+            width: 248px;
+            display: table-cell;
+            text-align: center;
+        }
+         #wrap .item .price{
+            color:#ff6700;
+            font-size: 18px;
+            font-weight: bold;
+         }
+
+
+    </style>
+</head>
+<body>
+<div class="cols">
+    <button>3列</button>
+    <button>4列</button>
+    <button>5列</button>
+</div>
+<div id="wrap">
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_1.jpg" alt="">
+            </div>
+            <p class="title">纯色短袖女春季秋t恤韩版国新款服装2019潮</p>
+            <p class="price">¥69</p>
+         </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_2.jpg" alt="">
+            </div>
+            <p class="title">百搭开春装女胖mm夏季显瘦2019新款大码韩版</p>
+            <p class="price">¥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_3.jpg" alt="">
+            </div>
+            <p class="title">婚纱2019新款欧美韩式孕妇婚纱高腰韩版</p>
+            <p class="price">¥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_4.jpg" alt="">
+            </div>
+            <p class="title">点上衣很仙的女装夏2019新款洋气打底衫</p>
+            <p class="price">¥90</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_5.jpg" alt="">
+            </div>
+            <p class="title">大码女装胖MM文艺时尚格子圆点显瘦连衣裙</p>
+            <p class="price">¥78</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_6.jpg" alt="">
+            </div>
+            <p class="title">2019夏季新款女装韩版修身显瘦V领无袖</p>
+            <p class="price">¥89</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_7.jpg" alt="">
+            </div>
+            <p class="title">春季短款小外套女2019春装春秋新款韩</p>
+            <p class="price">¥100</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_8.jpg" alt="">
+            </div>
+            <p class="title">大码女装中长款针织衫春装胖mm显瘦</p>
+            <p class="price">¥120</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_9.jpg" alt="">
+            </div>
+            <p class="title">春款韩版2019新款女装时尚初春两件套</p>
+            <p class="price">¥107</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_10.jpg" alt="">
+            </div>
+            <p class="title">牛仔外套女短款2019春装新款女装韩版</p>
+            <p class="price">¥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_11.jpg" alt="">
+            </div>
+            <p class="title">2019夏季新款女装裙子纯色流苏a字裙</p>
+            <p class="price">¥56</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_12.jpg" alt="">
+            </div>
+            <p class="title">女装休闲短袖韩版宽松2019新款春夏季</p>
+            <p class="price">¥76</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="images/taobao_13.jpg" alt="">
+            </div>
+            <p class="title">棉上衣女装秋季新款2019早春休闲时尚</p>
+            <p class="price">¥45</p>
+        </div>
+</div>
+<script type="text/javascript">
+    // 1.获取标签
+    var btns = document.getElementsByTagName('button');
+    var items = document.getElementsByClassName('item');
+
+    // 2.监听按钮的点击
+    btns[0].onclick = function(){
+        
+        // 3.循环  
+       mjj_flex(3);
+    }
+     btns[1].onclick = function(){
+        
+        mjj_flex(4)
+       
+    }
+    btns[2].onclick = function(){
+        
+       mjj_flex(5);
+    }
+
+    function mjj_flex(colsNum){
+         for(var i = 0; i < items.length; i++){
+            items[i].style.float = 'left';
+            items[i].parentNode.style.width = (colsNum * items[i].offsetWidth) + 'px'
+        }
+    }
+
+</script>
+    
+</body>
+</html>

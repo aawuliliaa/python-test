@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>19 数字时钟案例</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#clock{
+			width: 600px;
+			height: 600px;
+			background: url('images/clock.jpg') no-repeat;
+			position: relative;
+		}
+		#hour,#minute,#second{
+			position: absolute;
+			width: 30px;
+			height: 600px;
+			left: 50%;
+			top: 0;
+			margin-left: -15px;
+		}
+		#hour{
+			background: url('images/hour.png') no-repeat center center;
+		}
+		#minute{
+			background: url('images/minute.png') no-repeat center center;
+		}
+		#second{
+			background: url('images/second.png') no-repeat center center;
+		}
+	</style>
+</head>
+<body>
+	<div id="clock">
+		<div id="hour"></div>
+		<div id="minute"></div>
+		<div id="second"></div>
+	</div>
+	<script type="text/javascript">
+		// 1.获取标签
+		var hour = document.getElementById('hour');
+		var minute = document.getElementById('minute');
+		var second = document.getElementById('second');
+
+		// 2.开启定时器 获取当前时间
+		setInterval(function () {
+			// 2.1 获取当前的时间戳
+			var now = new Date();
+			// 2.2 获取小时 分钟 秒
+			var s = now.getSeconds();
+			var m = now.getMinutes() + s / 60;
+			var h = now.getHours() % 12 + m / 60;
+			// 2.3 旋转
+			second.style.transform = `rotate(${s * 6}deg)`;
+			minute.style.transform = `rotate(${m * 6}deg)`;
+			hour.style.transform = `rotate(${h * 30}deg)`;
+
+		}, 10);
+
+	</script>
+</body>
+</html>

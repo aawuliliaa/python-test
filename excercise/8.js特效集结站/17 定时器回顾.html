@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17 定时器回顾</title>
+</head>
+<body>
+	<button id="start">开启</button>
+	<button id="stop">关闭</button>
+
+	<script type="text/javascript">
+		// 1.获取标签
+		var start = document.getElementById('start');
+		var stop = document.getElementById('stop');
+		var num = 0,timer = null;
+		start.onclick = function(){
+			// 使用定时器的时候 先清除定时器 再开启定时器 防止用户频繁性的开启定时器
+			clearInterval(timer);
+			timer = setInterval(function(){
+				num++;
+				console.log(num);
+			},1000)
+		}
+		stop.onclick  = function(){
+			clearInterval(timer);
+		}
+	</script>
+</body>
+</html>

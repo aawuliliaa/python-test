@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>16 日期特效</title>
+	<style type="text/css">
+		*{
+	            padding: 0;
+	            margin: 0;
+	        }
+	        #date{
+	            width: 450px;
+	            height: 300px;
+	            background-color: darkorange;
+	            border-radius: 10px;
+	            margin: 100px auto;
+	        }
+	        #nowDate{
+	            width: 450px;
+	            height: 60px;
+	            line-height: 60px;
+	            text-align: center;
+	            color: #fff;
+	            font-size: 26px;
+	        }
+	        #day{
+	            width: 200px;
+	            height: 200px;
+	            line-height: 200px;
+	            background-color: orchid;
+	            margin: 0 auto;
+	            text-align: center;
+	            color:#fff;
+	            font-weight: bold;
+	            font-size: 60px;
+	        }
+	</style>
+</head>
+<body>
+<div id="date">
+	<p id="nowDate">
+
+	</p>
+	<p id="day">
+
+	</p>
+</div>
+<script type="text/javascript">
+	// 1.获取标签
+	var  nowDate = document.getElementById('nowDate');
+	var  day = document.getElementById('day');
+	// 用定时器 更新时间的变化
+	setInterval(nowNumTime, 10);
+
+	function nowNumTime(){
+		var now = new Date();
+		var hour  = now.getHours(); //0 ~ 23.   //19
+		var minute = now.getMinutes();
+		var second = now.getSeconds();
+		var year = now.getFullYear();
+		var month = now.getMonth();
+		var d = now.getDate();
+		var week = now.getDay();
+		//console.log(week); //索引
+		var weeks = ['星期天','星期一','星期二','星期叁','星期肆','星期伍','星期六'];
+		// 18 > 12  ? 18-12  : 8
+		var temp = '' + (hour > 12 ?  hour - 12 : hour);
+		if(hour === 0){
+			temp = '12';
+		}
+		temp  = temp +(minute < 10 ?  ':0': ":")+ minute;
+		temp  = temp +(second < 10 ?  ':0': ":")+ second;
+		temp = temp + (hour >= 12 ?  ' P.M.': " A.M.");
+		temp = `${year}年${month}月${d}日  ${temp} ${weeks[week]}`;
+		nowDate.innerHTML = temp;
+	}
+
+
+
+</script>
+</body>
+</html>

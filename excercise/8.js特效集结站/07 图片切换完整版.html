@@ -47,16 +47,14 @@
 			return typeof id === 'string' ? document.getElementById(id) : null;
 		}
 		var items = document.getElementsByClassName('item');
-		//注意，这里有个关键点，就是该方法是在页面加载时，就给相应的标签添加事件了
 		for(var i = 0;i < items.length; i++){
 			var item  = items[i];
-			//注意，正是由于这个循环是在加载页面完就执行了，所以要通过设置属性的方式来保存变量，以供后面使用
 			item.index = i+1;
 			items[i].onmouseover = function(){
 				$('box').style.background = ` url('images/big_pic${this.index}.jpg') no-repeat`;
 			}
 		}
 	</script>
-
+	
 </body>
 </html>
