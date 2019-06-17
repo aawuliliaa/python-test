@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <span class="close">X</span>
+    <img src="./images/phone_taobao.png" alt="">
+</div>
+<script type="text/javascript">
+    let close_tag = document.getElementsByClassName('close')[0];
+    let img_tag = document.getElementsByTagName('img')[0];
+    close_tag.onclick=function () {
+        img_tag.style.display='none';
+        close_tag.style.display='none';
+    }
+</script>
+</body>
+</html>
