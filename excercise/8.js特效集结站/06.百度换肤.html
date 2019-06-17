@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度换肤</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		#skin{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url('images/skin1.jpg');
+			background-position: center 0;
+			background-repeat: no-repeat;
+
+		}
+		#skin-photo{
+			width: 100%;
+			height: 100px;
+			position: relative;
+			z-index: 10
+		}
+		#skin-photo ul{
+			overflow: hidden;
+			width: 1200px;
+			margin: 0 auto;
+			background-color: rgba(255,255,255,.5);
+		}
+		#skin-photo ul li{
+			float: left;
+			cursor: pointer;
+			height: 120px;
+			margin: 10px 0 10px 96px;
+		}
+		#skin-photo ul li img{
+			width: 180px;
+			height: 120px;
+		}
+	</style>
+</head>
+<body>
+	<div id="skin"></div>
+	<div id="skin-photo">
+		<ul>
+			<li>
+				<img src="images/skin1.jpg">
+			</li>
+			<li>
+				<img src="images/skin2.jpg">
+			</li>
+			<li>
+				<img src="images/skin3.jpg">
+			</li>
+			<li>
+				<img src="images/skin4.jpg">
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		let img_tags = document.getElementsByTagName('img');
+		let skin_tag = document.getElementById('skin');
+		for(let index=0;index<img_tags.length;index++){
+		    img_tags[index].onmouseover=function () {
+		        let img_path = img_tags[index].getAttribute('src');
+                skin_tag.style.backgroundImage=`url(${img_path})`;
+            }
+        }
+	</script>
+
+</body>
+</html>

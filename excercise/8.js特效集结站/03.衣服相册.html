@@ -25,6 +25,7 @@
 <img src="./images/5.jpg" alt="" class="small" >
 <script type="text/javascript">
     let small_tags = document.getElementsByClassName('small');
+    //注意，这里有个关键点，就是该方法是在页面加载时，就给相应的标签添加事件了
     for (let index=0;index<small_tags.length;index++){
         small_tags[index].onmouseover=function () {
             let img_path = this.getAttribute('src');

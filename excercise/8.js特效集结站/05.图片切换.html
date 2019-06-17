@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<meta charset="UTF-8">
+	<title>05 图片切换</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#box{
+			border: 1px solid #ccc;
+			width: 430px;
+			height: 70px;
+			padding-top: 430px;
+			background: url('images/big_pic1.jpg') no-repeat;
+		}
+		#box ul li{
+			display: inline-block;
+			margin-right: 15px;
+		}
+	</style>
 </head>
 <body>
+	<div id="box">
+		<ul>
+			<li class="item">
+				<img src="images/pic1.jpg">
+			</li>
+			<li class="item">
+				<img src="images/pic2.jpg">
+			</li>
+			<li class="item">
+				<img src="images/pic3.jpg">
+			</li>
+			<li class="item">
+				<img src="images/pic4.jpg">
+			</li>
+			<li class="item">
+				<img src="images/pic5.jpg">
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		// 1.获取事件源
+		function $(id){
+			return typeof id === 'string' ? document.getElementById(id) : null;
+		}
+		var items = document.getElementsByClassName('item');
+		//注意，这里有个关键点，就是该方法是在页面加载时，就给相应的标签添加事件了
+		for(var i = 0;i < items.length; i++){
+			var item  = items[i];
+			//注意，正是由于这个循环是在加载页面完就执行了，所以要通过设置属性的方式来保存变量，以供后面使用
+			item.index = i+1;
+			items[i].onmouseover = function(){
+				$('box').style.background = ` url('images/big_pic${this.index}.jpg') no-repeat`;
+			}
+		}
+	</script>
 
 </body>
 </html>
