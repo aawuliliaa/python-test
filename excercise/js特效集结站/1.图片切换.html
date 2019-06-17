@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>js特效</title>
+
+</head>
+<body>
+<div>
+    <img src="./images/image01.jpg" alt="" style="width: 100px;height: 100px">
+</div>
+<div>
+    <input id="pre" type="button" value="上一张">
+    <input id="next" type="button" value="下一张">
+</div>
+</body>
+<script type="text/javascript">
+    let pre_tag = document.getElementById('pre');
+    let pic_tag = document.getElementsByTagName('img')[0];
+    let index=1;
+    pre_tag.onclick=function () {
+        if(index===1){
+            index=4;
+        }
+        index-=1;
+        let new_src=`./images/image0${index}.jpg`;
+        pic_tag.setAttribute('src',new_src);
+    };
+    let next_tag = document.getElementById('next');
+    next_tag.onclick=function () {
+
+        index+=1;
+        if (index===4){
+            index=1;
+        }
+        let new_src=`./images/image0${index}.jpg`;
+        pic_tag.setAttribute('src',new_src);
+    }
+</script>
+</html>
