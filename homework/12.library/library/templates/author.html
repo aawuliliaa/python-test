@@ -1,0 +1,35 @@
+<!-- 添加作者模态框--Modal -->
+
+
+<div class="modal fade bs-example-modal-sm" id="my_author_add_modal" tabindex="-1" role="dialog" aria-labelledby="addAuthorModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addAuthorModalLabel">添加作者</h4>
+      </div>
+      <div class="modal-body">
+          <form action="">
+              {% csrf_token %}
+              <div class="form-group">
+                  <label for="add_author_id">作者名</label>
+                  <input type="text" name="author_name" id="add_author_id" class="form-control">
+              </div>
+              <div class="form-group">
+                    <label for="add_age_id">年龄</label>
+                    <input type="text" name="author_age" id="add_age_id" class="form-control">
+              </div>
+              <p class="add_author_error"></p>
+          </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="add_author_commit">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

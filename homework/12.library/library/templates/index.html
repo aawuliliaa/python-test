@@ -8,7 +8,8 @@
         <div class="navbar-left my_container_text">图书管理系统</div>
         <div class="nav navbar-nav navbar-right my_nav_text">
             <span>当前用户[{{ request.user.username }}]</span>
-            <a href="/logout/" class="exit">退出</a>
+{#            由于直接写/logout/，前端报警告can not resolve /logout/,写这种方式就没有警告啦啦啦啦！！！#}
+            <a class="exit" href={{ logout_url }} >退出</a>
         </div>
     </div>
 </nav>
@@ -17,28 +18,38 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h3>用户信息</h3>
-        <a class="btn btn-default">添加用户</a>
+        <h3>作者信息</h3>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#my_author_add_modal">添加作者</button>
+
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>用户ID</th>
-                    <th>用户姓名</th>
+                    <th>作者ID</th>
+                    <th>作者姓名</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><a href="">用户名</a></td>
+                {% for author in author_list %}
+                    <tr>
+                    <td>{{ author.id }}</td>
+
+                    <td><a  href="/show_author/{{ author.id }}/">{{ author.name }}</a></td>
                     <td>
-                        <a class="btn btn-default">编辑</a>
-                        <a class="btn btn-default">删除</a>
+                        <a href="/edit_author/{{ author.id }}/" class="btn btn-warning">编辑</a>
+                        <a href="/books/{{ book.pk }}/delete/" class="btn btn-danger">删除</a>
                     </td>
                 </tr>
+                {% endfor %}
+
+
             </tbody>
         </table>
+
     </div>
+    {#    作者信息的增删改查#}
+    {% include "author.html" %}
+
     <div class="col-md-4">
         <h3>出版社信息</h3>
         <a class="btn btn-default">添加出版社</a>

@@ -1,4 +1,5 @@
 $(function () {
+
     //提交注册的用户信息
     $("#my_register_commit").click(
         function () {
@@ -28,7 +29,7 @@ $(function () {
         })
         }
     );
-
+    //登录
     $("#my_login_commit").click(function () {
         $.ajax({
             url:"/login/",
@@ -55,5 +56,31 @@ $(function () {
 
             }
         })
-    })
+    });
+    //添加作者
+    $("#add_author_commit").click(function () {
+        $.ajax({
+            url:"/add_author/",
+            type:"post",
+            data:{
+                author_name:$("#add_author_id").val(),
+                author_age:$("#add_age_id").val(),
+                csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+            },
+            success:function (data) {
+                if(data.success){
+                    location.href = "/index/";
+                    alert(data.info)
+                }else{
+                    $(".add_author_error").text(data.info).css({"color":"red"})
+                }
+            }
+        })
+    });
+
+$('#my_author_show_modal').on('show.bs.modal',
+        function(e) {
+            console.log("qwqwqwq")
+        });
+
 });

@@ -12,3 +12,9 @@
 2. 书名不可重复，不可修改
 3. 修改图书信息时，使用ajax请求发送信息
 ```
+# 2.注意事项
+```
+使用sqlite报错
+Python int too large to convert to C long
+
+```

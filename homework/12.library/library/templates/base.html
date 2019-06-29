@@ -20,7 +20,19 @@
 </head>
 <body>
 {% block head %}
-
+<nav class="navbar navbar-default">
+    <div class="container my_container">
+        <div class="navbar-header">
+            <img src="/static/images/favicon.ico" alt="">
+        </div>
+        <div class="navbar-left my_container_text">图书管理系统</div>
+        <div class="nav navbar-nav navbar-right my_nav_text">
+            <span>当前用户[{{ request.user.username }}]</span>
+{#            由于直接写/logout/，前端报警告can not resolve /logout/,写这种方式就没有警告啦啦啦啦！！！#}
+            <a class="exit" href="{{ logout_url }}" >退出</a>
+        </div>
+    </div>
+</nav>
 {% endblock head%}
 {% block content %}
 
