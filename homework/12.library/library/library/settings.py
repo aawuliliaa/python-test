@@ -106,8 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+# 修改时区为上海时间
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -120,3 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 设置STATIC_URL对应的路径，后面访问127.0.0.1:8000/static/就会访问到STATICFILES_DIRS下的内容
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]

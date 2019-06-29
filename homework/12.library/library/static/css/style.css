@@ -1,0 +1,14 @@
+.my_login_box{
+    border: #e0e0e0 solid;
+    margin-top:100px;
+    padding:30px;
+}
+.my_welcome_info{
+    color: #5bc0de;
+    text-align: center;
+    padding-bottom: 30px;
+    font-size:medium;
+}
+body{
+    background:url("/static/images/book.jpg") no-repeat;
+}
