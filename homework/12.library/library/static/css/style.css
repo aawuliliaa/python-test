@@ -1,14 +1,47 @@
+/*登录页面的信息框样式*/
 .my_login_box{
     border: #e0e0e0 solid;
     margin-top:100px;
     padding:30px;
 }
+/*登录页面的欢迎信息*/
 .my_welcome_info{
     color: #5bc0de;
     text-align: center;
     padding-bottom: 30px;
     font-size:medium;
 }
+/*设置登录页面的背景图*/
 body{
     background:url("/static/images/book.jpg") no-repeat;
+}
+
+/*表格中的文字中间摆放，使用的是并集选择器*/
+th,a,td{
+    text-align: center;
+}
+/*导航条处的Logo图片*/
+.navbar-header img{
+    height: 50px;
+    width: 50px;
+}
+/*设置用户和退出样式*/
+.my_nav_text{
+    text-align: center;
+    line-height: 50px;
+    padding-right: 50px;
+}
+/*设置导航条处的文字居中*/
+.my_container{
+    line-height: 50px;
+    text-align: center;
+}
+/*导航处的图书管理系统*/
+.my_container_text{
+    color: #5bc0de;
+    font-size: 20px;
+}
+/*退出字体样式*/
+.exit{
+    padding-left: 10px;
 }

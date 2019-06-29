@@ -1,21 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="row">
+
+    <div class="row">
     <div class="col-md-4 col-md-offset-4 my_login_box">
         <div class="my_welcome_info">欢迎来到图书管理系统</div>
-        <form action="" method="post">
+
+        <form action="">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="login_user_id">用户名</label>
                 <input type="text" name="user" id="login_user_id" class="form-control">
-                <p class="my_login"></p>
+                <p class="my_login_user_error"></p>
             </div>
             <div class="form-group">
                 <label for="login_pwd_id">密码</label>
                 <input type="password" name="pwd" id="login_pwd_id" class="form-control">
+                <p class="my_login_pwd_error"></p>
             </div>
-            <button type="submit" class="btn btn-default">登录</button>
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#my_register_modal">注册</button>
         </form>
+
+        <button type="submit" class="btn btn-default" id="my_login_commit">登录</button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#my_register_modal">注册</button>
+
 
 
             <!-- 注册模态框--Modal -->
@@ -27,15 +33,19 @@
                 <h4 class="modal-title" id="myModalLabel">注册账户</h4>
               </div>
               <div class="modal-body">
-                    <div class="form-group">
-                        <label for="register_user_id">用户名</label>
-                        <input type="text" name="user" id="register_user_id" class="form-control">
-                        <p class="my_login"></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="register_pwd_id">密码</label>
-                        <input type="password" name="pwd" id="register_pwd_id" class="form-control">
-                    </div>
+                  <form action="">
+                      {% csrf_token %}
+                      <div class="form-group">
+                          <label for="register_user_id">用户名</label>
+                          <input type="text" name="user" id="register_user_id" class="form-control">
+                      </div>
+                      <div class="form-group">
+                            <label for="register_pwd_id">密码</label>
+                            <input type="password" name="pwd" id="register_pwd_id" class="form-control">
+                      </div>
+                      <p id="my_register_error"></p>
+                  </form>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -46,6 +56,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock content%}

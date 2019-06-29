@@ -1,24 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- 以最高的ie 浏览器 渲染  -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <!-- 官网中说明：
-     为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>图书管理</title>
-    <!--    设置标题旁边的图标-->
-    <link rel="icon" href="/static/images/favicon.ico" >
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
-<!-- 自己写的样式 -->
-    <link rel="stylesheet" href="/static/css/style.css">
-    <!-- 加载jquery-->
-    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
-</head>
-<body>
+{% extends "base.html" %}
+{% block head %}
+<nav class="navbar navbar-default">
+    <div class="container my_container">
+        <div class="navbar-header">
+            <img src="/static/images/favicon.ico" alt="">
+        </div>
+        <div class="navbar-left my_container_text">图书管理系统</div>
+        <div class="nav navbar-nav navbar-right my_nav_text">
+            <span>当前用户[{{ request.user.username }}]</span>
+            <a href="/logout/" class="exit">退出</a>
+        </div>
+    </div>
+</nav>
+{% endblock head%}
+{% block content %}
 
-</body>
-</html>
+<div class="row">
+    <div class="col-md-4">
+        <h3>用户信息</h3>
+        <a class="btn btn-default">添加用户</a>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>用户ID</th>
+                    <th>用户姓名</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="">用户名</a></td>
+                    <td>
+                        <a class="btn btn-default">编辑</a>
+                        <a class="btn btn-default">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h3>出版社信息</h3>
+        <a class="btn btn-default">添加出版社</a>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>出版社名称</th>
+                    <th>出版社城市</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="">出版社名称</a></td>
+                    <td>2</td>
+                    <td>
+                        <a class="btn btn-default">编辑</a>
+                        <a class="btn btn-default">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h3>书籍信息</h3>
+        <a class="btn btn-default">添加书籍</a>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>出版社</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>
+                        <a class="btn btn-default">编辑</a>
+                        <a class="btn btn-default">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content%}
