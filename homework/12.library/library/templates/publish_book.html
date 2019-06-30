@@ -17,7 +17,7 @@
             {% for book_obj in publish_book_list %}
                 <tr>
                     <td>{{ book_obj.title }}</td>
-                    <td>{{ book_obj.publishDate }}</td>
+                    <td>{{ book_obj.publishDate|date:"Y-m-d" }}</td>
                     <td>{{ book_obj.price }}</td>
                 </tr>
             {% endfor %}
