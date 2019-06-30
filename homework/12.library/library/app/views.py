@@ -279,8 +279,46 @@ def add_book(request):
 
 @login_required
 def edit_book(request, book_id):
-    # 编辑书本信息
     book_obj = Book.objects.get(id=book_id)
+    # 编辑书本信息
+    if request.method == "POST":
+        res = {"success": False, "info": None}
+        # 获取前端传过来的数据
+        # print(request.POST)
+        # <QueryDict: {'book_authors_id_list[]': ['1', '3'], 'book_publish_id': ['2'],
+        # 由于深度序列化，自动在key的后面加了个[]
+        # 需要使用getlist方法获取数组值
+        book_author_id_list = request.POST.getlist("book_authors_id_list")
+
+        book_publish_id = request.POST.get("book_publish_id").strip()
+        book_title = request.POST.get("book_title").strip()
+        book_publish_date = request.POST.get("book_publishDate").strip()
+        book_price = request.POST.get("book_price").strip()
+        # 验证前端传过来的数据
+        if book_author_id_list is None or book_publish_id == "" \
+                or book_title == "" or book_publish_date == "" or book_price == "":
+            res["info"] = "编辑的内容不能为空哦！"
+        elif not book_price.replace(".", "").isnumeric():
+            res["info"] = "价格只能是数字！"
+        else:
+            # 插入数据可能报错
+            try:
+                Book.objects.filter(id=book_id).update(title=book_title, price=book_price,
+                                                       publishDate=book_publish_date, publish_id=book_publish_id)
+                # print(book_author_id_list)  # ['2', '3']
+
+                # edit_book_obj.authors.clear()
+                # edit_book_obj.authors.add(*authors_id_list)
+
+                book_obj.authors.set(book_author_id_list)
+                res["success"] = True
+                res["info"] = "%s 编辑成功" % book_title
+            except Exception as e:
+                print(e)
+                res["info"] = "插入数据报错，请查看端日志！"
+
+        return JsonResponse(res)
+    
     # get请求时，页面需要列出出版社和作者信息供用户选择
     publish_list = Publish.objects.all()
     author_list = Author.objects.all()

@@ -180,5 +180,45 @@ $(function () {
                     }
                 }
         })
-});
+    });
+
+        //提交书籍编辑信息
+    $("#book_edit_commit").click(
+        function () {
+                //由于后端插入数据的时候使用的是列表的形式，所以我们直接在这里把数据放到列表中
+            let book_id = $("#edit_book_ID").text();
+            let book_author_id_list = [];
+            $('#edit_book_authors_id option:selected').each(function () {
+                book_author_id_list.push($(this).val());
+                //book_author_id_list+=","
+            });
+            let book_publish_id = $("#edit_book_publish_id option:selected").val();
+            let book_title = $("#edit_book_title_id").val();
+            let book_publishDate = $("#edit_book_publishDate_id").val();
+            let book_price = $("#edit_book_price_id").val();
+            $.ajax({
+                url:"/edit_book/"+book_id+"/",
+                type:"post",
+                //如果不做traditional:true的设置，参数传递中是会自动把key变为了book_authors_id_list[]，服务端是无法通过book_authors_id_list获取参数的
+                traditional:true,
+                data:{
+                    book_authors_id_list:book_author_id_list,
+                    book_publish_id:book_publish_id,
+                    book_title:book_title,
+                    book_publishDate:book_publishDate,
+                    book_price:book_price,
+                    csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+                },
+                success:function (data) {
+                        if(data.success){
+                            alert(data.info);
+                            location.href = "/index/"
+                        }else{
+                            $(".add_book_error").text(data.info).css({"color":"red"})
+                        }
+                    }
+            })
+        }
+    );
+
 });

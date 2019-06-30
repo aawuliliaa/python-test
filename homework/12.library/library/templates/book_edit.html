@@ -8,6 +8,10 @@
         <form>
             {% csrf_token %}
             <div class="form-group">
+                <label id="edit_book_ID" class="hidden">{{ book_obj.id }}</label>
+
+            </div>
+            <div class="form-group">
                 <label for="edit_book_title_id">书名</label>
                 <input type="text" id="edit_book_title_id"  class="form-control" value="{{ book_obj.title }}" disabled>
             </div>
@@ -33,8 +37,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="add_book_authors_id">作者</label>
-                <select name="book_author_id_list" id="add_book_authors_id" class="form-control" multiple>
+                <label for="edit_book_authors_id">作者</label>
+                <select name="book_author_id_list" id="edit_book_authors_id" class="form-control" multiple>
                     {% for author in author_list %}
 
                         {% if author in book_obj.authors.all %}
