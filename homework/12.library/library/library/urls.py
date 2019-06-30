@@ -30,4 +30,7 @@ urlpatterns = [
     re_path(r'edit_publish/([0-9]*)/', views.edit_publish),
     re_path(r'show_publish/([0-9]*)/', views.show_publish),
     re_path(r'del_publish/([0-9]*)/', views.del_publish),
+    path('add_book/', views.add_book),
+    re_path(r'edit_book/([0-9]*)/', views.edit_book),
+    re_path(r'del_book/([0-9]*)/', views.del_book),
 ]

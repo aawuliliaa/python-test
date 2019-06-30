@@ -17,7 +17,7 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <h3>作者信息</h3>
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#my_author_add_modal">添加作者</button>
 
@@ -36,8 +36,8 @@
 
                     <td><a  href="/show_author/{{ author.id }}/">{{ author.name }}</a></td>
                     <td>
-                        <a href="/edit_author/{{ author.id }}/" class="btn btn-warning">编辑</a>
-                        <a href="/del_author/{{ author.id }}/" class="btn btn-danger">删除</a>
+                        <a href="/edit_author/{{ author.id }}/" class="btn btn-warning btn-xs">编辑</a>
+                        <a href="/del_author/{{ author.id }}/" class="btn btn-danger btn-xs">删除</a>
                     </td>
                 </tr>
                 {% endfor %}
@@ -67,8 +67,8 @@
                     <td><a  href="/show_publish/{{ publish.id }}/">{{ publish.name }}</a></td>
                     <td>{{ publish.city }}</td>
                     <td>
-                        <a href="/edit_publish/{{ publish.id }}/" class="btn btn-warning">编辑</a>
-                        <a href="/del_publish/{{ publish.id }}/" class="btn btn-danger">删除</a>
+                        <a href="/edit_publish/{{ publish.id }}/" class="btn btn-warning btn-xs">编辑</a>
+                        <a href="/del_publish/{{ publish.id }}/" class="btn btn-danger btn-xs">删除</a>
                     </td>
                 </tr>
             {% endfor %}
@@ -78,28 +78,45 @@
     </div>
 {#    增加出版社#}
     {% include "publish_add.html" %}
-    <div class="col-md-4">
+    <div class="col-md-5">
         <h3>书籍信息</h3>
-        <a class="btn btn-default">添加书籍</a>
+        <a href="{{ add_book_url }}" type="button" class="btn btn-default">添加书籍</a>
+
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <th>书名</th>
-                    <th>作者</th>
+                    <th>出版时间</th>
                     <th>出版社</th>
+                    <th>作者</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
+            {% for book in book_list %}
                 <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.publishDate|date:"Y-m-d"}}</td>
+                    <td>{{ book.publish.name }}</td>
                     <td>
-                        <a class="btn btn-default">编辑</a>
-                        <a class="btn btn-default">删除</a>
+                        {% for book_author in book.authors.all %}
+                            {% if forloop.last %}
+                                <span>{{ book_author.name }}</span>
+                            {% else %}
+                                <span>{{ book_author.name }},</span>
+                            {% endif %}
+
+                        {% endfor %}
+
+                    </td>
+                    <td>
+                        <a href="/edit_book/{{ book.id }}/" class="btn btn-warning btn-xs">编辑</a>
+                        <a href="/del_book/{{ book.id }}/" class="btn btn-danger btn-xs">删除</a>
                     </td>
                 </tr>
+            {% endfor %}
+
+
             </tbody>
         </table>
     </div>

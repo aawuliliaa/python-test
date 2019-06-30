@@ -72,8 +72,10 @@ def register(request):
 def index(request):
     # 展示信息页面
     logout_url = "/logout/"
+    add_book_url = "/add_book/"
     author_list = Author.objects.all()
     publish_list = Publish.objects.all()
+    book_list = Book.objects.all()
     return render(request, "index.html", locals())
 
 
@@ -227,4 +229,66 @@ def show_publish(request, publish_id):
 def del_publish(request, publish_id):
     # 删除出版社信息
     Publish.objects.get(id=publish_id).delete()
+    return redirect("/index/")
+
+
+@login_required
+def add_book(request):
+    # 添加书籍
+    if request.method == "POST":
+        res = {"success": False, "info": None}
+        # 获取前端传过来的数据
+        # print(request.POST)
+        # <QueryDict: {'book_authors_id_list[]': ['1', '3'], 'book_publish_id': ['2'],
+        # 由于深度序列化，自动在key的后面加了个[]
+        # 需要使用getlist方法获取数组值
+        book_author_id_list = request.POST.getlist("book_authors_id_list")
+
+        book_publish_id = request.POST.get("book_publish_id").strip()
+        book_title = request.POST.get("book_title").strip()
+        book_publish_date = request.POST.get("book_publishDate").strip()
+        book_price = request.POST.get("book_price").strip()
+        # 验证前端传过来的数据
+        if book_author_id_list is None or book_publish_id == "" \
+                or book_title == "" or book_publish_date == "" or book_price == "":
+            res["info"] = "添加的内容不能为空哦！"
+        elif not book_price.replace(".","").isnumeric():
+            res["info"] = "价格只能是数字！"
+        elif Book.objects.filter(title=book_title):
+            res["info"] = "书名不能重复"
+        else:
+            # 插入数据可能报错
+            try:
+                book_obj = Book.objects.create(title=book_title, price=book_price,
+                                               publishDate=book_publish_date, publish_id=book_publish_id)
+                # print(book_author_id_list)  # ['2', '3']
+
+                book_obj.authors.add(*book_author_id_list)
+                res["success"] = True
+                res["info"] = "%s 添加成功" % book_title
+            except Exception as e:
+                print(e)
+                res["info"] = "插入数据报错，请查看端日志！"
+
+        return JsonResponse(res)
+    # get请求时，页面需要列出出版社和作者信息供用户选择
+    publish_list = Publish.objects.all()
+    author_list = Author.objects.all()
+    return render(request, "book_add.html", locals())
+
+
+@login_required
+def edit_book(request, book_id):
+    # 编辑书本信息
+    book_obj = Book.objects.get(id=book_id)
+    # get请求时，页面需要列出出版社和作者信息供用户选择
+    publish_list = Publish.objects.all()
+    author_list = Author.objects.all()
+    return render(request, "book_edit.html", locals())
+
+
+@login_required
+def del_book(request, book_id):
+    # 删除书籍信息
+    Book.objects.filter(id=book_id).delete()
     return redirect("/index/")
