@@ -26,5 +26,8 @@ urlpatterns = [
     re_path(r'edit_author/([0-9]*)/', views.edit_author),
     re_path(r'show_author/([0-9]*)/', views.show_author),
     re_path(r'del_author/([0-9]*)/', views.del_author),
-
+    path('add_publish/', views.add_publish),
+    re_path(r'edit_publish/([0-9]*)/', views.edit_publish),
+    re_path(r'show_publish/([0-9]*)/', views.show_publish),
+    re_path(r'del_publish/([0-9]*)/', views.del_publish),
 ]

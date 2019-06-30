@@ -77,10 +77,77 @@ $(function () {
             }
         })
     });
+//提交作者编辑信息
+$("#author_edit_commit").click(
+    function () {
+        let user_id = $("#edit_user_ID").text();
+        $.ajax({
+            url:"/edit_author/"+user_id+"/",
+            type:"post",
+            data:{
+                author_name:$("#edit_author_id").val(),
+                author_age:$("#edit_age_id").val(),
+                csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+            },
+            success:function (data) {
+                if(data.success){
+                    alert(data.info);
+                    location.href = "/index/"
+                }else{
+                    $(".edit_author_error").text(data.info).css({"color":"red"})
+                }
+            }
+        })
+    }
+);
 
-$('#my_author_show_modal').on('show.bs.modal',
-        function(e) {
-            console.log("qwqwqwq")
-        });
+    
+    //添加作者
+    $("#add_publish_commit").click(function () {
+        $.ajax({
+            url:"/add_publish/",
+            type:"post",
+            data:{
+                publish_name:$("#add_publish_name_id").val(),
+                publish_city:$("#add_publish_city_id").val(),
+                publish_email:$("#add_publish_email_id").val(),
+                csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+            },
+            success:function (data) {
+                if(data.success){
+                    location.href = "/index/";
+                    alert(data.info)
+                }else{
+                    $(".add_publish_error").text(data.info).css({"color":"red"})
+                }
+            }
+        })
+    });
+    
+    
+    //提交出版社编辑信息
+$("#publish_edit_commit").click(
+    function () {
+        let publish_id = $("#edit_publish_ID").text();
+        $.ajax({
+            url:"/edit_publish/"+publish_id+"/",
+            type:"post",
+            data:{
+                publish_name:$("#edit_publish_name_id").val(),
+                publish_city:$("#edit_publish_city_id").val(),
+                publish_email:$("#edit_publish_email_id").val(),
+                csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+            },
+            success:function (data) {
+                if(data.success){
+                    alert(data.info);
+                    location.href = "/index/"
+                }else{
+                    $(".edit_publish_error").text(data.info).css({"color":"red"})
+                }
+            }
+        })
+    }
+);
 
 });

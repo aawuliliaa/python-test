@@ -37,7 +37,7 @@
                     <td><a  href="/show_author/{{ author.id }}/">{{ author.name }}</a></td>
                     <td>
                         <a href="/edit_author/{{ author.id }}/" class="btn btn-warning">编辑</a>
-                        <a href="/books/{{ book.pk }}/delete/" class="btn btn-danger">删除</a>
+                        <a href="/del_author/{{ author.id }}/" class="btn btn-danger">删除</a>
                     </td>
                 </tr>
                 {% endfor %}
@@ -47,12 +47,12 @@
         </table>
 
     </div>
-    {#    作者信息的增删改查#}
-    {% include "author.html" %}
+    {#    增加作者#}
+    {% include "author_add.html" %}
 
     <div class="col-md-4">
         <h3>出版社信息</h3>
-        <a class="btn btn-default">添加出版社</a>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#my_publish_add_modal">添加出版社</button>
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
@@ -62,17 +62,22 @@
                 </tr>
             </thead>
             <tbody>
+            {% for publish in publish_list %}
                 <tr>
-                    <td><a href="">出版社名称</a></td>
-                    <td>2</td>
+                    <td><a  href="/show_publish/{{ publish.id }}/">{{ publish.name }}</a></td>
+                    <td>{{ publish.city }}</td>
                     <td>
-                        <a class="btn btn-default">编辑</a>
-                        <a class="btn btn-default">删除</a>
+                        <a href="/edit_publish/{{ publish.id }}/" class="btn btn-warning">编辑</a>
+                        <a href="/del_publish/{{ publish.id }}/" class="btn btn-danger">删除</a>
                     </td>
                 </tr>
+            {% endfor %}
+
             </tbody>
         </table>
     </div>
+{#    增加出版社#}
+    {% include "publish_add.html" %}
     <div class="col-md-4">
         <h3>书籍信息</h3>
         <a class="btn btn-default">添加书籍</a>
