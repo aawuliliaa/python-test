@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.contrib import auth
-import json
 from django.core import serializers
 from app.models import *
 from app.page import my_page, set_page_session
@@ -30,7 +29,6 @@ def login(request):
                 request.session["back_url"] = "/index/"
 
             else:
-                res["user"] = user
                 res["info"] = "密码错误！"
 
         else:
@@ -42,18 +40,17 @@ def login(request):
     return render(request, "login.html")
 
 
-@login_required
 def register(request):
     # 注册函数
     if request.method == "POST":
-        res = {"user": None, "info": None}
+        res = {"user": False, "info": None}
         # 获取前端传过来的用户名与密码
         user = request.POST.get("user").strip()
         pwd = request.POST.get("pwd").strip()
         # 验证前端传过来的数据
         if user == "" or pwd == "":
             res["info"] = "user or password can not be null!"
-            return HttpResponse(json.dumps(res))
+            return JsonResponse(res)
         # 到数据库中获取用户信息
         user_obj = User.objects.filter(username=user)
 
@@ -61,13 +58,14 @@ def register(request):
         if user_obj:
             res["info"] = "user already exist!"
 
-            return HttpResponse(json.dumps(res))
+            return JsonResponse(res)
         # 用户不存在，就创建该用户
         User.objects.create_user(username=user, password=pwd)
         # 创建成功
         res["user"] = user
         # 这种方式不能传中文，前端会解析报错
-        return HttpResponse(json.dumps(res))
+        return JsonResponse(res)
+    return render(request, "login.html")
 
 # 需要auth.login()之后，才允许登录。auth.login会设置相关信息到session中
 @login_required

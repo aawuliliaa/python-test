@@ -20,7 +20,7 @@ Python int too large to convert to C long
 批量创建测试数据
 出版社批量创建
 list = []
-for i in range(100):
+for i in range(50):
     item = Publish(name="publish_%s" % i, city="上海%s"%i,email="123@qq.com")
     list.append(item)
 
@@ -28,7 +28,7 @@ Publish.objects.bulk_create(list)
 
 作者批量创建
 list = []
-for i in range(100):
+for i in range(50):
     item = Author(name="author_%s" % i, age=23)
     list.append(item)
 
