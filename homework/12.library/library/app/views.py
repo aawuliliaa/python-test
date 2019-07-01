@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from django.contrib import auth
 import json
 from app.models import *
+from app.page import my_page
 
 
 def login(request):
@@ -76,6 +77,10 @@ def index(request):
     author_list = Author.objects.all()
     publish_list = Publish.objects.all()
     book_list = Book.objects.all()
+    # 书的分页信息
+    book_page_info = my_page(request, book_list)
+    # book_page_range = book_page_info.get("page_range")
+    # book_current_page = book_page_info.get("current_page")
     return render(request, "index.html", locals())
 
 
@@ -252,7 +257,7 @@ def add_book(request):
         if book_author_id_list is None or book_publish_id == "" \
                 or book_title == "" or book_publish_date == "" or book_price == "":
             res["info"] = "添加的内容不能为空哦！"
-        elif not book_price.replace(".","").isnumeric():
+        elif not book_price.replace(".", "").isnumeric():
             res["info"] = "价格只能是数字！"
         elif Book.objects.filter(title=book_title):
             res["info"] = "书名不能重复"

@@ -93,7 +93,7 @@
                 </tr>
             </thead>
             <tbody>
-            {% for book in book_list %}
+            {% for book in book_page_info.current_page %}
                 <tr>
                     <td>{{ book.title }}</td>
                     <td>{{ book.publishDate|date:"Y-m-d"}}</td>
@@ -119,6 +119,39 @@
 
             </tbody>
         </table>
+
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        {% if book_page_info.current_page.has_previous %}
+        <li><a href="?page={{ book_page_info.current_page.previous_page_number  }}" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+        {% else %}
+        <li class="disabled"><a href="" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+        {% endif %}
+
+
+
+        {% for item in book_page_info.page_range %}
+
+            {% if book_page_info.current_page_num == item %}
+                <li class="active"><a href="?page={{ item }}">{{ item }}</a></li>
+            {% else %}
+                <li><a href="?page={{ item }}">{{ item }}</a></li>
+            {% endif %}
+
+        {% endfor %}
+
+
+
+        {% if book_page_info.current_page.has_next %}
+            <li><a href="?page={{ book_page_info.current_page.next_page_number  }}" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+        {% else %}
+            <li class="disabled"><a href="" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+        {% endif %}
+        </li>
+      </ul>
+    </nav>
+
+
     </div>
 </div>
 {% endblock content%}
