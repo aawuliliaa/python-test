@@ -65,6 +65,8 @@ def register(request):
         res["user"] = user
         # 这种方式不能传中文，前端会解析报错
         return JsonResponse(res)
+    # get请求时，跳转在login页面。
+    # 这里不能加装饰器，加了之后，发现前端success后，接收的data是login.html，所以这里使用这种方式
     return render(request, "login.html")
 
 # 需要auth.login()之后，才允许登录。auth.login会设置相关信息到session中
@@ -72,14 +74,16 @@ def register(request):
 def index(request):
     # 由于三个列表，是分别设置的分页操作，这里主要是让各自的分页互不影响。
     set_page_session(request)
-    # 展示信息页面
+    # 展示信息页面，这都是为了不让前端出现黄色的警告。。也可以直接写在前端的
     logout_url = "/logout/"
     add_book_url = "/add_book/"
+    # 前端展示数据使用
     author_list = Author.objects.all()
     publish_list = Publish.objects.all()
     book_list = Book.objects.all()
-    # 书的分页信息
-
+    # 分页信息
+    # 这里是为了让三个列表的分页操作互不影响而加的代码。
+    # 由于我是把三个列表都展示在一个页面了，可能某个列表数据很多，某个列表数据很少，所以设置了三个单独的列表
     book_page_info = my_page(book_list, request.session.get("book_page"))
     author_page_info = my_page(author_list, request.session.get("author_page"))
     publish_page_info = my_page(publish_list, request.session.get("publish_page"))
@@ -96,6 +100,7 @@ def logout(request):
 @login_required
 def add_author(request):
     # 添加作者信息
+    # 这里没有做作者姓名唯一性限制，因为作者姓名是可以重复的
     if request.method == "POST":
         res = {"success": False, "info": None}
         # 获取前端传过来的数据
@@ -108,6 +113,7 @@ def add_author(request):
             res["info"] = "年龄必须是数字"
         else:
             try:
+                # 添加用户信息
                 Author.objects.create(name=author_name, age=author_age)
                 res["success"] = True
                 res["info"] = "%s 作者添加成功" % author_name
@@ -120,8 +126,9 @@ def add_author(request):
 @login_required
 def edit_author(request, author_id):
     # 编辑作者信息
-    author_id = int(author_id)
-    author_obj = Author.objects.get(id=author_id)
+    # 这是之前写的跳转页面方式使用的代码
+    # author_id = int(author_id)
+    # author_obj = Author.objects.get(id=author_id)
     if request.method == "POST":
         res = {"success": False, "info": None}
         # 获取前端传过来的数据
@@ -134,6 +141,7 @@ def edit_author(request, author_id):
             res["info"] = "年龄必须是数字"
         else:
             try:
+                # 修改作者信息
                 Author.objects.filter(id=author_id).update(name=author_name, age=author_age)
                 res["success"] = True
                 res["info"] = "%s 作者修改成功" % author_name
@@ -141,7 +149,7 @@ def edit_author(request, author_id):
                 print(e)
                 res["info"] = "更新数据报错，请查看端日志！"
         return JsonResponse(res)
-    return render(request, "author_edit.html", locals())
+    # return render(request, "author_edit.html", locals())
 
 
 @login_required
@@ -219,9 +227,9 @@ def edit_publish(request, publish_id):
         return JsonResponse(res)
     
     # get请求时
-    publish_obj = Publish.objects.get(id=publish_id)
-    
-    return render(request, "publish_edit.html", locals())
+    # publish_obj = Publish.objects.get(id=publish_id)
+    #
+    # return render(request, "publish_edit.html", locals())
 
 
 @login_required
