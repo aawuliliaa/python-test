@@ -30,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for author in author_list %}
+                {% for author in author_page_info.current_page %}
                     <tr>
                     <td>{{ author.id }}</td>
 
@@ -45,7 +45,36 @@
 
             </tbody>
         </table>
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            {% if author_page_info.current_page.has_previous %}
+            <li><a href="?author_page={{ author_page_info.current_page.previous_page_number  }}" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+            {% else %}
+            <li class="disabled"><a href="" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+            {% endif %}
 
+
+
+            {% for item in author_page_info.page_range %}
+
+                {% if author_page_info.current_page_num == item %}
+                    <li class="active"><a href="?page={{ item }}">{{ item }}</a></li>
+                {% else %}
+                    <li><a href="?author_page={{ item }}">{{ item }}</a></li>
+                {% endif %}
+
+            {% endfor %}
+
+
+
+            {% if author_page_info.current_page.has_next %}
+                <li><a href="?author_page={{ author_page_info.current_page.next_page_number  }}" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+            {% else %}
+                <li class="disabled"><a href="" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+            {% endif %}
+            </li>
+          </ul>
+        </nav>
     </div>
     {#    增加作者#}
     {% include "author_add.html" %}
@@ -62,7 +91,7 @@
                 </tr>
             </thead>
             <tbody>
-            {% for publish in publish_list %}
+            {% for publish in publish_page_info.current_page %}
                 <tr>
                     <td><a  href="/show_publish/{{ publish.id }}/">{{ publish.name }}</a></td>
                     <td>{{ publish.city }}</td>
@@ -75,6 +104,37 @@
 
             </tbody>
         </table>
+
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            {% if publish_page_info.current_page.has_previous %}
+            <li><a href="?publish_page={{ publish_page_info.current_page.previous_page_number  }}" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+            {% else %}
+            <li class="disabled"><a href="" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+            {% endif %}
+
+
+
+            {% for item in publish_page_info.page_range %}
+
+                {% if publish_page_info.current_page_num == item %}
+                    <li class="active"><a href="?page={{ item }}">{{ item }}</a></li>
+                {% else %}
+                    <li><a href="?publish_page={{ item }}">{{ item }}</a></li>
+                {% endif %}
+
+            {% endfor %}
+
+
+
+            {% if publish_page_info.current_page.has_next %}
+                <li><a href="?publish_page={{ publish_page_info.current_page.next_page_number  }}" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+            {% else %}
+                <li class="disabled"><a href="" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+            {% endif %}
+            </li>
+          </ul>
+        </nav>
     </div>
 {#    增加出版社#}
     {% include "publish_add.html" %}
@@ -123,7 +183,7 @@
     <nav aria-label="Page navigation">
       <ul class="pagination">
         {% if book_page_info.current_page.has_previous %}
-        <li><a href="?page={{ book_page_info.current_page.previous_page_number  }}" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+        <li><a href="?book_page={{ book_page_info.current_page.previous_page_number  }}" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
         {% else %}
         <li class="disabled"><a href="" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
         {% endif %}
@@ -135,7 +195,7 @@
             {% if book_page_info.current_page_num == item %}
                 <li class="active"><a href="?page={{ item }}">{{ item }}</a></li>
             {% else %}
-                <li><a href="?page={{ item }}">{{ item }}</a></li>
+                <li><a href="?book_page={{ item }}">{{ item }}</a></li>
             {% endif %}
 
         {% endfor %}
@@ -143,7 +203,7 @@
 
 
         {% if book_page_info.current_page.has_next %}
-            <li><a href="?page={{ book_page_info.current_page.next_page_number  }}" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+            <li><a href="?book_page={{ book_page_info.current_page.next_page_number  }}" aria-label="Next"><span aria-hidden="true">下一页</span></a>
         {% else %}
             <li class="disabled"><a href="" aria-label="Next"><span aria-hidden="true">下一页</span></a>
         {% endif %}

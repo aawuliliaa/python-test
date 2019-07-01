@@ -4,11 +4,26 @@
 from django.core.paginator import Paginator, EmptyPage
 
 
-def my_page(request, queryset):
+def set_page_session(request):
+    # 由于三个列表，是分别设置的分页操作，这里主要是让各自的分页互不影响。
+    if request.GET.get("author_page"):
+        request.session["author_page"] = request.GET.get("author_page")
+    elif request.GET.get("publish_page"):
+        request.session["publish_page"] = request.GET.get("publish_page")
+    elif request.GET.get("book_page"):
+        request.session["book_page"] = request.GET.get("book_page")
+    else:
+        # 访问/index/时，就列出首页
+        request.session["book_page"] = 1
+        request.session["author_page"] = 1
+        request.session["publish_page"] = 1
+        
+        
+def my_page(queryset, current_page_num):
     # 分页器
     # 3是每页显示几条数据
     paginator = Paginator(queryset, 5)
-    current_page_num = int(request.GET.get("page", 1))
+    current_page_num = int(current_page_num)
 
     if paginator.num_pages > 5:
 

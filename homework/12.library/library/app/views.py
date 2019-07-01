@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.contrib import auth
 import json
 from app.models import *
-from app.page import my_page
+from app.page import my_page,set_page_session
 
 
 def login(request):
@@ -71,6 +71,8 @@ def register(request):
 # 需要auth.login()之后，才允许登录。auth.login会设置相关信息到session中
 @login_required
 def index(request):
+    # 由于三个列表，是分别设置的分页操作，这里主要是让各自的分页互不影响。
+    set_page_session(request)
     # 展示信息页面
     logout_url = "/logout/"
     add_book_url = "/add_book/"
@@ -78,9 +80,10 @@ def index(request):
     publish_list = Publish.objects.all()
     book_list = Book.objects.all()
     # 书的分页信息
-    book_page_info = my_page(request, book_list)
-    # book_page_range = book_page_info.get("page_range")
-    # book_current_page = book_page_info.get("current_page")
+
+    book_page_info = my_page(book_list, request.session.get("book_page"))
+    author_page_info = my_page(author_list, request.session.get("author_page"))
+    publish_page_info = my_page(publish_list, request.session.get("publish_page"))
     return render(request, "index.html", locals())
 
 
