@@ -220,5 +220,7 @@ $(function () {
             })
         }
     );
-
+$('#my_author_add_modal').on('show.bs.modal', function () {
+  console.log("my_author_add_modal")
+})
 });

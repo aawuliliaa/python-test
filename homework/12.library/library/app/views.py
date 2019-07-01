@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.contrib import auth
 import json
 from app.models import *
-from app.page import my_page,set_page_session
+from app.page import my_page, set_page_session
 
 
 def login(request):
