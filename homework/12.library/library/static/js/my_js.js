@@ -229,12 +229,47 @@ $(function () {
             success:function (data) {
                 // console.log(data.json_books_obj);[{"model": "app.author", "pk": 1, "fields": {"name": "\u5f20\u4e09\u65b0", "age": 12}}]
                 //设置模态框中的值
-                $("#edit_book_ID").html(book_id);
-                $("#edit_book_title_id").val(data.title);
-                $("#edit_book_price_id").val(data.price);
-                $("#edit_book_publishDate_id").val(data.publishDate);
-                $("#edit_book_publish_id").html(data.publish_str);
-                $("#edit_book_authors_id").html(data.author_str);
+
+                let publish_list = JSON.parse(data.json_publish_list);
+                let author_list = JSON.parse(data.json_author_list);
+                let book_obj = data.json_book_obj;
+
+                let publish_str = "";
+                let author_str = "";
+                for(let publish_item in publish_list){
+                    //这块研究了好一会，这个publish_item只是列表的索引
+                    // console.log(publish_list[publish_obj].fields.name)
+                    if (publish_list.hasOwnProperty(publish_item)){
+                        let publish_name = publish_list[publish_item].fields.name;
+                        let publish_id = publish_list[publish_item].pk;
+                        if(publish_id === book_obj.publish_id){
+                            publish_str+=`<option value="${publish_id}" selected>${publish_name}</option>`
+                        }else{
+                            publish_str+=`<option value="${publish_id}">${publish_name}</option>`
+                        }
+                    }
+                }
+                for(let author_item in author_list){
+                    //这块研究了好一会，这个publish_item只是列表的索引
+                    // console.log(publish_list[publish_obj].fields.name)
+                    if (author_list.hasOwnProperty(author_item)){
+                        let author_name = author_list[author_item].fields.name;
+                        let author_id = author_list[author_item].pk;
+                        if (book_obj.author_id_list.indexOf(author_id)!==-1){
+                            author_str+=`<option value="${author_id}" selected>${author_name}</option>`
+                        }else{
+                            author_str+=`<option value="${author_id}">${author_name}</option>`
+                        }
+
+
+                    }
+                }
+                $("#edit_book_ID").html(book_obj.book_id);
+                $("#edit_book_title_id").val(book_obj.book_title);
+                $("#edit_book_price_id").val(book_obj.book_price);
+                $("#edit_book_publishDate_id").val(book_obj.book_publishDate);
+                $("#edit_book_publish_id").html(publish_str);
+                $("#edit_book_authors_id").html(author_str);
 
             }
         })
@@ -251,7 +286,7 @@ $(function () {
                 let publish_str = "";
                 let author_str = "";
                 for(let publish_item in publish_list){
-                    //这块研究了好一会，这个publish_item只是列表的索引
+                    //这块研究了好一会，这个publish_item只是列表的索引,0,1,2,3
                     // console.log(publish_list[publish_obj].fields.name)
                     if (publish_list.hasOwnProperty(publish_item)){
                         let publish_name = publish_list[publish_item].fields.name;
@@ -259,10 +294,9 @@ $(function () {
                         if(publish_item === 0){
                             publish_str+=`<option value="${publish_id}" selected>${publish_name}</option>`
                         }else{
-                            publish_str+=`<option value="${publish_id}" selected>${publish_name}</option>`
+                            publish_str+=`<option value="${publish_id}">${publish_name}</option>`
                         }
                     }
-
                 }
                 for(let author_item in author_list){
                     //这块研究了好一会，这个publish_item只是列表的索引

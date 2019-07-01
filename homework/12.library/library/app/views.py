@@ -284,7 +284,7 @@ def add_book(request):
     publish_list = Publish.objects.all()
     author_list = Author.objects.all()
 
-    # 返回queryset值给ajax接收
+    # 把queryset序列化
     json_author_list = serializers.serialize('json', author_list)
     json_publish_list = serializers.serialize('json', publish_list)
     
@@ -338,25 +338,36 @@ def edit_book(request, book_id):
     publish_list = Publish.objects.all()
     author_list = Author.objects.all()
     
-    publish_str = ""
-    author_str = ""
-    for publish_obj in publish_list:
-        if book_obj.publish.id == publish_obj.id:
-            publish_str += "<option value = %s selected >%s </option>" % (publish_obj.id, publish_obj.name)
-        else:
-            publish_str += "<option value = %s  >%s </option>" % (publish_obj.id, publish_obj.name)
-            
-    for author_obj in author_list:
-        if author_obj in book_obj.authors.all():
-            author_str += "<option value = %s selected >%s </option>" % (author_obj.id, author_obj.name)
-        else:
-            author_str += "<option value = %s  >%s </option>" % (author_obj.id, author_obj.name)
+    # publish_str = ""
+    # author_str = ""
+    # for publish_obj in publish_list:
+    #     if book_obj.publish.id == publish_obj.id:
+    #         publish_str += "<option value = %s selected >%s </option>" % (publish_obj.id, publish_obj.name)
+    #     else:
+    #         publish_str += "<option value = %s  >%s </option>" % (publish_obj.id, publish_obj.name)
+    #         
+    # for author_obj in author_list:
+    #     if author_obj in book_obj.authors.all():
+    #         author_str += "<option value = %s selected >%s </option>" % (author_obj.id, author_obj.name)
+    #     else:
+    #         author_str += "<option value = %s  >%s </option>" % (author_obj.id, author_obj.name)
     #         弹出页面方式时的写法
     # return render(request, "book_edit.html", locals())
     # 弹出模态框时的写法
+    # 把queryset序列化
+    json_author_list = serializers.serialize('json', author_list)
+    json_publish_list = serializers.serialize('json', publish_list)
+    book_author_list = []
+    for book_author_obj in book_obj.authors.all():
+        book_author_list.append(book_author_obj.id)
+    json_book_obj = {"publish_id": book_obj.publish.id, "author_id_list": book_author_list, 
+                     "book_id": book_obj.id, "book_price": book_obj.price, "book_publishDate": book_obj.publishDate, 
+                     "book_title": book_obj.title}
+    # return JsonResponse({"publish_str": publish_str, "author_str": author_str, 
+    #                      "title": book_obj.title, "price": book_obj.price, "publishDate": book_obj.publishDate})
+    return JsonResponse({"json_author_list": json_author_list, 
+                         "json_publish_list": json_publish_list, "json_book_obj": json_book_obj})
     
-    return JsonResponse({"publish_str": publish_str, "author_str": author_str, 
-                         "title": book_obj.title, "price": book_obj.price, "publishDate": book_obj.publishDate})
 
 
 @login_required
