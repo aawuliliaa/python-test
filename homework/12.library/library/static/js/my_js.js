@@ -75,9 +75,11 @@ $(function () {
     });
     //编辑作者时，展示默认信息
     $(".my_author_edit_show_button").click(function () {
+        //获取编辑的作者信息
         let author_id = $(this).val();
         let author_age = $(this).parent("td").parent("tr").children(".author_age").text();
         let author_name = $(this).parent("td").parent("tr").find(".author_name").text();
+        //设置作者信息到模态框中
         $("#edit_user_ID").text(author_id);
         $("#edit_author_id").val(author_name);
         $("#edit_age_id").val(author_age)
@@ -156,10 +158,12 @@ $(function () {
     );
 //编辑出版社时，展示默认信息
     $(".my_publish_edit_show_button").click(function () {
+        //获取编辑行的信息
         let publish_id = $(this).val();
         let publish_email = $(this).parent("td").parent("tr").children(".publish_email").text();
         let publish_city = $(this).parent("td").parent("tr").children(".publish_city").text();
         let publish_name = $(this).parent("td").parent("tr").find(".publish_name").text();
+        //设置数据到编辑模态框
         $("#edit_publish_ID").text(publish_id);
         $("#edit_publish_name_id").val(publish_name);
         $("#edit_publish_city_id").val(publish_city);
