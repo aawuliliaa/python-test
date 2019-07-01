@@ -311,6 +311,7 @@ $(function () {
                     if (publish_list.hasOwnProperty(publish_item)){
                         let publish_name = publish_list[publish_item].fields.name;
                         let publish_id = publish_list[publish_item].pk;
+                        
                         if(publish_item === 0){
                             publish_str+=`<option value="${publish_id}" selected>${publish_name}</option>`
                         }else{

@@ -258,13 +258,12 @@ def add_book(request):
         # 由于深度序列化，自动在key的后面加了个[]
         # 需要使用getlist方法获取数组值
         book_author_id_list = request.POST.getlist("book_authors_id_list")
-
         book_publish_id = request.POST.get("book_publish_id").strip()
         book_title = request.POST.get("book_title").strip()
         book_publish_date = request.POST.get("book_publishDate").strip()
         book_price = request.POST.get("book_price").strip()
         # 验证前端传过来的数据
-        if book_author_id_list is None or book_publish_id == "" \
+        if len(book_author_id_list) == 0 or book_publish_id == "" \
                 or book_title == "" or book_publish_date == "" or book_price == "":
             res["info"] = "添加的内容不能为空哦！"
         elif not book_price.replace(".", "").isnumeric():
