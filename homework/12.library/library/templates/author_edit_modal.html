@@ -1,0 +1,40 @@
+<!-- 编辑作者模态框--Modal -->
+
+
+<div class="modal fade bs-example-modal-sm" id="my_author_edit_modal" tabindex="-1" role="dialog" aria-labelledby="editAuthorModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="editAuthorModalLabel">编辑作者</h4>
+      </div>
+      <div class="modal-body">
+          <form action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <label id="edit_user_ID" class="hidden">{{ author_obj.id }}</label>
+
+            </div>
+            <div class="form-group">
+                <label for="edit_author_id">用户名</label>
+                <input type="text" id="edit_author_id"  class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="edit_age_id">年龄</label>
+                <input type="text" id="edit_age_id" value="{{ author_obj.age }}" class="form-control">
+            </div>
+        </form>
+
+        <p class="edit_author_error"></p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="author_edit_commit">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

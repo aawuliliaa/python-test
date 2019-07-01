@@ -74,6 +74,15 @@ $(function () {
             }
         })
     });
+    //编辑作者时，展示默认信息
+    $(".my_author_edit_show_button").click(function () {
+        let author_id = $(this).val();
+        let author_age = $(this).parent("td").parent("tr").children(".author_age").text();
+        let author_name = $(this).parent("td").parent("tr").find(".author_name").text();
+        $("#edit_user_ID").text(author_id);
+        $("#edit_author_id").val(author_name);
+        $("#edit_age_id").val(author_age)
+    });
     //提交作者编辑信息
     $("#author_edit_commit").click(
         function () {
@@ -146,7 +155,17 @@ $(function () {
             })
         }
     );
-
+//编辑出版社时，展示默认信息
+    $(".my_publish_edit_show_button").click(function () {
+        let publish_id = $(this).val();
+        let publish_email = $(this).parent("td").parent("tr").children(".publish_email").text();
+        let publish_city = $(this).parent("td").parent("tr").children(".publish_city").text();
+        let publish_name = $(this).parent("td").parent("tr").find(".publish_name").text();
+        $("#edit_publish_ID").text(publish_id);
+        $("#edit_publish_name_id").val(publish_name);
+        $("#edit_publish_city_id").val(publish_city);
+        $("#edit_publish_email_id").val(publish_email);
+    });
     $("#book_add_commit").click(function () {
         //由于后端插入数据的时候使用的是列表的形式，所以我们直接在这里把数据放到列表中
         let book_author_id_list = [];
@@ -214,7 +233,7 @@ $(function () {
                             alert(data.info);
                             location.href = "/index/"
                         }else{
-                            $(".add_book_error").text(data.info).css({"color":"red"})
+                            $(".edit_book_error").text(data.info).css({"color":"red"})
                         }
                     }
             })
@@ -255,6 +274,7 @@ $(function () {
                     if (author_list.hasOwnProperty(author_item)){
                         let author_name = author_list[author_item].fields.name;
                         let author_id = author_list[author_item].pk;
+                        //如果该书的作者有当前循环的作者id，就设置为selected
                         if (book_obj.author_id_list.indexOf(author_id)!==-1){
                             author_str+=`<option value="${author_id}" selected>${author_name}</option>`
                         }else{
@@ -264,6 +284,7 @@ $(function () {
 
                     }
                 }
+                //设置模态框中的数据
                 $("#edit_book_ID").html(book_obj.book_id);
                 $("#edit_book_title_id").val(book_obj.book_title);
                 $("#edit_book_price_id").val(book_obj.book_price);
@@ -274,7 +295,7 @@ $(function () {
             }
         })
     });
-//添加书籍莫泰框弹出时，设置出版社和作者
+//添加书籍模态框弹出时，设置出版社和作者
     $("#my_book_add_button").click(function () {
         $.ajax({
             url:"/add_book/",

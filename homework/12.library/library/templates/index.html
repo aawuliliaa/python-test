@@ -33,10 +33,13 @@
                 {% for author in author_page_info.current_page %}
                     <tr>
                     <td>{{ author.id }}</td>
-
-                    <td><a  href="/show_author/{{ author.id }}/">{{ author.name }}</a></td>
+                    <td class="hidden author_age">{{ author.age }}</td>
+                    <td ><a  href="/show_author/{{ author.id }}/" class="author_name">{{ author.name }}</a></td>
                     <td>
-                        <a href="/edit_author/{{ author.id }}/" class="btn btn-warning btn-xs">编辑</a>
+
+{#                        <a href="/edit_author/{{ author.id }}/" class="btn btn-warning btn-xs">编辑</a>#}
+                        <button type="button" class="btn btn-warning btn-xs my_author_edit_show_button" data-toggle="modal" data-target="#my_author_edit_modal"  value="{{ author.id }}">编辑</button>
+
                         <a href="/del_author/{{ author.id }}/" class="btn btn-danger btn-xs">删除</a>
                     </td>
                 </tr>
@@ -78,6 +81,7 @@
     </div>
     {#    增加作者#}
     {% include "author_add.html" %}
+{% include "author_edit_modal.html" %}
 
     <div class="col-md-4">
         <h3>出版社信息</h3>
@@ -93,10 +97,12 @@
             <tbody>
             {% for publish in publish_page_info.current_page %}
                 <tr>
-                    <td><a  href="/show_publish/{{ publish.id }}/">{{ publish.name }}</a></td>
-                    <td>{{ publish.city }}</td>
+                    <td><a  href="/show_publish/{{ publish.id }}/" class="publish_name">{{ publish.name }}</a></td>
+                    <td class="publish_city">{{ publish.city }}</td>
+                    <td class="publish_email hidden" >{{ publish.email }}</td>
                     <td>
-                        <a href="/edit_publish/{{ publish.id }}/" class="btn btn-warning btn-xs">编辑</a>
+{#                        <a href="/edit_publish/{{ publish.id }}/" class="btn btn-warning btn-xs">编辑</a>#}
+                        <button type="button" class="btn btn-warning btn-xs my_publish_edit_show_button" data-toggle="modal" data-target="#my_publish_edit_modal"  value="{{ publish.id }}">编辑</button>
                         <a href="/del_publish/{{ publish.id }}/" class="btn btn-danger btn-xs">删除</a>
                     </td>
                 </tr>
@@ -136,6 +142,8 @@
     </div>
 {#    增加出版社#}
     {% include "publish_add.html" %}
+{#    编辑出版社#}
+    {% include "publish_edit_modal.html" %}
     <div class="col-md-4">
         <h3>书籍信息</h3>
 {#        <a href="{{ add_book_url }}" type="button" class="btn btn-default">添加书籍</a>#}

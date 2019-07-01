@@ -360,18 +360,17 @@ def edit_book(request, book_id):
     book_author_list = []
     for book_author_obj in book_obj.authors.all():
         book_author_list.append(book_author_obj.id)
+    # 这里，由于需要通过book_obj.authors获取多个用户id，所以就在后端处理成字典，传到前端
     json_book_obj = {"publish_id": book_obj.publish.id, "author_id_list": book_author_list, 
                      "book_id": book_obj.id, "book_price": book_obj.price, "book_publishDate": book_obj.publishDate, 
                      "book_title": book_obj.title}
-    # return JsonResponse({"publish_str": publish_str, "author_str": author_str, 
-    #                      "title": book_obj.title, "price": book_obj.price, "publishDate": book_obj.publishDate})
     return JsonResponse({"json_author_list": json_author_list, 
                          "json_publish_list": json_publish_list, "json_book_obj": json_book_obj})
     
 
-
 @login_required
 def del_book(request, book_id):
     # 删除书籍信息
+    print(request)
     Book.objects.filter(id=book_id).delete()
     return redirect("/index/")

@@ -1,0 +1,44 @@
+<!-- 添加出版社模态框--Modal -->
+
+
+<div class="modal fade bs-example-modal-sm" id="my_publish_edit_modal" tabindex="-1" role="dialog" aria-labelledby="editPublishModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="editPublishModalLabel">编辑出版社</h4>
+      </div>
+      <div class="modal-body">
+          <form action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <label id="edit_publish_ID" class="hidden"></label>
+
+            </div>
+            <div class="form-group">
+                <label for="edit_publish_name_id">出版社名</label>
+                <input type="text" id="edit_publish_name_id"  class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="edit_publish_city_id">所在城市</label>
+                <input type="text" id="edit_publish_city_id" value="{{ publish_obj.city }}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="edit_publish_email_id">邮箱</label>
+                <input type="text" id="edit_publish_email_id" value="{{ publish_obj.email }}" class="form-control">
+            </div>
+        </form>
+
+        <p class="edit_publish_error"></p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="publish_edit_commit">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
