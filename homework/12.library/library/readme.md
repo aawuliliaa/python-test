@@ -68,3 +68,5 @@ python manage.py runserver 8000
 ![](.readme_images/c427fe14.png)
 ![](.readme_images/1f64e8e0.png)
 ![](.readme_images/f46f9d4b.png)
+# 5.流程图
+![](.readme_images/library.jpg)
