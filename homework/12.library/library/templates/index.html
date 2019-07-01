@@ -19,7 +19,7 @@
 <div class="row">
     <div class="col-md-3">
         <h3>作者信息</h3>
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#my_author_add_modal">添加作者</button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#my_author_add_modal" id="my_author_add">添加作者</button>
 
         <table class="table table-bordered table-hover">
             <thead>
@@ -125,8 +125,6 @@
 
             {% endfor %}
 
-
-
             {% if publish_page_info.current_page.has_next %}
                 <li><a href="?publish_page={{ publish_page_info.current_page.next_page_number  }}" aria-label="Next"><span aria-hidden="true">下一页</span></a>
             {% else %}
@@ -140,8 +138,8 @@
     {% include "publish_add.html" %}
     <div class="col-md-5">
         <h3>书籍信息</h3>
-        <a href="{{ add_book_url }}" type="button" class="btn btn-default">添加书籍</a>
-
+{#        <a href="{{ add_book_url }}" type="button" class="btn btn-default">添加书籍</a>#}
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#my_book_add_modal" id="my_book_add_button">添加书籍</button>
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
@@ -170,7 +168,11 @@
 
                     </td>
                     <td>
-                        <a href="/edit_book/{{ book.id }}/" class="btn btn-warning btn-xs">编辑</a>
+{#                        上面这个是弹出新页面的方式#}
+{#                        <a href="/edit_book/{{ book.id }}/" class="btn btn-warning btn-xs">编辑</a>#}
+{#                        下面这个是弹出模态框的方式#}
+                        <button type="button" class="btn btn-warning btn-xs my_book_edit_show_button" data-toggle="modal" data-target="#my_book_edit_modal"  value="{{ book.id }}">编辑</button>
+
                         <a href="/del_book/{{ book.id }}/" class="btn btn-danger btn-xs">删除</a>
                     </td>
                 </tr>
@@ -214,4 +216,6 @@
 
     </div>
 </div>
+    {% include "book_add_modal.html" %}
+    {% include "book_edit_modal.html" %}
 {% endblock content%}

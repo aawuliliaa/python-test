@@ -220,7 +220,62 @@ $(function () {
             })
         }
     );
-$('#my_author_add_modal').on('show.bs.modal', function () {
-  console.log("my_author_add_modal")
-})
+    //编辑书籍，弹出模态框
+    $('.my_book_edit_show_button').click(function () {
+        let book_id = $(this).val();
+        $.ajax({
+            url:"/edit_book/"+book_id+"/",
+            type:"get",
+            success:function (data) {
+                // console.log(data.json_books_obj);[{"model": "app.author", "pk": 1, "fields": {"name": "\u5f20\u4e09\u65b0", "age": 12}}]
+                //设置模态框中的值
+                $("#edit_book_ID").html(book_id);
+                $("#edit_book_title_id").val(data.title);
+                $("#edit_book_price_id").val(data.price);
+                $("#edit_book_publishDate_id").val(data.publishDate);
+                $("#edit_book_publish_id").html(data.publish_str);
+                $("#edit_book_authors_id").html(data.author_str);
+
+            }
+        })
+    });
+//添加书籍莫泰框弹出时，设置出版社和作者
+    $("#my_book_add_button").click(function () {
+        $.ajax({
+            url:"/add_book/",
+            type:"get",
+            success:function (data) {
+                 // console.log(data.json_books_obj);[{"model": "app.author", "pk": 1, "fields": {"name": "\u5f20\u4e09\u65b0", "age": 12}}]
+                let publish_list = JSON.parse(data.json_publish_list);
+                let author_list = JSON.parse(data.json_author_list);
+                let publish_str = "";
+                let author_str = "";
+                for(let publish_item in publish_list){
+                    //这块研究了好一会，这个publish_item只是列表的索引
+                    // console.log(publish_list[publish_obj].fields.name)
+                    if (publish_list.hasOwnProperty(publish_item)){
+                        let publish_name = publish_list[publish_item].fields.name;
+                        let publish_id = publish_list[publish_item].pk;
+                        if(publish_item === 0){
+                            publish_str+=`<option value="${publish_id}" selected>${publish_name}</option>`
+                        }else{
+                            publish_str+=`<option value="${publish_id}" selected>${publish_name}</option>`
+                        }
+                    }
+
+                }
+                for(let author_item in author_list){
+                    //这块研究了好一会，这个publish_item只是列表的索引
+                    // console.log(publish_list[publish_obj].fields.name)
+                    if (author_list.hasOwnProperty(author_item)){
+                        let author_name = author_list[author_item].fields.name;
+                        let author_id = author_list[author_item].pk;
+                        author_str+=`<option value="${author_id}">${author_name}</option>`
+                    }
+                }
+                $("#add_book_publish_id").html(publish_str);
+                $("#add_book_authors_id").html(author_str);
+            }
+        })
+    })
 });

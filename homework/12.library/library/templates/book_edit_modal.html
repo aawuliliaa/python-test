@@ -1,0 +1,54 @@
+<!-- 编辑书模态框--Modal -->
+
+
+<div class="modal fade bs-example-modal-sm" id="my_book_edit_modal" tabindex="-1" role="dialog" aria-labelledby="editBookModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="editBookModalLabel">书籍</h4>
+      </div>
+      <div class="modal-body">
+         <form>
+            {% csrf_token %}
+            <div class="form-group">
+                <label id="edit_book_ID" class="hidden"></label>
+
+            </div>
+            <div class="form-group">
+                <label for="edit_book_title_id">书名</label>
+                <input type="text" id="edit_book_title_id"  class="form-control"  disabled>
+            </div>
+            <div class="form-group">
+                <label for="edit_book_publishDate_id">出版时间</label>
+                <input type="date" id="edit_book_publishDate_id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="edit_book_price_id">价格</label>
+                <input type="text" id="edit_book_price_id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="edit_book_publish_id">出版社</label>
+                <select name="book_publish_id" id="edit_book_publish_id" class="form-control">
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edit_book_authors_id">作者</label>
+                <select name="book_author_id_list" id="edit_book_authors_id" class="form-control" multiple>
+
+                </select>
+            </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="book_edit_commit">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

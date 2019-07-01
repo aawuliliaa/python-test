@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.contrib import auth
 import json
+from django.core import serializers
 from app.models import *
 from app.page import my_page, set_page_session
 
@@ -282,7 +283,13 @@ def add_book(request):
     # get请求时，页面需要列出出版社和作者信息供用户选择
     publish_list = Publish.objects.all()
     author_list = Author.objects.all()
-    return render(request, "book_add.html", locals())
+
+    # 返回queryset值给ajax接收
+    json_author_list = serializers.serialize('json', author_list)
+    json_publish_list = serializers.serialize('json', publish_list)
+    
+    # return render(request, "book_add.html", locals())
+    return JsonResponse({"json_author_list": json_author_list, "json_publish_list": json_publish_list})
 
 
 @login_required
@@ -330,7 +337,26 @@ def edit_book(request, book_id):
     # get请求时，页面需要列出出版社和作者信息供用户选择
     publish_list = Publish.objects.all()
     author_list = Author.objects.all()
-    return render(request, "book_edit.html", locals())
+    
+    publish_str = ""
+    author_str = ""
+    for publish_obj in publish_list:
+        if book_obj.publish.id == publish_obj.id:
+            publish_str += "<option value = %s selected >%s </option>" % (publish_obj.id, publish_obj.name)
+        else:
+            publish_str += "<option value = %s  >%s </option>" % (publish_obj.id, publish_obj.name)
+            
+    for author_obj in author_list:
+        if author_obj in book_obj.authors.all():
+            author_str += "<option value = %s selected >%s </option>" % (author_obj.id, author_obj.name)
+        else:
+            author_str += "<option value = %s  >%s </option>" % (author_obj.id, author_obj.name)
+    #         弹出页面方式时的写法
+    # return render(request, "book_edit.html", locals())
+    # 弹出模态框时的写法
+    
+    return JsonResponse({"publish_str": publish_str, "author_str": author_str, 
+                         "title": book_obj.title, "price": book_obj.price, "publishDate": book_obj.publishDate})
 
 
 @login_required
