@@ -14,13 +14,10 @@
 ```
 # 2.注意事项
 ```
-使用sqlite报错,所以使用了MySQL，实际工作中也会使用MySQL
-Python int too large to convert to C long
-
 批量创建测试数据
 出版社批量创建
 list = []
-for i in range(50):
+for i in range(60):
     item = Publish(name="publish_%s" % i, city="上海%s"%i,email="123@qq.com")
     list.append(item)
 
@@ -28,7 +25,7 @@ Publish.objects.bulk_create(list)
 
 作者批量创建
 list = []
-for i in range(50):
+for i in range(60):
     item = Author(name="author_%s" % i, age=23)
     list.append(item)
 
@@ -41,4 +38,33 @@ for i in range(100):
     list.append(item)
 
 Book.objects.bulk_create(list)
+
+django版本 2.2.2
+python版本3.6.2
+
+使用sqlite报错,所以使用了MySQL，实际工作中也会使用MySQL
+Python int too large to convert to C long
+
+需要模块
+pip install pymysql
+
+由于django对pymysql的支持，运行时需要在本地做如下修改
 ```
+![](.readme_images/40fe65fb.png)
+![](.readme_images/2e81f09f.png)
+# 3.运行
+```
+python manage.py runserver 8000
+```
+# 4.运行效果图
+![](.readme_images/01b37de9.png)
+![](.readme_images/4a53196b.png)
+![](.readme_images/e3704141.png)
+![](.readme_images/51b065ec.png)
+![](.readme_images/2b3e9a95.png)
+![](.readme_images/7404c37d.png)
+![](.readme_images/441ed819.png)
+![](.readme_images/8a743f88.png)
+![](.readme_images/c427fe14.png)
+![](.readme_images/1f64e8e0.png)
+![](.readme_images/f46f9d4b.png)
