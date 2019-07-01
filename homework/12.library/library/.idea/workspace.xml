@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00b92dfc-74e0-4e6c-bce9-96faf4cc343f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/my_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/my_js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../5.atm/auth/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.atm/auth/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../5.atm/shopping/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.atm/shopping/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../5.atm/utils/login_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.atm/utils/login_decorator.py" afterDir="false" />
@@ -60,20 +59,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="266" column="38" selection-start-line="266" selection-start-column="38" selection-end-line="266" selection-end-column="38" />
+            <state relative-caret-position="106">
+              <caret line="259" column="74" selection-start-line="259" selection-start-column="74" selection-end-line="259" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/my_js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="313" column="24" selection-start-line="313" selection-start-column="24" selection-end-line="313" selection-end-column="24" />
+            <state relative-caret-position="128">
+              <caret line="318" column="47" lean-forward="true" selection-start-line="318" selection-start-column="47" selection-end-line="318" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -127,8 +126,8 @@
         <option value="$PROJECT_DIR$/app/apps.py" />
         <option value="$PROJECT_DIR$/templates/book_edit_modal.html" />
         <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/static/js/my_js.js" />
         <option value="$PROJECT_DIR$/app/views.py" />
+        <option value="$PROJECT_DIR$/static/js/my_js.js" />
       </list>
     </option>
   </component>
@@ -256,7 +255,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561772915252</updated>
       <workItem from="1561772921915" duration="43605000" />
-      <workItem from="1561860597393" duration="58088000" />
+      <workItem from="1561860597393" duration="58859000" />
     </task>
     <task id="LOCAL-00001" summary="图书管理为">
       <created>1561773483628</created>
@@ -384,11 +383,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561988811966</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="图书管理">
+      <created>1561989503179</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1561989503179</updated>
+    </task>
+    <task id="LOCAL-00020" summary="图书管理">
+      <created>1561989970903</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1561989970903</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101693000" />
+    <option name="totallyTimeSpent" value="102464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -741,17 +754,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/my_js.js">
+    <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="313" column="24" selection-start-line="313" selection-start-column="24" selection-end-line="313" selection-end-column="24" />
+        <state relative-caret-position="106">
+          <caret line="259" column="74" selection-start-line="259" selection-start-column="74" selection-end-line="259" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views.py">
+    <entry file="file://$PROJECT_DIR$/static/js/my_js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="266" column="38" selection-start-line="266" selection-start-column="38" selection-end-line="266" selection-end-column="38" />
+        <state relative-caret-position="128">
+          <caret line="318" column="47" lean-forward="true" selection-start-line="318" selection-start-column="47" selection-end-line="318" selection-end-column="47" />
         </state>
       </provider>
     </entry>
