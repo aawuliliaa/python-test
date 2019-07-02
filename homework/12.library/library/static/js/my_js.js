@@ -310,6 +310,7 @@ $(function () {
                 let publish_str = "";
                 let author_str = "";
                 for(let publish_item in publish_list){
+                    
                     //这块研究了好一会，这个publish_item只是列表的索引,0,1,2,3
                     // console.log(publish_list[publish_obj].fields.name)
                     if (publish_list.hasOwnProperty(publish_item)){

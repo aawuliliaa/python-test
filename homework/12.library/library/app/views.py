@@ -9,7 +9,12 @@ from app.page import my_page, set_page_session
 
 
 def login(request):
+    """
     # 登录函数
+    :param request: 
+    :return: 
+    """
+    
     if request.method == "POST":
         res = {"user": None, "info": None}
         # 获取前端传过来的数据
@@ -41,7 +46,12 @@ def login(request):
 
 
 def register(request):
-    # 注册函数
+    """
+     # 注册函数
+    :param request: 
+    :return: 
+    """
+   
     if request.method == "POST":
         res = {"user": False, "info": None}
         # 获取前端传过来的用户名与密码
@@ -69,9 +79,15 @@ def register(request):
     # 这里不能加装饰器，加了之后，发现前端success后，接收的data是login.html，所以这里使用这种方式
     return render(request, "login.html")
 
-# 需要auth.login()之后，才允许登录。auth.login会设置相关信息到session中
+
 @login_required
 def index(request):
+    """
+    # 需要auth.login()之后，才允许登录。auth.login会设置相关信息到session中
+    index登录首页
+    :param request: 
+    :return: 
+    """
     # 由于三个列表，是分别设置的分页操作，这里主要是让各自的分页互不影响。
     set_page_session(request)
     # 展示信息页面，这都是为了不让前端出现黄色的警告。。也可以直接写在前端的
@@ -92,14 +108,24 @@ def index(request):
 
 @login_required
 def logout(request):
+    """
     # 退出登录，删除session,cookie信息
+    :param request: 
+    :return: 
+    """
+    
     auth.logout(request)
     return redirect("/login/")
 
 
 @login_required
 def add_author(request):
+    """
     # 添加作者信息
+    :param request: 
+    :return: 
+    """
+    
     # 这里没有做作者姓名唯一性限制，因为作者姓名是可以重复的
     if request.method == "POST":
         res = {"success": False, "info": None}
@@ -125,6 +151,12 @@ def add_author(request):
 
 @login_required
 def edit_author(request, author_id):
+    """
+    编辑作者信息
+    :param request: 
+    :param author_id: 
+    :return: 
+    """
     # 编辑作者信息
     # 这是之前写的跳转页面方式使用的代码
     # author_id = int(author_id)
@@ -154,7 +186,13 @@ def edit_author(request, author_id):
 
 @login_required
 def show_author(request, author_id):
+    """
     # 列出选择的作者出版了哪些书
+    :param request: 
+    :param author_id: 
+    :return: 
+    """
+    
     author_id = int(author_id)
     author_obj = Author.objects.get(id=author_id)
     author_book_list = Book.objects.filter(authors__id=author_id)
@@ -164,14 +202,25 @@ def show_author(request, author_id):
 
 @login_required
 def del_author(request, author_id):
+    """
     # 删除作者信息
+    :param request: 
+    :param author_id: 
+    :return: 
+    """
+    
     Author.objects.get(id=author_id).delete()
     return redirect("/index/")
 
 
 @login_required
 def add_publish(request):
+    """
     # 插入出版社信息
+    :param request: 
+    :return: 
+    """
+    
     if request.method == "POST":
         res = {"success": False, "info": None}
         # 获取前端传过来的数据
@@ -200,7 +249,13 @@ def add_publish(request):
 
 @login_required
 def edit_publish(request, publish_id):
+    """
     # 编辑出版社信息
+    :param request: 
+    :param publish_id: 
+    :return: 
+    """
+    
     if request.method == "POST":
         res = {"success": False, "info": None}
         # 获取前端传过来的数据
@@ -234,7 +289,13 @@ def edit_publish(request, publish_id):
 
 @login_required
 def show_publish(request, publish_id):
+    """
     # 展示出版社出版的书籍信息
+    :param request: 
+    :param publish_id: 
+    :return: 
+    """
+    
     publish_obj = Publish.objects.get(id=publish_id)
     publish_book_list = Book.objects.filter(publish__id=publish_id)
     return render(request, "publish_book.html", locals())
@@ -242,14 +303,25 @@ def show_publish(request, publish_id):
 
 @login_required
 def del_publish(request, publish_id):
+    """
     # 删除出版社信息
+    :param request: 
+    :param publish_id: 
+    :return: 
+    """
+    
     Publish.objects.get(id=publish_id).delete()
     return redirect("/index/")
 
 
 @login_required
 def add_book(request):
-    # 添加书籍
+    """
+    添加书籍
+    :param request: 
+    :return: 
+    """
+    
     if request.method == "POST":
         res = {"success": False, "info": None}
         # 获取前端传过来的数据
@@ -258,6 +330,7 @@ def add_book(request):
         # 由于深度序列化，自动在key的后面加了个[]
         # 需要使用getlist方法获取数组值
         book_author_id_list = request.POST.getlist("book_authors_id_list")
+
         book_publish_id = request.POST.get("book_publish_id").strip()
         book_title = request.POST.get("book_title").strip()
         book_publish_date = request.POST.get("book_publishDate").strip()
@@ -299,6 +372,12 @@ def add_book(request):
 
 @login_required
 def edit_book(request, book_id):
+    """
+    编辑书本信息时，展示编辑页面与提交编辑内容方法
+    :param request: 
+    :param book_id: 
+    :return: 
+    """
     book_obj = Book.objects.get(id=book_id)
     # 编辑书本信息
     if request.method == "POST":
@@ -375,7 +454,12 @@ def edit_book(request, book_id):
 
 @login_required
 def del_book(request, book_id):
+    """
     # 删除书籍信息
+    :param request: 
+    :param book_id: 
+    :return: 
+    """
     print(request)
     Book.objects.filter(id=book_id).delete()
     return redirect("/index/")
