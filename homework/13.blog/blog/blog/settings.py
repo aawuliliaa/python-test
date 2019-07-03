@@ -77,8 +77,14 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db4',
+        'USER': 'root',
+        'PASSWORD': '123',
+        'HOST': '10.0.0.61',
+        'PORT': "3306",
     }
 }
 
@@ -107,16 +113,46 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# 修改时区为上海时间
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
-
-USE_TZ = True
+# 显示为当前时间
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# 设置STATIC_URL对应的路径，后面访问127.0.0.1:8000/static/就会访问到STATICFILES_DIRS下的内容
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+# 对应login_required装饰器跳转的登录页面
+LOGIN_URL = "/login/"
+# 由于自己重写了user表，所以需要在这里添加一条配置
+AUTH_USER_MODEL = "app.UserInfo"
+# 与用户上传图片相关的配置
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# 打印SQL语句
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level': 'DEBUG',
+        },
+    }
+}
