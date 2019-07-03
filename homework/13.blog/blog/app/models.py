@@ -8,6 +8,7 @@ class UserInfo(AbstractUser):
     """
     id = models.AutoField(primary_key=True)
     telephone = models.CharField(max_length=11, null=True, unique=True)
+    # 该字段存放的是用户头像的路径
     avatar = models.FileField(upload_to="avatars/", default="images/default.png")
     create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
     blog = models.OneToOneField(to="Blog", to_field="id", null=True, on_delete=models.CASCADE)

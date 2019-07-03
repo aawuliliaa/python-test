@@ -15,9 +15,7 @@
 django 2.2.2
 python 3.6.2
 
-pip install pymysql
-pip install bs4
-pip install pillow
+由于报错，下面截图中的两处需要在本地修改
 mysql
 
   File "E:\PythonProject\new-python\python-test\homework\13.blog\blog\venvP\lib\site-packages\django\db\backends\mysql\base.py", line 36, in <module>
@@ -33,12 +31,27 @@ AttributeError: 'str' object has no attribute 'decode'
 ![](.readme_images/71b71bff.png)
 # 3.启动方式
 ```
+安装依赖包
+pip install pymysql
+pip install bs4
+pip install pillow
+pip install social-auth-app-django 需要安装这个，滑动验证才能运行成功
+certifi==2017.7.27.1
+chardet==3.0.4
+geetest==3.0.0
+idna==2.6
+pytz==2017.3
+requests==2.18.4
+urllib3==1.22
 
-```
-# 3.启动方式
+
+初始化数据
+python manage.py makemigrations
+python manage.py migrate
+创建管理用户,也可以不创建
+python manage.py createsuperuser
 ```
 
-```
 # 4.登录用户信息
 ```
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from app.models import *
 # Create your views here.
 def login(request):
     return render(request, "login.html")
@@ -9,4 +9,5 @@ def index(request):
     :param request:
     :return:
     """
-    return render(request, "index.html")
+    article_obj_list = Article.objects.all()
+    return render(request, "index.html",locals())

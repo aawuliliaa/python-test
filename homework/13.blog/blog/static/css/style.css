@@ -1,5 +1,23 @@
+/*导航处的logo样式设置*/
 .my_nav_logo{
     height: 50px;
     width: 50px;
     margin-top: 0;
+}
+/*每个文章列表的样式*/
+.my_content_container{
+    border-bottom: dotted;
+    color: #bbbbbb;
+    padding-bottom: 10px;
+}
+/*文章描述下面的样式设置*/
+span.small{
+    margin-left: 10px;
+}
+.my_head_img{
+    height: 50px;
+    width: 50px;
+}
+.my_first_page{
+    padding-top: 10px;
 }

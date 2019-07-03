@@ -57,9 +57,45 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3">12</div>
-        <div class="col-md-6">12</div>
-        <div class="col-md-3">12</div>
+        <div class="col-md-2">12</div>
+{#        中间的文章内容列表处#}
+        <div class="col-md-8">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">首页</a></li>
+                <li role="presentation"><a href="#">Profile</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+            </ul>
+
+            <div class="my_first_page">
+                {% for article_obj in article_obj_list %}
+                    <div class="media my_content_container">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object my_head_img" src="media/{{ article_obj.user.avatar }}" alt="..." >
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <a class="media-heading">{{ article_obj.title }}</a>
+                            <div>
+                                {{ article_obj.desc }}
+                            </div>
+                            <div>
+                                <a href="" class="small">{{ article_obj.user.username }}</a>
+                                <span class="small">发布于({{ article_obj.create_time|date:"Y-m-d H:i" }})</span>
+                                <span class="glyphicon glyphicon-comment small">评论({{ article_obj.comment_count }})</span>
+                                <span class="glyphicon glyphicon-thumbs-up small">点赞({{ article_obj.up_count }})</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+
+
+            </div>
+        </div>
+
+        <div class="col-md-2">12</div>
     </div>
 </div>
 </body>
