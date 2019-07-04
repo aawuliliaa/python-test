@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from django.http import JsonResponse
 import json
 from django.contrib import auth
 from geetest import GeetestLib
@@ -8,6 +9,7 @@ from app.my_form import UserForm
 # 这里是滑动验证处使用的
 pc_geetest_id = "b46d1900d0a894591916ea94ea91bd2c"
 pc_geetest_key = "36fc3fe98530eea08dfc6ce76e3d24c4"
+
 
 def pcgetcaptcha(request):
     """
@@ -98,6 +100,37 @@ def register(request):
     :param request:
     :return:
     """
+    if request.method == "POST":
+        # print(request.POST)
+        # <QueryDict: {'csrfmiddlewaretoken': [],'username': ['eee'],
+        # 'password': ['1234567'], 're_password': ['1234567'], 'email': ['eee@qq.com']}>
+        form = UserForm(request.POST)
+        response = {"user": None, "msg": None}
+        if form.is_valid():
+            username = form.cleaned_data.get("username")
+            response["user"] = username
+            password = form.cleaned_data.get("password")
+            email = form.cleaned_data.get("email")
+            avatar_obj = request.FILES.get("avatar")
+            # print("--------------",type(avatar_obj)) <class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+            # models.FileField接收文件对象，把文件下载到相应的位置，保存文件名为字段值
+            extra = {}
+            if avatar_obj:
+                extra["avatar"] = avatar_obj
+            UserInfo.objects.create_user(username=username, password=password, email=email, **extra)
+        else:
+            # 要清楚form.errors数据类型，这样在前端才能用合适的方式循环使用数据
+            # print("form.errors----", form.errors)
+            # print("type(form.errors)----", type(form.errors))  # <class 'django.forms.utils.ErrorDict'>
+            # print("form.errors.get('name')----", form.errors.get("name"))
+            # <ul class="errorlist"><li>该字段不能为空</li></ul>
+            # print("type(form.errors.get('name'))----",
+            #       type(form.errors.get("name")))  # <class 'django.forms.utils.ErrorList'>
+            # print("form.errors.get('name')[0]----", form.errors.get("name")[0])
+            # print("form.cleaned_data---------", form.cleaned_data)
+            #     {'pwd': '1234', 'email': '123@qq.com', 'tel': '123'}
+            response["msg"] = form.errors
+        return JsonResponse(response)
     form_obj = UserForm()
     return render(request, "register.html", locals())
 
