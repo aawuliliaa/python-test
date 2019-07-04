@@ -2,9 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- 以最高的ie 浏览器 渲染  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <!-- 官网中说明：
+     为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>博客系统</title>
+    <!--    设置标题旁边的图标-->
+    <link rel="icon" href="/static/images/favicon.ico" >
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+<!-- 自己写的样式 -->
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body>
+<body class="my_reg_back">
+<div class="row my_reg_box">
+    <div class="col-md-4 col-md-offset-2 my_reg_logo"><img src="/static/images/favicon.ico" alt=""></div>
+    <div class="col-md-4">
+        <form action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form_obj.username.id_for_label }}">{{ form_obj.username.label }}</label>
+                {{ form_obj.username }}
+                <span class="error-info"></span>
+            </div>
+            <div class="form-group">
+                <label for="{{ form_obj.password.id_for_label }}">{{ form_obj.password.label }}</label>
+                {{ form_obj.password }}
+                <span class="error-info"></span>
+            </div>
+            <div class="form-group">
+                <label for="{{ form_obj.re_password.id_for_label }}">{{ form_obj.re_password.label }}</label>
+                {{ form_obj.re_password }}
+                <span class="error-info"></span>
+            </div>
+            <div class="form-group">
+                <label for="{{ form_obj.telephone.id_for_label }}">{{ form_obj.telephone.label }}</label>
+                {{ form_obj.telephone }}
+                <span class="error-info"></span>
+            </div>
+            <div class="form-group">
+                <label for="head_avatar">头像 <img class="my_reg_head" src="/media/avatars/default.png" alt=""></label>
+                <input type="file" id="head_avatar">
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-default" value="注册">
+            </div>
+        </form>
+    </div>
+</div>
 
 </body>
+
+<!-- 加载jquery,由于bootstrap需要使用jquery，多以要把jquery放在前面-->
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+{#    加载bootstrap的js#}
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+{#注册的js#}
+    <script type="text/javascript" src="/static/js/register.js"></script>
+
 </html>

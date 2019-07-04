@@ -20,8 +20,17 @@ from django.views.static import serve
 from blog import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # 这里是滑动验证码处使用的ajax
+    re_path(r'^pc-geetest/register', views.pcgetcaptcha, name='pcgetcaptcha'),
+    re_path(r'^pc-geetest/ajax_validate', views.pcajax_validate, name='pcajax_validate'),
     path('login/', views.login),
+    path('logout/', views.logout),
+    path('register/', views.register),
     re_path('^$', views.index),
+    # 这里如果不在index/后加个$结尾，访问index/的时候，，页面的中图片就不显示
+    re_path('index/$', views.index),
     # media配置:只有配置了这里，Index页面中才能显示出头像
+    # 这里要注意，当url多了的时候，就会出现匹配的顺序问题，
+    # 当不显示图片的时候，要查看下是否被上面的url给匹配了
     re_path(r"media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
 ]

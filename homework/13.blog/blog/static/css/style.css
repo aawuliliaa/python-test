@@ -1,8 +1,14 @@
+/*index页面*/
 /*导航处的logo样式设置*/
 .my_nav_logo{
     height: 50px;
     width: 50px;
     margin-top: 0;
+}
+.my_login_head_img{
+    margin-top: 10px;
+    height: 30px;
+    width: 30px
 }
 /*每个文章列表的样式*/
 .my_content_container{
@@ -14,10 +20,34 @@
 span.small{
     margin-left: 10px;
 }
+/*文章列表处，头像的大小*/
 .my_head_img{
     height: 50px;
     width: 50px;
 }
+/*文章列表距离顶部的距离*/
 .my_first_page{
     padding-top: 10px;
+}
+/*登录页面背景*/
+.my_login_back,.my_reg_back{
+    background: url("/static/images/login.jpg") no-repeat;
+
+}
+/*登录页面的信息框样式*/
+.my_login_box{
+    border: #e0e0e0 solid;
+    margin-top:100px;
+    padding:30px;
+}
+/*注册页面样式*/
+.my_reg_box{
+    padding-top: 50px;
+}
+.my_reg_logo{
+    padding-top: 100px;
+}
+.my_reg_head{
+    height: 50px;
+    width: 50px;
 }

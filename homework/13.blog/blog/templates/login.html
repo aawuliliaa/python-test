@@ -15,67 +15,46 @@
     <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
 <!-- 自己写的样式 -->
     <link rel="stylesheet" href="/static/css/style.css">
+
 </head>
-<body>
+<body class="my_login_back">
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="/static/images/favicon.ico" alt=""></a>
-      </div>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 my_login_box">
+        <form action="" class="popup">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="login_user_id">用户名</label>
+                <input type="text" name="user" id="login_user_id" class="form-control">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+            </div>
+            <div class="form-group">
+                <label for="login_pwd_id">密码</label>
+                <input type="password" name="pwd" id="login_pwd_id" class="form-control">
+
+            </div>
+            <p class="my_login_error"></p>
+            <div class="form-group">
+              <div id="popup-captcha"></div>
+            </div>
+        </form>
+
+        <button type="submit" class="btn btn-default" id="popup-submit">登录</button>
+        <a type="button" class="btn btn-default" href="/register/">注册</a>
+    </div>
+
+</div>
 </body>
+
 <!-- 加载jquery,由于bootstrap需要使用jquery，多以要把jquery放在前面-->
     <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
 {#    加载bootstrap的js#}
     <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
-{#    加载我自己写的js#}
-    <script type="text/javascript" src="/static/js/my_js.js"></script>
+  <!-- 引入封装了failback的接口--initGeetest -->
+    <script type="text/javascript" src="/static/js/gt.js"></script>
+{#    加载我自己写的js,这里的内容只需要在登录页面加载，由于是在加载页面的时候就运行，如果别的页面引入，前端控制台会出现报错。#}
+{#    所以单独把登录页面的相关滑动验证的内容单独写在一个js#}
+<script type="text/javascript" src="/static/js/login.js"></script>
+
+
 </html>
