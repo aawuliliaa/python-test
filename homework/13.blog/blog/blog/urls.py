@@ -26,12 +26,15 @@ urlpatterns = [
     path('login/', views.login),
     path('logout/', views.logout),
     path('register/', views.register),
+    # 获取评论树
     path('get_comment_tree/', views.get_comment_tree),
+    # 提交评论
     path('commit_comment/', views.commit_comment),
     # 点赞按钮
     path('up_down/', views.up_down),
-
     re_path('^$', views.index),
+    path('back_manage/', views.back_manage),
+
     # 这里如果不在index/后加个$结尾，访问index/的时候，，页面的中图片就不显示
     re_path('index/$', views.index),
     re_path('^(?P<username>[a-zA-Z]+)/articles/(?P<article_id>[0-9]+)$', views.article_detail),

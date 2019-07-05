@@ -239,3 +239,7 @@ def up_down(request):
         ArticleUpDown.objects.create(is_up=is_up, article_id=article_id, user_id=user_id)
         result["success"] = True
     return JsonResponse(result)
+
+
+def back_manage(request):
+    return render(request, "back_manage/index.html")

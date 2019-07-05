@@ -1,63 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- 以最高的ie 浏览器 渲染  -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <!-- 官网中说明：
-     为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>博客系统</title>
-    <!--    设置标题旁边的图标-->
-    <link rel="icon" href="/static/images/favicon.ico" >
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
-<!-- 自己写的样式 -->
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-{#导航条内容#}
-<nav class="navbar navbar-default">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
-          <img src="/static/images/favicon.ico" alt="" class="my_nav_logo">
-      </div>
+{% extends "base.html" %}
+{% block content %}
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-              <li><a>欢迎来到博客世界，分享你的笔记吧！</a></li>
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-              {% if not request.user.is_authenticated %}
-                  <li><a href="/login/">登录</a></li>
-                  <li><a href="/register/">注册</a></li>
-              {% else %}
-                  <li><img src="media/{{ request.user.avatar }}" class="my_login_head_img" alt=""></li>
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.user.username }}<span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                          <li><a href="#">管理</a></li>
-                          <li><a href="#">修改密码</a></li>
-                          <li><a href="/logout/">注销</a></li>
-                      </ul>
-                  </li>
-              {% endif %}
-          </ul>
-      </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<div class="container">
+    <div class="container">
     <div class="row">
         <div class="col-md-2">12</div>
 {#        中间的文章内容列表处#}
@@ -96,13 +40,8 @@
             </div>
         </div>
 
-        <div class="col-md-2">12</div>
+        <div class="col-md-2">qwqw</div>
     </div>
 </div>
-</body>
-<!-- 加载jquery,由于bootstrap需要使用jquery，多以要把jquery放在前面-->
-    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
-{#    加载bootstrap的js#}
-    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
 
-</html>
+{% endblock %}
