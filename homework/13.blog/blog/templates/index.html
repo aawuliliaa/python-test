@@ -13,7 +13,7 @@
             </ul>
             {#文章列表#}
             <div class="my_first_page">
-                {% for article_obj in article_obj_list %}
+                {% for article_obj in article_page_info.current_page %}
 {#                    管网处的media修改的#}
                     <div class="media my_content_container">
                         <div class="media-left media-middle">
@@ -38,10 +38,45 @@
                     </div>
                 {% endfor %}
             </div>
+
+        {#    分页#}
+
+                <nav aria-label="Page navigation">
+                  <ul class="pagination">
+                    {% if article_page_info.current_page.has_previous %}
+                    <li><a href="?article_page={{ article_page_info.current_page.previous_page_number  }}" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+                    {% else %}
+                    <li class="disabled"><a href="" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+                    {% endif %}
+
+
+
+                    {% for item in article_page_info.page_range %}
+
+                        {% if article_page_info.current_page_num == item %}
+                            <li class="active"><a href="?page={{ item }}">{{ item }}</a></li>
+                        {% else %}
+                            <li><a href="?article_page={{ item }}">{{ item }}</a></li>
+                        {% endif %}
+
+                    {% endfor %}
+
+
+
+                    {% if article_page_info.current_page.has_next %}
+                        <li><a href="?article_page={{ article_page_info.current_page.next_page_number  }}" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+                    {% else %}
+                        <li class="disabled"><a href="" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+                    {% endif %}
+                    </li>
+                  </ul>
+                </nav>
+
         </div>
 
         <div class="col-md-2">qwqw</div>
     </div>
+
 </div>
 
 {% endblock %}

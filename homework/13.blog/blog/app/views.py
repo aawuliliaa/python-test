@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 from app.models import *
 from app.my_form import UserForm
 from blog import settings
+from app.page import my_page
 # Create your views here.
 # 这里是滑动验证处使用的
 pc_geetest_id = "b46d1900d0a894591916ea94ea91bd2c"
@@ -96,6 +97,7 @@ def index(request):
     :return:
     """
     article_obj_list = Article.objects.all()
+    article_page_info = my_page(article_obj_list, request.GET.get("article_page", 1))
     return render(request, "index.html", locals())
 
 
@@ -288,8 +290,12 @@ def add_article(request):
         # 添加文章
         article_obj = Article.objects.create(title=article_title, desc=desc,
                                              content=str(soup), category_id=article_category, user=request.user)
-        # 文章和标签的关联表
-        article_obj.tags.add(*tag_id_list)
+        # 文章和标签的关联表插入数据
+        # 自定义的多对多关联表不能使用add()和remove()方法，使用了数据也能插入，但是报警告
+        # article_obj.tags.add(*tag_id_list)
+        for tag_id in tag_id_list:
+            tag_obj = Tag.objects.get(id=tag_id)
+            ArticleToTag(article=article_obj, tag=tag_obj).save()
 
         res["success"] = True
     return JsonResponse(res)
