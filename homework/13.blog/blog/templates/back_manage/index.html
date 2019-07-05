@@ -9,16 +9,18 @@
         <div class="col-md-2">
             <div class="panel panel-success">
                 <div class="panel-heading">操作</div>
-                <div class="panel-body">
-                    <p><a href="/{{ username }}/archive/{{ date.0 }}">添加随笔</a></p>
-                    <p><a href="/{{ username }}/archive/{{ date.0 }}">添加分类</a></p>
-                    <p><a href="/{{ username }}/archive/{{ date.0 }}">添加标签</a></p>
-                </div>
+                <ul class="panel-body">
+                    <li class="box_show pa" value="add_article_box"><a>添加随笔</a></li>
+                    <li class="box_show pa" value="add_category_box"><a>添加分类</a></li>
+                    <li class="box_show pa" value="add_tag_box"><a>添加标签</a></li>
+                </ul>
             </div>
         </div>
         <div class="col-md-10">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">随笔</a></li>
+                <li role="presentation" class="na box_show active" value="add_article_box"><a href="#">随笔</a></li>
+                <li role="presentation" class="na box_show" value="add_category_box"><a href="#">分类</a></li>
+                <li role="presentation" class="na box_show" value="add_tag_box"><a href="#">标签</a></li>
             </ul>
 {#            添加随笔内容框#}
             <div class="panel panel-default add_article_box">
@@ -54,6 +56,12 @@
                 <div class="add_article_error_info"></div>
                 <button type="button" class="btn btn-success add_article_commit">提交</button>
             </div>
+{#        添加文章分类#}
+            <div class="add_category_box">add_category_box</div>
+
+        {#        添加标签#}
+            <div class="add_tag_box">add_tag_box</div>
+
         </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
 $(function () {
+    //添加文章，提交文章到数据库中
     $(".add_article_commit").click(function () {
         let article_title = $("#add_article_title").val();
         let article_desc = $("#add_article_desc").val();
@@ -34,8 +35,22 @@ $(function () {
                 }
             }
         })
+    });
+
+    $(".box_show").click(function () {
+        //点击左侧的内容，nav_tabs中响应的标签添加active
+        if($(this).hasClass("pa")){
+            let pa_val = $(this).attr("value");
+            $(`li.na[value=${pa_val}]`).addClass("active").siblings("li").removeClass("active");
+            $(`.${pa_val}`).removeClass("hidden").siblings("div").addClass("hidden")
+        }
+        if($(this).hasClass("na")){
+            let na_val = $(this).attr("value");
+            $(`.${na_val}`).removeClass("hidden").siblings("div").addClass("hidden")
+        }
     })
 });
+ //kindeditor内容，放在上面不行，只能放在外面
  KindEditor.ready(function(K) {
                     window.editor = K.create('#add_article_content',{
 
