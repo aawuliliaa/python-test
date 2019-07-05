@@ -46,9 +46,37 @@ $(function () {
         }
         if($(this).hasClass("na")){
             let na_val = $(this).attr("value");
+            $(this).addClass("active").siblings("li").removeClass("active");
             $(`.${na_val}`).removeClass("hidden").siblings("div").addClass("hidden")
         }
-    })
+    });
+    //删除分类和标签
+    $(".del_classes").click(function () {
+        let classes = "";
+        if($(this).hasClass("category")){
+            classes="category"
+        }else if($(this).hasClass("tag")){
+            classes="tag"
+        }
+        let classes_id = $(this).attr("value");
+        let del_button_obj = $(this);
+        $.ajax({
+            url:"/del_classes/",
+            type: "post",
+            data:{
+                csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val(),
+                classes:classes,
+                classes_id:classes_id
+            },
+            success:function (data) {
+                if(data.success){
+                    del_button_obj.parent("li").remove()
+                }
+
+            }
+        })
+
+    });
 });
  //kindeditor内容，放在上面不行，只能放在外面
  KindEditor.ready(function(K) {

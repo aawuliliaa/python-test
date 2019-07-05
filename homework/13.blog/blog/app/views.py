@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
 from django.db.models import F
+from django.contrib.auth.decorators import login_required
 from django.db import transaction
 import json
 import os
@@ -246,6 +247,7 @@ def up_down(request):
     return JsonResponse(result)
 
 
+@login_required
 def back_manage(request):
     """
     后台管理页面
@@ -258,6 +260,7 @@ def back_manage(request):
     return render(request, "back_manage/index.html", locals())
 
 
+@login_required
 def add_article(request):
     """
     添加文章
@@ -318,3 +321,15 @@ def upload(request):
         "url": "media/add_article_img/%s" % img_obj.name
     }
     return HttpResponse(json.dumps(response))
+
+
+def del_classes(request):
+    res = {"success": False}
+    classes_id = request.POST.get("classes_id")
+    classes = request.POST.get("classes")
+    if classes == "category":
+        Category.objects.filter(id=classes_id).delete()
+    elif classes == "tag":
+        Tag.objects.filter(id=classes_id).delete()
+    res["success"] = True
+    return JsonResponse(res)

@@ -106,3 +106,8 @@ span.small{
 .add_article_box{
     margin-top: 10px;
 }
+.del_classes{
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+}

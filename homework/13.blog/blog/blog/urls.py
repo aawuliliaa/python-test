@@ -35,7 +35,10 @@ urlpatterns = [
     re_path('^$', views.index),
     path('back_manage/', views.back_manage),
     path('add_article/', views.add_article),
+    # kindeditor编辑器中的图片上传
     path('upload/', views.upload),
+    # 删除文章分类或标签
+    path('del_classes/', views.del_classes),
 
 
     # 这里如果不在index/后加个$结尾，访问index/的时候，，页面的中图片就不显示
