@@ -1,5 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
+from django.db.models import F
+from django.db import transaction
 import json
 from django.contrib import auth
 from geetest import GeetestLib
@@ -135,3 +137,105 @@ def register(request):
     return render(request, "register.html", locals())
 
 
+def home_site(request, username, **kwargs):
+    """
+    个人站点页面
+    :param request:
+    :param username:
+    :return:
+    """
+    article_obj_list = Article.objects.filter(user__username=username)
+
+    if kwargs:
+        condition = kwargs.get("condition")
+        param = kwargs.get("param")
+        if condition == "category":
+            article_obj_list = article_obj_list.filter(category__title=param)
+        elif condition == "tag":
+            article_obj_list = article_obj_list.filter(tags__title=param)
+        elif condition == "archive":
+
+            year, month = param.split("-")
+            article_obj_list = article_obj_list.filter(create_time__year=year, create_time__month=month)
+
+    return render(request, "home-site.html", {"username": username, "article_obj_list": article_obj_list})
+
+
+def article_detail(request, username, article_id):
+    """
+    文章详情页
+    :param request:
+    :param article_id:
+    :param username:
+    :return:
+    """
+    article_obj = Article.objects.get(pk=article_id)
+    return render(request, "article_detail.html", locals())
+
+
+def get_comment_tree(request):
+    """
+    展示评论树
+    :param request:
+    :return:
+    """
+    article_id = request.GET.get("article_id")
+    # 把queryset
+    comment_list = list(Comment.objects.filter(article_id=article_id).
+                        values("pk", "content", "parent_comment_id", "user__username"))
+    # 非字典传送时，需要设置safe为false
+    return JsonResponse(comment_list, safe=False)
+
+
+def commit_comment(request):
+    """
+    提交评论
+    :param request:
+    :return:
+    """
+    result = {"success": None}
+    article_id = int(request.POST.get("article_id"))
+    parent_comment_id = request.POST.get("parent_comment_id")
+    if parent_comment_id:
+        reply_user = request.POST.get("reply_user")
+        comment_content = request.POST.get("comment_content").split(reply_user)[1].strip()
+    else:
+        comment_content = request.POST.get("comment_content")
+    #     事务操作
+    with transaction.atomic():
+        comment_obj = Comment.objects.create(article_id=article_id,
+                                             content=comment_content,
+                                             parent_comment_id=parent_comment_id, user_id=request.user.pk)
+        Article.objects.filter(id=article_id).update(comment_count=F("comment_count") + 1)
+    result["success"] = True
+    result["pk"] = comment_obj.pk
+    result["content"] = comment_content
+    result["parent_comment_id"] = parent_comment_id
+    result["user__username"] = comment_obj.user.username
+    return JsonResponse(result)
+
+
+def up_down(request):
+    """
+    点赞与反对按钮事件
+    :param request:
+    :return:
+    """
+    result = {"success": None}
+    article_id = int(request.POST.get("article_id"))
+    up_down = request.POST.get("up_down")
+    user_id = request.user.pk
+    up_down_obj = ArticleUpDown.objects.filter(article_id=article_id, user_id=user_id)
+    # 某个人对某文章没有评论过，就进行下面的操作
+    if not up_down_obj:
+
+        article_obj = Article.objects.filter(id=article_id)
+        if up_down == "down":
+            article_obj.update(up_count=F("down_count") + 1)
+            is_up = False
+        else:
+            article_obj.update(up_count=F("up_count") + 1)
+            is_up = True
+        ArticleUpDown.objects.create(is_up=is_up, article_id=article_id, user_id=user_id)
+        result["success"] = True
+    return JsonResponse(result)

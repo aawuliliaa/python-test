@@ -26,11 +26,20 @@ urlpatterns = [
     path('login/', views.login),
     path('logout/', views.logout),
     path('register/', views.register),
+    path('get_comment_tree/', views.get_comment_tree),
+    path('commit_comment/', views.commit_comment),
+    # 点赞按钮
+    path('up_down/', views.up_down),
+
     re_path('^$', views.index),
     # 这里如果不在index/后加个$结尾，访问index/的时候，，页面的中图片就不显示
     re_path('index/$', views.index),
+    re_path('^(?P<username>[a-zA-Z]+)/articles/(?P<article_id>[0-9]+)$', views.article_detail),
     # media配置:只有配置了这里，Index页面中才能显示出头像
     # 这里要注意，当url多了的时候，就会出现匹配的顺序问题，
     # 当不显示图片的时候，要查看下是否被上面的url给匹配了
     re_path(r"media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+    re_path(r"^(?P<username>[a-zA-Z]+)/(?P<condition>tag|category|archive)/(?P<param>.*)/$", views.home_site),
+    re_path('^(?P<username>[a-zA-Z]+)/$', views.home_site),
+
 ]

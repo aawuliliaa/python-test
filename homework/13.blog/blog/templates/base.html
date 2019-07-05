@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 以最高的ie 浏览器 渲染  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <!-- 官网中说明：
+     为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>博客系统</title>
+    <!--    设置标题旁边的图标-->
+    <link rel="icon" href="/static/images/favicon.ico" >
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+<!-- 自己写的样式 -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="my_home_site_back">
+<div class="container">
+    <h5 class="my_home_site_name">个人站点</h5>
+    <div>
+        <a href="/index/">博客园</a>
+        <a href="">管理</a>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            {% block content %}
+
+            {% endblock content%}
+        </div>
+        <div class="col-md-3">
+{#            在settings.py中配置app的时候，把自动生成的改成app，这里就不会标黄了#}
+            {% load my_tags %}
+            {% get_classes_data username %}
+        </div>
+    </div>
+</div>
+
+<!-- 加载jquery,由于bootstrap需要使用jquery，多以要把jquery放在前面-->
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+{#    加载bootstrap的js#}
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+{% block js %}
+
+{% endblock js%}
+</body>
+</html>

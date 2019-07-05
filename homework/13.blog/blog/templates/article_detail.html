@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="my_title_con_box">
+        <span id="article_id" class="hidden">{{ article_obj.id }}</span>
+        <div class="my_article_title">{{ article_obj.title }}</div>
+        <div class="my_article_con">{{ article_obj.content|safe }}</div>
+
+    </div>
+{#    子元素浮动，父元素要清楚浮动，下面的内容才能不受浮动影响#}
+    <div class="up_down_box clearfix">
+        {% csrf_token %}
+        <span class="my_article_down my_article_up_down pull-right">{{ article_obj.down_count }}</span>
+        <span class="my_article_up my_article_up_down pull-right">{{ article_obj.up_count }}</span>
+
+    </div>
+    <div class="clearfix"><span class="up_down_info pull-right"></span></div>
+{#    评论树内容#}
+    <div class="list-group" id="comment_tree">
+        <h5>评论列表</h5>
+    </div>
+
+{#    发表评论#}
+    <div>
+    <h4>发表评论</h4>
+    <div>
+        <label for="my_comment_user">当前用户</label>
+        <input type="text" id="my_comment_user" value="{{ request.user.username }}" disabled>
+
+    </div>
+    <div>
+        {% csrf_token %}
+        <label for="my_comment_content">评论内容</label>
+        <textarea name="" id="my_comment_content" cols="60" rows="10"></textarea>
+        <button class="btn btn-default" id="my_comment_commit">提交</button>
+    </div>
+    </div>
+{% endblock content%}
+{% block js %}
+    <script type="text/javascript" src="/static/js/article_detail.js"></script>
+{% endblock js%}

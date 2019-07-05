@@ -51,3 +51,54 @@ span.small{
     height: 50px;
     width: 50px;
 }
+/*个人站点页面*/
+/*.my_home_site_back{*/
+/*    background: #d4d4d4;*/
+/*}*/
+.my_home_site_name{
+    color: #ebccd1;
+    font-size: 50px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+/*文章详情页*/
+/*标题的字体*/
+.my_article_title{
+    font-size: 40px;
+}
+/*点赞的样式*/
+.my_article_up_down{
+    margin-top: 10px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    line-height:50px;
+    text-align:center;
+}
+/*点赞的图片*/
+.my_article_up{
+    background: url("/static/images/upup.gif");
+}
+.my_article_down{
+    margin-left: 10px;
+    background: url("/static/images/downdown.gif");
+}
+/*点赞提示信息*/
+.up_down_info{
+    display: block;
+    padding-right: 20px;
+}
+/*文章内容盒子*/
+.my_title_con_box{
+    border: #d4d4d4 solid 1px;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+/*评论树*/
+.comment_item{
+    margin-left: 20px;
+}
+#comment_tree{
+    padding-top: 70px;
+}

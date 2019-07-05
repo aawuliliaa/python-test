@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    {#文章列表#}
+    <div class="my_first_page">
+        {% for article_obj in article_obj_list %}
+{#                    管网处的media修改的#}
+            <div class="media my_content_container">
+
+                <div class="media-body">
+                    <h5><a class="media-heading" href="/{{ article_obj.user.username }}/articles/{{ article_obj.pk }}">{{ article_obj.title }}</a></h5>
+                    <div>
+                        {{ article_obj.desc }}
+                    </div>
+                    <div>
+                        <span class="small">发布于({{ article_obj.create_time|date:"Y-m-d H:i" }})</span>
+                        <span class="glyphicon glyphicon-comment small">评论({{ article_obj.comment_count }})</span>
+                        <span class="glyphicon glyphicon-thumbs-up small">点赞({{ article_obj.up_count }})</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content%}

@@ -47,6 +47,7 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.user.username }}<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="#">管理</a></li>
+                          <li><a href="#">修改密码</a></li>
                           <li><a href="/logout/">注销</a></li>
                       </ul>
                   </li>
@@ -69,19 +70,22 @@
             {#文章列表#}
             <div class="my_first_page">
                 {% for article_obj in article_obj_list %}
+{#                    管网处的media修改的#}
                     <div class="media my_content_container">
                         <div class="media-left media-middle">
-                            <a href="#">
+{#                            点击用户头像，跳转到个人站点页面#}
+                            <a href="/{{ article_obj.user.username }}/">
                                 <img class="media-object my_head_img" src="media/{{ article_obj.user.avatar }}" alt="..." >
                             </a>
                         </div>
                         <div class="media-body">
-                            <a class="media-heading">{{ article_obj.title }}</a>
+                            <h5><a class="media-heading" href="/{{ article_obj.user.username }}/articles/{{ article_obj.pk }}">{{ article_obj.title }}</a></h5>
                             <div>
                                 {{ article_obj.desc }}
                             </div>
                             <div>
-                                <a href="" class="small">{{ article_obj.user.username }}</a>
+                                {# 点击用户名，跳转到个人站点页面#}
+                                <a href="/{{ article_obj.user.username }}/" class="small">{{ article_obj.user.username }}</a>
                                 <span class="small">发布于({{ article_obj.create_time|date:"Y-m-d H:i" }})</span>
                                 <span class="glyphicon glyphicon-comment small">评论({{ article_obj.comment_count }})</span>
                                 <span class="glyphicon glyphicon-thumbs-up small">点赞({{ article_obj.up_count }})</span>
