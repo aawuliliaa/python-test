@@ -38,7 +38,7 @@ class Category(models.Model):
     """
     id = models.AutoField(primary_key=True)
     title = models.CharField(verbose_name="分类名称", max_length=32)
-    blog = models.ForeignKey(verbose_name="所属博客", to_field="id", to="Blog", on_delete=models.CASCADE)
+    user = models.ForeignKey(verbose_name="所属用户", to_field="id", to="UserInfo", on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.title
@@ -51,7 +51,7 @@ class Tag(models.Model):
     """
     id = models.AutoField(primary_key=True)
     title = models.CharField(verbose_name="标签名称", max_length=32)
-    blog = models.ForeignKey(verbose_name="所属的博客", to="Blog", to_field="id", on_delete=models.CASCADE)
+    user = models.ForeignKey(verbose_name="所属的用户", to="UserInfo", to_field="id", on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.title
@@ -71,7 +71,8 @@ class Article(models.Model):
     down_count = models.IntegerField(verbose_name="反对数", default=0)
 
     user = models.ForeignKey(verbose_name="作者", to="UserInfo", to_field="id", on_delete=models.CASCADE)
-    category = models.ForeignKey(verbose_name="所属分类", to="Category", to_field="id", on_delete=models.CASCADE)
+    category = models.ForeignKey(verbose_name="所属分类", to="Category",
+                                 to_field="id", on_delete=models.CASCADE)
     tags = models.ManyToManyField(verbose_name="所属标签", to="Tag", through="ArticleToTag")
 
 

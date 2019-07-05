@@ -34,6 +34,9 @@ urlpatterns = [
     path('up_down/', views.up_down),
     re_path('^$', views.index),
     path('back_manage/', views.back_manage),
+    path('add_article/', views.add_article),
+    path('upload/', views.upload),
+
 
     # 这里如果不在index/后加个$结尾，访问index/的时候，，页面的中图片就不显示
     re_path('index/$', views.index),

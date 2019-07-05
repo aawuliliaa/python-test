@@ -3,10 +3,13 @@ from django.http import JsonResponse
 from django.db.models import F
 from django.db import transaction
 import json
+import os
 from django.contrib import auth
 from geetest import GeetestLib
+from bs4 import BeautifulSoup
 from app.models import *
 from app.my_form import UserForm
+from blog import settings
 # Create your views here.
 # 这里是滑动验证处使用的
 pc_geetest_id = "b46d1900d0a894591916ea94ea91bd2c"
@@ -223,14 +226,14 @@ def up_down(request):
     """
     result = {"success": None}
     article_id = int(request.POST.get("article_id"))
-    up_down = request.POST.get("up_down")
+    up_down_info = request.POST.get("up_down")
     user_id = request.user.pk
     up_down_obj = ArticleUpDown.objects.filter(article_id=article_id, user_id=user_id)
     # 某个人对某文章没有评论过，就进行下面的操作
     if not up_down_obj:
 
         article_obj = Article.objects.filter(id=article_id)
-        if up_down == "down":
+        if up_down_info == "down":
             article_obj.update(up_count=F("down_count") + 1)
             is_up = False
         else:
@@ -242,4 +245,70 @@ def up_down(request):
 
 
 def back_manage(request):
-    return render(request, "back_manage/index.html")
+    """
+    后台管理页面
+    :param request:
+    :return:
+    """
+    # 当前用户的所有标签
+    tag_list = Tag.objects.filter(user=request.user)
+    category_list = Category.objects.filter(user=request.user)
+    return render(request, "back_manage/index.html", locals())
+
+
+def add_article(request):
+    """
+    添加文章
+    :param request:
+    :return:
+    """
+
+    res = {"success": False, "info": None}
+    # 从前端获取数据
+    article_title = request.POST.get("article_title").strip()
+    article_category = int(request.POST.get("article_category").strip())
+    article_content = request.POST.get("article_content").strip()
+    tag_id_list = request.POST.getlist("tag_id_list")
+    if article_title == "" or article_content == "" \
+            or article_category == "" or len(tag_id_list) == 0:
+        res["info"] = "添加的内容不能为空"
+    else:
+
+        # 防止xss攻击,过滤script标签
+        soup = BeautifulSoup(article_content, "html.parser")
+        for tag in soup.find_all():
+
+            # 去掉script的html内容，去掉js代码
+            if tag.name == "script":
+                tag.decompose()
+
+        # 构建摘要数据,获取标签字符串的文本前150个符号
+
+        desc = soup.text[0:150] + "..."
+        # 添加文章
+        article_obj = Article.objects.create(title=article_title, desc=desc,
+                                             content=str(soup), category_id=article_category, user=request.user)
+        # 文章和标签的关联表
+        article_obj.tags.add(*tag_id_list)
+
+        res["success"] = True
+    return JsonResponse(res)
+
+
+def upload(request):
+    """
+    kindeditor中上传图片，展示图片的功能
+    :param request:
+    :return:
+    """
+    img_obj = request.FILES.get("upload_img")
+    path = os.path.join(settings.MEDIA_ROOT, "add_article_img", img_obj.name)
+    with open(path, "wb") as f:
+        for line in img_obj:
+            f.write(line)
+    # 这是kindeditor固定的返回方式
+    response = {
+        "error": 0,
+        "url": "media/add_article_img/%s" % img_obj.name
+    }
+    return HttpResponse(json.dumps(response))

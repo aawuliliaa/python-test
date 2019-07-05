@@ -3,5 +3,66 @@
     <li><a>后台管理</a></li>
 {% endblock nav_info%}
 {% block content %}
-qwqwq
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-2">
+            <div class="panel panel-success">
+                <div class="panel-heading">操作</div>
+                <div class="panel-body">
+                    <p><a href="/{{ username }}/archive/{{ date.0 }}">添加随笔</a></p>
+                    <p><a href="/{{ username }}/archive/{{ date.0 }}">添加分类</a></p>
+                    <p><a href="/{{ username }}/archive/{{ date.0 }}">添加标签</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">随笔</a></li>
+            </ul>
+{#            添加随笔内容框#}
+            <div class="panel panel-default add_article_box">
+                {% csrf_token %}
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">文章标题</span>
+                    <label for="add_article_title"></label>
+                    <input type="text" class="form-control" id="add_article_title" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="panel-body">
+                    <label for="">内容(Kindeditor编辑器，不支持拖放/粘贴上传图片) </label>
+                     <div id="add_article_content">
+                         <label for="add_article_content"></label>
+                         <textarea name="content" id="add_article_content" rows="20" class="form-control"></textarea>
+                     </div>
+                </div>
+
+                <label for="">所属分类</label>
+                <select name="" id=""  class="form-control my_article_classes">
+                    {% for category in category_list %}
+                        {% if forloop.first %}
+                            <option value="{{ category.id }}" selected>{{ category.title }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="">所属标签</label>
+                <select name="" id="" multiple class="form-control my_article_tag">
+                    {% for tag in tag_list %}
+                        <option value="{{ tag.id }}">{{ tag.title }}</option>
+                    {% endfor %}
+                </select>
+                <div class="add_article_error_info"></div>
+                <button type="button" class="btn btn-success add_article_commit">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock content%}
+
+{% block script %}
+    <script charset="utf-8" src="/static/kindeditor/kindeditor-all.js"></script>
+    <script src="/static/js/my_back.js"></script>
+{% endblock script%}
+
+

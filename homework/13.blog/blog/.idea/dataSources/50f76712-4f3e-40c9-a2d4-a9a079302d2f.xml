@@ -1166,14 +1166,14 @@ article_id</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="234" name="blog_id">
+    <column id="288" parent="234" name="user_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="289" parent="234" name="app_category_blog_id_40a4a99f_fk_app_blog_id">
-      <ColNames>blog_id</ColNames>
+    <index id="289" parent="234" name="app_category_user_id_2aaf64d4_fk_app_userinfo_id">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="290" parent="234" name="PRIMARY">
@@ -1181,10 +1181,10 @@ article_id</ColNames>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="291" parent="234" name="app_category_blog_id_40a4a99f_fk_app_blog_id">
-      <ColNames>blog_id</ColNames>
+    <foreign-key id="291" parent="234" name="app_category_user_id_2aaf64d4_fk_app_userinfo_id">
+      <ColNames>user_id</ColNames>
       <RefSchemaName>db4</RefSchemaName>
-      <RefTableName>app_blog</RefTableName>
+      <RefTableName>app_userinfo</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="292" parent="235" name="id">
@@ -1271,14 +1271,14 @@ article_id</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="307" parent="236" name="blog_id">
+    <column id="307" parent="236" name="user_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="308" parent="236" name="app_tag_blog_id_2c33bfee_fk_app_blog_id">
-      <ColNames>blog_id</ColNames>
+    <index id="308" parent="236" name="app_tag_user_id_3eb7ac2a_fk_app_userinfo_id">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="309" parent="236" name="PRIMARY">
@@ -1286,10 +1286,10 @@ article_id</ColNames>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="310" parent="236" name="app_tag_blog_id_2c33bfee_fk_app_blog_id">
-      <ColNames>blog_id</ColNames>
+    <foreign-key id="310" parent="236" name="app_tag_user_id_3eb7ac2a_fk_app_userinfo_id">
+      <ColNames>user_id</ColNames>
       <RefSchemaName>db4</RefSchemaName>
-      <RefTableName>app_blog</RefTableName>
+      <RefTableName>app_userinfo</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="311" parent="237" name="password">

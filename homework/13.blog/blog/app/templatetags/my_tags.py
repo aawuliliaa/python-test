@@ -16,9 +16,9 @@ def get_classes_data(username):
     """
 
     user_obj = UserInfo.objects.filter(username=username).first()
-    cate_list = Category.objects.filter(blog=user_obj.blog).values("pk").\
+    cate_list = Category.objects.filter(user=user_obj).values("pk").\
         annotate(c=Count("article__title")).values_list("title", "c")
-    tag_list = Tag.objects.filter(blog=user_obj.blog).values("pk").\
+    tag_list = Tag.objects.filter(user=user_obj).values("pk").\
         annotate(c=Count("article__title")).values_list("title", "c")
     # 存的是dateTime类型，按照年-月分类
     date_list = Article.objects.filter(user=user_obj).extra(select={"y_m_date": "date_format(create_time,'%%Y-%%m')"}).\
