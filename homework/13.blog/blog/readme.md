@@ -52,10 +52,15 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-# 4.登录用户信息
+# 4.运行效果
 ```
 
 ```
+![](.readme_images/7c943ab1.png)
+![](.readme_images/988387f3.png)
+![](.readme_images/37a7445d.png)
+![](.readme_images/8ad127a2.png)
+![](.readme_images/4e1516b9.png)
 # 5.运行效果
 ```
 
