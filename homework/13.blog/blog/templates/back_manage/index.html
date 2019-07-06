@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-10">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="na box_show active" value="add_article_box"><a>随笔</a></li>
+                <li role="presentation" class="na box_show active" value="add_article_box"><a href="{% url 'back_manage' %}">随笔</a></li>
                 <li role="presentation" class="na box_show" value="add_category_box"><a>分类</a></li>
                 <li role="presentation" class="na box_show" value="add_tag_box"><a>标签</a></li>
             </ul>
@@ -44,6 +44,8 @@
                     {% for category in category_list %}
                         {% if forloop.first %}
                             <option value="{{ category.id }}" selected>{{ category.title }}</option>
+                        {% else %}
+                            <option value="{{ category.id }}">{{ category.title }}</option>
                         {% endif %}
                     {% endfor %}
                 </select>
