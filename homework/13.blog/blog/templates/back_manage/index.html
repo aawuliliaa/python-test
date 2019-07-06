@@ -68,10 +68,11 @@
                         <button type="button" class="btn btn-warning del_classes category" value="{{ category.id }}">删除</button>
                         </li>
                     {% endfor %}
-                    <li class="list-group-item">
+                    <li class="list-group-item add_category">
                         <label for="add_category"></label>
-                        <input type="text" id="add_category">
-                        <button class="btn btn-warning">添加</button>
+                        <input type="text" id="add_category"  placeholder="添加新分类">
+                        <button class="btn btn-warning add_classes_btn category">添加</button>
+                        <span class="add_error_info"></span>
                     </li>
                 </ul>
             </div>
@@ -89,10 +90,11 @@
                         <button type="button" class="btn btn-warning del_classes tag" value="{{ tag.id }}">删除</button>
                         </li>
                     {% endfor %}
-                    <li class="list-group-item">
-                        <label for="add_category"></label>
-                        <input type="text" id="add_category">
-                        <button class="btn btn-warning">添加</button>
+                    <li class="list-group-item add_tag">
+                        <label for="add_tag"></label>
+                        <input type="text" id="add_tag" placeholder="添加新标签">
+                        <button class="btn btn-warning add_classes_btn tag">添加</button>
+                        <span class="add_error_info"></span>
                     </li>
                 </ul>
             </div>

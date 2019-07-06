@@ -50,9 +50,9 @@ $(function () {
             $(`.${na_val}`).removeClass("hidden").siblings("div").addClass("hidden")
         }
     });
-    //删除分类和标签
-    $(".del_classes").click(function () {
-        let classes = "";
+    //需要进行事件委托，只有该方式，新加的元素才能事件才能操作
+    $(".list-group").on('click','.del_classes',function(){
+       let classes = "";
         if($(this).hasClass("category")){
             classes="category"
         }else if($(this).hasClass("tag")){
@@ -74,9 +74,78 @@ $(function () {
                 }
 
             }
-        })
+        });
+     });
 
-    });
+    //删除分类和标签
+    // $(".del_classes").click(function () {
+    //     let classes = "";
+    //     if($(this).hasClass("category")){
+    //         classes="category"
+    //     }else if($(this).hasClass("tag")){
+    //         classes="tag"
+    //     }
+    //     let classes_id = $(this).attr("value");
+    //     let del_button_obj = $(this);
+    //     $.ajax({
+    //         url:"/del_classes/",
+    //         type: "post",
+    //         data:{
+    //             csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val(),
+    //             classes:classes,
+    //             classes_id:classes_id
+    //         },
+    //         success:function (data) {
+    //             if(data.success){
+    //                 del_button_obj.parent("li").remove()
+    //             }
+    //
+    //         }
+    //     });
+    // });
+
+
+    //添加文章分类或标签
+         $(".add_classes_btn").click(function () {
+
+            let classes = "";
+            let classes_obj="";
+            let box_class="";
+            if($(this).hasClass("category")){
+                classes="category";
+            }else if($(this).hasClass("tag")){
+                classes="tag";
+            }
+            let add_button_obj = $(this);
+            $.ajax({
+                url:"/add_classes/",
+                type:"post",
+                data:{
+                    csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val(),
+                    classes:classes,
+                    classes_title:add_button_obj.siblings("input").val()
+                },
+                success:function (data) {
+                    if(data.success){
+                        let new_item = `<li class="list-group-item">
+                            ${data.title}
+                        <button type="button" class="btn btn-warning del_classes category" value="${data.id}">删除</button>
+                        </li>`;
+                        $(new_item).insertBefore(add_button_obj.parent("li"))
+                         }
+                    else{
+                        add_button_obj.siblings("span").text(data.info).css("color","red")
+                        setTimeout(function () {
+                            add_button_obj.siblings("span").text("")
+                        },500)
+                    }
+                    add_button_obj.siblings("input").val("");
+
+                }
+            })
+        });
+
+
 });
  //kindeditor内容，放在上面不行，只能放在外面
  KindEditor.ready(function(K) {

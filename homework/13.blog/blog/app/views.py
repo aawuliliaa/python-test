@@ -324,6 +324,11 @@ def upload(request):
 
 
 def del_classes(request):
+    """
+    删除分类，包含删除文章分类和标签
+    :param request:
+    :return:
+    """
     res = {"success": False}
     classes_id = request.POST.get("classes_id")
     classes = request.POST.get("classes")
@@ -332,4 +337,37 @@ def del_classes(request):
     elif classes == "tag":
         Tag.objects.filter(id=classes_id).delete()
     res["success"] = True
+    return JsonResponse(res)
+
+
+def add_classes(request):
+    """
+    添加分类或添加标签
+    :param request:
+    :return:
+    """
+    res = {"success": False, "info": None}
+    classes = request.POST.get("classes")
+    classes_title = request.POST.get("classes_title")
+    find_obj = ""
+    if classes == "category":
+        find_obj = Category.objects.filter(title=classes_title, user=request.user)
+    elif classes == "tag":
+        find_obj = Tag.objects.filter(title=classes_title, user=request.user)
+
+    if find_obj:
+        res["info"] = "该类别已经添加过了！"
+    elif classes_title == "":
+        res["info"] = "类别名不能为空！"
+    elif len(classes_title) > 32:
+        res["info"] = "类别名称过长！"
+    else:
+        add_obj = ""
+        if classes == "category":
+            add_obj = Category.objects.create(title=classes_title, user=request.user)
+        elif classes == "tag":
+            add_obj = Tag.objects.create(title=classes_title, user=request.user)
+        res["id"] = add_obj.pk
+        res["title"] = classes_title
+        res["success"] = True
     return JsonResponse(res)

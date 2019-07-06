@@ -39,6 +39,7 @@ urlpatterns = [
     path('upload/', views.upload),
     # 删除文章分类或标签
     path('del_classes/', views.del_classes),
+    path('add_classes/', views.add_classes),
 
 
     # 这里如果不在index/后加个$结尾，访问index/的时候，，页面的中图片就不显示
