@@ -75,7 +75,7 @@ $(function () {
 
             }
         });
-     });
+    });
 
     //删除分类和标签
     // $(".del_classes").click(function () {
@@ -126,6 +126,7 @@ $(function () {
                     classes_title:add_button_obj.siblings("input").val()
                 },
                 success:function (data) {
+                    //添加新加的元素，立即展示在页面中
                     if(data.success){
                         let new_item = `<li class="list-group-item">
                             ${data.title}
@@ -134,11 +135,13 @@ $(function () {
                         $(new_item).insertBefore(add_button_obj.parent("li"))
                          }
                     else{
-                        add_button_obj.siblings("span").text(data.info).css("color","red")
+                        //展示错误信息
+                        add_button_obj.siblings("span").text(data.info).css("color","red");
                         setTimeout(function () {
                             add_button_obj.siblings("span").text("")
                         },500)
                     }
+                    //输入框置空
                     add_button_obj.siblings("input").val("");
 
                 }

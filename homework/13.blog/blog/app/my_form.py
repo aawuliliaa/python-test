@@ -4,7 +4,6 @@
 from django import forms
 from django.forms import widgets
 from django.core.exceptions import ValidationError
-from django.core.validators import RegexValidator
 from app.models import UserInfo
 
 

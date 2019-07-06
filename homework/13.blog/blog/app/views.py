@@ -69,6 +69,7 @@ def login(request):
     :param request:
     :return:
     """
+    # 本来是想在滑动模块验证前，验证用户名和密码的，后来看博客上都是滑动模块验证过后再验证用户名和密码
     # if request.method == "POST":
     #     result = {"user": None}
     #     username = request.POST.get("username")
@@ -98,6 +99,7 @@ def index(request):
     :return:
     """
     article_obj_list = Article.objects.all()
+    # 展示一些分页数据，供前端渲染使用
     article_page_info = my_page(article_obj_list, request.GET.get("article_page", 1))
     return render(request, "index.html", locals())
 
@@ -114,17 +116,20 @@ def register(request):
         # 'password': ['1234567'], 're_password': ['1234567'], 'email': ['eee@qq.com']}>
         form = UserForm(request.POST)
         response = {"user": None, "msg": None}
+        # 所有的form字段验证通过
         if form.is_valid():
             username = form.cleaned_data.get("username")
             response["user"] = username
             password = form.cleaned_data.get("password")
             email = form.cleaned_data.get("email")
+            # 获取文件对象，由于models中使用的是FileField，所以就不需要自己手动操作图片内容了
             avatar_obj = request.FILES.get("avatar")
             # print("--------------",type(avatar_obj)) <class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
             # models.FileField接收文件对象，把文件下载到相应的位置，保存文件名为字段值
             extra = {}
             if avatar_obj:
                 extra["avatar"] = avatar_obj
+            #     新加用户
             UserInfo.objects.create_user(username=username, password=password, email=email, **extra)
         else:
             # 要清楚form.errors数据类型，这样在前端才能用合适的方式循环使用数据
@@ -154,6 +159,7 @@ def home_site(request, username, **kwargs):
 
     if kwargs:
         condition = kwargs.get("condition")
+        # 个人站点页面，点击标签，点击分类后，展示对应的数据
         param = kwargs.get("param")
         if condition == "category":
             article_obj_list = article_obj_list.filter(category__title=param)
@@ -186,7 +192,7 @@ def get_comment_tree(request):
     :return:
     """
     article_id = request.GET.get("article_id")
-    # 把queryset
+    # 把queryset转换为List，传到前端
     comment_list = list(Comment.objects.filter(article_id=article_id).
                         values("pk", "content", "parent_comment_id", "user__username"))
     # 非字典传送时，需要设置safe为false
@@ -209,10 +215,13 @@ def commit_comment(request):
         comment_content = request.POST.get("comment_content")
     #     事务操作
     with transaction.atomic():
+        # 新建评论
         comment_obj = Comment.objects.create(article_id=article_id,
                                              content=comment_content,
                                              parent_comment_id=parent_comment_id, user_id=request.user.pk)
+        # 文章评论数加1
         Article.objects.filter(id=article_id).update(comment_count=F("comment_count") + 1)
+    #     返回数据，前端使用
     result["success"] = True
     result["pk"] = comment_obj.pk
     result["content"] = comment_content
@@ -350,11 +359,12 @@ def add_classes(request):
     classes = request.POST.get("classes")
     classes_title = request.POST.get("classes_title")
     find_obj = ""
+    # 检查是否已经添加过了
     if classes == "category":
         find_obj = Category.objects.filter(title=classes_title, user=request.user)
     elif classes == "tag":
         find_obj = Tag.objects.filter(title=classes_title, user=request.user)
-
+    # 验证
     if find_obj:
         res["info"] = "该类别已经添加过了！"
     elif classes_title == "":
