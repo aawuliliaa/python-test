@@ -61,11 +61,5 @@ python manage.py createsuperuser
 ![](.readme_images/37a7445d.png)
 ![](.readme_images/8ad127a2.png)
 ![](.readme_images/4e1516b9.png)
-# 5.运行效果
-```
-
-```
-# 6.流程图
-```
-
-```
+# 5.流程图
+![](.readme_images/process.jpg)
