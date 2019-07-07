@@ -44,12 +44,12 @@ urlpatterns = [
 
     # 这里如果不在index/后加个$结尾，访问index/的时候，，页面的中图片就不显示
     re_path('index/$', views.index, name="index"),
-    re_path('^(?P<username>[a-zA-Z]+)/articles/(?P<article_id>[0-9]+)$', views.article_detail),
+    re_path(r'^(?P<username>\w+)/articles/(?P<article_id>[0-9]+)$', views.article_detail),
     # media配置:只有配置了这里，Index页面中才能显示出头像
     # 这里要注意，当url多了的时候，就会出现匹配的顺序问题，
     # 当不显示图片的时候，要查看下是否被上面的url给匹配了
     re_path(r"media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
-    re_path(r"^(?P<username>[a-zA-Z]+)/(?P<condition>tag|category|archive)/(?P<param>.*)/$", views.home_site),
-    re_path('^(?P<username>[a-zA-Z]+)/$', views.home_site),
+    re_path(r"^(?P<username>\w+)/(?P<condition>tag|category|archive)/(?P<param>.*)/$", views.home_site),
+    re_path(r'^(?P<username>\w+)/$', views.home_site),
 
 ]
