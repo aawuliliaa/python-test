@@ -1,5 +1,12 @@
 # 1.环境准备
 ```
+前端：购买的INSPINIA完整版
+django==2.2.3
+python==3.6.3
+pymysql==0.9.3
+djangorestframework==3.10.0
+```
+```
 1.把本地代码上传到linux上
 https://blog.51cto.com/10983441/2380368
 最后一条1.11配置，本地代码上传到linux上
@@ -55,10 +62,12 @@ query = query.encode(errors='replace')
 [root@m01 CMDB]# python3 manage.py migrate
 
 ```
+
 # 2.功能解析
 ## 2.1自定义用户认证
 ```
 参考https://docs.djangoproject.com/zh-hans/2.1/topics/auth/customizing/
+由于我后来为用户添加了头像字段，所以稍有更改，可以查看项目代码
 
 models.py
 from django.db import models
@@ -272,3 +281,9 @@ Superuser created successfully.
 这里通过python manage.py createsuperuser 创建的是管理员账户，可以登录后台管理平台
 其他新建的或自己注册的账户，默认是非管理员账户。
 ```
+## 2.2restframwork
+```
+http://10.0.0.61:8000/api/
+登录用户是上面注册的admin@qq.com/123
+```
+![](.readme_images/526de4b6.png)

@@ -24,6 +24,7 @@
             <h3>Welcome to DevOps</h3>
 
             <form class="m-t" role="form">
+                {% csrf_token %}
                 <div class="form-group">
                     <input type="email" class="form-control" placeholder="Email" required="" id="login_user_email_id">
                 </div>
@@ -52,6 +53,7 @@
                     url:"{% url 'login' %}",
                     type:'post',
                     data:{
+                        csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
                         email:$('#login_user_email_id').val(),
                         password:$('#login_passwd_id').val()
                     },

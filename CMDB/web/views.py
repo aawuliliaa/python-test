@@ -10,10 +10,20 @@ from web.models import MyUser
 
 @login_required
 def index(request):
+    """
+    index首页
+    :param request:
+    :return:
+    """
     return render(request, "index.html")
 
 
 def login(request):
+    """
+    注册功能
+    :param request:
+    :return:
+    """
     if request.method == 'POST':
         res = {"user": None, "info": None}
         email = request.POST.get("email")
