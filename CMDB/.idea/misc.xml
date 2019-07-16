@@ -87,5 +87,5 @@
       <textMaps />
     </LinkMapSettings>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.6.3 (sftp://root@10.0.0.61:22/usr/local/python3/bin/python3)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.6.3 (sftp://root@10.0.0.61:22/usr/bin/python3)" project-jdk-type="Python SDK" />
 </project>

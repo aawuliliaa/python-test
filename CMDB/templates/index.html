@@ -1,0 +1,125 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-4">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>New data for the report</h5> <span class="label label-primary">IN+</span>
+                <div class="ibox-tools">
+                    <a class="collapse-link" href="">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#" class="dropdown-item">Config option 1</a>
+                        </li>
+                        <li><a href="#" class="dropdown-item">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link" href="">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div>
+
+                    <div class="float-right text-right">
+
+                        <span class="bar_dashboard">1,0,9,5,6,8,3,2,1</span>
+                        <br/>
+                        <small class="font-bold">$ 20 054.43</small>
+                    </div>
+                    <h4>NYS report new data!
+                        <br/>
+                        <small class="m-r"><a href="graph_flot.html"> Check the stock price! </a> </small>
+                    </h4>
+                    </div>
+                </div>
+            </div>
+    </div>
+        <div class="col-lg-4">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Your daily feed</h5>
+                    <div class="ibox-tools">
+                        <span class="label label-warning-light float-right">10 Messages</span>
+                       </div>
+                </div>
+                <div class="ibox-content">
+
+                    <div>
+                        <div class="feed-activity-list">
+
+                            <div class="feed-element">
+                                <a class="float-left" href="profile.html">
+                                    <img alt="image" class="rounded-circle" src="img/profile.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="float-right">5m ago</small>
+                                    <strong>Monica Smith</strong> posted a new blog. <br>
+                                    <small class="text-muted">Today 5:60 pm - 12.06.2014</small>
+
+                                </div>
+                            </div>
+
+                        <button class="btn btn-primary btn-block m-t"><i class="fa fa-arrow-down"></i> Show More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block foot_script %}
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 400
+                };
+                toastr.success('Responsive Admin Theme', 'Welcome to devops system');
+
+            }, 1300);
+
+            var doughnutData = {
+                labels: ["App","Software","Laptop" ],
+                datasets: [{
+                    data: [300,50,100],
+                    backgroundColor: ["#a3e1d4","#dedede","#9CC3DA"]
+                }]
+            } ;
+
+
+            var doughnutOptions = {
+                responsive: false,
+                legend: {
+                    display: false
+                }
+            };
+
+            var doughnutData = {
+                labels: ["App","Software","Laptop" ],
+                datasets: [{
+                    data: [70,27,85],
+                    backgroundColor: ["#a3e1d4","#dedede","#9CC3DA"]
+                }]
+            } ;
+
+
+            var doughnutOptions = {
+                responsive: false,
+                legend: {
+                    display: false
+                }
+            };
+
+        });
+    </script>
+{% endblock %}

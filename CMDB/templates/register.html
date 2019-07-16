@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html  lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register</title>
+<!--    设置标题旁边的图标-->
+    <link rel="icon" href="/static/img/favicon.ico" >
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/my_style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+
+            <h3>Register to DevOps</h3>
+            <form class="m-t"  id="form" >
+                {% csrf_token %}
+                {% for field in form_obj %}
+                    <div class="form-group">
+                        {{ field }}
+                        <span class="error pull-right"></span>
+                    </div>
+                {% endfor %}
+                <div class="form-group">
+                    <label for="avatar" class="float-left">头像 <img id="my_avatar_img" class="my_reg_head" src="/media/avatar/default.png" alt=""></label>
+                    <input type="file" id="avatar" class="float-left">
+                </div>
+{#            千万不能写成Button标签呀，form中的button会自动提交get请求#}
+                <input class="btn btn-primary block full-width m-b my_reg_commit"  value="Register">
+
+                <p class="text-muted text-center"><small>Already have an account?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="{% url 'login' %}">Login</a>
+            </form>
+            <p class="m-t"> <small>author:vita  &copy; 2019</small> </p>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="/static/js/jquery-3.1.1.min.js"></script>
+
+    <script src="/static/js/bootstrap.js"></script>
+
+
+</body>
+<script>
+$(function () {
+    //头像预览功能
+    $("#avatar").change(function () {
+        let file_obj = $(this)[0].files[0];
+        let reader = new FileReader();
+        reader.readAsDataURL(file_obj);
+        reader.onload = function () {
+            $("#my_avatar_img").attr("src",reader.result)
+        }
+    });
+    $(".my_reg_commit").click(function () {
+        let formData = new FormData();
+        //存放数据方式一：
+        // formData.append("csrfmiddlewaretoken", $("[name='csrfmiddlewaretoken']").val());
+        // formData.append("username", $("#id_username").val());
+        // formData.append("password", $("#id_password").val());
+        // formData.append("re_password", $("#id_re_password").val());
+        // formData.append("phone", $("#id_phone").val());
+        // formData.append("avatar", $("#avatar")[0].files[0]);
+
+        // 存放数据方式二
+        let request_data = $("#form").serializeArray();
+        // console.log(request_data)，下面是request_data的内容
+        //[{…}, {…}, {…}, {…}, {…}]
+        // 0: {name: "csrfmiddlewaretoken", value: "Q6cM6rw8847S5taZaulrJChCvezVM0WvOJ1kraj3YY2EO8TpzSzgKHELlLk0hMtM"}
+        // 1: {name: "username", value: "vita"}
+        // 2: {name: "password", value: "123"}
+        // 3: {name: "re_password", value: "123"}
+        // 4: {name: "telephone", value: "1212112121"}
+        // length: 5
+        // __proto__: Array(0)
+        //列表循环
+        $.each(request_data,function (index,data) {
+            formData.append(data.name,data.value)
+        });
+        //文件对象$("#avatar")[0].files[0]
+        formData.append("avatar",$("#avatar")[0].files[0]);
+        $.ajax({
+            url:"{% url 'register' %}",
+            type:"post",
+            contentType:false,//上传文件，需要设置这两个false
+            processData: false,
+            data:formData,
+            success:function (data) {
+                if (data.user){
+                    location.href="{% url 'login' %}"
+                }else{
+                    //清除报错添加的样式，否则下次报信错，原来的错误样式还在
+                    $("span.error").html("");
+                    $(".form-group").removeClass("has-error");
+
+                    //data.msg是一个字典，每个key对应的是列表
+                    $.each(data.msg,function (key,val_error_list) {
+                        if(key==="__all__"){
+                            //错误信息框中添加报错信息，并给该框添加has-error类
+                            //这里是确认密码处添加报错信息
+                            $("#id_re_password").next().html(val_error_list[0]).parent().addClass("has-error")
+                        }
+                        $("#id_"+key).next().html(val_error_list[0]).parent().addClass("has-error")
+
+                })
+                }
+
+            }
+        })
+    })
+});
+</script>
+</html>

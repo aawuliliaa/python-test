@@ -8,7 +8,7 @@ from django.contrib.auth.models import (
 
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email, name, password=None):
+    def create_user(self, email, name, password=None, **kwargs):
         """
         Creates and saves a User with the given email, date of
         birth and password.
@@ -19,6 +19,7 @@ class MyUserManager(BaseUserManager):
         user = self.model(
             email=self.normalize_email(email),
             name=name,
+            avatar=kwargs.get("avatar")
         )
 
         user.set_password(password)
@@ -49,6 +50,9 @@ class MyUser(AbstractBaseUser):
     name = models.CharField(max_length=32)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    # 该字段存放的是用户头像的路径
+    avatar = models.FileField(upload_to="avatar/", default="avatar/default.png")
+    create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
 
     objects = MyUserManager()
 

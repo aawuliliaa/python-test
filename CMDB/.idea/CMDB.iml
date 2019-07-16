@@ -16,7 +16,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venvP" />
     </content>
-    <orderEntry type="jdk" jdkName="Remote Python 3.6.3 (sftp://root@10.0.0.61:22/usr/local/python3/bin/python3)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.6.3 (sftp://root@10.0.0.61:22/usr/bin/python3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
