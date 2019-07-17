@@ -4,7 +4,9 @@ from django.contrib import auth
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from web.reg_form import UserForm
-from web.models import MyUser
+from web.models import *
+from web.utils import *
+from web.page import *
 # Create your views here.
 
 
@@ -15,7 +17,9 @@ def index(request):
     :param request:
     :return:
     """
-    return render(request, "index.html")
+    # 左侧菜单栏
+    left_label_dic = get_label(request)
+    return render(request, "index.html", locals())
 
 
 def login(request):
@@ -94,3 +98,32 @@ def register(request):
     elif request.method == "GET":
         form_obj = UserForm()
         return render(request, "register.html", locals())
+
+
+def privilege(request):
+    """
+    展示当前用户的角色权限信息
+    :param request:
+    :return:
+    """
+    # 左侧菜单栏
+    # 批量创建测试数据
+    # list = []
+    # for i in range(0,101):
+    #     item = Role(name="role_%s" % i, parent_menu_name="role_%s" % i,
+    #     child_menu_name="role_%s" % i,url="role_%s" % i)
+    #     list.append(item)
+    #
+    # Role.objects.bulk_create(list)
+
+    left_label_dic = get_label(request)
+    if request.user.is_admin:
+        role_obj_set = Role.objects.all().order_by('id')
+    else:
+        role_obj_set = Role.objects.filter(users__email=request.user.email).all().order_by('id')
+        # 展示一些分页数据，供前端渲染使用
+    if not request.COOKIES.get("data_nums_per_page"):
+        request.COOKIES["data_nums_per_page"] = 10
+    data_page_info = my_page(role_obj_set, request.GET.get("page_num", 1), int(request.COOKIES.get("data_nums_per_page")))
+
+    return render(request, 'privilege/privilege.html', locals())

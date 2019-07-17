@@ -1,0 +1,32 @@
+{#    分页#}
+
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    {% if data_page_info.current_page.has_previous %}
+    <li><a href="?page_num={{ data_page_info.current_page.previous_page_number  }}" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+    {% else %}
+    <li class="disabled"><a href="" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+    {% endif %}
+
+
+
+    {% for item in data_page_info.page_range %}
+
+        {% if data_page_info.current_page_num == item %}
+            <li class="active" style="background-color: #1e7e34"><a href="?page={{ item }}">{{ item }}</a></li>
+        {% else %}
+            <li><a href="?page_num={{ item }}">{{ item }}</a></li>
+        {% endif %}
+
+    {% endfor %}
+
+
+
+    {% if data_page_info.current_page.has_next %}
+        <li><a href="?page_num={{ data_page_info.current_page.next_page_number  }}" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+    {% else %}
+        <li class="disabled"><a href="" aria-label="Next"><span aria-hidden="true">下一页</span></a>
+    {% endif %}
+    </li>
+  </ul>
+</nav>
