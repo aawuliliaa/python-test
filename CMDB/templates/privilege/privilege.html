@@ -44,10 +44,20 @@
                             <option value="50" class="data_nums_per_page">50</option>
                         </select>
                         <label for="">条数据</label>
+
+                        <a class="btn btn-info float-right export" href="{% url 'role_export' %}">导出</a>
+                        <label class="btn btn-info float-right" id="search_button" style="margin-right: 5px">搜索</label>
+                        <div class="float-right" style="margin-right: 5px">
+
+                            <input type="text" id="search" class="form-control" placeholder="user_email/role_code/role_name">
+
+                        </div>
                         <table class="table table-striped table-bordered table-hover dataTables-example" >
                             <thead>
                             <tr>
+                                <th>用户名</th>
                                 <th>角色名称</th>
+                                <th>角色编码</th>
                                 <th>父级标签</th>
                                 <th>子级标签</th>
                                 <th>字标签URL</th>
@@ -58,24 +68,33 @@
                             <tbody>
                             {% for role_obj in  data_page_info.current_page %}
                                 <tr>
+                                    <td>
+                                    {% if request.user.is_admin %}
+                                        {% for user in role_obj.users.all %}
+                                            {% if forloop.last %}
+                                                {{ user }}
+                                            {% else %}
+                                                {{ user }},
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        {{ request.user.email }}
+                                    {% endif %}
+
+                                    </td>
                                     <td>{{ role_obj.name }}</td>
+                                    <td>{{ role_obj.code }}</td>
                                     <td>{{ role_obj.parent_menu_name }}</td>
                                     <td>{{ role_obj.child_menu_name }}</td>
                                     <td>{{ role_obj.url }}</td>
                                     <td>
-                                        {% if request.user.is_admin %}
-                                            ALL
-                                        {% else %}
-                                            {% for pri in role_obj.privileges.all %}
-                                                {% if forloop.last %}
-                                                    {{ pri }}
-                                                {% else %}
-                                                    {{ pri }},
-                                                {% endif %}
-
-                                            {% endfor %}
-
-                                        {% endif %}
+                                        {% for pri in role_obj.privileges.all %}
+                                            {% if forloop.last %}
+                                                {{ pri }}
+                                            {% else %}
+                                                {{ pri }},
+                                            {% endif %}
+                                        {% endfor %}
 
                                     </td>
                                     <td>{{ role_obj.note }}</td>
@@ -104,6 +123,10 @@
             data_nums_per_page = $.cookie('data_nums_per_page');
             $(`.data_nums_per_page_change option[value=${data_nums_per_page}]`).attr('selected',true)
         }
+        if($.cookie('role_search')){
+            role_search = $.cookie('role_search');
+            $("#search").val(decodeURIComponent(role_search));
+        }
     });
     $(function () {
         {#每页数据量修改后，就刷新页面，并设置selected为#}
@@ -114,6 +137,10 @@
 {#             注：当没有指明 cookie有效时间时，所创建的cookie有效期默认到用户关闭浏览器为止，所以被称为#}
 {#“会话cookie（session cookie）”。#}
         });
+        $("#search_button").click(function () {
+            $.cookie('role_search', encodeURIComponent($("#search").val()), { path: '/' });
+            location.href='{% url 'privilege' %}';
+        })
 
     })
     </script>

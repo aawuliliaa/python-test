@@ -85,7 +85,7 @@ class UserAdmin(BaseUserAdmin):
 
 
 class RoleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'parent_menu_name', 'child_menu_name', 'url', 'note', 'create_time', 'update_time']
+    list_display = ['id', 'name', 'code', 'parent_menu_name', 'child_menu_name', 'url', 'note', 'create_time', 'update_time']
     list_filter = ('name',)
     search_fields = ('name',)
     filter_horizontal = ('users', 'privileges')

@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author: vita
-
+from django.shortcuts import HttpResponse
+import csv
+import codecs
 from web.models import *
 
 
@@ -50,3 +52,19 @@ def get_label(request):
     # `email` = 'cc@qq.com'"; args=('cc@qq.com',)
 
     return left_label_dic
+
+
+def export(filename, export_datas, header):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="%s"' % filename
+    response.write(codecs.BOM_UTF8)
+    writer = csv.writer(
+        response,
+        dialect='excel',
+        quoting=csv.QUOTE_MINIMAL)
+
+    writer.writerow(header)
+
+    for data in export_datas:
+        writer.writerow(data)
+    return response

@@ -3,8 +3,10 @@ from django.http import JsonResponse
 from django.contrib import auth
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from web.reg_form import UserForm
 from web.models import *
+from urllib.parse import unquote
 from web.utils import *
 from web.page import *
 # Create your views here.
@@ -45,8 +47,18 @@ def login(request):
 
 @login_required
 def logout(request):
+    """
+    退出
+    :param request:
+    :return:
+    """
     auth.logout(request)
-    return redirect(reverse("login"))
+    response = redirect(reverse("login"))
+    response.delete_cookie("data_nums_per_page")
+    response.delete_cookie("role_search")
+    # response.cookies.clear()
+
+    return response
 
 
 def register(request):
@@ -124,7 +136,36 @@ def privilege(request):
         role_obj_set = Role.objects.filter(users__email=request.user.email).all().order_by('id')
         # 展示一些分页数据，供前端渲染使用
     if not request.COOKIES.get("data_nums_per_page"):
+        # 初次访问，还没有设置COOKIE，所以我们设置一个默认值
         request.COOKIES["data_nums_per_page"] = 10
-    data_page_info = my_page(role_obj_set, request.GET.get("page_num", 1), int(request.COOKIES.get("data_nums_per_page")))
+    if request.COOKIES.get("role_search"):
+        search_val = request.COOKIES.get("role_search").strip()
+        print("ddddddddddddddd",unquote(unquote(search_val,"utf-8")))
+
+        role_obj_set = role_obj_set.filter(Q(users__email__contains=search_val) |
+                                           Q(name__contains=unquote(unquote(search_val, "utf-8"))) |
+                                           Q(code__contains=unquote(unquote(search_val, "utf-8"))))
+    data_page_info = my_page(role_obj_set, request.GET.get("page_num", 1),
+                             int(request.COOKIES.get("data_nums_per_page")))
 
     return render(request, 'privilege/privilege.html', locals())
+
+
+def role_export(request):
+    """
+    角色权限数据导出
+    :param request:
+    :return:
+    """
+    if request.user.is_admin:
+        role_obj_set = Role.objects.all().order_by('id')
+    else:
+        role_obj_set = Role.objects.filter(users__email=request.user.email).all().order_by('id')
+
+    export_datas = list(role_obj_set.values_list("users__email", "name", "parent_menu_name",
+                                                 "child_menu_name", "url", "privileges__name"))
+
+    filename = 'roles.csv'
+    header = ['用户名', '角色名称', '父级菜单名', '子级菜单名', 'url路径', '权限']
+    response = export(filename, export_datas, header)
+    return response

@@ -26,6 +26,7 @@ urlpatterns = [
     path('logout/', views.logout, name="logout"),
     re_path(r'^api/', include('web.rest_urls')),
     path('privilege/', views.privilege, name="privilege"),
+    path('role_export/', views.role_export, name="role_export"),
     # media配置:只有配置了这里，Index页面中才能显示出头像
     # 这里要注意，当url多了的时候，就会出现匹配的顺序问题，
     # 当不显示图片的时候，要查看下是否被上面的url给匹配了

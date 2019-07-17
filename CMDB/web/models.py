@@ -109,6 +109,7 @@ class Role(models.Model):
     """
     id = models.AutoField(primary_key=True,verbose_name="主键ID")
     name = models.CharField(max_length=32, verbose_name="角色名称")
+    code = models.CharField(max_length=32, verbose_name="角色编码")
     parent_menu_name = models.CharField(max_length=32, verbose_name="父级菜单名")
     child_menu_name = models.CharField(max_length=32, verbose_name="子级菜单名")
     url = models.CharField(max_length=255, verbose_name="url路径")
@@ -123,7 +124,7 @@ class Role(models.Model):
         verbose_name_plural = "角色表"
         # 设置联合主键
         unique_together = [
-            ('name', 'parent_menu_name', 'child_menu_name', 'url'),
+            ('name', 'code', 'parent_menu_name', 'child_menu_name', 'url'),
         ]
 
     def __str__(self):

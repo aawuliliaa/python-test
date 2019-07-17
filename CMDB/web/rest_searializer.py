@@ -27,7 +27,7 @@ class PrivilegeSerializer(serializers.ModelSerializer):
 class RoleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Role
-        fields = ('id', 'name', 'parent_menu_name', 'child_menu_name', 'url',
+        fields = ('id', 'name', 'code', 'parent_menu_name', 'child_menu_name', 'url',
                   'note', 'users', 'privileges', 'create_time', 'update_time')
         # 列出关联表中的详细数据
         # depth = 2
