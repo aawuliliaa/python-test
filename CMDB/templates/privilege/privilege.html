@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block head %}
-    <link href="/static/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/static/css/my_style.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
     <div class="row wrapper border-bottom white-bg page-heading">
@@ -84,8 +84,9 @@
                             </tbody>
                         </table>
 
-                    {% include 'page.html' %}
                     </div>
+                    {#分页#}
+                    {% include 'page.html' %}
                     </div>
                 </div>
             </div>
@@ -93,17 +94,19 @@
         </div>
 {% endblock %}
 {% block foot_script %}
+{#    $.cookie需要该js#}
     <script src="/static/js/jquery.cookie.js"></script>
     <!-- Page-Level Scripts -->
     <script>
     $(document).ready(function () {
-        {#设置每页*条数据#}
+        {#设置每页*条数据,在用户当前会话有效#}
         if($.cookie('data_nums_per_page')){
             data_nums_per_page = $.cookie('data_nums_per_page');
             $(`.data_nums_per_page_change option[value=${data_nums_per_page}]`).attr('selected',true)
         }
     });
     $(function () {
+        {#每页数据量修改后，就刷新页面，并设置selected为#}
         $(".data_nums_per_page_change").change(function () {
              data_nums_per_page = $(".data_nums_per_page_change option:selected").val();
              $.cookie('data_nums_per_page', data_nums_per_page, { path: '/' });

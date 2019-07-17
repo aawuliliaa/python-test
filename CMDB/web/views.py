@@ -100,6 +100,7 @@ def register(request):
         return render(request, "register.html", locals())
 
 
+@login_required
 def privilege(request):
     """
     展示当前用户的角色权限信息

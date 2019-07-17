@@ -2,3 +2,6 @@
     height: 50px;
     width: 50px;
 }
+li.current_page{
+    background-color: #1e7e34;
+}
