@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e37becd-34ea-4e0e-937f-7f84d4b62202" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.readme_images/07164f36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/1129bae4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/4529f996.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/64405447.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/6ad6c296.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/90b5775c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/d2addf7a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/f7ed9e03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/ffd574a5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/12b7f213.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/18114845.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/2a1647b3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/30535da3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/695b3eb2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/9e8b779a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/ac7e774b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/dbf0b407.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0fd76a6e-efc3-481d-a789-769ccce1d303.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMDB/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMDB/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMDB/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/privilege/privilege.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/privilege/privilege.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/rest_searializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/rest_searializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/9.Django/1.myWebStruct/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/9.Django/1.myWebStruct/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/9.Django/1.myWebStruct/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/9.Django/1.myWebStruct/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/9.Django/Django.md" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/9.Django/Django.md" afterDir="false" />
@@ -80,7 +71,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMDB/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="106">
@@ -113,42 +104,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crond/tasks.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="43" />
-              <folding>
-                <element signature="e#25#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crond/tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crond/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="230">
-                <caret line="356" column="14" lean-forward="true" selection-start-line="356" selection-start-column="14" selection-end-line="356" selection-end-column="14" />
+              <first_editor relative-caret-position="96">
+                <caret line="633" column="32" lean-forward="true" selection-start-line="633" selection-start-column="32" selection-end-line="633" selection-end-column="32" />
               </first_editor>
               <second_editor />
             </state>
@@ -225,14 +186,14 @@
         <option value="$PROJECT_DIR$/CMDB/__init__.py" />
         <option value="$PROJECT_DIR$/crond/tasks.py" />
         <option value="$PROJECT_DIR$/crond/test.py" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/CMDB/settings.py" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="79" />
-    <option name="y" value="16" />
+    <option name="x" value="519" />
+    <option name="y" value="72" />
     <option name="width" value="1584" />
     <option name="height" value="1031" />
   </component>
@@ -419,7 +380,7 @@
       <updated>1563151608850</updated>
       <workItem from="1563151664394" duration="7170000" />
       <workItem from="1563159324826" duration="102425000" />
-      <workItem from="1563356550386" duration="21543000" />
+      <workItem from="1563356550386" duration="26489000" />
     </task>
     <task id="LOCAL-00001" summary="CMDB">
       <created>1563159094145</created>
@@ -456,22 +417,28 @@
       <option name="project" value="LOCAL" />
       <updated>1563333006133</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="CMDB">
+      <created>1563431729681</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1563431729681</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131138000" />
+    <option name="totallyTimeSpent" value="136084000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="11" width="1056" height="687" extended-state="0" />
-    <editor active="true" />
+    <frame x="346" y="48" width="1056" height="687" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2309237" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16967872" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37931034" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38112524" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.52579033" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -784,16 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMDB/celery.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crond/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -818,16 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="230">
-            <caret line="356" column="14" lean-forward="true" selection-start-line="356" selection-start-column="14" selection-end-line="356" selection-end-column="14" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crond/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -842,6 +789,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="127" column="14" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMDB/celery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="96">
+            <caret line="633" column="32" lean-forward="true" selection-start-line="633" selection-start-column="32" selection-end-line="633" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

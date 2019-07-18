@@ -312,6 +312,7 @@ http://10.0.0.61:8000/api/
 
 至于页面中的按钮操作权限，是通过Privilege表控制的，角色与权限是多对多的关系
 ```
+
 ## 2.4前端中文，后端解码
 ```
 前端
@@ -342,12 +343,297 @@ print(search_val)#'%25E6%25B5%258B%25E8%25AF%2595'
 print(unquote(search_val, "utf-8"))# %E6%B5%8B%E8%AF%95
 print(unquote(unquote(search_val,"utf-8")))# 测试
 ```
-## 2.5定时任务
-
+## 2.5celery定时任务
+### 2.5.1celery软件架构
+![](.readme_images/ac7e774b.png)
 ```
-
+相关模块
+[root@m01 CMDB]# pip3 install celery
 [root@m01 CMDB]# pip3 install django-celery-beat
 [root@m01 CMDB]# pip3 install django-celery-results
+```
+### 2.5.2celery模块介绍
+```
+任务模块 Task.py
+包含异步任务和定时任务
+异步任务：如果不想让程序等着结果返回，而是返回一个任务ID，过一段时间根据task_id获取任务的结果。
+周期任务：根据设置的执行周期，定时周期性执行任务
+
+消息中间件模块 Broker
+app = Celery('tasks',backend='redis://10.0.0.61:6379/1',broker='redis://localhost:6379/0')
+Broker，即为任务调度队列，接收任务生产者发来的消息（任务），将任务存入队列。
+Celery本身不提供队列服务，官方推荐使用RabbitMQ和Redis等。
+
+任务执行模块 Worker
+[root@m01 CMDB]# celery -A CMDB worker -l info
+#CMDB是Django项目名，或py文件的文件名
+Worker是执行任务的处理单元，它实时监控消息队列，获取队列中的调度任务，并执行它。
+
+任务结果存储模块 Backend
+app = Celery('tasks',backend='redis://10.0.0.61:6379/1',broker='redis://localhost:6379/0')
+Backend用于存储任务的执行结果，以供查询。
+同消息中间件一样，存储也可以使用RabbitMQ或Redis或MongoDB等数据库
+
+周期任务模块 Beat
+[root@m01 CMDB]# celery -A CMDB beat
+用于监控周期任务，把任务放到消息中间件broker中
+worker监控到了broker中的任务，就会执行任务
+```
+### 2.5.3celery异步任务1-没有设置backend
+```
+1.进入到py文件所在目录
+[root@m01 project]# pwd
+/project
+
+2.查看写好的异步程序
+[root@m01 project]# cat sync.py 
+#/usr/bin/python3
+from celery import Celery,shared_task
+
+app = Celery('tasks', broker='redis://10.0.0.61:6379/1')
+
+@shared_task(name="add")
+def add(x, y):
+    return x + y
+[root@m01 project]# 
+
+3.手动把异步任务放到消息队列中
+[root@m01 project]# python3
+Python 3.6.3 (default, Jul 15 2019, 09:46:16) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-23)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from sync import add
+>>> add.delay(2,3)   
+<AsyncResult: 57ddfa56-8e80-448a-b912-243ce44fef70>
+
+4.另打开一个xshell窗口，执行下面的命令，调用worker执行异步任务
+[root@m01 project]# celery -A sync worker --loglevel=info
+/usr/local/python3/lib/python3.6/site-packages/celery/platforms.py:801: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+ 
+ -------------- celery@m01 v4.3.0 (rhubarb)
+---- **** ----- 
+--- * ***  * -- Linux-2.6.32-696.el6.x86_64-x86_64-with-centos-6.9-Final 2019-07-18 14:45:06
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         tasks:0x7f226e9250b8
+- ** ---------- .> transport:   redis://10.0.0.61:6379/1
+- ** ---------- .> results:     redis://10.0.0.61:6379/1
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . add
+
+[2019-07-18 14:45:07,042: INFO/MainProcess] Connected to redis://10.0.0.61:6379/1
+[2019-07-18 14:45:07,050: INFO/MainProcess] mingle: searching for neighbors
+[2019-07-18 14:45:08,082: INFO/MainProcess] mingle: all alone
+[2019-07-18 14:45:08,091: INFO/MainProcess] celery@m01 ready.
+[2019-07-18 14:45:29,634: INFO/MainProcess] Received task: add[74d07c57-b74d-4ded-9831-73ec4f739940]  
+[2019-07-18 14:45:29,649: INFO/ForkPoolWorker-1] Task add[74d07c57-b74d-4ded-9831-73ec4f739940] 
+succeeded in 0.012957275001099333s: 5     #返回结果
+
+
+```
+### 2.5.4celery异步任务2-设置backend
+```
+1.进入到py文件所在目录
+[root@m01 project]# pwd
+/project
+
+2.程序代码
+[root@m01 project]# cat sync2.py 
+#/usr/bin/python3
+from celery import Celery,shared_task
+
+app = Celery('tasks', backend='redis://10.0.0.61:6379/1',broker='redis://10.0.0.61:6379/1')
+
+@shared_task(name="add")
+def add(x, y):
+    return x + y
+[root@m01 project]# 
+
+3.没有启动worker时，调用异步任务
+[root@m01 project]# python3
+Python 3.6.3 (default, Jul 15 2019, 09:46:16) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-23)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from sync2 import add
+>>> add.delay(2,3)   
+<AsyncResult: 57ddfa56-8e80-448a-b912-243ce44fef70> # 任务ID
+>>> re=add.delay(2,3)    
+>>> re.ready() # 只有设置了backend才能调用ready()。orker没有启动，任务没有执行时，返回值为False
+False
+>>> re.get(timeout=1)  #worker没有启动，任务没有执行时，超时时间过了会报错
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/celery/backends/asynchronous.py", line 255, in _wait_for_pending
+    on_interval=on_interval):
+  File "/usr/local/python3/lib/python3.6/site-packages/celery/backends/asynchronous.py", line 54, in drain_events_until
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/local/python3/lib/python3.6/site-packages/celery/result.py", line 226, in get
+    on_message=on_message,
+  File "/usr/local/python3/lib/python3.6/site-packages/celery/backends/asynchronous.py", line 188, in wait_for_pending
+    for _ in self._wait_for_pending(result, **kwargs):
+  File "/usr/local/python3/lib/python3.6/site-packages/celery/backends/asynchronous.py", line 259, in _wait_for_pending
+    raise TimeoutError('The operation timed out.')
+celery.exceptions.TimeoutError: The operation timed out.
+>>> re.get() #没有启动worker，会阻塞在这里，等待结果
+
+4.启动worker
+[root@m01 project]# celery -A sync2 worker --loglevel=info
+/usr/local/python3/lib/python3.6/site-packages/celery/platforms.py:801: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+ 
+ -------------- celery@m01 v4.3.0 (rhubarb)
+---- **** ----- 
+--- * ***  * -- Linux-2.6.32-696.el6.x86_64-x86_64-with-centos-6.9-Final 2019-07-18 14:45:06
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         tasks:0x7f226e9250b8
+- ** ---------- .> transport:   redis://10.0.0.61:6379/1
+- ** ---------- .> results:     redis://10.0.0.61:6379/1
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . add
+
+[2019-07-18 14:45:07,042: INFO/MainProcess] Connected to redis://10.0.0.61:6379/1
+[2019-07-18 14:45:07,050: INFO/MainProcess] mingle: searching for neighbors
+[2019-07-18 14:45:08,082: INFO/MainProcess] mingle: all alone
+[2019-07-18 14:45:08,091: INFO/MainProcess] celery@m01 ready.
+[2019-07-18 14:45:29,634: INFO/MainProcess] Received task: add[74d07c57-b74d-4ded-9831-73ec4f739940]  
+[2019-07-18 14:45:29,649: INFO/ForkPoolWorker-1] Task add[74d07c57-b74d-4ded-9831-73ec4f739940] 
+succeeded in 0.012957275001099333s: 5
+
+5.调用处可以查看到结果
+>>> re.get()
+5
+>>> re.get(propagate=False)
+5
+
+6.异步任务根据task_id获取任务结果，只有设置了backend才能调用
+>>> add.delay(1,2)  
+<AsyncResult: 57ddfa56-8e80-448a-b912-243ce44fef70>
+>>> from celery.result import AsyncResult
+
+>>> res=AsyncResult("57ddfa56-8e80-448a-b912-243ce44fef70")
+>>> re.result
+3
+
+7.redis中查看结果
+```
+![](.readme_images/695b3eb2.png)
+### 2.5.5celery周期任务
+![](.readme_images/30535da3.png)
+![](.readme_images/2a1647b3.png)
+![](.readme_images/12b7f213.png)
+![](.readme_images/dbf0b407.png)
+![](.readme_images/9e8b779a.png)
+```
+1.创建result表
+[root@m01 project]# cd /tmp/untitled/
+[root@m01 untitled]# ll
+total 60
+-rw-r--r-- 1 root root    89 Jul 18 13:13 celerybeat-schedule.bak
+-rw-r--r-- 1 root root  8731 Jul 18 13:13 celerybeat-schedule.dat
+-rw-r--r-- 1 root root    89 Jul 18 13:13 celerybeat-schedule.dir
+-rw-r--r-- 1 root root 18432 Jul 16  2018 db.sqlite3
+-rw-r--r-- 1 root root   540 Jul 16  2018 manage.py
+-rw-r--r-- 1 root root  2862 Jul 18 15:54 readme.md
+-rw-r--r-- 1 root root   188 Jul 18 14:46 te.py
+drwxr-xr-x 4 root root  4096 Jul 18 13:05 testcelery
+drwxr-xr-x 3 root root  4096 Jul 18 13:02 untitled
+# 创建result表
+[root@m01 untitled]# python3 manage.py migrate
+
+2.启动worker
+[root@m01 untitled]# celery -A untitled worker -l info
+/usr/local/python3/lib/python3.6/site-packages/celery/platforms.py:801: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+ 
+ -------------- celery@m01 v4.3.0 (rhubarb)
+---- **** ----- 
+--- * ***  * -- Linux-2.6.32-696.el6.x86_64-x86_64-with-centos-6.9-Final 2019-07-18 13:13:52
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         untitled:0x7fa14a5312e8
+- ** ---------- .> transport:   redis://10.0.0.61:6379/2
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . printqw
+
+[2019-07-18 13:13:52,288: INFO/MainProcess] Connected to redis://10.0.0.61:6379/2
+[2019-07-18 13:13:52,297: INFO/MainProcess] mingle: searching for neighbors
+[2019-07-18 13:13:53,319: INFO/MainProcess] mingle: all alone
+[2019-07-18 13:13:53,330: WARNING/MainProcess] /usr/local/python3/lib/python3.6/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-07-18 13:13:53,331: INFO/MainProcess] celery@m01 ready.
+[2019-07-18 13:13:53,448: INFO/MainProcess] Received task: printqw[e3d1792f-7628-4861-9fc7-05fd8e7ce537]  
+[2019-07-18 13:13:53,469: INFO/ForkPoolWorker-1] Task printqw[e3d1792f-7628-4861-9fc7-05fd8e7ce537] succeeded in 0.01883281399932457s: 'hello celery and django...'
+[2019-07-18 13:13:53,969: INFO/MainProcess] Received task: printqw[b874cb79-4aac-4b09-a9f8-5906bf09326b]  
+[2019-07-18 13:13:53,979: INFO/ForkPoolWorker-1] Task printqw[b874cb79-4aac-4b09-a9f8-5906bf09326b] succeeded in 0.009641711996664526s: 'hello celery and django...'
+
+3.启动beat,周期性把任务放到队列中
+[root@m01 untitled]# celery -A untitled beat -l info
+celery beat v4.3.0 (rhubarb) is starting.
+__    -    ... __   -        _
+LocalTime -> 2019-07-18 13:13:48
+Configuration ->
+    . broker -> redis://10.0.0.61:6379/2
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+[2019-07-18 13:13:48,957: INFO/MainProcess] beat: Starting...
+[2019-07-18 13:13:48,978: INFO/MainProcess] Scheduler: Sending due task task-one (printqw)
+[2019-07-18 13:13:53,967: INFO/MainProcess] Scheduler: Sending due task task-one (printqw)
+
+4.任务结果
+```
+![](.readme_images/18114845.png)
+```
+
 # 创建表结构
 [root@m01 CMDB]# python3 manage.py migrate
 
@@ -357,5 +643,7 @@ print(unquote(unquote(search_val,"utf-8")))# 测试
 [root@m01 CMDB]# celery -A CMDB worker -l info
 # 周期性的吧任务放到队列中
 [root@m01 CMDB]# celery -A CMDB beat
-
+注意：
+这里的celery命令，是pip install celery后生成的，默认放在了python安装路径下/usr/local/python3/bin/celery 
+需要手动建立连接：ln -s /usr/local/python3/bin/celery  /usr/bin/celery 这样就可以直接使用了
 ```
