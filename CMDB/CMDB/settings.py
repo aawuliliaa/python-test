@@ -125,7 +125,9 @@ USE_I18N = True
 USE_L10N = True
 # celery
 # 由于celery-4.1.0存在时区bug，必须启用USE_TZ
-USE_TZ = False
+# raise ValueError("MySQL backend does not support timezone-aware datetimes when USE_TZ is False.")
+# ValueError: MySQL backend does not support timezone-aware datetimes when USE_TZ is False.
+USE_TZ = True
 
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BROKER_URL = 'redis://10.0.0.61:6379'

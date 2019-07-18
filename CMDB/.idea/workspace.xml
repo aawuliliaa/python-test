@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e37becd-34ea-4e0e-937f-7f84d4b62202" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.readme_images/12b7f213.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/18114845.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/2a1647b3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/30535da3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/695b3eb2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/9e8b779a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/ac7e774b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.readme_images/dbf0b407.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/2789882e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/42e5f8af.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/460186d1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/5d5fee4b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/6013a21e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/625de93c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/6a72fcaa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/81253a2c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/99fc83f9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/c6000fa9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.readme_images/d6e2d1ab.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMDB/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/9.Django/1.myWebStruct/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/9.Django/1.myWebStruct/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/9.Django/1.myWebStruct/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/9.Django/1.myWebStruct/views.py" afterDir="false" />
@@ -71,47 +75,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMDB/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="127" column="14" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMDB/celery.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMDB/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="28" />
-              <folding>
-                <element signature="e#2#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/readme.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="96">
-                <caret line="633" column="32" lean-forward="true" selection-start-line="633" selection-start-column="32" selection-end-line="633" selection-end-column="32" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/templates/rest_post_test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -192,8 +160,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="519" />
-    <option name="y" value="72" />
+    <option name="x" value="-12" />
+    <option name="y" value="46" />
     <option name="width" value="1584" />
     <option name="height" value="1031" />
   </component>
@@ -222,6 +190,11 @@
               <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="CMDB" type="462c0819:PsiDirectoryNode" />
               <item name="crond" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -380,7 +353,7 @@
       <updated>1563151608850</updated>
       <workItem from="1563151664394" duration="7170000" />
       <workItem from="1563159324826" duration="102425000" />
-      <workItem from="1563356550386" duration="26489000" />
+      <workItem from="1563356550386" duration="28392000" />
     </task>
     <task id="LOCAL-00001" summary="CMDB">
       <created>1563159094145</created>
@@ -424,21 +397,29 @@
       <option name="project" value="LOCAL" />
       <updated>1563431729681</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CMDB">
+      <created>1563436923649</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563436923649</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136084000" />
+    <option name="totallyTimeSpent" value="137987000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="346" y="48" width="1056" height="687" extended-state="0" />
+    <frame x="-8" y="31" width="1056" height="687" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16967872" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22791165" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38112524" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27041742" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.52579033" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -466,21 +447,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="CMDB" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CMDB$test.coverage" NAME="test Coverage Results" MODIFIED="1563431464988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crond" />
+    <SUITE FILE_PATH="coverage/CMDB$test.coverage" NAME="test Coverage Results" MODIFIED="1563436925923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crond" />
     <SUITE FILE_PATH="coverage/CMDB$manage.coverage" NAME="manage Coverage Results" MODIFIED="1563160720210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CMDB$utils.coverage" NAME="utils Coverage Results" MODIFIED="1563278819187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/-1156481044/-1506120977/socket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="585" selection-start-line="585" selection-end-line="585" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMDB/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -661,13 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/rest_post_test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/rest_searializer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -765,10 +729,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CMDB/celery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMDB/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="128" column="91" selection-start-line="128" selection-start-column="91" selection-end-line="128" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crond/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMDB/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="133">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
             <element signature="e#2#58#0" expanded="true" />
           </folding>
@@ -777,27 +761,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crond/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="43" />
+        <state relative-caret-position="228">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#25#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMDB/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="127" column="14" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMDB/celery.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -805,10 +772,20 @@
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="96">
-            <caret line="633" column="32" lean-forward="true" selection-start-line="633" selection-start-column="32" selection-end-line="633" selection-end-column="32" />
+          <first_editor relative-caret-position="268">
+            <caret line="354" column="32" selection-start-line="354" selection-start-column="32" selection-end-line="354" selection-end-column="32" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.readme_images/1214c5a9.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/rest_post_test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
         </state>
       </provider>
     </entry>

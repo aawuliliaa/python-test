@@ -287,13 +287,14 @@ http://10.0.0.61:8000/api/
 登录用户是上面注册的admin@qq.com/123
 ```
 ![](.readme_images/526de4b6.png)
+### 2.2.1发送post请求
 ![](.readme_images/f7ed9e03.png)
 ![](.readme_images/90b5775c.png)
 
 ![](.readme_images/d2addf7a.png)
 ![](.readme_images/64405447.png)
 
-关联表插入数据
+### 2.2.2关联表插入数据
 ![](.readme_images/6ad6c296.png)
 ![](.readme_images/ffd574a5.png)
 ![](.readme_images/1129bae4.png)
@@ -352,6 +353,7 @@ print(unquote(unquote(search_val,"utf-8")))# 测试
 [root@m01 CMDB]# pip3 install django-celery-beat
 [root@m01 CMDB]# pip3 install django-celery-results
 ```
+![](.readme_images/5d5fee4b.png)
 ### 2.5.2celery模块介绍
 ```
 任务模块 Task.py
@@ -632,6 +634,27 @@ Configuration ->
 4.任务结果
 ```
 ![](.readme_images/18114845.png)
+
+
+### 2.5.7celery周期任务之admin配置
+![](.readme_images/6a72fcaa.png)
+![](.readme_images/81253a2c.png)
+![](.readme_images/99fc83f9.png)
+![](.readme_images/2789882e.png)
+![](.readme_images/c6000fa9.png)
+```
+task有修改，需要重启
+[root@m01 CMDB]# celery -A CMDB worker --loglevel=info >/project/celery_work.log 2>&1 &
+[1] 7071
+[root@m01 CMDB]# celery -A CMDB beat --loglevel=info >/project/celery_beat.log 2>&1 &
+[2] 7077
+
+```
+![](.readme_images/42e5f8af.png)
+![](.readme_images/6013a21e.png)
+![](.readme_images/625de93c.png)
+![](.readme_images/460186d1.png)
+![](.readme_images/d6e2d1ab.png)
 ```
 
 # 创建表结构
@@ -647,3 +670,4 @@ Configuration ->
 这里的celery命令，是pip install celery后生成的，默认放在了python安装路径下/usr/local/python3/bin/celery 
 需要手动建立连接：ln -s /usr/local/python3/bin/celery  /usr/bin/celery 这样就可以直接使用了
 ```
+## 2.6
