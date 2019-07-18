@@ -287,6 +287,23 @@ http://10.0.0.61:8000/api/
 登录用户是上面注册的admin@qq.com/123
 ```
 ![](.readme_images/526de4b6.png)
+![](.readme_images/f7ed9e03.png)
+![](.readme_images/90b5775c.png)
+
+![](.readme_images/d2addf7a.png)
+![](.readme_images/64405447.png)
+
+关联表插入数据
+![](.readme_images/6ad6c296.png)
+![](.readme_images/ffd574a5.png)
+![](.readme_images/1129bae4.png)
+![](.readme_images/07164f36.png)
+```
+如果是
+总结：
+提交的数据形式与下面的形式相同
+```
+![](.readme_images/4529f996.png)
 ## 2.3角色权限
 ```
 这里的角色权限是我自己设计的一种方式
@@ -294,4 +311,51 @@ http://10.0.0.61:8000/api/
 可以限制每个用户可以看到哪些菜单
 
 至于页面中的按钮操作权限，是通过Privilege表控制的，角色与权限是多对多的关系
+```
+## 2.4前端中文，后端解码
+```
+前端
+jquery
+{#    $.cookie需要该js#}
+    <script src="/static/js/jquery.cookie.js"></script>
+    
+不编码
+$.cookie('role_search', '测试', { path: '/' });
+
+后端
+from urllib.parse import unquote
+print(search_val)
+print(unquote(search_val, "utf-8"))# 测试
+print(unquote(unquote(search_val,"utf-8")))# 测试
+
+
+
+前端
+编码
+$.cookie('role_search', encodeURIComponent('测试'), { path: '/' });
+解码
+$("#search").val(decodeURIComponent(role_search));
+
+后端
+from urllib.parse import unquote
+print(search_val)#'%25E6%25B5%258B%25E8%25AF%2595'
+print(unquote(search_val, "utf-8"))# %E6%B5%8B%E8%AF%95
+print(unquote(unquote(search_val,"utf-8")))# 测试
+```
+## 2.5定时任务
+
+```
+
+[root@m01 CMDB]# pip3 install django-celery-beat
+[root@m01 CMDB]# pip3 install django-celery-results
+# 创建表结构
+[root@m01 CMDB]# python3 manage.py migrate
+
+[root@m01 CMDB]# pwd
+/project/CMDB
+# 启动worker，监听队列中的任务，执行任务
+[root@m01 CMDB]# celery -A CMDB worker -l info
+# 周期性的吧任务放到队列中
+[root@m01 CMDB]# celery -A CMDB beat
+
 ```

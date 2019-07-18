@@ -24,10 +24,10 @@ class PrivilegeSerializer(serializers.ModelSerializer):
 
 # HyperlinkedModelSerializer关联表以url形式显示
 # ModelSerializer显示关联表的ID值
-class RoleSerializer(serializers.HyperlinkedModelSerializer):
+class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Role
         fields = ('id', 'name', 'code', 'parent_menu_name', 'child_menu_name', 'url',
                   'note', 'users', 'privileges', 'create_time', 'update_time')
         # 列出关联表中的详细数据
-        # depth = 2
+        depth = 2

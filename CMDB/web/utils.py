@@ -19,7 +19,10 @@ def get_label(request):
     # 由于用户和角色是多对多的关系，可能出现下面的情况，但是字典是不重复的，所以自动去重了
     # role1 pa_menu1 child_menu1 url1
     # role2 pa_menu1 child_menu1 url1
-    role_set_list = Role.objects.filter(users__email=email).all()
+    if request.user.is_admin:
+        role_set_list = Role.objects.all()
+    else:
+        role_set_list = Role.objects.filter(users__email=email).all()
     left_label_dic = {}
 
     for role_obj in role_set_list:

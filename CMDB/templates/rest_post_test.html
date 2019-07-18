@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+
+    <textarea name="data" rows="25" cols="100"></textarea>
+
+    <input type="submit" value="create">
+
+    {{ errors }}
+    <br>
+    {{ data }}
+</form>
+</body>
+</html>

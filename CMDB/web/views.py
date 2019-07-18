@@ -4,11 +4,13 @@ from django.contrib import auth
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+import json
 from web.reg_form import UserForm
 from web.models import *
 from urllib.parse import unquote
 from web.utils import *
 from web.page import *
+from web import rest_searializer
 # Create your views here.
 
 
@@ -140,11 +142,10 @@ def privilege(request):
         request.COOKIES["data_nums_per_page"] = 10
     if request.COOKIES.get("role_search"):
         search_val = request.COOKIES.get("role_search").strip()
-        print("ddddddddddddddd",unquote(unquote(search_val,"utf-8")))
 
         role_obj_set = role_obj_set.filter(Q(users__email__contains=search_val) |
-                                           Q(name__contains=unquote(unquote(search_val, "utf-8"))) |
-                                           Q(code__contains=unquote(unquote(search_val, "utf-8"))))
+                                           Q(name__contains=unquote(search_val, "utf-8")) |
+                                           Q(code__contains=unquote(search_val, "utf-8")))
     data_page_info = my_page(role_obj_set, request.GET.get("page_num", 1),
                              int(request.COOKIES.get("data_nums_per_page")))
 
@@ -169,3 +170,22 @@ def role_export(request):
     header = ['用户名', '角色名称', '父级菜单名', '子级菜单名', 'url路径', '权限']
     response = export(filename, export_datas, header)
     return response
+
+
+def rest_post_test(request):
+    """
+    rest POST请求测试
+    :param request:
+    :return:
+    """
+    if request.method == "GET":
+        return render(request, "rest_post_test.html")
+    else:
+        data = json.loads(request.POST.get("data"))
+
+        # many=True创建多条[{},{}]前端传过来的数据列表中方字典
+        rest_obj = rest_searializer.RoleSerializer(data=data)
+        if rest_obj.is_valid():
+            rest_obj.save()
+
+        return render(request, "rest_post_test.html", {"errors": rest_obj.errors, "data": rest_obj.data})

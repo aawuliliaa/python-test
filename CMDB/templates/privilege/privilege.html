@@ -48,8 +48,8 @@
                         <a class="btn btn-info float-right export" href="{% url 'role_export' %}">导出</a>
                         <label class="btn btn-info float-right" id="search_button" style="margin-right: 5px">搜索</label>
                         <div class="float-right" style="margin-right: 5px">
-
-                            <input type="text" id="search" class="form-control" placeholder="user_email/role_code/role_name">
+                            {#这里是输入用户的邮箱，角色编码或角色名称#}
+                            <input type="text" id="search" class="form-control" placeholder="email/code/name">
 
                         </div>
                         <table class="table table-striped table-bordered table-hover dataTables-example" >
@@ -125,7 +125,8 @@
         }
         if($.cookie('role_search')){
             role_search = $.cookie('role_search');
-            $("#search").val(decodeURIComponent(role_search));
+            {#$("#search").val(decodeURIComponent(role_search));#}
+            $("#search").val(role_search);
         }
     });
     $(function () {
@@ -138,7 +139,8 @@
 {#“会话cookie（session cookie）”。#}
         });
         $("#search_button").click(function () {
-            $.cookie('role_search', encodeURIComponent($("#search").val()), { path: '/' });
+            {#$.cookie('role_search', encodeURIComponent($("#search").val()), { path: '/' });#}
+             $.cookie('role_search', $("#search").val(), { path: '/' });
             location.href='{% url 'privilege' %}';
         })
 
