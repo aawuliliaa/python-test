@@ -18,3 +18,4 @@ def get_data(user,password):
     cur.execute(sql)
     return cur
 
+

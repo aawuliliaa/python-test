@@ -37,6 +37,14 @@ MVT-model-view-template,model是业务对象与数据库的映射，view负责�
 5.render返回，可以进行template模板的渲染，其中模板渲染可以通过filter和tag协助，进行数据的展示
 6.中间的response，对响应数据进行处理
 7.wsgi协议对数据进行封装，返回给HTTP协议。
+
+因此根据CBV和FBVdjango的生命周期可以又两类
+
+FBV：请求通过uwsgi网关，中间件，然后进入路由匹配，进入视图函数，连接数据库ORM操作，模板渲染，返回经过中间件，最终交给浏览器response字符串。
+
+CBV：请求通过uwsgi网关，中间件，然后进入路由匹配，这里就与FBV有区别了，
+    因为不再是试图函数而是视图类，说的详细一点，先经过父类View的dispath方法，进行请求方法的判断，
+    在分发到视图类的方法，连接数据库ORM操作，模板渲染，返回经过中间件，最终交给浏览器response字符串。
 ```
 # 5.简述什么是FBV和CBV
 ```
@@ -359,6 +367,41 @@ django2.x
 path中可以直接进行参数类型的转换
 path("articles/<int:year>/", views.year_archive),
 path不能进行正则匹配，re_path可以
+path可以自定义转化器
+converters.py
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author: vita
+class YearConverter:
+    regex = '[0-9]{4}'
+    def to_python(self,value):
+        print("to_python",value)
+        return int(value)
+    def to_url(self,value):
+        print("to_url",value)
+        return '%04d' % value
+        
+urls.py
+from django.contrib import admin
+from django.urls import path, register_converter
+from app1 import views,converters
+register_converter(converters.YearConverter,"int_con")
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path("articles/2003/", views.special_case_2003),
+    path("articles/<int_con:year>/<int_con:month>/", views.month_archive,name="month_archive"),
+]
+
+views.py
+from django.shortcuts import HttpResponse
+from django.urls import reverse
+
+def special_case_2003(request):
+    return HttpResponse("articles/2003/")
+
+def month_archive(request, year, month):
+    print(reverse(month_archive,args=(121,234)))#<class 'int'>
+    return HttpResponse("articles/<int:year>/   year:%s" % (year))
 ```
 # 27.urlpatterns中的name与namespace有什么作用？你是如何使用的？
 ```

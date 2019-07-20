@@ -3,6 +3,8 @@
 # Author: vita
 from urllib.parse import parse_qs
 from models import get_data
+from django.urls import reverse
+
 
 def index(environ):
     with open("./templates/index.html","rb") as f:
@@ -40,3 +42,5 @@ def auth(environ):
         return index(environ)
     else:
         return b'user or pwd is wrong!'
+
+
