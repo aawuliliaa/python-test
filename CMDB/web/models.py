@@ -118,7 +118,7 @@ class Role(models.Model):
     child_menu_name = models.CharField(max_length=32, verbose_name="子级菜单名")
     url = models.CharField(max_length=255, verbose_name="url路径")
     note = models.CharField(max_length=255, verbose_name="描述信息")
-    users = models.ManyToManyField(to=MyUser)
+    users = models.ManyToManyField(to=MyUser, related_name='users_role')
     privileges = models.ManyToManyField(to=Privilege, blank=True, null=True)
     create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
     update_time = models.DateTimeField(verbose_name="更新时间", auto_now=True)
@@ -132,7 +132,7 @@ class Role(models.Model):
         ]
 
     def __str__(self):
-        return self.name
+        return self.code
 
 
 class AccessLog(models.Model):
@@ -144,6 +144,10 @@ class AccessLog(models.Model):
     remote_ip = models.CharField(verbose_name="访问者IP地址", max_length=32)
     request_path = models.CharField(verbose_name="访问的地址", max_length=255, default="/")
     access_time = models.DateTimeField(verbose_name="访问时间", auto_now_add=True)
+
+    class Meta:
+        verbose_name = '用户访问记录表'
+        verbose_name_plural = "用户访问记录表"
 
     def __str__(self):
         return self.remote_ip

@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'Role', rest_view.RoleView.as_view()),
     # rest提交数据测试
-    path('rest_post_test/', rest_view.rest_post_test, name="rest_post_test"),
+    path('rest_post_test/', rest_view.TestAuthView.as_view(), name="rest_post_test"),
     # 会有登录的功能，可以创建数据
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

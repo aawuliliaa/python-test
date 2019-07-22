@@ -159,6 +159,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # 中间件中访问频率的限制
 ACCESS_TIME = 60
 ACCESS_LIMIT = 5
+# rest_framework认证配置
+# 我们的版本在前面~然后是认证，然后是权限~ 最后是频率~~所以大家要清楚~~
+REST_FRAMEWORK = {
+    # 配置全局认证
+    'DEFAULT_AUTHENTICATION_CLASSES': ["web.rest_auth.MyApiAuth", ],
+    # 配置全局权限
+    "DEFAULT_PERMISSION_CLASSES": ["web.rest_permission.MyApiPermission"],
+    "DEFAULT_THROTTLE_CLASSES": ["web.rest_throttle.MyThrottle"],
+        "DEFAULT_THROTTLE_RATES":{
+            'WD':'5/m',         #速率配置每分钟不能超过5次访问，WD是scope定义的值，
+
+        }
+}
+# 需要事先在role表中添加该角色
+REST_OWN_PERMISSION_USER_ROLE_CODE = "API_user"
 # 下面就是logging的配置
 LOGGING = {
     'version': 1,  # 指明dictConnfig的版本，目前就只有一个版本，哈哈

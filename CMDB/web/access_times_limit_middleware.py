@@ -13,6 +13,7 @@ class AccessTimesLimitMiddleware(MiddlewareMixin):
     定义访问频率限制的中间件
     """
     def process_request(self, request):
+        # 这里只对登录做了限制，如果想对其他路径进行限制，可自行设置
         if request.path.__contains__("login") and request.method == "POST":
             # 设置时间间隔，默认设置60秒内的访问频率
             access_time = settings.ACCESS_TIME if hasattr(settings, 'ACCESS_TIME') else 60

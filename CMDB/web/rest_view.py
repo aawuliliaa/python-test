@@ -6,7 +6,7 @@ import json
 from web import models
 
 from web import rest_searializer
-
+from web import rest_auth
 
 # ViewSets define the view behavior.
 # 这种方式，get,post请求，是restframwork已经帮助我们封装好了
@@ -33,7 +33,8 @@ class RoleView(APIView):
     # 在这个页面可以发送post请求，数据格式是get请求中的一个字典
     参考博客
     # https://www.cnblogs.com/GGGG-XXXX/articles/9568816.html
-
+    由于添加了rest认证，所以访问的时候需要
+    http://10.0.0.61:8080/api/Role?email=admin@qq.com&password=123
     """
 
     def get(self, request):
@@ -102,56 +103,102 @@ class RoleView(APIView):
             return Response("删除的角色不存在")
 
 
-def rest_post_test(request):
+class TestAuthView(APIView):
     """
     rest POST请求测试,FBV方式
     :param request:
     :return:
     """
-    if request.method == "GET":
-        return render(request, "rest_post_test.html")
-    else:
-        data = json.loads(request.POST.get("data"))
+    # authentication_classes = [rest_auth.MyApiAuth, ]
 
+    def get(self, request, *args, **kwargs):
+        # http://10.0.0.61:8080/api/rest_post_test/?email=admin@qq.com&password=123
+        # 这样请求才会出现页面
+        # print(request.user)  # admin
+        # print(request.auth.users_role.all())
+        return render(request, "rest_post_test.html")
+
+    def post(self, request):
+        # http://10.0.0.61:8080/api/rest_post_test/?email=admin@qq.com&password=123
+        # post请求的时候，请求路径要是上面的设置
+        data = json.loads(request.POST.get("data"))
+        # print("qqqqqqqqqqqqqqqqqqqqqqq", data)
         # many=True创建多条[{},{}]前端传过来的数据列表中方字典
-        rest_obj = rest_searializer.RoleSerializer(data=data)
+        rest_obj = rest_searializer.PrivilegeSerializer(data=data)
         if rest_obj.is_valid():
             rest_obj.save()
 
         return render(request, "rest_post_test.html", {"errors": rest_obj.errors, "data": rest_obj.data})
 
-# python3.6中urllib模块的使用，get和post方法
-# import urllib
-# req = urllib.request.Request("http://10.0.0.61:8080/api/Role")
-# page = urllib.request.urlopen(req).read()
+
+# 1.python3.6中urllib模块的使用，get
+# from  urllib import request
+# import json
+# req = request.Request("http://10.0.0.61:8080/api/Role?email=admin@qq.com&password=123")
+# page = request.urlopen(req).read()
 # page = page.decode('utf-8')
 # print("wwwwwwwwwwwwwwwwwwwww", type(page))  # <class 'str'>
 # print("================",type(json.loads(page)))  # <class 'list'>
+
+# 2.post请求，不是自己定义的get.post
+# from  urllib import request
+# from  urllib import parse
 #
-#
-# # coding:utf-8
-# from urllib import request
-# from urllib import parse
-# url = "http://10.1.2.151/ctower-mall-c/sys/login/login.do"
-# data = {"id":"wdb","pwd":"wdb"}
-# params="?"
-# for key in data:
-#   params = params + key + "=" + data[key] + "&"
-# print("Get方法参数："+params)
-# headers = {
-#   #heard部分直接通过chrome部分request header部分
-#   'Accept':'application/json, text/plain, */*',
-#   'Accept-Encoding':'gzip, deflate',
-#   'Accept-Language':'zh-CN,zh;q=0.8',
-#   'Connection':'keep-alive',
-#   'Content-Length':'14', #get方式提交的数据长度，如果是post方式，转成get方式：【id=wdb&pwd=wdb】
-#   'Content-Type':'application/x-www-form-urlencoded',
-#   'Referer':'http://10.1.2.151/',
-#   'User-Agent':'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Mobile Safari/537.36'
+# data = {
+#     "name": "sd搜索s",
+#     "note": "ss"
 # }
+# url = "http://10.0.0.61:8080/api/Privileges/?email=admin@qq.com&password=123"
+# # 不加后面的用户名和密码报urllib.error.HTTPError: HTTP Error 403: Forbidden
+# print(url)
 # data = parse.urlencode(data).encode('utf-8')
-# req = request.Request(url, headers=headers, data=data) #POST方法
-# #req = request.Request(url+params) # GET方法
-# page = urllib.request.urlopen(req).read()
+# req = request.Request(url, data=data) #POST方法
+#
+# # print("rrrrrrrrrrrrrrrrr",req.data.decode("utf-8"))
+# page = request.urlopen(req).read()
+# # 如果数据插入报错，例如数据已经存在，或主键已经存在，会报urllib.error.HTTPError: HTTP Error 400: Bad Request
 # page = page.decode('utf-8')
 # print(page)
+# # {"id":17,"name":"sd搜索s","note":"ss",
+# "create_time":"2019-07-22T08:08:38.056705Z","update_time":"2019-07-22T08:08:38.056739Z"}
+#
+
+# 3.post请求，自定义的view
+# from  urllib import request
+# from  urllib import parse
+#
+# data = {
+#         "id": 3,
+#         "users": [
+#             {
+#                 "id": 2,
+#                 "name": "lili"
+#             },
+#             {
+#                 "id": 37,
+#                 "name": "cc"
+#             }
+#         ],
+#         "name": "运维",
+#         "code": "operator",
+#         "parent_menu_name": "资产信息",
+#         "child_menu_name": "系统信息",
+#         "url": "/system/",
+#         "note": "系统信息"
+#
+#
+#     }
+# url = "http://10.0.0.61:8080/api/Role/?email=admin@qq.com&password=123"
+# # 不加后面的用户名和密码报urllib.error.HTTPError: HTTP Error 403: Forbidden
+# print(url)
+# data = parse.urlencode(data).encode('utf-8')
+# req = request.Request(url, data=data) #POST方法
+#
+# # print("rrrrrrrrrrrrrrrrr",req.data.decode("utf-8"))
+# page = request.urlopen(req).read()
+# # 如果数据插入报错，
+# # 报错信息
+# # {"non_field_errors":["The fields name, code, parent_menu_name, child_menu_name, url must make a unique set."]}
+# page = page.decode('utf-8')
+# print(page)
+
