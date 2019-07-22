@@ -8,6 +8,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from web.models import *
 
 
+# https://www.cnblogs.com/alex3714/articles/8997376.html详细说明参考
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
@@ -62,7 +63,10 @@ class UserAdmin(BaseUserAdmin):
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
     list_display = ('email', 'name', 'is_admin')
+    list_display_links = ('email',)  # 点下这2个字段就跳到修改页
+    list_per_page = 20 # 每页多少数据
     list_filter = ('is_admin',)
+    # 这个是修改时，页面中有个分组
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {'fields': ('name',)}),
@@ -72,27 +76,32 @@ class UserAdmin(BaseUserAdmin):
     # overrides get_fieldsets to use this attribute when creating a user.
     # 创建用户时，列出的需要添加的字段信息
     add_fieldsets = (
-        (None, {
+        ("添加用户", {
             'classes': ('wide',),
             'fields': ('email', 'name', 'password1', 'password2')}
         ),
     )
     # 搜索字段
-    search_fields = ('email',)
+    search_fields = ('email', 'name')
     # 排序字段
     ordering = ('email',)
+    # 多对多使用
     filter_horizontal = ()
 
 
 class RoleAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'code', 'parent_menu_name', 'child_menu_name', 'url', 'note', 'create_time', 'update_time']
     list_filter = ('name',)
-    search_fields = ('name',)
+    search_fields = ('name', 'code')
     filter_horizontal = ('users', 'privileges')
+    list_display_links = ('id', 'name')  # 点下这2个字段就跳到修改页
+    list_per_page = 20
 
 
 class PrivilegeAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'note', 'create_time', 'update_time']
+    list_display_links = ('id', 'name') # 点下这2个字段就跳到修改页
+    list_per_page = 20
     list_filter = ('name',)
     search_fields = ('name',)
 

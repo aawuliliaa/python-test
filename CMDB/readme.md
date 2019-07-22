@@ -5,6 +5,10 @@ django==2.2.3
 python==3.6.3
 pymysql==0.9.3
 djangorestframework==3.10.0
+redis
+pip3 install celery
+pip3 install django-celery-beat
+pip3 install django-celery-results
 ```
 ```
 1.把本地代码上传到linux上

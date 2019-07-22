@@ -45,6 +45,9 @@
     <script src="/static/js/jquery-3.1.1.min.js"></script>
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/plugins/sweetalert/sweetalert.min.js"></script>
+     <!-- Toastr script -->
+    <script src="/static/js/plugins/toastr/toastr.min.js"></script>
     <script>
         $(function () {
             $('.my_login_commit').click(function () {
@@ -58,12 +61,21 @@
                         password:$('#login_passwd_id').val()
                     },
                     success:function (data) {
+                        console.log("data",data)
                         if(data.user){
                             location.href="{% url 'index' %}"
+                        }else if (data.info){
+
+                            $(".error_info").text(data.info).css("color", "red")
+
                         }else{
-                            $(".error_info").text(data.info)
+                            {#alert(data)#}
+                            $(".error_info").text(data).css("color", "red")
                         }
 
+                    },
+                    exception: function (data) {
+                        console.log("exceptdata",data)
                     }
                 })
             })

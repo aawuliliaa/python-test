@@ -27,8 +27,7 @@ urlpatterns = [
     re_path(r'^api/', include('web.rest_urls')),
     path('privilege/', views.privilege, name="privilege"),
     path('role_export/', views.role_export, name="role_export"),
-    # rest提交数据测试
-    path('rest_post_test/', views.rest_post_test, name="rest_post_test"),
+
     # 定时任务
     path('crond/', include('crond.urls', namespace="crond")),
     # media配置:只有配置了这里，Index页面中才能显示出头像

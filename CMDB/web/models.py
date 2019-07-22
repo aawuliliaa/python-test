@@ -7,6 +7,9 @@ from django.contrib.auth.models import (
 
 
 class MyUserManager(BaseUserManager):
+    """
+    这里是管网处复制修改的
+    """
     def create_user(self, email, name, password=None, **kwargs):
         """
         Creates and saves a User with the given email, date of
@@ -107,7 +110,8 @@ class Role(models.Model):
     """
     角色表
     """
-    id = models.AutoField(primary_key=True,verbose_name="主键ID")
+    id = models.AutoField(primary_key=True, verbose_name="主键ID")
+    # strip=True去除用户输入的空白
     name = models.CharField(max_length=32, verbose_name="角色名称")
     code = models.CharField(max_length=32, verbose_name="角色编码")
     parent_menu_name = models.CharField(max_length=32, verbose_name="父级菜单名")
@@ -129,3 +133,17 @@ class Role(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class AccessLog(models.Model):
+    """
+    用户访问的记录表
+    """
+    id = models.AutoField(primary_key=True)
+    # user_email = models.CharField(verbose_name="访问者邮箱", max_length=32)
+    remote_ip = models.CharField(verbose_name="访问者IP地址", max_length=32)
+    request_path = models.CharField(verbose_name="访问的地址", max_length=255, default="/")
+    access_time = models.DateTimeField(verbose_name="访问时间", auto_now_add=True)
+
+    def __str__(self):
+        return self.remote_ip

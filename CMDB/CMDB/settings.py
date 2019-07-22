@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'web.access_times_limit_middleware.AccessTimesLimitMiddleware',
 ]
 
 ROOT_URLCONF = 'CMDB.urls'
@@ -155,8 +156,9 @@ AUTH_USER_MODEL = 'web.MyUser'
 # 与用户上传图片相关的配置
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-
+# 中间件中访问频率的限制
+ACCESS_TIME = 60
+ACCESS_LIMIT = 5
 # 下面就是logging的配置
 LOGGING = {
     'version': 1,  # 指明dictConnfig的版本，目前就只有一个版本，哈哈

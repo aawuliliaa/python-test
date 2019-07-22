@@ -12,6 +12,7 @@ from web.utils import *
 from web.page import *
 from web import rest_searializer
 # Create your views here.
+import urllib
 
 
 @login_required
@@ -22,6 +23,7 @@ def index(request):
     :return:
     """
     # 左侧菜单栏
+
     left_label_dic = get_label(request)
     return render(request, "index.html", locals())
 
@@ -172,20 +174,3 @@ def role_export(request):
     return response
 
 
-def rest_post_test(request):
-    """
-    rest POST请求测试
-    :param request:
-    :return:
-    """
-    if request.method == "GET":
-        return render(request, "rest_post_test.html")
-    else:
-        data = json.loads(request.POST.get("data"))
-
-        # many=True创建多条[{},{}]前端传过来的数据列表中方字典
-        rest_obj = rest_searializer.RoleSerializer(data=data)
-        if rest_obj.is_valid():
-            rest_obj.save()
-
-        return render(request, "rest_post_test.html", {"errors": rest_obj.errors, "data": rest_obj.data})
