@@ -2,8 +2,8 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 from django.utils.deprecation import MiddlewareMixin
-from django.shortcuts import HttpResponse,redirect,render
-import time, datetime
+from django.shortcuts import HttpResponse
+import time
 from CMDB import settings
 from web.models import AccessLog
 
@@ -14,7 +14,7 @@ class AccessTimesLimitMiddleware(MiddlewareMixin):
     """
     def process_request(self, request):
         if request.path.__contains__("login") and request.method == "POST":
-
+            # 设置时间间隔，默认设置60秒内的访问频率
             access_time = settings.ACCESS_TIME if hasattr(settings, 'ACCESS_TIME') else 60
             ip = request.META.get('REMOTE_ADDR')
             request_path = request.path
@@ -37,10 +37,9 @@ class AccessTimesLimitMiddleware(MiddlewareMixin):
 
             access_limit = settings.ACCESS_LIMIT if hasattr(settings, 'ACCESS_LIMIT') else 5
             if ip_access_log.count() >= access_limit:
-                # 多少秒后访问
+                # 多少秒后访问，这个不懂，自己画图就懂了哦。哈哈
                 wait_second = round(access_time-(float(now)-first_access_time), 2)
                 # "%s 秒内只允许访问%s次" % (access_time, access_limit)
                 return HttpResponse("%s 秒内只允许访问%s次，请%s 秒后尝试" % (access_time, access_limit, wait_second))
 
             AccessLog.objects.create(remote_ip=ip, request_path=request_path)
-
