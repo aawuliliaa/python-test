@@ -61,7 +61,7 @@
                             <a href=""><i class="fa fa-diamond"></i> <span class="nav-label">{{ parent_label_name_key }}</span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 {% for child_label_name_key,child_label_url_value in parent_label_value.items %}
-                                    <li><a href="{{ child_label_url_value }}">{{ child_label_name_key }}</a></li>
+                                    <li><a href="{{ child_label_url_value }}"  class="child_label">{{ child_label_name_key }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
@@ -154,7 +154,16 @@
     <!-- Toastr -->
     <script src="/static/js/plugins/toastr/toastr.min.js"></script>
 
+    <script>
+        $(".child_label").click(function () {
+            let href_click = $(this).attr("href").split("/").join("");
+            {#alert(`${href}data_nums_per_page`)/asset/env/data_nums_per_page#}
+            $.cookie(`${href_click}data_nums_per_page`, null);
+            $.cookie(`${href_click}search`, null);
+            alert("base")
+        });
 
+    </script>
     {% block foot_script %}
 
     {% endblock %}

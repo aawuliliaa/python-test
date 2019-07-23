@@ -54,10 +54,10 @@ def logout(request):
     """
     auth.logout(request)
     response = redirect(reverse("login"))
-    response.delete_cookie("data_nums_per_page")
-    response.delete_cookie("role_search")
-    response.delete_cookie("env_data_nums_per_page")
-    response.delete_cookie("env_role_search")
+    # response.delete_cookie("data_nums_per_page")
+    # response.delete_cookie("role_search")
+    # response.delete_cookie("env_data_nums_per_page")
+    # response.delete_cookie("env_role_search")
     # response.cookies.clear()
 
     return response
