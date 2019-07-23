@@ -35,7 +35,6 @@ class Env(View):
 
             data_obj_set = data_obj_set.filter(Q(name__contains=unquote(search_val, "utf-8")) |
                                                Q(abs_name__contains=unquote(search_val, "utf-8")))
-        print("qqqqqqqqqqqqqqqqqqqqqqqqq", request.COOKIES.get("env_data_nums_per_page"))
         data_page_info = my_page(data_obj_set, request.GET.get("page_num", 1),
                                  int(request.COOKIES.get("env_data_nums_per_page")))
         return render(request, 'asset/env.html', locals())
