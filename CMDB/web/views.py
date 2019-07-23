@@ -1,18 +1,14 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib import auth
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-import json
+from urllib.parse import unquote
 from web.reg_form import UserForm
 from web.models import *
-from urllib.parse import unquote
 from web.utils import *
 from web.page import *
-from web import rest_searializer
-# Create your views here.
-import urllib
 
 
 @login_required
@@ -60,6 +56,8 @@ def logout(request):
     response = redirect(reverse("login"))
     response.delete_cookie("data_nums_per_page")
     response.delete_cookie("role_search")
+    response.delete_cookie("env_data_nums_per_page")
+    response.delete_cookie("env_role_search")
     # response.cookies.clear()
 
     return response

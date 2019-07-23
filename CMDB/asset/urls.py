@@ -4,7 +4,7 @@
 app_name = "asset"
 from django.urls import path
 from asset import views
-
+from django.contrib.auth.decorators import login_required
 urlpatterns = [
-    # path('env/', views.env, name="env"),
+    path('env/', login_required(views.Env.as_view()), name="env"),
 ]
