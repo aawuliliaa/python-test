@@ -30,18 +30,18 @@ class Env(View):
         data_obj_set = Environment.objects.all()
         # 展示一些分页数据，供前端渲染使用
         # print("22222222222222222222222222222", request.COOKIES)
-        if not request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page"):
-            # 初次访问，还没有设置COOKIE，所以我们设置一个默认值
-            request.COOKIES[request.path.replace("/", "")+"data_nums_per_page"] = 10
-        # print("3333333333333333333",request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page"))
-
-        if request.COOKIES.get(request.path.replace("/", "")+"search"):
-            search_val = request.COOKIES.get(request.path.replace("/", "")+"search").strip()
-
-            data_obj_set = data_obj_set.filter(Q(name__contains=unquote(search_val, "utf-8")) |
-                                               Q(abs_name__contains=unquote(search_val, "utf-8")))
-        data_page_info = my_page(data_obj_set, request.GET.get("page_num", 1),
-                                 int(request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page")))
+        # if not request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page"):
+        #     # 初次访问，还没有设置COOKIE，所以我们设置一个默认值
+        #     request.COOKIES[request.path.replace("/", "")+"data_nums_per_page"] = 10
+        # # print("3333333333333333333",request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page"))
+        # filter_value = 'Q(name__contains=unquote(search_val, "utf-8")) | Q(abs_name__contains=unquote(search_val, "utf-8"))'
+        # if request.COOKIES.get(request.path.replace("/", "")+"search"):
+        #     search_val = request.COOKIES.get(request.path.replace("/", "")+"search").strip()
+        #
+        #     data_obj_set = data_obj_set.filter(eval(filter_value))
+        # data_page_info = my_page(data_obj_set, request.GET.get("page_num", 1),
+        #                          int(request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page")))
+        data_page_info = return_show_data(request, data_obj_set, *("name", "abs_name"))
         return render(request, 'asset/env.html', locals())
 
 
