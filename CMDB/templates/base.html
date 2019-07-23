@@ -155,13 +155,7 @@
     <script src="/static/js/plugins/toastr/toastr.min.js"></script>
 
     <script>
-        $(".child_label").click(function () {
-            let href_click = $(this).attr("href").split("/").join("");
-            {#alert(`${href}data_nums_per_page`)/asset/env/data_nums_per_page#}
-            $.cookie(`${href_click}data_nums_per_page`, null);
-            $.cookie(`${href_click}search`, null);
-            alert("base")
-        });
+
 
     </script>
     {% block foot_script %}

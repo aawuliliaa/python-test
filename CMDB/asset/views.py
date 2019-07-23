@@ -33,7 +33,7 @@ class Env(View):
         if not request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page"):
             # 初次访问，还没有设置COOKIE，所以我们设置一个默认值
             request.COOKIES[request.path.replace("/", "")+"data_nums_per_page"] = 10
-        print("3333333333333333333",request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page"))
+        # print("3333333333333333333",request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page"))
 
         if request.COOKIES.get(request.path.replace("/", "")+"search"):
             search_val = request.COOKIES.get(request.path.replace("/", "")+"search").strip()

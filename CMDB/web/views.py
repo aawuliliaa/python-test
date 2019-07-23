@@ -135,21 +135,34 @@ def privilege(request):
     # print("mmmmmmmmmmmmmmmmmmmmmmm",request.path)# /privilege/
     role_obj = Role.objects.filter(url=request.path).first()
     if request.user.is_admin:
-        role_obj_set = Role.objects.all().order_by('id')
+        data_obj_set = Role.objects.all().order_by('id')
     else:
-        role_obj_set = Role.objects.filter(users__email=request.user.email).all().order_by('id')
+        data_obj_set = Role.objects.filter(users__email=request.user.email).all().order_by('id')
         # 展示一些分页数据，供前端渲染使用
-    if not request.COOKIES.get("data_nums_per_page"):
+    # if not request.COOKIES.get("data_nums_per_page"):
+    #     # 初次访问，还没有设置COOKIE，所以我们设置一个默认值
+    #     request.COOKIES["data_nums_per_page"] = 10
+    # if request.COOKIES.get("role_search"):
+    #     search_val = request.COOKIES.get("role_search").strip()
+    #
+        # role_obj_set = role_obj_set.filter(Q(users__email__contains=search_val) |
+        #                                    Q(name__contains=unquote(search_val, "utf-8")) |
+        #                                    Q(code__contains=unquote(search_val, "utf-8")))
+    # data_page_info = my_page(role_obj_set, request.GET.get("page_num", 1),
+    #                          int(request.COOKIES.get("data_nums_per_page")))
+    if not request.COOKIES.get(request.path.replace("/", "") + "data_nums_per_page"):
         # 初次访问，还没有设置COOKIE，所以我们设置一个默认值
-        request.COOKIES["data_nums_per_page"] = 10
-    if request.COOKIES.get("role_search"):
-        search_val = request.COOKIES.get("role_search").strip()
+        request.COOKIES[request.path.replace("/", "") + "data_nums_per_page"] = 10
+    # print("3333333333333333333",request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page"))
 
-        role_obj_set = role_obj_set.filter(Q(users__email__contains=search_val) |
+    if request.COOKIES.get(request.path.replace("/", "") + "search"):
+        search_val = request.COOKIES.get(request.path.replace("/", "") + "search").strip()
+
+        data_obj_set = data_obj_set.filter(Q(users__email__contains=search_val) |
                                            Q(name__contains=unquote(search_val, "utf-8")) |
                                            Q(code__contains=unquote(search_val, "utf-8")))
-    data_page_info = my_page(role_obj_set, request.GET.get("page_num", 1),
-                             int(request.COOKIES.get("data_nums_per_page")))
+    data_page_info = my_page(data_obj_set, request.GET.get("page_num", 1),
+                             int(request.COOKIES.get(request.path.replace("/", "") + "data_nums_per_page")))
 
     return render(request, 'privilege/privilege.html', locals())
 
