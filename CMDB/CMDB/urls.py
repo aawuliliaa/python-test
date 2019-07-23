@@ -30,6 +30,8 @@ urlpatterns = [
 
     # 定时任务
     path('crond/', include('crond.urls', namespace="crond")),
+    # 资产信息
+    path('asset/', include('asset.urls', namespace="asset")),
     # media配置:只有配置了这里，Index页面中才能显示出头像
     # 这里要注意，当url多了的时候，就会出现匹配的顺序问题，
     # 当不显示图片的时候，要查看下是否被上面的url给匹配了

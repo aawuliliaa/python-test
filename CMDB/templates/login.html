@@ -61,7 +61,7 @@
                         password:$('#login_passwd_id').val()
                     },
                     success:function (data) {
-                        console.log("data",data)
+                        {#console.log("data",data)#}
                         if(data.user){
                             location.href="{% url 'index' %}"
                         }else if (data.info){

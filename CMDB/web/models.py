@@ -119,7 +119,7 @@ class Role(models.Model):
     url = models.CharField(max_length=255, verbose_name="url路径")
     note = models.CharField(max_length=255, verbose_name="描述信息")
     users = models.ManyToManyField(to=MyUser, related_name='users_role')
-    privileges = models.ManyToManyField(to=Privilege, blank=True, null=True)
+    privileges = models.ManyToManyField(to=Privilege, blank=True)
     create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
     update_time = models.DateTimeField(verbose_name="更新时间", auto_now=True)
 
