@@ -5,16 +5,16 @@
 {% block content %}
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>角色信息</h2>
+            <h2>{{ role_obj.child_menu_name }}</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{% url 'index' %}">首页</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a>角色信息</a>
+                    <a>{{ role_obj.parent_menu_name }}</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>角色信息</strong>
+                    <strong>{{ role_obj.child_menu_name }}</strong>
                 </li>
             </ol>
         </div>
@@ -45,12 +45,16 @@
                         </select>
                         <label for="">条数据</label>
 
-                        <a class="btn btn-primary float-right export" href="{% url 'role_export' %}">导出</a>
-                        <label class="btn btn-primary float-right" id="search_button" style="margin-right: 5px">搜索</label>
-                        <div class="float-right" style="margin-right: 5px">
-                            {#这里是输入用户的邮箱，角色编码或角色名称#}
-                            <input type="text" id="search" class="form-control" placeholder="email/code/name">
 
+
+                        <div class="input-group">
+                             {#这里是输入用户的邮箱，角色编码或角色名称#}
+                            <input type="text" id="search" class="form-control" placeholder="email/code/name">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" id="search_button" style="margin-right: 5px">搜索</button>
+                                <a class="btn btn-primary export" href="{% url 'role_export' %}">导出</a>
+                            </span>
+{#                            <label class="btn btn-primary pull-right" id="search_button" style="margin-right: 5px">搜索</label>#}
                         </div>
                         <table class="table table-striped table-bordered table-hover dataTables-example" >
                             <thead>

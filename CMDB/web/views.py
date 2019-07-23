@@ -134,6 +134,8 @@ def privilege(request):
     # Role.objects.bulk_create(list)
 
     left_label_dic = get_label(request)
+    # print("mmmmmmmmmmmmmmmmmmmmmmm",request.path)# /privilege/
+    role_obj = Role.objects.filter(url=request.path).first()
     if request.user.is_admin:
         role_obj_set = Role.objects.all().order_by('id')
     else:
