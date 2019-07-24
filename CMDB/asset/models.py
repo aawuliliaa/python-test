@@ -93,7 +93,7 @@ class HostLoginUser(models.Model):
     # 由于多个环境，多个系统，会出现登录用户相同，但是密码不同，所以这样设计了
     name_info = models.CharField(verbose_name="用户信息，建议system_environment_name", max_length=255)
     name = models.CharField(verbose_name="用户名", max_length=32)
-    password = models.CharField(verbose_name="密码", max_length=32)
+    password = models.CharField(verbose_name="密码", max_length=2550)
     # upload_to上内置了strftime（）函数
     key_file = models.FileField(verbose_name="私钥文件",
                                 upload_to='upload/privatekey/%Y%m%d/{}-{}'.format(time.time(),random.randint(0, 99999)),

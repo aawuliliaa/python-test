@@ -2,6 +2,7 @@ from django.views.generic import View
 from django.shortcuts import render, redirect, HttpResponse
 from django.urls import reverse
 import os
+from web.password_crypt import encrypt_p, decrypt_p
 from web.utils import *
 from web.page import *
 from asset.models import *
@@ -299,8 +300,12 @@ class AddHostLoginUser(View):
         left_label_dic = get_label(request)
         # modelform上传文件
         form = HostLoginUserForm(request.POST, request.FILES)
+        name = request.POST.get("name")
+        name_info = request.POST.get("name_info")
+        password = request.POST.get("password")
         if form.is_valid():
             form.save()
+            HostLoginUser.objects.filter(name=name, name_info=name_info).update(password=encrypt_p(password))
             return redirect(reverse("asset:host_login_user"))
         return render(request, 'asset/add_edit_host_login_user.html', locals())
 
@@ -356,10 +361,12 @@ class DelHostLoginUser(View):
     def get(self, request, **kwargs):
         # print("================2",kwargs)  #{'pk': 205}
         user_set = HostLoginUser.objects.filter(id=kwargs.get("pk"))
+
         file_path = user_set.first().key_file  # 这是一个FileField类
-        file_abs_path = os.path.join(settings.MEDIA_ROOT, file_path.name)
-        # 删除文件
-        os.remove(file_abs_path)
-        # 删除数据
+        if file_path:
+            file_abs_path = os.path.join(settings.MEDIA_ROOT, file_path.name)
+            # 删除文件
+            os.remove(file_abs_path)
+            # 删除数据
         user_set.delete()
         return redirect(reverse("asset:host_login_user"))

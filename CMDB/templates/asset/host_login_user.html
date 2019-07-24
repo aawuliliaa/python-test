@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load  mytags %}
 {% block head %}
     <!-- FooTable -->
     <link href="/static/css/plugins/footable/footable.core.css" rel="stylesheet">
@@ -56,7 +57,10 @@
                             <tr>
                                 <th data-toggle="true">用户名</th>
                                 <th>用户名信息</th>
-                                <th>密码</th>
+                                {% if request.user.email|identify_privilege:"show_password" %}
+                                    <th>密码</th>
+                                {% endif %}
+
                                 <th>私钥文件</th>
                                 <th>过期时间</th>
                                 <th>创建时间</th>
@@ -70,7 +74,10 @@
                                 <tr>
                                     <td>{{ user_obj.name}}</td>
                                     <td>{{ user_obj.name_info }}</td>
-                                    <td>{{ user_obj.password }}</td>
+                                    {% if request.user.email|identify_privilege:"show_password" %}
+                                        <td>{{ user_obj.password| decode_password}}</td>
+                                    {% endif %}
+
                                     <td>{{ user_obj.key_file }}</td>
                                     <td>{{ user_obj.expire_date|date:"Y-m-d"}}</td>
                                     <td>{{ user_obj.create_time|date:"Y-m-d H:i"}}</td>
