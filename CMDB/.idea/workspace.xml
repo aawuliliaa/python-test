@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e37becd-34ea-4e0e-937f-7f84d4b62202" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/asset/add_edit_host_login_user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/asset/host_login_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/asset/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/asset/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/asset/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/asset/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/access_times_limit_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/access_times_limit_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/asset/add_edit_application.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/asset/add_edit_application.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/asset/add_edit_env.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/asset/add_edit_env.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/asset/add_edit_host_login_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/asset/add_edit_host_login_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/asset/add_edit_system.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/asset/add_edit_system.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/12.library/library/.idea/dataSources/f9f94861-0344-4837-b7ab-d71d8272890a.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/12.library/library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../homework/12.library/library/.idea/workspace.xml" afterDir="false" />
@@ -82,8 +79,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_host_login_user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-228">
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
+            <state relative-caret-position="347">
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_env.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_application.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -100,14 +115,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asset/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="353" column="24" selection-start-line="353" selection-start-column="24" selection-end-line="353" selection-end-column="24" />
+            <state relative-caret-position="257">
+              <caret line="364" column="57" lean-forward="true" selection-start-line="364" selection-start-column="57" selection-end-line="364" selection-end-column="57" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/asset/application.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-95">
+              <caret line="7" selection-start-line="7" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_system.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5">
+              <caret line="7" selection-start-line="7" selection-end-line="22" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -197,17 +230,17 @@
         <option value="$PROJECT_DIR$/templates/asset/env.html" />
         <option value="$PROJECT_DIR$/templates/asset/system.html" />
         <option value="$PROJECT_DIR$/templates/asset/edit_system.html" />
-        <option value="$PROJECT_DIR$/templates/asset/add_edit_system.html" />
-        <option value="$PROJECT_DIR$/templates/asset/add_edit_env.html" />
-        <option value="$PROJECT_DIR$/templates/asset/add_edit_application.html" />
         <option value="$PROJECT_DIR$/templates/asset/application.html" />
         <option value="$PROJECT_DIR$/asset/urls.py" />
         <option value="$PROJECT_DIR$/web/access_times_limit_middleware.py" />
         <option value="$PROJECT_DIR$/templates/asset/host_login_user.html" />
-        <option value="$PROJECT_DIR$/templates/asset/add_edit_host_login_user.html" />
         <option value="$PROJECT_DIR$/asset/models.py" />
         <option value="$PROJECT_DIR$/asset/form.py" />
         <option value="$PROJECT_DIR$/asset/views.py" />
+        <option value="$PROJECT_DIR$/templates/asset/add_edit_system.html" />
+        <option value="$PROJECT_DIR$/templates/asset/add_edit_host_login_user.html" />
+        <option value="$PROJECT_DIR$/templates/asset/add_edit_env.html" />
+        <option value="$PROJECT_DIR$/templates/asset/add_edit_application.html" />
       </list>
     </option>
   </component>
@@ -447,7 +480,7 @@
       <workItem from="1563151664394" duration="7170000" />
       <workItem from="1563159324826" duration="102425000" />
       <workItem from="1563356550386" duration="129764000" />
-      <workItem from="1563929995373" duration="33205000" />
+      <workItem from="1563929995373" duration="33736000" />
     </task>
     <task id="LOCAL-00001" summary="CMDB">
       <created>1563159094145</created>
@@ -610,21 +643,29 @@
       <option name="project" value="LOCAL" />
       <updated>1563952529469</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="CMDB">
+      <created>1563974393308</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1563974393308</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272564000" />
+    <option name="totallyTimeSpent" value="273095000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="39" y="24" width="1056" height="688" extended-state="0" />
+    <frame x="39" y="24" width="1056" height="688" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.1746988" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.2248996" />
       <window_info id="Structure" order="1" sideWeight="0.50340134" side_tool="true" weight="0.1611336" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20289855" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20289855" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.52579033" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -895,38 +936,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_system.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="57" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_env.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/-1156481044/-798664301/django/views/generic/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-559">
           <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_application.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/asset/application.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="49" column="110" lean-forward="true" selection-start-line="49" selection-start-column="110" selection-end-line="49" selection-end-column="111" />
         </state>
       </provider>
     </entry>
@@ -967,13 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_host_login_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMDB/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2502">
@@ -1003,11 +1009,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="353" column="24" selection-start-line="353" selection-start-column="24" selection-end-line="353" selection-end-column="24" />
+        <state relative-caret-position="257">
+          <caret line="364" column="57" lean-forward="true" selection-start-line="364" selection-start-column="57" selection-end-line="364" selection-end-column="57" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/asset/application.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="7" selection-start-line="7" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_system.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="7" selection-start-line="7" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_host_login_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_env.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/asset/add_edit_application.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
         </state>
       </provider>
     </entry>
