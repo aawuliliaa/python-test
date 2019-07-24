@@ -21,20 +21,19 @@
                     <div class="ibox-content">
                         <form action="" method="post">
                             {% csrf_token %}
-                            {% if form.non_field_errors %}
-                                <div class="alert alert-danger" style="margin: 20px auto 0">
-                                    {{ form.non_field_errors }}
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger" style="margin: 20px auto 0">
+                                {{ form.non_field_errors }}
 
-                                </div>
-                            {% endif %}
+                            </div>
+                        {% endif %}
                             {% for field in form %}
                                 <div class="form-group">
                                     <label for="{{ field.auto_id }}">{{ field.label }}</label>
                                     {{ field }}
-                                    <span class="error pull-right"></span>
+
                                 </div>
                             {% endfor %}
-
                             <div class="clearfix">
                                 <button class="btn btn-primary pull-right">提交</button>
                                 <button class="btn btn-primary pull-right reset" style="margin-right: 5px">重置</button>
@@ -62,7 +61,6 @@
                 $("input").val("")
             })
         })
-
 
     </script>
 

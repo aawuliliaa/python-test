@@ -7,6 +7,9 @@ from asset.models import *
 
 
 class EnvironmentForm(ModelForm):
+    """
+    环境信息form
+    """
     class Meta:
         model = Environment
         fields = "__all__"  # 对所有字段转换
@@ -27,3 +30,28 @@ class EnvironmentForm(ModelForm):
         #     'note': {'invalid': "name无效", },
         #
         # }
+
+
+class SystemForm(ModelForm):
+    """
+    系统信息form
+    """
+
+    class Meta:
+        model = System
+        fields = "__all__"  #
+
+        widgets = {
+
+            'name': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'abs_name': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'note': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'operate_person': forms.Select(
+                attrs={'class': 'form-control'}),
+            'environment': forms.SelectMultiple(
+                attrs={
+                    'class': 'form-control'})
+        }

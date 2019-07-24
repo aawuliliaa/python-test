@@ -43,7 +43,7 @@ class System(models.Model):
                                        related_name="system_operate_person")
     # 一个系统会有多个环境，一个环境中，会有多个系统，所以是多对多关系
     # 一个系统一定要属于一个环境，不能没有归属，流浪的环境哦
-    environment = models.ManyToManyField(verbose_name="该系统有哪几个环境",
+    environment = models.ManyToManyField(verbose_name="该系统拥有的环境",
                                          to=Environment,
                                          blank=False,
                                          related_name="system_environment"
