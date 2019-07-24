@@ -55,3 +55,43 @@ class SystemForm(ModelForm):
                 attrs={
                     'class': 'form-control'})
         }
+
+
+class ApplicationForm(ModelForm):
+    """
+    应用信息form
+    """
+    class Meta:
+        model = Application
+        fields = "__all__"  # 对所有字段转换
+        widgets = {
+
+            'middleware': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'name': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'note': forms.TextInput(
+                attrs={'class': 'form-control'}),
+        }
+
+
+class HostLoginUserForm(ModelForm):
+    """
+    主机登录用户信息form
+    """
+    class Meta:
+        model = HostLoginUser
+        fields = "__all__"  # 对所有字段转换
+        widgets = {
+
+            'name_info': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'name': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'password': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'key_file': forms.FileField(
+                attrs={'class': 'form-control'}),
+            'expire_date': forms.DateTimeField(
+                attrs={'class': 'form-control'})
+        }
