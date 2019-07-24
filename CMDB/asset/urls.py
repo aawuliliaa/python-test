@@ -18,4 +18,8 @@ urlpatterns = [
     path('add_application/', login_required(views.AddApplication.as_view()), name="add_application"),
     path('del_application/<int:pk>/', login_required(views.DelApplication.as_view()), name="del_application"),
     path('edit_application/<int:pk>/', login_required(views.EditApplication.as_view()), name="edit_application"),
+    path('host_login_user/', login_required(views.HostLoginUserView.as_view()), name="host_login_user"),
+    path('add_host_login_user/', login_required(views.AddHostLoginUser.as_view()), name="add_host_login_user"),
+    path('del_host_login_user/<int:pk>/', login_required(views.DelHostLoginUser.as_view()), name="del_host_login_user"),
+    path('edit_host_login_user/<int:pk>/', login_required(views.EditHostLoginUser.as_view()), name="edit_host_login_user"),
 ]

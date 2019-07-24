@@ -75,10 +75,22 @@ class ApplicationForm(ModelForm):
         }
 
 
+class DateInput(forms.DateInput):
+    """
+    事件字段渲染到前端，还是为input标签
+    这样设置后，会出现时间选择器
+    """
+    input_type = 'date'
+
+
 class HostLoginUserForm(ModelForm):
     """
     主机登录用户信息form
     """
+    # key_file = forms.FileField(label="私钥文件",
+    #                            required=False,
+    #                            widget=forms.ClearableFileInput(attrs={'multiple': True}))
+
     class Meta:
         model = HostLoginUser
         fields = "__all__"  # 对所有字段转换
@@ -90,8 +102,5 @@ class HostLoginUserForm(ModelForm):
                 attrs={'class': 'form-control'}),
             'password': forms.TextInput(
                 attrs={'class': 'form-control'}),
-            'key_file': forms.FileField(
-                attrs={'class': 'form-control'}),
-            'expire_date': forms.DateTimeField(
-                attrs={'class': 'form-control'})
+            'expire_date': DateInput(),
         }
