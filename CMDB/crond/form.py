@@ -7,6 +7,9 @@ from django_celery_beat.models import CrontabSchedule, PeriodicTask, IntervalSch
 
 
 class CrontabScheduleForm(forms.ModelForm):
+    """
+    设置周期任务的form，
+    """
     class Meta:
         model = CrontabSchedule
         fields = '__all__'
@@ -23,10 +26,17 @@ class CrontabScheduleForm(forms.ModelForm):
             'month_of_year': forms.TextInput(
                 attrs={'class': 'form-control'}),
         }
-        help_texts = {
-            "minute": "* 必填 任务名字",
 
+
+class IntervalScheduleForm(forms.ModelForm):
+    class Meta:
+        model = IntervalSchedule
+        fields = '__all__'
+        widgets = {
+
+            'every': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'period': forms.Select(
+                attrs={'class': 'form-control'}),
         }
-
-
 
