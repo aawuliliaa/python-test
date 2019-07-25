@@ -128,9 +128,9 @@ class Host(models.Model):
     # 下面的信息可以通过点击按钮，进行异步获取
     MAC = models.CharField(verbose_name="物理MAC地址", max_length=32, blank=True, null=True)
     hostname = models.CharField(verbose_name="主机名", max_length=32, blank=True, null=True)
-    cpu = models.IntegerField(verbose_name="CPU核数", blank=True, null=True)
-    disk = models.IntegerField(verbose_name="磁盘大小，默认存的是KB", blank=True, null=True)
-    mem = models.IntegerField(verbose_name="内存大小，默认存的是KB", blank=True, null=True)
+    cpu = models.CharField(verbose_name="CPU核数", max_length=32, blank=True, null=True)
+    disk = models.CharField(verbose_name="磁盘大小，默认存的是KB", max_length=32, blank=True, null=True)
+    mem = models.CharField(verbose_name="内存大小，默认存的是KB", max_length=32, blank=True, null=True)
     # 一定要让系统有个维护人，不能没人维护呀。哈哈
     operate_person = models.ForeignKey(verbose_name="主机维护人",
                                        to=MyUser,

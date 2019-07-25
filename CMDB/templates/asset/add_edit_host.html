@@ -112,7 +112,7 @@
 
 
                             <div class="clearfix">
-                                <button class="btn btn-primary pull-right">提交</button>
+                                <button class="btn btn-primary pull-right my_commit">提交</button>
                                 <button class="btn btn-primary pull-right reset" style="margin-right: 5px">重置</button>
                             </div>
                         </form>
@@ -132,11 +132,15 @@
             if(location.pathname.indexOf("edit")!==-1){
                 $("input[name='ip']").attr("readonly","True");
             }
+
+
         });
         $(function () {
             $(".reset").click(function () {
                 $("input").val("")
             })
+
+
         })
 
 

@@ -146,3 +146,9 @@ class HostForm(ModelForm):
                 attrs={
                     'class': 'form-control'}),
         }
+        error_messages = {
+            'mem': {'invalid': "无效的输入", },
+            'cpu': {'invalid': "无效的输入", },
+            'disk': {'invalid': "无效的输入", },
+
+        }

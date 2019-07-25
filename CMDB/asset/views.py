@@ -417,6 +417,9 @@ class AddHost(View):
 
 
 class EditHost(View):
+    """
+    编辑主机信息
+    """
 
     edit_host = None
 
@@ -436,6 +439,7 @@ class EditHost(View):
         # 这样既能利用modelform的优势，也能灵活操作。
         # 由于不可为空和长度限制已经在前端限制好了，后端就不需要做检查了
         left_label_dic = get_label(request)
+
         ip = request.POST.get("ip")
         host_set = Host.objects.filter(ip=ip)
         host_obj = host_set.first()
