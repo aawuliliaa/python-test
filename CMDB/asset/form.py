@@ -102,7 +102,7 @@ class HostLoginUserForm(ModelForm):
                 attrs={'class': 'form-control'}),
             'password': forms.TextInput(
                 attrs={'class': 'form-control'}),
-            'expire_date': DateInput(),
+            'expire_date': DateInput(attrs={'class': 'form-control'}),
         }
 
 
@@ -127,7 +127,7 @@ class HostForm(ModelForm):
                 attrs={'class': 'form-control'}),
             'hostname': forms.TextInput(
                 attrs={'class': 'form-control'}),
-            'expire_date': DateInput(),
+            'expire_date': DateInput(attrs={'class': 'form-control'}),
             'cpu': forms.TextInput(
                 attrs={'class': 'form-control'}),
             'disk': forms.TextInput(
