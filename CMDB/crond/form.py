@@ -40,3 +40,32 @@ class IntervalScheduleForm(forms.ModelForm):
                 attrs={'class': 'form-control'}),
         }
 
+
+class PeriodicTasksForm(forms.ModelForm):
+
+    enabled = forms.BooleanField()
+
+    class Meta:
+        model = PeriodicTask
+        fields = ['task', 'name', 'interval', 'crontab', 'args', 'kwargs', 'enabled', 'expires', 'description']
+
+        widgets = {
+
+            'task': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'name': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'interval': forms.Select(
+                attrs={'class': 'form-control'}),
+            'crontab': forms.Select(
+                attrs={'class': 'form-control'}),
+            'args': forms.Textarea(
+                attrs={'class': 'form-control'}),
+            'kwargs': forms.Textarea(
+                attrs={'class': 'form-control'}),
+
+            'expires': forms.DateTimeInput(
+                attrs={'type': 'date'}),
+            'description': forms.Textarea(
+                attrs={'class': 'form-control'}),
+        }

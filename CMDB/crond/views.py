@@ -136,3 +136,84 @@ class DelIntervalSchedule(View):
         # print("================2",kwargs)  #{'pk': 205}
         IntervalSchedule.objects.filter(id=kwargs.get("pk")).delete()
         return redirect(reverse("crond:interval_schedule"))
+
+
+class PeriodicTasksView(ListView):
+    """
+        定时任务时间 列表
+        """
+
+    template_name = 'crond/periodic_task.html'
+    model = PeriodicTask
+    # context_object_name = "crontabs_list"
+    queryset = PeriodicTask.objects.all()
+    ordering = ('-id',)
+
+    def get_context_data(self, **kwargs):
+        # 同样可以进行模糊查询
+        data_page_info = return_show_data(self.request, self.queryset, *("name", "task"))
+        left_label_dic = get_label(self.request)
+        role_obj = Role.objects.filter(url=self.request.path).first()
+        context = {
+            "data_page_info": data_page_info,
+            "left_label_dic": left_label_dic,
+            "role_obj": role_obj
+        }
+        kwargs.update(context)
+        return super().get_context_data(**kwargs)
+
+    def get_queryset(self):
+        """
+        查询功能,先执行这个，在执行get_context_data。。看父类就知道了
+        """
+        self.queryset = super().get_queryset()
+
+        return self.queryset
+
+
+class AddPeriodicTasks(CreateView):
+    """
+    定时任务时间 增加
+    """
+    model = PeriodicTask
+    form_class = PeriodicTasksForm
+    queryset = PeriodicTask.objects.all()
+    template_name = 'crond/add_edit_periodic_task.html'
+    success_url = reverse_lazy('crond:periodic_tasks')
+
+    def get_context_data(self, **kwargs):
+        left_label_dic = get_label(self.request)
+        context = {
+            "left_label_dic": left_label_dic
+        }
+        kwargs.update(context)
+        return super().get_context_data(**kwargs)
+
+
+class DelPeriodicTasks(View):
+    """
+    删除环境信息
+    """
+    def get(self, request, **kwargs):
+        # print("================2",kwargs)  #{'pk': 205}
+        PeriodicTask.objects.filter(id=kwargs.get("pk")).delete()
+        return redirect(reverse("crond:periodic_tasks"))
+
+
+class EditPeriodicTasks(UpdateView):
+    """
+    周期任务 更新
+    """
+
+    model = PeriodicTask
+    form_class = PeriodicTasksForm
+    template_name = 'crond/add_edit_periodic_task.html'
+    success_url = reverse_lazy('crond:periodic_tasks')
+
+    def get_context_data(self, **kwargs):
+        left_label_dic = get_label(self.request)
+        context = {
+            "left_label_dic": left_label_dic
+        }
+        kwargs.update(context)
+        return super().get_context_data(**kwargs)
