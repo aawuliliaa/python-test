@@ -317,7 +317,9 @@ http://10.0.0.61:8000/api/
 
 至于页面中的按钮操作权限，是通过Privilege表控制的，角色与权限是多对多的关系
 ```
-
+![](.readme_images/8925ac81.png)
+![](.readme_images/ae1427b4.png)
+![](.readme_images/51438f0d.png)
 ## 2.4前端中文，后端解码
 ```
 前端
