@@ -92,7 +92,7 @@ def return_show_data(request, data_obj_set, *args):
     filter_value = ""
     for index, value in enumerate(args):
 
-        filter_value += 'Q(%s__contains=unquote(search_val, "utf-8"))'% value
+        filter_value += 'Q(%s__contains=unquote(search_val, "utf-8"))' % value
         if not index == len(args)-1:
             filter_value += "|"
 

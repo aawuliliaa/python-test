@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load  mytags %}
 {% block head %}
     <!-- FooTable -->
     <link href="/static/css/plugins/footable/footable.core.css" rel="stylesheet">
@@ -39,7 +38,7 @@
                     </div>
                     <div class="ibox-content">
                         <div>
-                            <a href="{% url 'asset:add_host_login_user' %}" class="btn btn-primary" style="margin-bottom: 10px">添加</a>
+                            <a href="{% url 'crond:add_crontab_schedule' %}" class="btn btn-primary" style="margin-bottom: 10px">添加</a>
                         </div>
                         {#分页中，设置每页的数据量#}
                         {% include "data_nums_per_page.html" %}
@@ -48,43 +47,35 @@
                         <div class="input-group">
                              {#这里是输入用户的邮箱，角色编码或角色名称#}
 {#                            按下回车就会搜索了#}
-                            <input type="text" id="search" class="form-control" placeholder="搜索:name/name_info">
+                            <input type="text" id="search" class="form-control" placeholder="搜索:minute/hour/day_of_week/day_of_month/month_of_year">
 {#                            <label class="btn btn-primary pull-right" id="search_button" style="margin-right: 5px">搜索</label>#}
                         </div>
 {#                    写在<table>标签里面，其中5是最大显示个数#}
                         <table id="footable_id" class="footable table table-stripped toggle-arrow-tiny" data-page-size="10">
                             <thead>
                             <tr>
-                                <th data-toggle="true">用户名</th>
-                                <th>用户名信息</th>
-                                {% if request.user.email|identify_privilege:"show_password" %}
-                                    <th>密码</th>
-                                {% endif %}
 
-                                <th>私钥文件</th>
-                                <th>过期时间</th>
-                                <th>创建时间</th>
-                                <th>修改时间</th>
-                                <th>操作</th>
+                                <th>minute</th>
+                                <th>hour</th>
+                                <th>day_of_week</th>
+                                <th>day_of_month</th>
+                                <th>month_of_year</th>
+                                <th>timezone</th>
+
                             </tr>
                             </thead>
                             <tbody>
 {#                            data_page_info.current_page#}
-                            {% for user_obj in  data_page_info.current_page %}
+                            {% for crontab_schedule_obj in  data_page_info.current_page%}
                                 <tr>
-                                    <td>{{ user_obj.name}}</td>
-                                    <td>{{ user_obj.name_info }}</td>
-                                    {% if request.user.email|identify_privilege:"show_password" %}
-                                        <td>{{ user_obj.password| decode_password}}</td>
-                                    {% endif %}
-
-                                    <td>{{ user_obj.key_file }}</td>
-                                    <td>{{ user_obj.expire_date|date:"Y-m-d"}}</td>
-                                    <td>{{ user_obj.create_time|date:"Y-m-d H:i"}}</td>
-                                    <td>{{ user_obj.update_time|date:"Y-m-d H:i"}}</td>
+                                    <td>{{ crontab_schedule_obj.minute }}</td>
+                                    <td>{{ crontab_schedule_obj.hour }}</td>
+                                    <td>{{ crontab_schedule_obj.day_of_week }}</td>
+                                    <td>{{ crontab_schedule_obj.day_of_month}}</td>
+                                    <td>{{ crontab_schedule_obj.month_of_year}}</td>
+                                    <td>{{ crontab_schedule_obj.timezone}}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-xs" style="color: white" href="{% url 'asset:edit_host_login_user' user_obj.id %}">编辑</a>
-                                        <a class="btn btn-danger btn-xs" href="{% url 'asset:del_host_login_user' user_obj.id %}">删除</a>
+                                        <a class="btn btn-danger btn-xs" href="{% url 'crond:del_crontab_schedule' crontab_schedule_obj.id %}">删除</a>
                                     </td>
 
                                 </tr>
@@ -92,9 +83,9 @@
                             </tbody>
 
                         </table>
-
-                    {#分页#}
+{#分页#}
                     {% include 'page.html' %}
+
                     </div>
 
                 </div>
