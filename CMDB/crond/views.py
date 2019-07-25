@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 from django_celery_beat.models import CrontabSchedule, PeriodicTask, IntervalSchedule
 from crond.form import *
 from web.utils import return_show_data, get_label
+from web.models import *
 
 
 # 由于不需要自定义，就使用封装好的view啦，省事啦啦啦啦啦啦啦
@@ -26,9 +27,11 @@ class CrontabScheduleView(ListView):
                                                                          "day_of_month",
                                                                          "month_of_year"))
         left_label_dic = get_label(self.request)
+        role_obj = Role.objects.filter(url=self.request.path).first()
         context = {
             "data_page_info": data_page_info,
-            "left_label_dic": left_label_dic
+            "left_label_dic": left_label_dic,
+            "role_obj": role_obj
         }
         kwargs.update(context)
         return super().get_context_data(**kwargs)
