@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author: vita
-app_name = "asset"
 from django.urls import path
 from asset import views
 from django.contrib.auth.decorators import login_required
+app_name = "asset"
 urlpatterns = [
     path('env/', login_required(views.Env.as_view()), name="env"),
     path('add_env/', login_required(views.AddEnv.as_view()), name="add_env"),
@@ -21,5 +21,10 @@ urlpatterns = [
     path('host_login_user/', login_required(views.HostLoginUserView.as_view()), name="host_login_user"),
     path('add_host_login_user/', login_required(views.AddHostLoginUser.as_view()), name="add_host_login_user"),
     path('del_host_login_user/<int:pk>/', login_required(views.DelHostLoginUser.as_view()), name="del_host_login_user"),
-    path('edit_host_login_user/<int:pk>/', login_required(views.EditHostLoginUser.as_view()), name="edit_host_login_user"),
+    path('edit_host_login_user/<int:pk>/', login_required(views.EditHostLoginUser.as_view()),
+         name="edit_host_login_user"),
+    path('host/', login_required(views.HostView.as_view()), name="host"),
+    path('add_host/', login_required(views.AddHost.as_view()), name="add_host"),
+    path('del_host/<int:pk>/', login_required(views.DelHost.as_view()), name="del_host"),
+    path('edit_host/<int:pk>/', login_required(views.EditHost.as_view()), name="edit_host"),
 ]

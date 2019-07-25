@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% block head %}
+    <!-- FooTable -->
+    <link href="/static/css/plugins/footable/footable.core.css" rel="stylesheet">
+    <link href="/static/css/my_style.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>设置数据信息</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'asset:host' %}">返回</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a>设置数据信息</a>
+                </li>
+
+            </ol>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>数据信息</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-danger" style="margin: 20px auto 0">
+                                    {{ form.non_field_errors }}
+
+                                </div>
+                            {% endif %}
+                                <div class="form-group">
+                                    <label for="{{ form.ip.auto_id }}">{{ form.ip.label }}</label>
+                                    {{ form.ip }}
+                                    <span class="error pull-right" style="color: red">{{ form.ip.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.note.auto_id }}">{{ form.note.label }}</label>
+                                    {{ form.note }}
+                                    <span class="error pull-right" style="color: red">{{ form.note.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.operate_person.auto_id }}">{{ form.operate_person.label }}</label>
+                                    {{ form.operate_person }}
+                                    <span class="error pull-right" style="color: red">{{ form.operate_person.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.system.auto_id }}">{{ form.system.label }}</label>
+                                    {{ form.system }}
+                                    <span class="error pull-right" style="color: red">{{ form.system.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.environment.auto_id }}">{{ form.environment.label }}</label>
+                                    {{ form.environment }}
+                                    <span class="error pull-right" style="color: red">{{ form.environment.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.application.auto_id }}">{{ form.application.label }}</label>
+                                    {{ form.application }}
+                                    <span class="error pull-right" style="color: red">{{ form.application.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.login_user.auto_id }}">{{ form.login_user.label }}</label>
+                                    {{ form.login_user }}
+                                    <span class="error pull-right" style="color: red">{{ form.login_user.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.expire_date.auto_id }}">{{ form.expire_date.label }}</label>
+                                    {{ form.expire_date }}
+                                    <span class="error pull-right" style="color: red">{{ form.expire_date.errors.0 }}</span>
+                                </div>
+                                <p style="border-bottom: solid #1e7e34; padding-bottom: 5px;font-size: 20px; color: #1e7e34">以下内容可自动获取</p>
+{#                                <hr>#}
+                                <div class="form-group">
+                                    <label for="{{ form.MAC.auto_id }}">{{ form.MAC.label }}</label>
+                                    {{ form.MAC }}
+                                    <span class="error pull-right" style="color: red">{{ form.MAC.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.hostname.auto_id }}">{{ form.hostname.label }}</label>
+                                    {{ form.hostname }}
+                                    <span class="error pull-right" style="color: red">{{ form.hostname.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.cpu.auto_id }}">{{ form.cpu.label }}</label>
+                                    {{ form.cpu }}
+                                    <span class="error pull-right" style="color: red">{{ form.cpu.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.mem.auto_id }}">{{ form.mem.label }}</label>
+                                    {{ form.mem }}
+                                    <span class="error pull-right" style="color: red">{{ form.mem.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.disk.auto_id }}">{{ form.disk.label }}</label>
+                                    {{ form.disk }}
+                                    <span class="error pull-right" style="color: red">{{ form.disk.errors.0 }}</span>
+                                </div>
+
+
+                            <div class="clearfix">
+                                <button class="btn btn-primary pull-right">提交</button>
+                                <button class="btn btn-primary pull-right reset" style="margin-right: 5px">重置</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+{% endblock %}
+{% block foot_script %}
+
+    <!-- Page-Level Scripts -->
+    <script >
+        $(document).ready(function () {
+            {#编辑页面，把唯一的字段设置为只读#}
+            if(location.pathname.indexOf("edit")!==-1){
+                $("input[name='ip']").attr("readonly","True");
+            }
+        });
+        $(function () {
+            $(".reset").click(function () {
+                $("input").val("")
+            })
+        })
+
+
+    </script>
+
+
+{% endblock %}

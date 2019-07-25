@@ -104,3 +104,45 @@ class HostLoginUserForm(ModelForm):
                 attrs={'class': 'form-control'}),
             'expire_date': DateInput(),
         }
+
+
+class HostForm(ModelForm):
+    """
+    主机登录用户信息form
+    """
+    # key_file = forms.FileField(label="私钥文件",
+    #                            required=False,
+    #                            widget=forms.ClearableFileInput(attrs={'multiple': True}))
+
+    class Meta:
+        model = Host
+        fields = "__all__"  # 对所有字段转换
+        widgets = {
+
+            'ip': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'note': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'MAC': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'hostname': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'expire_date': DateInput(),
+            'cpu': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'disk': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'mem': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'operate_person': forms.Select(
+                attrs={'class': 'form-control'}),
+            'system': forms.Select(
+                attrs={'class': 'form-control'}),
+            'environment': forms.Select(
+                attrs={'class': 'form-control'}),
+            'application': forms.SelectMultiple(
+                attrs={'class': 'form-control'}),
+            'login_user': forms.SelectMultiple(
+                attrs={
+                    'class': 'form-control'}),
+        }

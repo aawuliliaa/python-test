@@ -3,6 +3,7 @@ import random
 from web.models import *
 import time
 
+
 class Environment(models.Model):
     """
     环境信息
@@ -96,7 +97,8 @@ class HostLoginUser(models.Model):
     password = models.CharField(verbose_name="密码", max_length=2550)
     # upload_to上内置了strftime（）函数
     key_file = models.FileField(verbose_name="私钥文件",
-                                upload_to='upload/privatekey/%Y%m%d/{}-{}'.format(time.time(),random.randint(0, 99999)),
+                                upload_to='upload/privatekey/%Y%m%d/{}-{}'.
+                                format(time.time(), random.randint(0, 99999)),
                                 blank=True, null=True)
     # 这里是根据我之前的经验，为了密码安全，需要定期修改密码
     # 这里稍后我会做个定时任务，检查密码是否即将过期，提示用户
