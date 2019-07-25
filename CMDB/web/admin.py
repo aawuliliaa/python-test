@@ -5,7 +5,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
-from asset.models import *
+from web.models import *
 
 
 # https://www.cnblogs.com/alex3714/articles/8997376.html详细说明参考
@@ -112,45 +112,6 @@ class PrivilegeAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
-class EnvironmentAdmin(admin.ModelAdmin):
-    list_display = ['name', 'abs_name', 'note', 'create_time', 'update_time']
-    list_filter = ('name',)
-    search_fields = ('name',)
-
-
-class SystemAdmin(admin.ModelAdmin):
-    # 不能列出多对多的字段
-    list_display = ['name', 'abs_name', 'note', 'operate_person', 'create_time', 'update_time']
-    list_filter = ('name',)
-    search_fields = ('name',)
-    # 多对多使用
-    filter_horizontal = ('environment',)
-
-
-class ApplicationAdmin(admin.ModelAdmin):
-    # 不能列出多对多的字段
-    list_display = ['middleware', 'name', 'note', 'create_time', 'update_time']
-    list_filter = ('name',)
-    search_fields = ('name',)
-
-
-class HostLoginUserAdmin(admin.ModelAdmin):
-    # 不能列出多对多的字段
-    list_display = ['name_info', 'name', 'password', 'key_file', 'expire_date', 'create_time', 'update_time']
-    list_filter = ('name', 'name_info')
-    search_fields = ('name', 'name_info')
-
-
-class HostAdmin(admin.ModelAdmin):
-    # 不能列出多对多的字段
-    list_display = ['ip', 'note', 'MAC', 'hostname', 'cpu', 'disk', 'mem', 'operate_person',
-                    'system', 'environment', 'expire_date', 'create_time', 'update_time']
-    list_filter = ('ip',)
-    search_fields = ('ip',)
-    # 多对多使用
-    filter_horizontal = ('application', 'login_user')
-
-
 # Now register the new UserAdmin...
 admin.site.register(MyUser, UserAdmin)
 
@@ -160,8 +121,4 @@ admin.site.unregister(Group)
 admin.site.register(Privilege, PrivilegeAdmin)
 admin.site.register(Role, RoleAdmin)
 admin.site.register(AccessLog, AccessLogAdmin)
-admin.site.register(Environment, EnvironmentAdmin)
-admin.site.register(System, SystemAdmin)
-admin.site.register(Application, ApplicationAdmin)
-admin.site.register(HostLoginUser, HostLoginUserAdmin)
-admin.site.register(Host, HostAdmin)
+
