@@ -2,6 +2,7 @@ from django.views.generic import View, ListView, CreateView, UpdateView, DeleteV
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import redirect
 from django_celery_beat.models import CrontabSchedule, PeriodicTask, IntervalSchedule
+from django_celery_results.models import TaskResult
 from crond.form import *
 from web.utils import return_show_data, get_label
 from web.models import *
@@ -214,6 +215,31 @@ class EditPeriodicTasks(UpdateView):
         left_label_dic = get_label(self.request)
         context = {
             "left_label_dic": left_label_dic
+        }
+        kwargs.update(context)
+        return super().get_context_data(**kwargs)
+
+
+class TasksResultView(ListView):
+    """
+        定时任务时间 列表
+        """
+
+    template_name = 'crond/task_result.html'
+    model = TaskResult
+    # context_object_name = "crontabs_list"
+    queryset = TaskResult.objects.all()
+    ordering = ('-id',)
+
+    def get_context_data(self, **kwargs):
+        # 同样可以进行模糊查询
+        data_page_info = return_show_data(self.request, self.queryset, *("task_name",))
+        left_label_dic = get_label(self.request)
+        role_obj = Role.objects.filter(url=self.request.path).first()
+        context = {
+            "data_page_info": data_page_info,
+            "left_label_dic": left_label_dic,
+            "role_obj": role_obj
         }
         kwargs.update(context)
         return super().get_context_data(**kwargs)

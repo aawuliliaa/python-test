@@ -17,4 +17,5 @@ urlpatterns = [
     path('add_periodic_tasks/', login_required(views.AddPeriodicTasks.as_view()), name="add_periodic_tasks"),
     path('edit_periodic_tasks/<int:pk>/', login_required(views.EditPeriodicTasks.as_view()), name="edit_periodic_tasks"),
     path('del_periodic_tasks/<int:pk>/', login_required(views.DelPeriodicTasks.as_view()),name="del_periodic_tasks"),
+    path('task_result/', login_required(views.TasksResultView.as_view()), name="task_result"),
 ]
