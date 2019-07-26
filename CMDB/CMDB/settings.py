@@ -94,8 +94,17 @@ DATABASES = {
         'PORT': "3306",
     }
 }
-
-
+# http://yshblog.com/blog/156
+# 也可以把{}等使用json序列化为字符串，存入缓存中
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://10.0.0.61:6379/1",
+        "OPTIONS": {
+           "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 

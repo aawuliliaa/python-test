@@ -152,7 +152,7 @@ class PeriodicTasksView(ListView):
 
     def get_context_data(self, **kwargs):
         # 同样可以进行模糊查询
-        data_page_info = return_show_data(self.request, self.queryset, *("name", "task"))
+        data_page_info = return_show_data(self.request, self.queryset, *("name", "task_manage"))
         left_label_dic = get_label(self.request)
         role_obj = Role.objects.filter(url=self.request.path).first()
         context = {

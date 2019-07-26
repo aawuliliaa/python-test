@@ -231,7 +231,7 @@
   );
 
   MT("export_task_one_line_does_not_indent",
-     "[keyword export] [string \"DPI-C\"] [keyword task] [variable helloFromSV];",
+     "[keyword export] [string \"DPI-C\"] [keyword task_manage] [variable helloFromSV];",
      ""
   );
 
@@ -243,7 +243,7 @@
 
   MT("export_task_two_lines_indents_properly",
     "[keyword export]",
-    "    [string \"DPI-C\"] [keyword task] [variable helloFromSV];",
+    "    [string \"DPI-C\"] [keyword task_manage] [variable helloFromSV];",
     ""
   );
 
@@ -253,7 +253,7 @@
   );
 
   MT("import_task_one_line_does_not_indent",
-    "[keyword import] [string \"DPI-C\"] [keyword task] [variable helloFromC];",
+    "[keyword import] [string \"DPI-C\"] [keyword task_manage] [variable helloFromC];",
     ""
   );
 

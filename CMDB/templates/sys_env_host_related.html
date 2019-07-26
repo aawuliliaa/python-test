@@ -1,0 +1,40 @@
+{#                    因为里面都浮动了，所以在加个父元素，清除浮动#}
+<div class="clearfix">
+    <div class="col-md-4 pull-left">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">选择系统</span>
+            <select name="" id="select_system" class="form-control">
+                <option value="">---------------</option>
+                {% for sys_obj in sys_obj_set %}
+
+                    <option value="{{ sys_obj.id }}">{{ sys_obj.name }}----{{ sys_obj.abs_name }}</option>
+                {% endfor %}
+
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4 pull-left">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">选择环境</span>
+            <select name="" id="select_environment" class="form-control">
+                <option value="">---------------</option>
+                {% for env_obj in env_obj_set %}
+
+                    <option value="{{ env_obj.id }}">{{ env_obj.name }}----{{ env_obj.abs_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4 pull-left">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">选择主机</span>
+            <select name="" id="select_host"  class="form-control">
+                <option value="">---------------</option>
+                {% for host_obj in host_obj_set %}
+
+                    <option value="{{ host_obj.id }}">{{ host_obj.ip }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</div>

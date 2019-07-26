@@ -90,11 +90,12 @@ def return_show_data(request, data_obj_set, *args):
         request.COOKIES[request.path.replace("/", "") + "data_nums_per_page"] = 10
     # print("3333333333333333333",request.COOKIES.get(request.path.replace("/", "")+"data_nums_per_page"))
     filter_value = ""
-    for index, value in enumerate(args):
+    if len(args) != 0:
+        for index, value in enumerate(args):
 
-        filter_value += 'Q(%s__contains=unquote(search_val, "utf-8"))' % value
-        if not index == len(args)-1:
-            filter_value += "|"
+            filter_value += 'Q(%s__contains=unquote(search_val, "utf-8"))' % value
+            if not index == len(args)-1:
+                filter_value += "|"
 
     if request.COOKIES.get(request.path.replace("/", "") + "search"):
         search_val = request.COOKIES.get(request.path.replace("/", "") + "search").strip()

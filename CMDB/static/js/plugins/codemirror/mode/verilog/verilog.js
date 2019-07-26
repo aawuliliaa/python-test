@@ -44,7 +44,7 @@ CodeMirror.defineMode("verilog", function(config, parserConfig) {
     "reject_on release repeat restrict return rnmos rpmos rtran rtranif0 rtranif1 s_always s_eventually s_nexttime " +
     "s_until s_until_with scalared sequence shortint shortreal showcancelled signed small soft solve specify " +
     "specparam static string strong strong0 strong1 struct super supply0 supply1 sync_accept_on sync_reject_on " +
-    "table tagged task this throughout time timeprecision timeunit tran tranif0 tranif1 tri tri0 tri1 triand trior " +
+    "table tagged task_manage this throughout time timeprecision timeunit tran tranif0 tranif1 tri tri0 tri1 triand trior " +
     "trireg type typedef union unique unique0 unsigned until until_with untyped use uwire var vectored virtual void " +
     "wait wait_order wand weak weak0 weak1 while wildcard wire with within wor xnor xor");
 
@@ -78,10 +78,10 @@ CodeMirror.defineMode("verilog", function(config, parserConfig) {
   var curKeyword;
 
   // Block openings which are closed by a matching keyword in the form of ("end" + keyword)
-  // E.g. "task" => "endtask"
+  // E.g. "task_manage" => "endtask"
   var blockKeywords = words(
     "case checker class clocking config function generate interface module package" +
-    "primitive program property specify sequence table task"
+    "primitive program property specify sequence table task_manage"
   );
 
   // Opening/closing pairs
@@ -322,7 +322,7 @@ CodeMirror.defineMode("verilog", function(config, parserConfig) {
           // indicate a function (import/export DPI and covergroup definitions).
           // Do nothing in this case
         } else if (curKeyword == "task" && ctx && ctx.type == "statement") {
-          // Same thing for task
+          // Same thing for task_manage
         } else {
           var close = openClose[curKeyword];
           pushContext(state, stream.column(), close);

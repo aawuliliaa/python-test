@@ -17625,7 +17625,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
       }).catch(function (reason) {
         if (_this8.options.ignoreErrors) {
           _this8.handler.send('UnsupportedFeature', { featureId: _util.UNSUPPORTED_FEATURES.unknown });
-          (0, _util.warn)('getOperatorList - ignoring errors during task: ' + task.name);
+          (0, _util.warn)('getOperatorList - ignoring errors during task_manage: ' + task.name);
           closePendingRestoreOPS();
           return;
         }
@@ -18134,7 +18134,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
           return;
         }
         if (_this9.options.ignoreErrors) {
-          (0, _util.warn)('getTextContent - ignoring errors during task: ' + task.name);
+          (0, _util.warn)('getTextContent - ignoring errors during task_manage: ' + task.name);
           flushTextContentItem();
           enqueueChunk();
           return;
@@ -23896,7 +23896,7 @@ var WorkerTask = function WorkerTaskClosure() {
     },
     ensureNotTerminated: function ensureNotTerminated() {
       if (this.terminated) {
-        throw new Error('Worker task was terminated');
+        throw new Error('Worker task_manage was terminated');
       }
     }
   };

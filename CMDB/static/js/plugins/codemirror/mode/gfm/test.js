@@ -19,8 +19,8 @@
      "[comment&formatting&formatting-code-block ```]");
 
   FT("taskList",
-     "[variable-2&formatting&formatting-list&formatting-list-ul - ][meta&formatting&formatting-task [ ]]][variable-2  foo]",
-     "[variable-2&formatting&formatting-list&formatting-list-ul - ][property&formatting&formatting-task [x]]][variable-2  foo]");
+     "[variable-2&formatting&formatting-list&formatting-list-ul - ][meta&formatting&formatting-task_manage [ ]]][variable-2  foo]",
+     "[variable-2&formatting&formatting-list&formatting-list-ul - ][property&formatting&formatting-task_manage [x]]][variable-2  foo]");
 
   MT("emInWordAsterisk",
      "foo[em *bar*]hello");
