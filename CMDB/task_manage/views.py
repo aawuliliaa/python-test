@@ -55,18 +55,23 @@ def get_env_by_system_id(request):
     return JsonResponse(result, safe=False)
 
 
+@login_required
 def get_host_by_sys_or_env_id(request):
-
+    """
+    这个是环境选择器动了，三个选择器的数据动态变化
+    :param request:
+    :return:
+    """
     system_id = request.GET.get('system_id')
     environment_id = request.GET.get('environment_id')
+    host_list = []
     # 不知道为啥，动态添加的option,当
-    if system_id and environment_id.isnumeric():
+    if system_id and environment_id:
         host_list = list(Host.objects.filter(system_id=system_id, environment_id=environment_id).values("id", "ip"))
     elif not system_id and environment_id:
         host_list = list(Host.objects.filter(environment_id=environment_id).values("id", "ip"))
-    elif system_id and not environment_id.isnumeric():
+    elif system_id and not environment_id:
         host_list = list(Host.objects.filter(system_id=system_id).values("id", "ip"))
-    elif not system_id and not environment_id.isnumeric():
+    elif not system_id and not environment_id:
         host_list = list(Host.objects.all().values("id", "ip"))
-
     return JsonResponse(host_list, safe=False)
