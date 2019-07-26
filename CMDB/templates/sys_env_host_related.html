@@ -29,7 +29,7 @@
         <div class="input-group">
           <span class="input-group-addon" id="basic-addon1">选择主机</span>
             <select name="" id="select_host"  class="form-control">
-                <option>---------------</option>
+                <option value="">---------------</option>
                 {% for host_obj in host_obj_set %}
 
                     <option value="{{ host_obj.id }}">{{ host_obj.ip }}</option>

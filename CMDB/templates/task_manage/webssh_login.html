@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load mytags %}
 {% block head %}
     <!-- FooTable -->
     <link href="/static/css/plugins/footable/footable.core.css" rel="stylesheet">
@@ -73,9 +74,18 @@
                                             Action
                                           </button>
                                           <ul class="dropdown-menu">
-                                            <li><a href="#">Action</a></li>
-                                            <li><a href="#">Another action</a></li>
+                                              {% for login_user_obj in host_obj.login_user.all %}
+                                                  <li><a href="#">
+{#                                                  如果是root用户，但是当前系统登录人没有root_login的权限，就不显示root用户--即不能通过root用户访问webssh#}
+                                                      {% if login_user_obj.name == "root" and not request.user.email|identify_privilege:"root_login" %}
 
+                                                      {% else %}
+                                                          {{ login_user_obj.name }}
+                                                          <button class="btn btn-primary btn-xs pull-right">webssh</button>
+                                                      {% endif %}
+
+                                                  </a></li>
+                                              {% endfor %}
                                           </ul>
                                         </div>
                                     </td>
@@ -101,6 +111,7 @@
     <script src="/static/js/jquery.cookie.js"></script>
    <!-- Page-Level Scripts 按下回车的搜索功能，分页功能-->
     <script src="/static/js/my_footable_page.js"></script>
+{#    系统，环境，主机联动框#}
     <script src="/static/js/sys_env_host_related.js"></script>
 
 {% endblock %}

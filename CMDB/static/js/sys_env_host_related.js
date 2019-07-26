@@ -54,8 +54,13 @@ $(function () {
                 }
             }
         });
+    });
+
+    $("#sys_env_host_search").click(function () {
+        let system_selected_id = $("#select_system option:selected").val();
+        let environment_selected_id = $("#select_environment option:selected").val();
+        let host_selected_id = $("#select_host option:selected").val();
+        location.href=`/task_manage/webssh_login/?system_selected_id=${system_selected_id}&environment_selected_id=${environment_selected_id}&host_selected_id=${host_selected_id}`
     })
-
-
 
 });
