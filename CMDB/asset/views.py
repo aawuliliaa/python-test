@@ -336,7 +336,8 @@ class EditHostLoginUser(View):
         file_obj = request.FILES.get("key_file")
         # 如果没有上传文件,就更新数据
         if not file_obj:
-            user_set.update(password=encrypt_p(request.POST.get("password")), expire_date=request.POST.get("expire_date"),)
+            user_set.update(password=encrypt_p(request.POST.get("password")),
+                            expire_date=request.POST.get("expire_date"),)
         else:
             # 如果上传了文件，就把旧数据删除，创建新数据，create_time保留
             create_time = user_set.first().create_time
