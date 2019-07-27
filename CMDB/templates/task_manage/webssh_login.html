@@ -27,7 +27,7 @@
         </div>
     </div>
 
-        <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="wrapper wrapper-content animated fadeInRight container_content">
             <div class="row">
                 <div class="col-lg-12">
                 <div class="ibox ">
@@ -92,8 +92,6 @@
                                                                   password="{{ login_user_obj.password }}">webssh</button>
                                                       {% endif %}
                                                       </a>
-
-
                                                   </li>
                                               {% endfor %}
                                           </ul>
@@ -102,20 +100,21 @@
                                 </tr>
                             {% endfor %}
                             </tbody>
-
                         </table>
-
                     {#分页#}
                     {% include 'page.html' %}
                     </div>
-
                 </div>
             </div>
         </div>
         </div>
-    <div class="container">
-      <div id="status" style="color: red;"></div>
-      <div id="terminal"></div>
+    <div class="wrapper wrapper-content animated fadeInRight container_shell">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="status" style="color: red;"></div>
+                <div id="terminal"></div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 {% block foot_script %}
@@ -128,8 +127,10 @@
     <script src="/static/js/my_footable_page.js"></script>
 {#    系统，环境，主机联动框#}
     <script src="/static/js/sys_env_host_related.js"></script>
-    <script src="/static/webssh_static/js/fullscreen.min.js"></script>
+{##}
     <script src="/static/webssh_static/js/xterm.min.js"></script>
+{#    她要在xterm的后面，因为要使用xterm里面的内容呗，哈哈#}
+     <script src="/static/webssh_static/js/fullscreen.min.js"></script>
     <script>
     $(function () {
 
@@ -164,7 +165,7 @@
 
                       function current_geometry() {
                                 cols = parseInt(window.innerWidth / 10);
-                                rows = parseInt(window.innerHeight / 10);
+                                rows = parseInt(window.innerHeight / 19);
                                 return [cols, rows];
                             }
 
@@ -191,7 +192,8 @@
                                 });
 
                                 socket.onopen = function (e) {
-                                    $('.container1').hide();
+                                    {#我这里要隐藏左侧导航栏，否则左侧导航的内容会浮动在上面#}
+                                    $('#wrapper').hide();
                                     term.open(terminal, true);
                                     term.toggleFullscreen(true);
                                 };
@@ -208,7 +210,7 @@
                                 socket.onclose = function (e) {
                                     console.log(e);
                                     term.destroy();
-                                    $('.container1').show();
+                                    $('#wrapper').show();
                                     // status.text(e.reason);
                                 };
                             }

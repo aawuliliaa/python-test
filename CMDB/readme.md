@@ -676,4 +676,11 @@ task有修改，需要重启
 这里的celery命令，是pip install celery后生成的，默认放在了python安装路径下/usr/local/python3/bin/celery 
 需要手动建立连接：ln -s /usr/local/python3/bin/celery  /usr/bin/celery 这样就可以直接使用了
 ```
-## 2.6
+## 2.6webssh
+```
+后端一定记得启动webssh
+[root@m01 CMDB]# python3    webssh/main.py
+
+webssh 终端ssh登录 参考的 https://github.com/huashengdun/webssh 此项目
+https://github.com/hequan2017/chain
+```
