@@ -682,5 +682,5 @@ task有修改，需要重启
 [root@m01 CMDB]# python3    webssh/main.py
 
 webssh 终端ssh登录 参考的 https://github.com/huashengdun/webssh 此项目
-https://github.com/hequan2017/chain
+
 ```
