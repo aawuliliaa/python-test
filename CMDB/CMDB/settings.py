@@ -129,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -184,6 +184,11 @@ REST_FRAMEWORK = {
 }
 # 需要事先在role表中添加该角色
 REST_OWN_PERMISSION_USER_ROLE_CODE = "API_user"
+
+web_ssh = "10.0.0.61"
+web_port = 8003
+# python3    webssh/main.py    ##启动终端登录功能
+# 不要忘记启动呀，忘记了是连接不上的
 # 下面就是logging的配置
 LOGGING = {
     'version': 1,  # 指明dictConnfig的版本，目前就只有一个版本，哈哈

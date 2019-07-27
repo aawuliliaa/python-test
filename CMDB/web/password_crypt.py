@@ -32,8 +32,8 @@ def decrypt_p(password):
 
 
 if __name__ == '__main__':
-    a = encrypt_p('123')
+    a = encrypt_p('123456')
     print(a)
     b = decrypt_p(
-        'gAAAAABaR3yZXkUbkFOJDa2h0EFprRoc5EsMjFLcKicUWAdQOTfX-cmbXXAv_d1S216QcHuT4zrV6zk4NO-tYBXlSyjl-1OaRw==')
+        'gAAAAABdOGY2JnH3r-z2o_niTNXyTgJuxk8OTAybLrvU8cV5v8FyVARRT-1wlGGWQ1IMcjATeNGHl3hON1Qu516-_n2dx-HTrw==')
     print(b)

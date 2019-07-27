@@ -121,6 +121,8 @@ class HostForm(ModelForm):
 
             'ip': forms.TextInput(
                 attrs={'class': 'form-control'}),
+            'port': forms.TextInput(
+                attrs={'class': 'form-control'}),
             'note': forms.TextInput(
                 attrs={'class': 'form-control'}),
             'MAC': forms.TextInput(

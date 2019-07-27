@@ -124,6 +124,7 @@ class Host(models.Model):
     主机信息
     """
     ip = models.CharField(verbose_name="主机IP", max_length=32, unique=True)
+    port = models.CharField(verbose_name="端口", max_length=32)
     note = models.CharField(verbose_name="备注信息", max_length=255)
     # 下面的信息可以通过点击按钮，进行异步获取
     MAC = models.CharField(verbose_name="物理MAC地址", max_length=32, blank=True, null=True)

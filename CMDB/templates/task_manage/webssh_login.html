@@ -4,6 +4,8 @@
     <!-- FooTable -->
     <link href="/static/css/plugins/footable/footable.core.css" rel="stylesheet">
     <link href="/static/css/my_style.css" rel="stylesheet">
+    <link href="/static/webssh_static/css/xterm.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/webssh_static/css/fullscreen.min.css" rel="stylesheet" type="text/css"/>
 {% endblock %}
 {% block content %}
     <div class="row wrapper border-bottom white-bg page-heading">
@@ -46,7 +48,7 @@
                             <button class="btn btn-primary pull-right" id="sys_env_host_search">搜索</button>
                         </div>
 
-
+                        {% csrf_token %}
                     
 {#                    写在<table>标签里面，其中5是最大显示个数#}
                         <table id="footable_id" class="footable table table-stripped toggle-arrow-tiny" data-page-size="10">
@@ -66,7 +68,7 @@
                                 <tr>
                                     <td>{{ host_obj.system }}</td>
                                     <td>{{ host_obj.environment }}</td>
-                                    <td>{{ host_obj.ip }}</td>
+                                    <td class="ip" port="{{ host_obj.port }}">{{ host_obj.ip }}</td>
                                     <td>
                                         <!-- Single button -->
                                         <div class="btn-group">
@@ -75,16 +77,24 @@
                                           </button>
                                           <ul class="dropdown-menu">
                                               {% for login_user_obj in host_obj.login_user.all %}
-                                                  <li><a href="#">
-{#                                                  如果是root用户，但是当前系统登录人没有root_login的权限，就不显示root用户--即不能通过root用户访问webssh#}
+                                                  <li>
+                                                      <a>
+
+
+                                                          {#                                                  如果是root用户，但是当前系统登录人没有root_login的权限，就不显示root用户--即不能通过root用户访问webssh#}
                                                       {% if login_user_obj.name == "root" and not request.user.email|identify_privilege:"root_login" %}
 
                                                       {% else %}
                                                           {{ login_user_obj.name }}
-                                                          <button class="btn btn-primary btn-xs pull-right">webssh</button>
+                                                          <button class="btn btn-primary btn-xs pull-right webssh"
+                                                                  id="{{ login_user_obj.id }}" user_name="{{ login_user_obj.name }}"
+                                                                  key_file="{{ login_user_obj.key_file }}"
+                                                                  password="{{ login_user_obj.password }}">webssh</button>
                                                       {% endif %}
+                                                      </a>
 
-                                                  </a></li>
+
+                                                  </li>
                                               {% endfor %}
                                           </ul>
                                         </div>
@@ -103,8 +113,13 @@
             </div>
         </div>
         </div>
+    <div class="container">
+      <div id="status" style="color: red;"></div>
+      <div id="terminal"></div>
+    </div>
 {% endblock %}
 {% block foot_script %}
+
     <!-- FooTable -->
     <script src="/static/js/plugins/footable/footable.all.min.js"></script>
 {#    $.cookie需要该js#}
@@ -113,5 +128,107 @@
     <script src="/static/js/my_footable_page.js"></script>
 {#    系统，环境，主机联动框#}
     <script src="/static/js/sys_env_host_related.js"></script>
+    <script src="/static/webssh_static/js/fullscreen.min.js"></script>
+    <script src="/static/webssh_static/js/xterm.min.js"></script>
+    <script>
+    $(function () {
 
+        //需要进行事件委托，只有该方式，新加的元素才能事件才能操作
+        $("tbody").on('click','.webssh',function(event){
+
+            let host_login_user_id=$(".webssh").attr("id");
+            {#就不通过ajax获取了，渲染的时候直接渲染把。嘿嘿#}
+            let host_ip = $(this).parent("a").parent("li").parent("ul").parent(".btn-group").parent("td").siblings(".ip").text();
+            let host_port = $(this).parent("a").parent("li").parent("ul").parent(".btn-group").parent("td").siblings(".ip").attr("port");
+            let user_name = $(this).attr("user_name");
+            let key_file = $(this).attr("key_file");
+            let password = $(this).attr("password");
+
+            $.ajax({
+                        {#headers: {"X-CSRFToken": '{{ csrf_token }}'},#}
+                        {#不能添加上面的headers,会报错http请求 405错误 方法不被允许 (Method not allowed)#}
+                        url: "http://{{ web_ssh }}:{{ web_port }}/",
+                        type: 'POST',
+                        data: {
+                            hostname: host_ip,
+                            port: host_port,
+                            username: user_name,
+                            password: password,
+                            privatekey: key_file
+                        },
+                        crossDomain: true,
+                        success: callback
+                    });
+
+                {#    webssh#}
+
+                      function current_geometry() {
+                                cols = parseInt(window.innerWidth / 10);
+                                rows = parseInt(window.innerHeight / 10);
+                                return [cols, rows];
+                            }
+
+
+                            function callback(msg) {
+                                console.log(msg);
+                                if (msg.status) {
+                                    alert("错误"+"登陆" + "[ " + msg.status + " ]" + "遇到错误");
+                                    return;
+                                }
+
+
+                                var url = "ws://{{ web_ssh }}:{{ web_port }}/" + 'ws?id=' + msg.id,
+                                    socket = new WebSocket(url),
+                                    terminal = document.getElementById('#terminal'),
+                                    geometry = current_geometry();
+                                term = new Terminal({cursorBlink: true, cols: geometry[0], rows: geometry[1]});
+
+                                console.log(url);
+                                term.on('data', function (data) {
+                                    {#这里是命令输入的地方,输入一个字母就接收一个#}
+                                    console.log("qqqqqqqqqqqqq",data);
+                                    socket.send(data);
+                                });
+
+                                socket.onopen = function (e) {
+                                    $('.container1').hide();
+                                    term.open(terminal, true);
+                                    term.toggleFullscreen(true);
+                                };
+
+                                socket.onmessage = function (msg) {
+                                    console.log(msg);
+                                    term.write(msg.data);
+                                };
+
+                                socket.onerror = function (e) {
+                                    console.log(e);
+                                };
+
+                                socket.onclose = function (e) {
+                                    console.log(e);
+                                    term.destroy();
+                                    $('.container1').show();
+                                    // status.text(e.reason);
+                                };
+                            }
+
+
+                            $(window).resize(function () {
+                                if (typeof term != "undefined") {
+                                    geometry = current_geometry();
+                                    term.geometry = geometry;
+                                    term.resize(geometry[0], geometry[1]);
+                                }
+                            });
+
+
+
+
+        });
+
+
+
+    })
+    </script>
 {% endblock %}

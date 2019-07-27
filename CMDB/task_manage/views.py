@@ -8,7 +8,9 @@ from asset.models import *
 from web.models import *
 from django.core.cache import cache
 from task_manage.utils import get_data_from_cache
+from web.password_crypt import decrypt_p
 
+from CMDB import settings
 
 # http://yshblog.com/blog/156
 # 也可以把{}等使用json序列化为字符串，存入缓存中
@@ -29,19 +31,22 @@ class WebsshLogin(View):
 
         env_obj_set = get_data_from_cache("Environment")
         sys_obj_set = get_data_from_cache("System")
-        # 搜索按钮点击时，
-        # system_selected_id = request.GET.get("system_selected_id")
-        # environment_selected_id = request.GET.get("environment_selected_id")
+        web_ssh = settings.web_ssh
+        web_port = settings.web_port
+        # 上面内容是给前端渲染使用的
 
-        # val = 0 if a == 0 else 2
+        # 搜索按钮点击时，
 
         if request.get_full_path().__contains__("selected_id"):
+            # 由于前端会传三个字段的值，但是不知道哪个字段为空，哪个不为空，所以就拼接SQL
+            # 拼接SQL就不需要判断多次啦，啦啦啦啦啦
             my_filter_condition = ""
             if len(request.GET.get("system_selected_id")) != 0:
                 sys_id = request.GET.get("system_selected_id")
                 # 这里一定注意，必须使用Q(),否则eval()报语法错误，因为=eval会进行赋值，但是eval不能进行赋值操作
                 my_filter_condition += "Q(system_id=%s)" % sys_id
-                if len(request.GET.get("environment_selected_id")) != 0 or len(request.GET.get("host_selected_id")) != 0:
+                if len(request.GET.get("environment_selected_id")) != 0 or \
+                        len(request.GET.get("host_selected_id")) != 0:
                     my_filter_condition += " and "
 
             if len(request.GET.get("environment_selected_id")) != 0:
@@ -55,10 +60,13 @@ class WebsshLogin(View):
                 my_filter_condition += "Q(id=%s)" % host_id
 
             if len(my_filter_condition) != 0:
+                # 有查询条件
                 list_host_obj_set = Host.objects.filter(eval(my_filter_condition))
             else:
+                # 每个字段都为空
                 list_host_obj_set = host_obj_set
         else:
+            # 访问首页
             list_host_obj_set = host_obj_set
 
         data_page_info = return_show_data(request, list_host_obj_set)
@@ -109,3 +117,10 @@ def get_host_by_sys_or_env_id(request):
     elif not system_id and not environment_id:
         host_list = list(Host.objects.all().values("id", "ip"))
     return JsonResponse(host_list, safe=False)
+
+
+def get_host_login_user_info_by_id(request):
+    host_login_user_id = request.POST.get("host_login_user_id")
+    password = HostLoginUser.objects.filter(id=host_login_user_id).first().password
+    dec_password = password
+    return JsonResponse({"password": dec_password})

@@ -48,6 +48,11 @@
                                     <span class="error pull-right" style="color: red">{{ form.ip.errors.0 }}</span>
                                 </div>
                                 <div class="form-group">
+                                    <label for="{{ form.port.auto_id }}">{{ form.port.label }}</label>
+                                    {{ form.port }}
+                                    <span class="error pull-right" style="color: red">{{ form.ip.errors.0 }}</span>
+                                </div>
+                                <div class="form-group">
                                     <label for="{{ form.note.auto_id }}">{{ form.note.label }}</label>
                                     {{ form.note }}
                                     <span class="error pull-right" style="color: red">{{ form.note.errors.0 }}</span>
