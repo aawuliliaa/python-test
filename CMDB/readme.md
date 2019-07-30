@@ -684,3 +684,10 @@ task有修改，需要重启
 webssh 终端ssh登录 参考的 https://github.com/huashengdun/webssh 此项目
 
 ```
+## 2.7ansible
+```
+pip3 install ansible==2.7.12
+注意：2.8的版本已經沒有Options了，可以參考
+https://lex-lee.blog.csdn.net/article/details/92837916
+我這裡就使用了2.7.的版本，最新版本稍后研究
+```

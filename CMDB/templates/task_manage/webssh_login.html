@@ -6,6 +6,9 @@
     <link href="/static/css/my_style.css" rel="stylesheet">
     <link href="/static/webssh_static/css/xterm.min.css" rel="stylesheet" type="text/css"/>
     <link href="/static/webssh_static/css/fullscreen.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Sweet Alert -->
+    <link href="/static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
     <div class="row wrapper border-bottom white-bg page-heading">
@@ -131,6 +134,8 @@
     <script src="/static/webssh_static/js/xterm.min.js"></script>
 {#    她要在xterm的后面，因为要使用xterm里面的内容呗，哈哈#}
      <script src="/static/webssh_static/js/fullscreen.min.js"></script>
+    <!-- Sweet alert -->
+    <script src="/static/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script>
     $(function () {
 
@@ -173,7 +178,11 @@
                             function callback(msg) {
                                 console.log(msg);
                                 if (msg.status) {
-                                    alert("错误"+"登陆" + "[ " + msg.status + " ]" + "遇到错误");
+                                    {#alert("错误"+"登陆" + "[ " + msg.status + " ]" + "遇到错误");#}
+                                    swal({
+                                        title: "Welcome in Alerts",
+                                        text: "错误"+"登陆" + "[ " + msg.status + " ]" + "遇到错误"
+                                    });
                                     return;
                                 }
 
