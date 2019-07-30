@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load mytags %}
+{% block head %}
+    <!-- Sweet Alert -->
+    <link href="/static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>{{ role_obj.child_menu_name }}</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'index' %}">首页</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a>{{ role_obj.parent_menu_name }}</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>{{ role_obj.child_menu_name }}</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>数据信息</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-6">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>命令结果</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link" href="">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                    </div>
+                    </div>
+             </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block foot_script %}
+
+    <!-- Sweet alert -->
+    <script src="/static/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script>
+
+    </script>
+{% endblock %}

@@ -11,6 +11,7 @@ urlpatterns = [
     path('get_env_by_system_id/', views.get_env_by_system_id, name="get_env_by_system_id"),
     path('get_host_by_sys_or_env_id/', views.get_host_by_sys_or_env_id, name="get_host_by_sys_or_env_id"),
     path('get_host_login_user_info_by_id/', views.get_host_login_user_info_by_id, name="get_host_login_user_info_by_id"),
+    path('run_cmd/', login_required(views.RunCmd.as_view()), name="run_cmd"),
 
 
 ]

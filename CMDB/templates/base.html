@@ -54,7 +54,7 @@
                         </div>
                     </li>
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
+                        <a href="{% url 'index' %}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
                     </li>
                     {% for parent_label_name_key,parent_label_value in left_label_dic.items%}
                         <li>

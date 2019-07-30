@@ -119,8 +119,22 @@ def get_host_by_sys_or_env_id(request):
     return JsonResponse(host_list, safe=False)
 
 
+@login_required
 def get_host_login_user_info_by_id(request):
     host_login_user_id = request.POST.get("host_login_user_id")
     password = HostLoginUser.objects.filter(id=host_login_user_id).first().password
     dec_password = password
     return JsonResponse({"password": dec_password})
+
+
+class RunCmd(View):
+    """
+    webssh页面
+    """
+    def get(self, request, *args, **kwargs):
+
+        left_label_dic = get_label(request)
+        # print(request.path)# /privilege/
+        role_obj = Role.objects.filter(url=request.path).first()
+
+        return render(request, 'task_manage/run_cmd.html', locals())
