@@ -127,7 +127,7 @@ class MyInventory:
         return self.inventory
 
     @property
-    def variable_manager_onj(self):
+    def variable_manager_obj(self):
         """
        返回variable_manager對象
        :return:
