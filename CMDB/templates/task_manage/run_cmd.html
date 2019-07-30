@@ -3,6 +3,7 @@
 {% block head %}
     <!-- Sweet Alert -->
     <link href="/static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+     <link href="/static/css/plugins/jsTree/style.min.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
     <div class="row wrapper border-bottom white-bg page-heading">
@@ -38,8 +39,54 @@
                         </div>
                     </div>
                     <div class="ibox-content">
+                        <div id="jstree1">
+                            <ul>
+                                <li class="jstree-open">Admin theme
+                                    <ul>
+                                        {% for sys_obj in sys_obj_set %}
+                                            <li class="jstree-closed" value="{{ sys_obj.id }}">{{ sys_obj.name }}--{{ sys_obj.abs_name }}
+                                                <ul>
+                                                    {% for env_obj in sys_obj.environment.all%}
+                                                        <li class="jstree-closed" value="{{ env_obj.id }}">{{ env_obj.name }}--{{ env_obj.abs_name }}
+                                                            <ul>
+                                                                {% for host_obj in env_obj.host_environment.all %}
+{#                                                                    当前环境下的主机要与当前的系统_id相同，这块一定要注意#}
+                                                                    {% if host_obj.system.id == sys_obj.id %}
+                                                                        <li class="host" value="{{ host_obj.ip }}">
+                                                                            {{ host_obj.ip }}
+                                                                        </li>
+                                                                    {% endif %}
 
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                        {% endfor %}
 
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="ibox">
+                    {% csrf_token %}
+                    <div class="ibox-title">
+                        <h5>shell命令</h5>
+                        <small>--(按下回车执行)</small>
+                        <div class="ibox-tools">
+                            <a class="collapse-link" href="">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <input type="text" placeholder="输入shell命令" class="form-control" id="run_cmd" required>
                     </div>
                 </div>
             </div>
@@ -54,7 +101,7 @@
 
                         </div>
                     </div>
-                    <div class="ibox-content">
+                    <div class="ibox-content cmd_result">
 
                     </div>
                     </div>
@@ -67,7 +114,62 @@
 
     <!-- Sweet alert -->
     <script src="/static/js/plugins/sweetalert/sweetalert.min.js"></script>
-    <script>
+    <script src="/static/js/plugins/jsTree/jstree.min.js"></script>
 
+    <script>
+        $(document).ready(
+             $('#jstree1').jstree({
+            'core' : {
+                'check_callback' : true
+            },
+            'plugins' : [ 'types', 'dnd', "checkbox" ],
+             "checkbox": {
+                    "keep_selected_style": false,//是否默认选中
+                    "three_state": true,//父子级别级联选择
+                    "tie_selection": false
+                },
+            'types' : {
+                'default' : {
+                    'icon' : 'fa fa-folder'
+                },
+
+            }
+        })
+        );
+
+    $(function () {
+
+        $("#run_cmd").keyup(function(){
+            {#执行命令按钮，按下回车执行命令#}
+            let host_ip_list = [];
+            $("a.jstree-checked").parent(".host").each(function () {
+                host_ip_list.push($(this).attr("value"));
+            });
+            let cmd = $("#run_cmd").val();
+            {#console.log("pppppppppppppp",host_ip_list);#}
+            if(event.keyCode == 13){
+            //这里写你要执行的事件;
+                $.ajax({
+                    url:"{% url 'task_manage:run_cmd' %}",
+                    type:"post",
+                    //如果不做traditional:true的设置，参数传递中是会自动把key变为了book_authors_id_list[]，服务端是无法通过book_authors_id_list获取参数的
+                    traditional:true,
+                    data:{
+                        csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+                        host_ip_list:host_ip_list,
+                        cmd:cmd
+                    },
+                    success:function (data) {
+                        let cmd_result = "";
+                        $.each(data,function (key,value) {
+                            {#换行写会有空格哦，还是放在一行写#}
+                            cmd_result += `<pre>${key}结果:\n${value}</pre>`
+                        });
+                        $(".cmd_result").html(cmd_result)
+                    }
+                })
+            }
+        });
+    })
     </script>
 {% endblock %}

@@ -691,3 +691,6 @@ pip3 install ansible==2.7.12
 https://lex-lee.blog.csdn.net/article/details/92837916
 我這裡就使用了2.7.的版本，最新版本稍后研究
 ```
+![](.readme_images/9c3d211b.png)
+![](.readme_images/e29c6923.png)
+![](.readme_images/2316a636.png)

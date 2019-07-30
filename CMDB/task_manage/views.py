@@ -9,6 +9,7 @@ from web.models import *
 from django.core.cache import cache
 from task_manage.utils import get_data_from_cache
 from web.password_crypt import decrypt_p
+from task_manage.my_ansible.run_adhoc import AdhocRunner
 
 from CMDB import settings
 
@@ -129,12 +130,66 @@ def get_host_login_user_info_by_id(request):
 
 class RunCmd(View):
     """
-    webssh页面
+    执行命令的页面
     """
     def get(self, request, *args, **kwargs):
 
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
         role_obj = Role.objects.filter(url=request.path).first()
-
+        sys_obj_set = System.objects.all()
         return render(request, 'task_manage/run_cmd.html', locals())
+
+    def post(self, request):
+        # 获取前端传过来的数据
+        # print(request.POST)
+        # <QueryDict: {'book_authors_id_list[]': ['1', '3'], 'book_publish_id': ['2'],
+        # 由于深度序列化，自动在key的后面加了个[]
+        # 需要使用getlist方法获取数组值
+        host_ip_list = request.POST.getlist("host_ip_list")
+        # print("llllllllllllllllllllllllll",host_ip_list)
+        cmd = request.POST.get("cmd")
+        temphosts_dict=dict(cmd_group=dict(hosts=[]))
+        # temphosts_dict["cmd_group"]["hosts"] = []
+        for host_ip in host_ip_list:
+            host_obj = Host.objects.filter(ip=host_ip).first()
+            host_login_users_set = host_obj.login_user.all()
+            password = ""
+            for host_login_user in host_login_users_set:
+                if host_login_user.name == "root":
+                    password = decrypt_p(host_login_user.password)
+            host_dict = dict(ip=host_obj.ip, port=host_obj.port, username="root", password=password)
+            temphosts_dict["cmd_group"]["hosts"].append(host_dict)
+        #     上面的循环是为了拼凑成下面的形式
+        # temphosts_dict = {
+        #     "cmd_group": {
+        #         "hosts": [{"ip": "10.0.0.62", "port": "22", "username": "root", "password": "123456"},
+        #                   {"ip": "10.0.0.61", "port": "22", "username": "root", "password": "123456"}],
+        #         "group_vars": {"var1": "ansible"}
+        #     },
+        #     # "Group2": {}
+        # }
+        tasks = [dict(action=dict(module="shell", args=cmd, warn=False))]
+        hosts = "cmd_group"
+        ar = AdhocRunner(temphosts_dict)
+        ar.run_adhoc(hosts, tasks)
+
+        # changed = ar.get_adhoc_result().get("changed")
+        # status = ar.get_adhoc_result().get("status")
+        # skipped = ar.get_adhoc_result().get("skipped")
+        failed = ar.get_adhoc_result().get("failed")
+        ok = ar.get_adhoc_result().get("ok")
+        unreachable = ar.get_adhoc_result().get("unreachable")
+        result = {}
+        for host_ip in host_ip_list:
+            if failed:
+                if host_ip in failed:
+                    result[host_ip] = failed.get(host_ip).get("stderr")
+            if unreachable:
+                if host_ip in unreachable:
+                    result[host_ip] = unreachable.get(host_ip).get("msg")
+            if ok:
+                if host_ip in ok:
+                    result[host_ip] = ok.get(host_ip).get("stdout")
+
+        return JsonResponse(result)
