@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+</head>
+<body>
+<textarea name="" id="chat-log" cols="30" rows="10" class="form-control"></textarea>
+<br>
+<input type="text" id="chat-message-input" class="form-control">
+<br>
+<input type="button" id="chat-message-submit" value="send" class="btn btn-primary">
+</body>
+<!-- 加载jquery-->
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+{#    加载bootstrap的js#}
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+<script>
+
+    let chatSocket = new WebSocket(
+        "ws://"+window.location.host+"/ws/chat/"
+
+    );
+    chatSocket.onmessage = function (e) {
+            let data = JSON.parse(e.data);
+            let message = data["message"]+"\n";
+            $("#chat-log").prepend(message)
+        };
+    chatSocket.onclose=function (e) {
+        console.log("chat socket closed unexpectly");
+    };
+    {#$("#chat-message-input").focus();#}
+    $("#chat-message-submit").click(function () {
+        let browser_message = $("#chat-message-input").val();
+        chatSocket.send(JSON.stringify({"message":browser_message}));
+        $("#chat-message-input").val("")
+    })
+
+</script>
+</html>

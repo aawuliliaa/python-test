@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+</head>
+<body>
+<div class="col-md-8">
+    <select name="" id="file" class="form-control">
+    <option value="">选择日志</option>
+    {% for key,log_path in log_paths.items %}
+        <option value="{{ key }}">{{ log_path }}</option>
+    {% endfor %}
+
+</select>
+</div>
+
+<div class="col-md-2">
+  <input class="btn btn-success btn-block" type="button" onclick="connect()" value="开始监听"/><br/>
+</div>
+<div class="col-md-2">
+  <input class="btn btn-warning btn-block" type="button" onclick="goclose()" value="终止监听"/><br/>
+</div>
+<div class="col-md-12">
+  <textarea class="form-control" id="chat-log" disabled rows="20"></textarea>
+</div>
+</body>
+<!-- 加载jquery-->
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+{#    加载bootstrap的js#}
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+<script>
+
+ function connect() {
+    if ($('#file').val()) {
+      window.chatSocket = new WebSocket(
+        'ws://' + window.location.host + '/ws/tailf/' + $('#file').val() + '/');
+
+      chatSocket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        var message = data['message'];
+        $("#chat-log").prepend(message);
+        // 跳转到页面底部
+        {#$('#chat-log').scrollTop($('#chat-log')[0].scrollHeight);#}
+      };
+
+      chatSocket.onerror = function(e) {
+        alert('服务端连接异常！')
+      };
+
+      chatSocket.onclose = function(e) {
+        alert('websocket已关闭！')
+      };
+    } else {
+      alert('请选择要监听的日志文件')
+    }
+  }
+
+function goclose() {
+    console.log(window.chatSocket);
+
+    window.chatSocket.close();
+    window.chatSocket.onclose = function(e) {
+      alert('已终止日志监听！')
+    };
+  }
+</script>
+</html>
