@@ -20,6 +20,7 @@ def index(request):
     """
     # 左侧菜单栏
 
+
     left_label_dic = get_label(request)
     return render(request, "index.html", locals())
 

@@ -355,6 +355,14 @@ print(unquote(unquote(search_val,"utf-8")))# 测试
 ![](.readme_images/ac7e774b.png)
 ```
 相关模块
+# kombu版本
+pip install kombu==4.2.0
+# celery版本
+pip install celery==4.1.1
+版本不对，会报错
+Django中解决redis-py versions 3.2.0 or later. You have 2.10.6版本问题
+No module named 'kombu.matcher'
+
 [root@m01 CMDB]# pip3 install celery
 [root@m01 CMDB]# pip3 install django-celery-beat
 [root@m01 CMDB]# pip3 install django-celery-results
@@ -686,6 +694,7 @@ webssh 终端ssh登录 参考的 https://github.com/huashengdun/webssh 此项目
 ```
 ## 2.7ansible
 ```
+更多相关API看我写在test*.py中的输出，
 pip3 install ansible==2.7.12
 注意：2.8的版本已經沒有Options了，可以參考
 https://lex-lee.blog.csdn.net/article/details/92837916
@@ -694,3 +703,4 @@ https://lex-lee.blog.csdn.net/article/details/92837916
 ![](.readme_images/9c3d211b.png)
 ![](.readme_images/e29c6923.png)
 ![](.readme_images/2316a636.png)
+

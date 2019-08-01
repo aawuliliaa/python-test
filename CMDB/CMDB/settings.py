@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'django_celery_results',
     'asset',
+    'channels',
 
 ]
 
@@ -149,7 +150,18 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 # 这是使用了django-celery默认的数据库调度模型,任务执行周期都被存在你指定的orm数据库中
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+# django-channels配置
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("10.0.0.61", 6379)],
+        },
+    },
+}
 
+# 配置ASGI
+ASGI_APPLICATION = "CMDB.routing.application"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -184,7 +196,7 @@ REST_FRAMEWORK = {
 }
 # 需要事先在role表中添加该角色
 REST_OWN_PERMISSION_USER_ROLE_CODE = "API_user"
-
+# 用于webssh登录使用
 web_ssh = "10.0.0.61"
 web_port = 8003
 # python3    webssh/main.py    ##启动终端登录功能
@@ -251,3 +263,4 @@ LOGGING = {
         },
     },
 }
+

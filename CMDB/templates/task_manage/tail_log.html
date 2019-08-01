@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load mytags %}
+{% block head %}
+    <!-- Sweet Alert -->
+    <link href="/static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>{{ role_obj.child_menu_name }}</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'index' %}">首页</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a>{{ role_obj.parent_menu_name }}</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>{{ role_obj.child_menu_name }}</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>查看日志</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        {% csrf_token %}
+                        <select name="" id="tail_ip" class="form-control">
+                            {% for host_obj in host_obj_set %}
+                                <option value="{{ host_obj.ip }}">{{ host_obj.ip }}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <input type="text" placeholder="example:tail -f /var/log/messages" class="form-control tail_cmd">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>日志输出</h5>
+                        <button class="btn btn-primary btn-xs stop-tail">停止</button>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <pre id="output_append">
+
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block foot_script %}
+
+    <!-- Sweet alert -->
+    <script src="/static/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        CreateWebSocket();
+    });
+
+
+    function CreateWebSocket() {
+        var socket = new WebSocket('ws://' + window.location.host + '/ws/');
+        socket.onmessage = function (message) {
+            toastr.success("开始输出日志！")
+            var result = JSON.parse(message.data);
+            var status = result.status;
+            var data = result.data;
+            var output_html = '';
+            if (status === 0) {
+    {#            $('#output_append').empty();#}
+                output_html = data;
+            }
+            else if (status === 1) {
+                $('#output_append').empty();
+                output_html = data;
+            }
+            $("#output_append").prepend(output_html);
+        }
+    }
+
+    $(function () {
+        $(".tail_cmd").keyup(function(){
+            {#执行命令按钮，按下回车执行命令#}
+            let ip = $("#tail_ip option:selected").text();
+            let tail_cmd = $(".tail_cmd").val();
+            if(event.keyCode == 13){
+            //这里写你要执行的事件;
+                $.ajax({
+                    url:"{% url 'task_manage:tail_log' %}",
+                    type:"post",
+                    data:{
+                        csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+                        ip:ip,
+                        tail_cmd:tail_cmd
+                    },
+                    success:function (data) {
+                        var obj = data;
+                        console.log("llllllll",obj.status)
+                        if (obj.status) {
+                            toastr.success("执行成功！")
+                        } else {
+                             toastr.error(obj.error)
+                        }
+                    }
+                })
+            }
+        });
+
+        $(".stop-tail").click(function () {
+            $.ajax({
+                url: "{% url 'task_manage:tail_stop' %}",
+                timeout : 5000, //超时时间设置，单位毫秒
+                type: 'POST',
+                data: {
+                    "status":"stop",
+                     csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),},
+                success: function (data) {
+                    var obj = data;
+                    if (obj.status) {
+                        toastr.success("停止成功！")
+                    } else {
+                         toastr.error("停止失败！")
+                    }
+
+                }
+            })
+        })
+
+    })
+    </script>
+{% endblock %}

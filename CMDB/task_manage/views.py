@@ -1,12 +1,15 @@
 from django.views.generic import View
 from django.shortcuts import render
 from django.http import JsonResponse
-from django.db.models import Q
+import paramiko
+import os
+import json
+from asgiref.sync import async_to_sync
+from channels.layers import get_channel_layer
 from django.contrib.auth.decorators import login_required
 from web.utils import get_label, return_show_data
 from asset.models import *
 from web.models import *
-from django.core.cache import cache
 from task_manage.utils import get_data_from_cache
 from web.password_crypt import decrypt_p
 from task_manage.my_ansible.run_adhoc import AdhocRunner
@@ -149,7 +152,7 @@ class RunCmd(View):
         host_ip_list = request.POST.getlist("host_ip_list")
         # print("llllllllllllllllllllllllll",host_ip_list)
         cmd = request.POST.get("cmd")
-        temphosts_dict=dict(cmd_group=dict(hosts=[]))
+        temphosts_dict = dict(cmd_group=dict(hosts=[]))
         # temphosts_dict["cmd_group"]["hosts"] = []
         for host_ip in host_ip_list:
             host_obj = Host.objects.filter(ip=host_ip).first()
@@ -193,3 +196,68 @@ class RunCmd(View):
                     result[host_ip] = ok.get(host_ip).get("stdout")
 
         return JsonResponse(result)
+
+
+def taillog(request, hostname, port, username, password, private, tail_cmd):
+    """
+    执行 tail log 接口
+    """
+    channel_layer = get_channel_layer()
+    user = request.user.name
+    os.environ["".format(user)] = "true"
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    if password:
+        ssh.connect(hostname=hostname, port=port, username=username, password=decrypt_p(password))
+    else:
+        pkey = paramiko.RSAKey.from_private_key_file("{0}".format(private))
+        ssh.connect(hostname=hostname, port=port, username=username, pkey=pkey)
+    # cmd = "tail " + tail
+    stdin, stdout, stderr = ssh.exec_command(tail_cmd, get_pty=True)
+    for line in iter(stdout.readline, ""):
+        if os.environ.get("".format(user)) == 'false':
+            break
+        result = {"status": 0, 'data': line}
+        result_all = json.dumps(result)
+        async_to_sync(channel_layer.group_send)(user, {"type": "user.message", 'text': result_all})
+
+
+class TailLog(View):
+    def get(self, request, *args, **kwargs):
+
+        left_label_dic = get_label(request)
+        # print(request.path)# /privilege/
+        role_obj = Role.objects.filter(url=request.path).first()
+        sys_obj_set = System.objects.all()
+        host_obj_set = Host.objects.all()
+        return render(request, 'task_manage/tail_log.html', locals())
+
+    def post(self, request):
+        ret = {'status': True, 'error': None, }
+        ip = request.POST.get("ip")
+        tail_cmd = request.POST.get("tail_cmd")
+        host_obj = Host.objects.filter(ip=ip).first()
+        password = ""
+        private_key = ""
+        for host_user_obj in host_obj.login_user.all():
+            if host_user_obj.name == "root":
+                password = host_user_obj.password
+        try:
+            taillog(request, ip, host_obj.port, "root", password,
+                    private_key, tail_cmd)
+        except Exception as e:
+            ret['status'] = False
+            ret['error'] = "错误{0}".format(e)
+
+        return JsonResponse(ret)
+
+
+class TailStop(View):
+    """
+       执行 tail_log  stop  命令
+       """
+    def post(self,request):
+        ret = {'status': True, 'error': None, }
+        name = request.user.name
+        os.environ["".format(name)] = "false"
+        return JsonResponse(ret)

@@ -12,6 +12,8 @@ urlpatterns = [
     path('get_host_by_sys_or_env_id/', views.get_host_by_sys_or_env_id, name="get_host_by_sys_or_env_id"),
     path('get_host_login_user_info_by_id/', views.get_host_login_user_info_by_id, name="get_host_login_user_info_by_id"),
     path('run_cmd/', login_required(views.RunCmd.as_view()), name="run_cmd"),
+    path('tail_log/', login_required(views.TailLog.as_view()), name="tail_log"),
+    path('tail_stop/', login_required(views.TailStop.as_view()), name="tail_stop"),
 
 
 ]
