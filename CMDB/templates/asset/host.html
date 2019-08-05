@@ -71,6 +71,7 @@
                                 <th>操作</th>
                                 <th data-hide="all">该主机上安装的应用</th>
                                 <th data-hide="all">该主机的登录用户</th>
+                                <th data-hide="all">异步获取主机信息</th>
 
                             </tr>
                             </thead>
@@ -117,6 +118,9 @@
                                         {% endfor %}
 
                                     </td>
+                                <td>
+                                    <a class="btn btn-primary btn-xs sync_host_info" value="{{ host_obj.id }}">刷新</a>
+                                </td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -139,5 +143,31 @@
     <script src="/static/js/jquery.cookie.js"></script>
     <!-- Page-Level Scripts 按下回车的搜索功能，分页功能-->
    <script src="/static/js/my_footable_page.js"></script>
+    <script>
+    $(function () {
 
+        function sleep(delay) {
+          var start = (new Date()).getTime();
+          while ((new Date()).getTime() - start < delay) {
+            continue;
+          }
+        }
+        $(".sync_host_info").click(function () {
+            $.ajax({
+                url: "{% url 'asset:sync_host_info' %}",
+                data:{
+                    id:$(".sync_host_info").attr("value")
+                },
+                success:function (res) {
+                    if (res.success){
+                        toastr.success("获取完成！刷新页面查看!没有数据，请查看异步任务结果中查看原因！");
+                        {#sleep(800);#}
+                        {#location.href='{% url 'asset:host' %}';#}
+
+                    }
+                }
+            })
+        })
+    })
+    </script>
 {% endblock %}

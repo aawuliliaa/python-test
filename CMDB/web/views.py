@@ -9,7 +9,7 @@ from web.reg_form import UserForm
 from web.models import *
 from web.utils import *
 from web.page import *
-
+from crond.tasks import pool_get_host_info
 
 @login_required
 def index(request):
@@ -20,7 +20,7 @@ def index(request):
     """
     # 左侧菜单栏
 
-
+    pool_get_host_info.delay()
     left_label_dic = get_label(request)
     return render(request, "index.html", locals())
 

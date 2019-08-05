@@ -201,6 +201,8 @@ web_ssh = "10.0.0.61"
 web_port = 8003
 # python3    webssh/main.py    ##启动终端登录功能
 # 不要忘记启动呀，忘记了是连接不上的
+
+MAX_POOL_SIZE = 3
 # 下面就是logging的配置
 LOGGING = {
     'version': 1,  # 指明dictConnfig的版本，目前就只有一个版本，哈哈

@@ -1,6 +1,8 @@
 from django.views.generic import View
 from django.shortcuts import render, redirect, HttpResponse
+from django.http import JsonResponse
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 import os
 from web.password_crypt import encrypt_p, decrypt_p
 from web.utils import *
@@ -8,7 +10,7 @@ from web.page import *
 from asset.models import *
 from asset.form import *
 from CMDB import settings
-
+from crond.tasks import sync_host_info_task
 # https://www.cnblogs.com/yuanchenqi/articles/8034442.html
 # https://www.cnblogs.com/yuanchenqi/articles/7614921.html
 # https://www.cnblogs.com/wupeiqi/articles/6144178.html
@@ -469,3 +471,12 @@ class DelHost(View):
         # print("================2",kwargs)  #{'pk': 205}
         Host.objects.filter(id=kwargs.get("pk")).delete()
         return redirect(reverse("asset:host"))
+
+
+@login_required
+def sync_host_info(request):
+    res = {"success": True}
+    pk = request.GET.get("id")
+    sync_host_info_task.delay(int(pk))
+
+    return JsonResponse(res)

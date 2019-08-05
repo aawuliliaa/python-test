@@ -59,6 +59,7 @@ class AdhocRunner(object):
                 stdout_callback=self._callback  # 配置使用自定义callback
             )
             tqm.run(play)
+            # return self._callback
         except Exception as err:
             print(err)
 

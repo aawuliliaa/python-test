@@ -27,4 +27,6 @@ urlpatterns = [
     path('add_host/', login_required(views.AddHost.as_view()), name="add_host"),
     path('del_host/<int:pk>/', login_required(views.DelHost.as_view()), name="del_host"),
     path('edit_host/<int:pk>/', login_required(views.EditHost.as_view()), name="edit_host"),
+    path('sync_host_info/', views.sync_host_info, name="sync_host_info"),
+
 ]
