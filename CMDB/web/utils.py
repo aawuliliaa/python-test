@@ -4,11 +4,13 @@
 from django.shortcuts import HttpResponse
 from django.db.models import Q
 from urllib.parse import unquote
+from random import choice
+import string
 import csv
 import codecs
 from web.models import *
 from web.page import my_page
-
+from CMDB.settings import HOST_LOGIN_USER_PASSWORD_LENGTH
 
 def get_label(request):
     """
@@ -104,3 +106,13 @@ def return_show_data(request, data_obj_set, *args):
     data_page_info = my_page(data_obj_set, request.GET.get("page_num", 1),
                              int(request.COOKIES.get(request.path.replace("/", "") + "data_nums_per_page")))
     return data_page_info
+
+
+def host_login_user_password(length=HOST_LOGIN_USER_PASSWORD_LENGTH, chars=string.ascii_letters + string.digits+"!@#$%&*"):
+    """
+    简短地生成随机密码，包括大小写字母、数字、特殊字符，可以指定密码长度
+    :param length:
+    :param chars:
+    :return:
+    """
+    return ''.join([choice(chars) for i in range(length)])

@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 
-from celery.task import task
 import os
 import random
+import time
 from concurrent.futures import ThreadPoolExecutor
 from django_celery_results.models import TaskResult
 from threading import currentThread
 from celery import shared_task
 from asset.models import Host
 from CMDB.settings import MAX_POOL_SIZE, BASE_DIR
-from web.password_crypt import decrypt_p
+from web.password_crypt import decrypt_p,encrypt_p
 from task_manage.my_ansible.run_adhoc import AdhocRunner
-from asset.models import Host
+from asset.models import Host, HostLoginUser
+from web.utils import host_login_user_password
 # 自定义要执行的task任务
 # 一定要加上name,否则会报错Received unregistered task_manage
 # 在我这个版本整体中，不能使用@app.task_manage
@@ -144,6 +145,77 @@ def sync_host_info_task(pk):
     host_set_list.append(Host.objects.filter(id=pk))
     # host_set_list = [<QuerySet [<Host: 10.0.0.61>]>]
     get_host_info_func(host_set_list)
+
+
+@shared_task(name="reset_host_login_user_password")
+def reset_host_login_user_password():
+    """
+    # 设置定时任务，每晚上执行
+    由于设置了密码有效期，而且把有效期设置为一个月，哎，没办法，只能想出高招应对了
+    密码到期了，就自动重置密码，就不需要手动设置啦，啦啦啦啦，
+    要不然一堆机器，都要手动设置密码，累死啦，55555555
+    :return:
+    """
+    # 新密码
+    new_passwd = host_login_user_password()
+    password = ""
+    # 查找出密码过期的用户
+    host_login_user_set = HostLoginUser.objects.filter(expire_date__year=time.localtime().tm_year,
+                                                      expire_date__month=time.localtime().tm_mon,
+                                                      expire_date__day=time.localtime().tm_mday)
+    # host_login_user_set = HostLoginUser.objects.all()
+    if host_login_user_set:
+        for host_login_user_obj in host_login_user_set:
+            # 该用户关联的所有主机
+            host_set = host_login_user_obj.host_login_user.all()
+            temphosts_dict = dict(reset_host_login_user_password_group=dict(hosts=[]))
+            # 把该用户关联的所有主机，放到temphosts_dict中
+            for host_obj in host_set:
+                host_ip = host_obj.ip
+                host_user_set = host_obj.login_user.all()
+                # 只有root用户才能执行下面重置密码的命令
+                # [vita@m01 ~]$ echo '123456'|passwd vita --stdin
+                # Only root can do that.
+                for host_user in host_user_set:
+                    if host_user.name == "root":
+                        password = host_user.password
+                host_dict = dict(ip=host_obj.ip, port=host_obj.port,
+                                 username="root",
+                                 password=decrypt_p(password))
+                temphosts_dict["reset_host_login_user_password_group"]["hosts"].append(host_dict)
+            # echo '123456'|passwd vita --stdin
+            # 给当前用户关联的主机，root登录，设置本次循环的用户密码
+            cmd = "echo '{password}'|passwd {user} --stdin".format(password=new_passwd, user=host_login_user_obj.name)
+            tasks = [dict(action=dict(module="shell", args=cmd, warn=False))]
+            ar = AdhocRunner(temphosts_dict)
+            ar.run_adhoc("reset_host_login_user_password_group", tasks)
+            failed = ar.get_adhoc_result().get("failed")
+            ok = ar.get_adhoc_result().get("ok")
+            unreachable = ar.get_adhoc_result().get("unreachable")
+
+            for host_obj in host_set:
+                host_ip = host_obj.ip
+                task_id = host_ip + "---" + str(random.randrange(1, 99999999999999999999999999999999999))
+                result = {}
+                if failed:
+                    if host_ip in failed:
+                        result[host_ip] = failed.get(host_ip).get("stderr")
+                if unreachable:
+                    if host_ip in unreachable:
+                        result[host_ip] = unreachable.get(host_ip).get("msg")
+                if ok:
+                    if host_ip in ok:
+                        # 没有报错信息，就更新表中的密码信息
+                        HostLoginUser.objects.filter(name=host_login_user_obj.name,
+                                                     host_login_user__ip=host_ip)\
+                            .update(password=encrypt_p(new_passwd))
+                        result[host_ip] = ok.get(host_ip).get("stdout")
+            #         报错信息或正确信息存到task_result表中
+                TaskResult.objects.create(task_id=task_id,
+                                          result=result[host_ip],
+                                          task_name="reset_host_login_user_password")
+
+
 
 
 

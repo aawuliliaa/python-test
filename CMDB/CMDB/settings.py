@@ -203,6 +203,8 @@ web_port = 8003
 # 不要忘记启动呀，忘记了是连接不上的
 
 MAX_POOL_SIZE = 3
+# 设置host_login_user_password的密码长度
+HOST_LOGIN_USER_PASSWORD_LENGTH = 10
 # 下面就是logging的配置
 LOGGING = {
     'version': 1,  # 指明dictConnfig的版本，目前就只有一个版本，哈哈
