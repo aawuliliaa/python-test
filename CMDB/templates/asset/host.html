@@ -146,12 +146,6 @@
     <script>
     $(function () {
 
-        function sleep(delay) {
-          var start = (new Date()).getTime();
-          while ((new Date()).getTime() - start < delay) {
-            continue;
-          }
-        }
         $(".sync_host_info").click(function () {
             $.ajax({
                 url: "{% url 'asset:sync_host_info' %}",

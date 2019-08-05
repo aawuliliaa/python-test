@@ -135,6 +135,11 @@ def pool_get_host_info():
 
 @shared_task(name="sync_host_info")
 def sync_host_info_task(pk):
+    """
+    页面中点击，异步获取主机信息
+    :param pk:
+    :return:
+    """
     host_set_list = []
     host_set_list.append(Host.objects.filter(id=pk))
     # host_set_list = [<QuerySet [<Host: 10.0.0.61>]>]
