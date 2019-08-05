@@ -336,9 +336,15 @@ class EditHostLoginUser(View):
         user_set = HostLoginUser.objects.filter(name=name, name_info=name_info)
 
         file_obj = request.FILES.get("key_file")
+        password = request.POST.get("password")
+        # 修改密码的时候，前端默认显示的是加密后的密码，加密后的密码是以==结尾的
+        if password.endswith("=="):
+            password = password
+        else:
+            password = encrypt_p(password)
         # 如果没有上传文件,就更新数据
         if not file_obj:
-            user_set.update(password=encrypt_p(request.POST.get("password")),
+            user_set.update(password=password,
                             expire_date=request.POST.get("expire_date"),)
         else:
             # 如果上传了文件，就把旧数据删除，创建新数据，create_time保留
@@ -351,7 +357,7 @@ class EditHostLoginUser(View):
             # 由于update方法不能创建文件，但是create可以在upload路径下创建文件，
             # 为了不处理麻烦的路径问题，把原数据删除，创建新的数据
             HostLoginUser.objects.create(name_info=name_info, name=name, create_time=create_time,
-                                         password=request.POST.get("password"),
+                                         password=password,
                                          key_file=file_obj,
                                          expire_date=request.POST.get("expire_date"))
         return redirect(reverse("asset:host_login_user"))
