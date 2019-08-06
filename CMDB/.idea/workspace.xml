@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7e37becd-34ea-4e0e-937f-7f84d4b62202" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/asset/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/asset/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/asset/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMDB/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/consumers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMDB/routing.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/routing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_manage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manage/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_manage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/asset/application.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/asset/application.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/12.library/library/.idea/dataSources/f9f94861-0344-4837-b7ab-d71d8272890a.xml" beforeDir="false" />
@@ -67,10 +67,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/task_manage/tester_tail_log.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="235">
+                <caret line="716" column="32" selection-start-line="716" selection-start-column="32" selection-end-line="716" selection-end-column="32" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -78,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task_manage/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="301" column="48" selection-start-line="301" selection-start-column="48" selection-end-line="301" selection-end-column="48" />
+            <state relative-caret-position="158">
+              <caret line="442" column="56" selection-start-line="442" selection-start-column="56" selection-end-line="442" selection-end-column="56" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -88,24 +91,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task_manage/urls.py">
+        <entry file="file://$PROJECT_DIR$/templates/task_manage/no_password_to_login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#85#113#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="228">
+              <caret line="161" column="81" selection-start-line="161" selection-start-column="81" selection-end-line="161" selection-end-column="81" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset/models.py">
+        <entry file="file://$PROJECT_DIR$/task_manage/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="12" />
+            <state relative-caret-position="166">
+              <caret line="17" column="100" lean-forward="true" selection-start-line="17" selection-start-column="100" selection-end-line="17" selection-end-column="100" />
               <folding>
-                <element signature="e#31#44#0" expanded="true" />
+                <element signature="e#85#113#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,6 +151,8 @@
       <find>get_playbook_result</find>
       <find>url</find>
       <find>Hover Table</find>
+      <find>no_password_to_login</find>
+      <find>output_append</find>
     </findStrings>
     <replaceStrings>
       <replace>get_adhoc_result</replace>
@@ -162,8 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/crond/form.py" />
-        <option value="$PROJECT_DIR$/crond/views.py" />
         <option value="$PROJECT_DIR$/crond/urls.py" />
         <option value="$PROJECT_DIR$/templates/crond/periodic_task.html" />
         <option value="$PROJECT_DIR$/templates/crond/task_result.html" />
@@ -187,17 +187,14 @@
         <option value="$PROJECT_DIR$/task_manage/my_ansible/my_inventory.py" />
         <option value="$PROJECT_DIR$/task_manage/my_ansible/run_playbook.py" />
         <option value="$PROJECT_DIR$/task_manage/my_ansible/test_playbook.py" />
-        <option value="$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py" />
         <option value="$PROJECT_DIR$/templates/temp_example.html" />
         <option value="$PROJECT_DIR$/CMDB/asgi.py" />
-        <option value="$PROJECT_DIR$/CMDB/consumers.py" />
         <option value="$PROJECT_DIR$/templates/task_manage/tail_log.html" />
         <option value="$PROJECT_DIR$/shell_script/get_host_info.py" />
         <option value="$PROJECT_DIR$/shell_script/get_host_info.sh" />
         <option value="$PROJECT_DIR$/task_manage/my_ansible/run_adhoc.py" />
         <option value="$PROJECT_DIR$/CMDB/settings.py" />
         <option value="$PROJECT_DIR$/web/utils.py" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/crond/tasks.py" />
         <option value="$PROJECT_DIR$/web/views.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
@@ -209,10 +206,15 @@
         <option value="$PROJECT_DIR$/asset/models.py" />
         <option value="$PROJECT_DIR$/asset/form.py" />
         <option value="$PROJECT_DIR$/templates/asset/application.html" />
-        <option value="$PROJECT_DIR$/task_manage/urls.py" />
         <option value="$PROJECT_DIR$/asset/views.py" />
-        <option value="$PROJECT_DIR$/task_manage/views.py" />
         <option value="$PROJECT_DIR$/templates/task_manage/tester_tail_log.html" />
+        <option value="$PROJECT_DIR$/CMDB/routing.py" />
+        <option value="$PROJECT_DIR$/CMDB/consumers.py" />
+        <option value="$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py" />
+        <option value="$PROJECT_DIR$/task_manage/urls.py" />
+        <option value="$PROJECT_DIR$/templates/task_manage/no_password_to_login.html" />
+        <option value="$PROJECT_DIR$/task_manage/views.py" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -466,8 +468,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.test_adhoc" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.test_playbook" />
         <item itemvalue="Python.test_inventory" />
         <item itemvalue="Python.ewew" />
@@ -491,14 +493,7 @@
       <workItem from="1564295791994" duration="42807000" />
       <workItem from="1564534603224" duration="19397000" />
       <workItem from="1564621419321" duration="3326000" />
-      <workItem from="1564975045647" duration="56191000" />
-    </task>
-    <task id="LOCAL-00009" summary="CMDB">
-      <created>1563770848954</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1563770848954</updated>
+      <workItem from="1564975045647" duration="70742000" />
     </task>
     <task id="LOCAL-00010" summary="CMDB">
       <created>1563771167635</created>
@@ -836,21 +831,29 @@
       <option name="project" value="LOCAL" />
       <updated>1565064322751</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="CMDB">
+      <created>1565079763207</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1565079763207</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="495542000" />
+    <option name="totallyTimeSpent" value="510093000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.20404859" />
       <window_info id="Structure" order="1" sideWeight="0.50340134" side_tool="true" weight="0.1611336" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291592" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37924865" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34168157" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2665474" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -895,23 +898,11 @@
     <SUITE FILE_PATH="coverage/CMDB$rest_view.coverage" NAME="rest_view Coverage Results" MODIFIED="1563791559311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/CMDB$test.coverage" NAME="test Coverage Results" MODIFIED="1564563376341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crond" />
     <SUITE FILE_PATH="coverage/CMDB$manage.coverage" NAME="manage Coverage Results" MODIFIED="1563160720210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CMDB$test_adhoc.coverage" NAME="test_adhoc Coverage Results" MODIFIED="1564477441031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/task_manage/my_ansible" />
+    <SUITE FILE_PATH="coverage/CMDB$test_adhoc.coverage" NAME="test_adhoc Coverage Results" MODIFIED="1565101360325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/task_manage/my_ansible" />
     <SUITE FILE_PATH="coverage/CMDB$utils.coverage" NAME="utils Coverage Results" MODIFIED="1563278819187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/CMDB$password_crypt.coverage" NAME="password_crypt Coverage Results" MODIFIED="1564200205730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asset/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crond/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crond/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crond/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/crond/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-114" />
@@ -987,13 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task_manage/my_ansible/run_adhoc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="62" column="32" lean-forward="true" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1029,16 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="291">
-            <caret line="714" column="32" selection-start-line="714" selection-start-column="32" selection-end-line="714" selection-end-column="32" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1088,13 +1062,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/task_manage/run_cmd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="126" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/temp_example.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1102,13 +1069,6 @@
           <folding>
             <element signature="e#1009#1469#0#HTML" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/task_manage/tail_log.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="33" column="53" lean-forward="true" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -1172,16 +1132,6 @@
         <state relative-caret-position="-185" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="12" />
-          <folding>
-            <element signature="e#31#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -1195,26 +1145,6 @@
     <entry file="file://$PROJECT_DIR$/CMDB/asgi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMDB/routing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMDB/consumers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-101">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1222,30 +1152,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/task_manage/tester_tail_log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="179" lean-forward="true" selection-end-line="228" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/task_manage/tail_log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="66" column="30" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="66" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/task_manage/run_cmd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="131" column="22" lean-forward="true" selection-start-line="124" selection-start-column="20" selection-end-line="131" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMDB/routing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_manage/my_ansible/test_inventory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-684" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="12" />
+          <folding>
+            <element signature="e#31#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/-1156481044/-798664301/channels/generic/websocket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1767">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMDB/consumers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_manage/my_ansible/run_adhoc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="27" column="70" lean-forward="true" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/task_manage/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="166">
+          <caret line="17" column="100" lean-forward="true" selection-start-line="17" selection-start-column="100" selection-end-line="17" selection-end-column="100" />
           <folding>
             <element signature="e#85#113#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/task_manage/no_password_to_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="161" column="81" selection-start-line="161" selection-start-column="81" selection-end-line="161" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/task_manage/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="301" column="48" selection-start-line="301" selection-start-column="48" selection-end-line="301" selection-end-column="48" />
+        <state relative-caret-position="158">
+          <caret line="442" column="56" selection-start-line="442" selection-start-column="56" selection-end-line="442" selection-end-column="56" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/task_manage/tester_tail_log.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="235">
+            <caret line="716" column="32" selection-start-line="716" selection-start-column="32" selection-end-line="716" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

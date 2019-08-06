@@ -18,6 +18,9 @@ urlpatterns = [
     path('tester_tail_log/', login_required(views.TesterTailLog.as_view()), name="tester_tail_log"),
     path('tester_tail_stop/', login_required(views.TesterTailStop.as_view()), name="tester_tail_stop"),
     path('get_application_by_ip/', views.get_application_by_ip, name="get_application_by_ip"),
+    # 配置免密登录
+    path('no_password_to_login/', login_required(views.NoPasswordToLogin.as_view()), name="no_password_to_login"),
+    path('test_no_password/', login_required(views.TestNoPassword.as_view()), name="test_no_password"),
 
 
 

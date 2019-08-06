@@ -20,7 +20,7 @@ def main():
     #     print(group, hosts)
     # host = mi.INVENTORY.get_host("192.168.200.10")
     # print(mi.VARIABLE_MANAGER.get_vars(host=host))
-    tasks = [dict(action=dict(module="shell", args="hostname", warn=False))]
+    tasks = [dict(action=dict(module="shell", args='sshpass -p123456 ssh-copy-id -i /root/.ssh/id_dsa.pub 10.0.0.62', warn=False))]
     hosts = "Group1"
     ar = AdhocRunner(temphosts_dict)
     ar.run_adhoc(hosts, tasks)

@@ -325,3 +325,153 @@ class TesterTailStop(View):
         name = request.user.name
         os.environ["".format(name)] = "false"
         return JsonResponse(ret)
+
+
+class NoPasswordToLogin(View):
+    """
+    配置免密登录
+    """
+
+    def get(self, request):
+        """
+        免密登陆页面
+        :param request:
+        :return:
+        """
+        left_label_dic = get_label(request)
+        # print(request.path)# /privilege/
+        role_obj = Role.objects.filter(url=request.path).first()
+        sys_obj_set = System.objects.all()
+        host_obj_set = Host.objects.all()
+        return render(request, 'task_manage/no_password_to_login.html', locals())
+
+    def post(self, request):
+        """
+        用户点击配置免密登录按钮
+        :param request:
+        :return:
+        """
+        channel_layer = get_channel_layer()
+        host_ip_list = request.POST.getlist("host_ip_list")
+        for host_ip in host_ip_list:
+            # 在当前主机上
+            # 1.首先删除私钥
+            # 2.生成公钥和私钥
+            # 3.把当前主机的公钥分发到host_ip_list的所有主机上
+            temphosts_dict = dict(no_password_group=dict(hosts=[]))
+            # temphosts_dict["cmd_group"]["hosts"] = []
+
+            host_obj = Host.objects.filter(ip=host_ip).first()
+            password = decrypt_p(HostLoginUser.objects.
+                                 filter(host_login_user__ip=host_ip, name="root").first().password)
+
+            host_dict = dict(ip=host_obj.ip, port=host_obj.port, username="root", password=password)
+            temphosts_dict["no_password_group"]["hosts"].append(host_dict)
+            #     上面的循环是为了拼凑成下面的形式
+            # temphosts_dict = {
+            #     "cmd_group": {
+            #         "hosts": [{"ip": "10.0.0.62", "port": "22", "username": "root", "password": "123456"},
+            #                   {"ip": "10.0.0.61", "port": "22", "username": "root", "password": "123456"}],
+            #         "group_vars": {"var1": "ansible"}
+            #     },
+            #     # "Group2": {}
+            # }
+            tasks = []
+            # 生成公钥和私钥
+            tasks.append(dict(action=dict(module="shell",
+                                          args='rm -rf /root/.ssh/id_dsa&&ssh-keygen -f /root/.ssh/id_dsa -N ""',
+                                          warn=False)))
+            # 向所有主机发送公钥
+            for ip in host_ip_list:
+                host_login_user_obj = HostLoginUser.objects.filter(host_login_user__ip=ip, name="root").first()
+                password = decrypt_p(host_login_user_obj.password)
+                # ansible 10.0.0.61 -m shell -a 'sshpass -p123456 ssh-copy-id -i
+                # /root/.ssh/id_dsa.pub "-o StrictHostKeyChecking=no 10.0.0.62"'
+                # ansible命令执行可以，但是使用api调用就不可以，只能放大招了
+                # 修改 /etc/ssh/ssh_config或者~/.ssh/config
+                #
+                # Host *
+                #
+                # StrictHostKeyChecking no
+                #
+                # 建议创建或者修改~/.ssh/config文件针对单个用户生效。
+                # 上面的命令只在centos6有效，centos7报错
+                # [root@m02 ~]# sshpass -p123456 ssh-copy-id -i /root/.ssh/id_dsa.pub "-o StrictHostKeyChecking=no 10.0.0.61"/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_dsa.pub"
+                # Usage: /usr/bin/ssh-copy-id [-h|-?|-f|-n] [-i [identity_file]] [-p port] [[-o <ssh -o options>] ...] [user@]hostname
+                # 	-f: force mode -- copy keys without trying to check if they are already installed
+                # 	-n: dry run    -- no keys are actually copied
+                # 	-h|-?: print this help
+                cmd = dict(action=dict(module="shell",
+                                       args="sshpass -p%s ssh-copy-id -i /root/.ssh/id_dsa.pub  %s" % (password, ip),
+                                       warn=False))
+                tasks.append(cmd)
+            hosts = "no_password_group"
+            ar = AdhocRunner(temphosts_dict)
+            ar.run_adhoc(hosts, tasks)
+            print("-----------",ar.get_adhoc_result())
+            failed = ar.get_adhoc_result().get("failed")
+            ok = ar.get_adhoc_result().get("ok")
+            unreachable = ar.get_adhoc_result().get("unreachable")
+            data = "\n\r" + host_ip + "\n\r"
+            # 由于一次操作多条命令，可能存在一条主机信息同时存在Ok和failed，所以把结果字符串拼接
+            if failed:
+                #  'failed': {'10.0.0.62': {'msg': 'Unsupported parameters for (command) module:
+                #  "-o StrictHostKeyChecking Supported parameters include: }
+                data += failed.get(host_ip).get("stderr") \
+                    if failed.get(host_ip).get("stderr")else failed.get(host_ip).get("msg")
+            if unreachable:
+                data += unreachable.get(host_ip).get("msg")
+            if ok:
+                data += ok.get(host_ip).get("stdout")
+
+            result = {"status": 0, 'data': data}
+            result_all = json.dumps(result)
+            group_name = request.user.name + "nopassword"
+            async_to_sync(channel_layer.group_send)(group_name, {"type": "user.message", 'text': result_all})
+        res = {"success": True}
+
+        return JsonResponse(res)
+
+
+class TestNoPassword(View):
+    def post(self, request):
+        res = {"success": True}
+        channel_layer = get_channel_layer()
+        host_ip_list = request.POST.getlist("host_ip_list")
+
+        for host_ip in host_ip_list:
+            temphosts_dict = dict(test_no_password_group=dict(hosts=[]))
+            host_obj = Host.objects.filter(ip=host_ip).first()
+            host_dict = dict(ip=host_obj.ip, port=host_obj.port)
+            temphosts_dict["test_no_password_group"]["hosts"].append(host_dict)
+            tasks = []
+            for ip in host_ip_list:
+                cmd = dict(action=dict(module="shell",
+                                       args="ssh %s df -h" % ip,
+                                       warn=False))
+                tasks.append(cmd)
+        #     ssh 10.0.0.61 df -h
+            hosts = "test_no_password_group"
+            ar = AdhocRunner(temphosts_dict)
+            ar.run_adhoc(hosts, tasks)
+            print("-----------", ar.get_adhoc_result())
+            failed = ar.get_adhoc_result().get("failed")
+            ok = ar.get_adhoc_result().get("ok")
+            unreachable = ar.get_adhoc_result().get("unreachable")
+            data = "\n\r" + host_ip + "\n\r"
+            # 由于一次操作多条命令，可能存在一条主机信息同时存在Ok和failed，所以把结果字符串拼接
+            if failed:
+                #  'failed': {'10.0.0.62': {'msg': 'Unsupported parameters for (command) module:
+                #  "-o StrictHostKeyChecking Supported parameters include: }
+                data += failed.get(host_ip).get("stderr") \
+                    if failed.get(host_ip).get("stderr") else failed.get(host_ip).get("msg")
+            if unreachable:
+                data += unreachable.get(host_ip).get("msg")
+            if ok:
+                data += ok.get(host_ip).get("stdout")
+
+            result = {"status": 0, 'data': data}
+            result_all = json.dumps(result)
+            group_name = request.user.name + "nopassword"
+            async_to_sync(channel_layer.group_send)(group_name, {"type": "user.message", 'text': result_all})
+        return JsonResponse(res)
