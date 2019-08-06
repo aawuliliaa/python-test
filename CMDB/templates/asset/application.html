@@ -57,7 +57,8 @@
                                 <th data-toggle="true">中间件</th>
                                 <th>应用名</th>
                                 <th>备注</th>
-
+                                <th>日志路径</th>
+                                <th>应用访问路径</th>
                                 <th>创建时间</th>
                                 <th>修改时间</th>
                                 <th>操作</th>
@@ -70,6 +71,8 @@
                                     <td>{{ app_obj.middleware }}</td>
                                     <td>{{ app_obj.name }}</td>
                                     <td>{{ app_obj.note }}</td>
+                                    <td>{{ app_obj.log_path}}</td>
+                                    <td>{{ app_obj.access_url}}</td>
                                     <td>{{ app_obj.create_time|date:"Y-m-d H:i"}}</td>
                                     <td>{{ app_obj.update_time|date:"Y-m-d H:i"}}</td>
                                     <td>

@@ -250,7 +250,7 @@ class EditApplication(View):
         middleware = request.POST.get("middleware")
         name = request.POST.get("name")
         app_set = Application.objects.filter(name=name, middleware=middleware)
-        app_set.update(note=request.POST.get("note"))
+        app_set.update(note=request.POST.get("note"), log_path=request.POST.get("log_path"))
         return redirect(reverse("asset:application"))
 
 

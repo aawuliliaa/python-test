@@ -14,6 +14,11 @@ urlpatterns = [
     path('run_cmd/', login_required(views.RunCmd.as_view()), name="run_cmd"),
     path('tail_log/', login_required(views.TailLog.as_view()), name="tail_log"),
     path('tail_stop/', login_required(views.TailStop.as_view()), name="tail_stop"),
+    # 方便测试人员查看日志的页面
+    path('tester_tail_log/', login_required(views.TesterTailLog.as_view()), name="tester_tail_log"),
+    path('tester_tail_stop/', login_required(views.TesterTailStop.as_view()), name="tester_tail_stop"),
+    path('get_application_by_ip/', views.get_application_by_ip, name="get_application_by_ip"),
+
 
 
 ]

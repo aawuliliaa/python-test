@@ -261,3 +261,67 @@ class TailStop(View):
         name = request.user.name
         os.environ["".format(name)] = "false"
         return JsonResponse(ret)
+
+
+@login_required
+def get_application_by_ip(request):
+    """
+    根据树形结构中点击的ip获取应用列表
+    :param request:
+    :return:
+    """
+
+    ip = request.GET.get("ip")
+    # application_set = Application.objects.filter(host_system__ip=ip)
+    # 把queryset转换为List，传到前端
+    application_list = list(Application.objects.filter(host_application__ip=ip).
+                        values("name", "log_path", "access_url", "note"))
+    # 非字典传送时，需要设置safe为false
+    res = {'success': True, 'data': application_list}
+    return JsonResponse(res, safe=False)
+
+
+class TesterTailLog(View):
+    """
+    测试人员查看日志页面
+    """
+    def get(self, request, *args, **kwargs):
+
+        left_label_dic = get_label(request)
+        # print(request.path)# /privilege/
+        role_obj = Role.objects.filter(url=request.path).first()
+        sys_obj_set = System.objects.all()
+        host_obj_set = Host.objects.all()
+        return render(request, 'task_manage/tester_tail_log.html', locals())
+
+    def post(self, request):
+        ret = {'status': True, 'error': None, }
+        ip = request.POST.get("ip")
+        log_path = request.POST.get("log_path")
+        tail_cmd = "tail -f "+log_path
+        print("-----------------------",log_path)
+        host_obj = Host.objects.filter(ip=ip).first()
+        password = ""
+        private_key = ""
+        for host_user_obj in host_obj.login_user.all():
+            if host_user_obj.name == "root":
+                password = host_user_obj.password
+        try:
+            taillog(request, ip, host_obj.port, "root", password,
+                    private_key, tail_cmd)
+        except Exception as e:
+            ret['status'] = False
+            ret['error'] = "错误{0}".format(e)
+
+        return JsonResponse(ret)
+
+
+class TesterTailStop(View):
+    """
+       执行 tail_log  stop  命令
+       """
+    def post(self,request):
+        ret = {'status': True, 'error': None, }
+        name = request.user.name
+        os.environ["".format(name)] = "false"
+        return JsonResponse(ret)

@@ -70,6 +70,10 @@ class ApplicationForm(ModelForm):
                 attrs={'class': 'form-control'}),
             'name': forms.TextInput(
                 attrs={'class': 'form-control'}),
+            'log_path': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'access_url': forms.TextInput(
+                attrs={'class': 'form-control'}),
             'note': forms.TextInput(
                 attrs={'class': 'form-control'}),
         }

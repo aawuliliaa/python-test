@@ -71,6 +71,8 @@ class Application(models.Model):
     """
     middleware = models.CharField(verbose_name="中间件", max_length=32)
     name = models.CharField(verbose_name="应用名", max_length=32)
+    log_path = models.CharField(verbose_name="日志路径", max_length=255)
+    access_url = models.CharField(verbose_name="应用访问路径", max_length=255)
     note = models.CharField(verbose_name="备注信息", max_length=255)
     create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
     update_time = models.DateTimeField(verbose_name="更新时间", auto_now=True)
