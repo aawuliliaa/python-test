@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e37becd-34ea-4e0e-937f-7f84d4b62202" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.readme_images/0b701b76.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMDB/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/consumers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMDB/routing.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/routing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manage/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_manage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manage/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" afterDir="false" />
@@ -70,8 +68,8 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="235">
-                <caret line="716" column="32" selection-start-line="716" selection-start-column="32" selection-end-line="716" selection-end-column="32" />
+              <first_editor relative-caret-position="254">
+                <caret line="717" column="32" selection-start-line="717" selection-start-column="32" selection-end-line="717" selection-end-column="32" />
               </first_editor>
               <second_editor />
             </state>
@@ -81,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task_manage/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="442" column="56" selection-start-line="442" selection-start-column="56" selection-end-line="442" selection-end-column="56" />
+            <state relative-caret-position="215">
+              <caret line="481" column="57" selection-start-line="481" selection-start-column="57" selection-end-line="481" selection-end-column="57" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -93,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/task_manage/no_password_to_login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="161" column="81" selection-start-line="161" selection-start-column="81" selection-end-line="161" selection-end-column="81" />
+            <state relative-caret-position="158">
+              <caret line="172" column="40" lean-forward="true" selection-start-line="172" selection-start-column="40" selection-end-line="172" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -493,14 +491,7 @@
       <workItem from="1564295791994" duration="42807000" />
       <workItem from="1564534603224" duration="19397000" />
       <workItem from="1564621419321" duration="3326000" />
-      <workItem from="1564975045647" duration="70742000" />
-    </task>
-    <task id="LOCAL-00010" summary="CMDB">
-      <created>1563771167635</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1563771167635</updated>
+      <workItem from="1564975045647" duration="71788000" />
     </task>
     <task id="LOCAL-00011" summary="CMDB">
       <created>1563795044026</created>
@@ -838,22 +829,28 @@
       <option name="project" value="LOCAL" />
       <updated>1565079763207</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="CMDB">
+      <created>1565105514514</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1565105514514</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="510093000" />
+    <option name="totallyTimeSpent" value="511139000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.20404859" />
       <window_info id="Structure" order="1" sideWeight="0.50340134" side_tool="true" weight="0.1611336" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291592" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34168157" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33810377" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2665474" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1241,15 +1238,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/task_manage/no_password_to_login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="161" column="81" selection-start-line="161" selection-start-column="81" selection-end-line="161" selection-end-column="81" />
+        <state relative-caret-position="158">
+          <caret line="172" column="40" lean-forward="true" selection-start-line="172" selection-start-column="40" selection-end-line="172" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/task_manage/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="442" column="56" selection-start-line="442" selection-start-column="56" selection-end-line="442" selection-end-column="56" />
+        <state relative-caret-position="215">
+          <caret line="481" column="57" selection-start-line="481" selection-start-column="57" selection-end-line="481" selection-end-column="57" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -1259,8 +1256,8 @@
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="235">
-            <caret line="716" column="32" selection-start-line="716" selection-start-column="32" selection-end-line="716" selection-end-column="32" />
+          <first_editor relative-caret-position="254">
+            <caret line="717" column="32" selection-start-line="717" selection-start-column="32" selection-end-line="717" selection-end-column="32" />
           </first_editor>
           <second_editor />
         </state>

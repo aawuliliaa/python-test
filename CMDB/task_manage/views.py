@@ -434,12 +434,21 @@ class NoPasswordToLogin(View):
 
 
 class TestNoPassword(View):
+    """
+    测试多个主机间的相互免密登录
+    """
     def post(self, request):
+        """
+        测试多个主机间的相互免密登录
+        :param request:
+        :return:
+        """
         res = {"success": True}
         channel_layer = get_channel_layer()
         host_ip_list = request.POST.getlist("host_ip_list")
 
         for host_ip in host_ip_list:
+            # 1.在当前主机，执行ssh命令到host_ip_list中的所有主机，不使用密码
             temphosts_dict = dict(test_no_password_group=dict(hosts=[]))
             host_obj = Host.objects.filter(ip=host_ip).first()
             host_dict = dict(ip=host_obj.ip, port=host_obj.port)
@@ -458,16 +467,19 @@ class TestNoPassword(View):
             failed = ar.get_adhoc_result().get("failed")
             ok = ar.get_adhoc_result().get("ok")
             unreachable = ar.get_adhoc_result().get("unreachable")
-            data = "\n\r" + host_ip + "\n\r"
+            data = "\n\r" + "current server:" + host_ip + "\n\r"
             # 由于一次操作多条命令，可能存在一条主机信息同时存在Ok和failed，所以把结果字符串拼接
             if failed:
                 #  'failed': {'10.0.0.62': {'msg': 'Unsupported parameters for (command) module:
                 #  "-o StrictHostKeyChecking Supported parameters include: }
+                data += "\n\r" + "ssh to remote sever:" + "--------------" + "\n\r"
                 data += failed.get(host_ip).get("stderr") \
                     if failed.get(host_ip).get("stderr") else failed.get(host_ip).get("msg")
             if unreachable:
+                data += "\n\r" + "ssh to remote sever" + "--------------" + "\n\r"
                 data += unreachable.get(host_ip).get("msg")
             if ok:
+                data += "\n\r" + "ssh to remote sever" + "--------------" + "\n\r"
                 data += ok.get(host_ip).get("stdout")
 
             result = {"status": 0, 'data': data}
