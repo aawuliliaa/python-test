@@ -171,3 +171,19 @@ class Host(models.Model):
 
     def __str__(self):
         return self.ip
+
+
+class AbandonedHost(models.Model):
+    """
+    废弃主机表
+    """
+    ip = models.CharField(verbose_name="主机IP", max_length=32, unique=True)
+    note = models.CharField(verbose_name="备注信息", max_length=255)
+    operate_user = models.CharField(verbose_name="操作人", max_length=255)
+
+    class Meta:
+        verbose_name = "废弃主机信息"
+        verbose_name_plural = "废弃主机信息"
+
+    def __str__(self):
+        return self.ip

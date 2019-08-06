@@ -3,6 +3,7 @@
     <!-- FooTable -->
     <link href="/static/css/plugins/footable/footable.core.css" rel="stylesheet">
     <link href="/static/css/my_style.css" rel="stylesheet">
+    <link href="/static/css/plugins/jsTree/style.min.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
     <div class="row wrapper border-bottom white-bg page-heading">
@@ -133,8 +134,102 @@
 
                 </div>
             </div>
+
+
+                <div class="col-lg-6">
+                    <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>即将过期主机信息</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="jstree1">
+                            <ul>
+                                <li class="jstree-open">Admin theme
+                                    <ul>
+                                        {% for sys_obj in sys_obj_set %}
+                                            <li class="jstree-closed" value="{{ sys_obj.id }}">{{ sys_obj.name }}--{{ sys_obj.abs_name }}
+                                                <ul>
+                                                    {% for env_obj in sys_obj.environment.all%}
+                                                        <li class="jstree-closed" value="{{ env_obj.id }}">{{ env_obj.name }}--{{ env_obj.abs_name }}
+                                                            <ul>
+                                                                {% for host_obj in env_obj.host_environment.all %}
+                        {#                                                                    当前环境下的主机所属系统要与当前的系统_id相同，这块一定要注意#}
+                                                                    {% if host_obj.system.id == sys_obj.id %}
+                                                                    {#只显示过期的主机#}
+                                                                            {% for expire_host_obj in expire_host_set %}
+                                                                                {% if expire_host_obj.ip == host_obj.ip %}
+                                                                                    <li class="host" value="{{ host_obj.ip }}">
+                                                                                    {{ host_obj.ip }}
+                                                                                    </li>
+
+                                                                                {% endif %}
+                                                                            {% endfor %}
+
+                                                                    {% endif %}
+
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <select name="" id="continue_use_time" class="btn btn-success">
+                            <option value="one_year">一年</option>
+                        </select>
+
+                        <span class="btn btn-primary continue_use">延用</span>
+                        <span class="btn btn-danger abandoned_hosts">废弃</span>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>废弃主机信息</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="abandoned_hosts_jstree">
+                            <ul>
+                                <li class="jstree-open">Admin theme
+                                    <ul>
+                                        {% for abandoned_host_obj in abandoned_hosts_set %}
+                                            <li class="jstree-closed" value="{{ abandoned_host_obj.id }}">{{ abandoned_host_obj.ip }}--{{ abandoned_host_obj.operate_user }}--{{ abandoned_host_obj.note }}
+
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
         </div>
         </div>
+    <div class="refresh_current_page" style="position: fixed; right: 5px;bottom: 100px;height: 80px;width: 15px;background-color: #1ab394;color: white;border-radius: 5px">刷新页面</div>
 {% endblock %}
 {% block foot_script %}
     <!-- FooTable -->
@@ -143,7 +238,41 @@
     <script src="/static/js/jquery.cookie.js"></script>
     <!-- Page-Level Scripts 按下回车的搜索功能，分页功能-->
    <script src="/static/js/my_footable_page.js"></script>
+    <script src="/static/js/plugins/jsTree/jstree.min.js"></script>
     <script>
+    $(document).ready(
+             $('#jstree1').jstree({
+            'core' : {
+                'check_callback' : true
+            },
+            'plugins' : [ 'types', 'dnd', "checkbox" ],
+             "checkbox": {
+                    "keep_selected_style": false,//是否默认选中
+                    "three_state": true,//父子级别级联选择
+                    "tie_selection": false
+                },
+            'types' : {
+                'default' : {
+                    'icon' : 'fa fa-folder'
+                },
+
+            }
+        }),
+
+         $('#abandoned_hosts_jstree').jstree({
+                'core' : {
+                    'check_callback' : true
+                },
+                'plugins' : [ 'types', 'dnd'],
+
+                'types' : {
+                    'default' : {
+                        'icon' : 'fa fa-folder'
+                    },
+
+                }
+            }),
+        );
     $(function () {
 
         $(".sync_host_info").click(function () {
@@ -161,7 +290,57 @@
                     }
                 }
             })
+        });
+
+    $(".continue_use").click(function () {
+        let host_ip_list = [];
+        $("a.jstree-checked").parent(".host").each(function () {
+            host_ip_list.push($(this).attr("value"));
+        });
+        let continue_use_time = $("#continue_use_time option:selected").val();
+        $.ajax({
+            url:"{% url  'asset:continue_use' %}",
+            //如果不做traditional:true的设置，参数传递中是会自动把key变为了book_authors_id_list[]，服务端是无法通过book_authors_id_list获取参数的
+            traditional:true,
+            data:{
+                host_ip_list:host_ip_list,
+                continue_use_time:continue_use_time
+            },
+            success:function (res) {
+                if(res.success){
+                    toastr.success("已经成功设置了主机的过期时间，刷新查看！")
+                }
+            }
         })
+    });
+
+
+    $(".abandoned_hosts").click(function () {
+        let host_ip_list = [];
+        $("a.jstree-checked").parent(".host").each(function () {
+            host_ip_list.push($(this).attr("value"));
+        });
+
+        $.ajax({
+            url:"{% url  'asset:abandoned_hosts' %}",
+            //如果不做traditional:true的设置，参数传递中是会自动把key变为了book_authors_id_list[]，服务端是无法通过book_authors_id_list获取参数的
+            traditional:true,
+            data:{
+                host_ip_list:host_ip_list
+            },
+            success:function (res) {
+                if(res.success){
+                    toastr.success("已经将选中的主机废弃，可在废弃主机列表中查看，刷新查看！")
+                }
+            }
+        })
+    });
+    $(".refresh_current_page").click(function () {
+        location.href="{% url 'asset:host' %}"
     })
+
+
+    })
+
     </script>
 {% endblock %}

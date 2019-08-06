@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 import os
+import datetime
 from web.password_crypt import encrypt_p, decrypt_p
 from web.utils import *
 from web.page import *
@@ -402,6 +403,15 @@ class HostView(View):
         data_obj_set = Host.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段
         data_page_info = return_show_data(request, data_obj_set, *("ip", "hostname"))
+        # 这里也可以使用jstree的json方式，但是我习惯了使用现有的方式，因为可以灵活的自添加一些内容
+        # 查询有过期主机的系统信息
+        # 由于有重复信息，所以要distinct
+        sys_obj_set = System.objects.filter(
+            host_system__expire_date__lt=datetime.datetime.now() + datetime.timedelta(7))\
+            .distinct()
+        # 查询过期的主机
+        expire_host_set = Host.objects.filter(expire_date__lt=datetime.datetime.now() + datetime.timedelta(7))
+        abandoned_hosts_set = AbandonedHost.objects.all()
         return render(request, 'asset/host.html', locals())
 
 
@@ -481,8 +491,53 @@ class DelHost(View):
 
 @login_required
 def sync_host_info(request):
+    """
+    异步获取主机的内存，CPU，磁盘，主机名等信息
+    :param request:
+    :return:
+    """
     res = {"success": True}
     pk = request.GET.get("id")
     sync_host_info_task.delay(int(pk))
 
+    return JsonResponse(res)
+
+
+@login_required
+def continue_use(request):
+    """
+    设置主机的expire_date，沿用主机
+    :param request:
+    :return:
+    """
+    res = {"success": True}
+    host_ip_list = request.GET.getlist("host_ip_list")
+    continue_use_time = request.GET.get("continue_use_time")
+    if continue_use_time == "one_year":
+        # 更新过期时间
+        Host.objects.filter(ip__in=host_ip_list).update(expire_date=datetime.datetime.now() + datetime.timedelta(365))
+    return JsonResponse(res)
+
+
+@login_required
+def abandoned_hosts(request):
+    res = {"success": True}
+    host_ip_list = request.GET.getlist("host_ip_list")
+
+    # # 批量创建测试数据
+    # list = []
+    # for i in range(101,201):
+    #     item = Environment(name="env_%s" % i, abs_name="env_%s" % i,
+    #     note="env_%s" % i)
+    #     list.append(item)
+    #
+    # Environment.objects.bulk_create(list)
+    bulk_create_list = []
+    for ip in host_ip_list:
+        host_obj = Host.objects.filter(ip=ip).first()
+        item = AbandonedHost(ip=ip, note=host_obj.note, operate_user=request.user.email)
+        bulk_create_list.append(item)
+    AbandonedHost.objects.bulk_create(bulk_create_list)
+    # 从主机表中删除
+    Host.objects.filter(ip__in=host_ip_list).delete()
     return JsonResponse(res)
