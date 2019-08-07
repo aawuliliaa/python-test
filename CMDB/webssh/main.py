@@ -225,7 +225,9 @@ class IndexHandler(MixinHandler, tornado.web.RequestHandler):
         username = self.get_value('username')
         password = self.get_argument('password')
         privatekey = self.get_privatekey()
-        pkey = self.get_pkey(privatekey, password) if privatekey else None
+        # 由于有配置免密功能，而且私钥是时常改变的，所以我们使用用户名和密码登录
+        pkey = None
+        # pkey = self.get_pkey(privatekey, password) if privatekey else None
         args = (hostname, port, username, decrypt_p(password), pkey)
         logging.debug(args)
         print("------------------------------------------------------",args)
