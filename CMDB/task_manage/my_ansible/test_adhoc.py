@@ -23,7 +23,7 @@ def main():
     # Searched in:\n\t/project/CMDB/task_manage/my_ansible/files/10.0.0.61应用3
     tasks = []
     tasks.append(dict(action=dict(module="shell",
-                                  args='dos2unix %s' % "/project/CMDB/tmp_dir/10.0.0.61应用1.sh",
+                                  args="tail -f /var/log/messages",
                                   warn=False)))
     tasks.append(dict(action=dict(module="script", args='/project/CMDB/tmp_dir/10.0.0.61应用1.sh', warn=False)))
     hosts = "Group1"

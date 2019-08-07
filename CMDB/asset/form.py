@@ -73,11 +73,14 @@ class ApplicationForm(ModelForm):
             'log_path': forms.TextInput(
                 attrs={'class': 'form-control'}),
             'start_script': forms.Textarea(
-                attrs={'class': 'form-control'}),
+                attrs={'class': 'form-control',
+                       'placeholder': "ansible不支持tail -f 实时命令,ansible执行脚本时会自动去除"}),
             'stop_script': forms.Textarea(
-                attrs={'class': 'form-control'}),
+                attrs={'class': 'form-control',
+                       'placeholder': "ansible不支持tail -f 实时命令,ansible执行脚本时会自动去除"}),
             'restart_script': forms.Textarea(
-                attrs={'class': 'form-control'}),
+                attrs={'class': 'form-control',
+                       'placeholder': "ansible不支持tail -f 实时命令,ansible执行脚本时会自动去除"}),
             'access_url': forms.TextInput(
                 attrs={'class': 'form-control'}),
             'note': forms.TextInput(

@@ -3,17 +3,19 @@
 import os
 import random
 import time
+import re
 from concurrent.futures import ThreadPoolExecutor
 from django_celery_results.models import TaskResult
 from threading import currentThread
 from celery import shared_task
 from asset.models import Host
 from CMDB.settings import MAX_POOL_SIZE, BASE_DIR
-from web.password_crypt import decrypt_p,encrypt_p
+from web.password_crypt import decrypt_p, encrypt_p
 from task_manage.my_ansible.run_adhoc import AdhocRunner
 from asset.models import *
 from web.utils import host_login_user_password
 from CMDB import settings
+
 # 自定义要执行的task任务
 # 一定要加上name,否则会报错Received unregistered task_manage
 # 在我这个版本整体中，不能使用@app.task_manage
@@ -268,6 +270,9 @@ def start_stop_restart_server(host_ip_app_info, start_or_stop_or_restart):
             fw = open(file=script_asb_path, mode="w", encoding="utf-8")
             if script_context is None:
                 script_context = ""
+
+            script_context = re.sub(r'tail.*', '', script_context)
+            print("-------------------------", script_context)
             fw.write(script_context)
             # 千万别忘记close
             fw.close()
