@@ -23,7 +23,7 @@ urlpatterns = [
     path('test_no_password/', login_required(views.TestNoPassword.as_view()), name="test_no_password"),
     # 服务管理，启动服务或停止服务
     path('manage_server/', login_required(views.ManageServer.as_view()), name="manage_server"),
-    path('start_server/', views.StartServer, name="start_server"),
+    path('start_server/', views.start_server, name="start_server"),
 
 
 

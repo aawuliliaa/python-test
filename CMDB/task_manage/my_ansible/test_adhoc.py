@@ -8,8 +8,8 @@ def main():
 
     temphosts_dict = {
         "Group1": {
-            "hosts": [{"ip": "10.0.0.62", "port": "22", "username": "root", "password": "123456"},
-                      {"ip": "10.0.0.61", "port": "22", "username": "root", "password": "123456"}],
+            "hosts": [{"ip": "10.0.0.61", "port": "22", "username": "root", "password": "123456"}
+                      ],
             "group_vars": {"var1": "ansible"}
         },
         # "Group2": {}
@@ -20,7 +20,12 @@ def main():
     #     print(group, hosts)
     # host = mi.INVENTORY.get_host("192.168.200.10")
     # print(mi.VARIABLE_MANAGER.get_vars(host=host))
-    tasks = [dict(action=dict(module="shell", args='sshpass -p123456 ssh-copy-id -i /root/.ssh/id_dsa.pub 10.0.0.62', warn=False))]
+    # Searched in:\n\t/project/CMDB/task_manage/my_ansible/files/10.0.0.61应用3
+    tasks = []
+    tasks.append(dict(action=dict(module="shell",
+                                  args='dos2unix %s' % "/project/CMDB/tmp_dir/10.0.0.61应用1.sh",
+                                  warn=False)))
+    tasks.append(dict(action=dict(module="script", args='/project/CMDB/tmp_dir/10.0.0.61应用1.sh', warn=False)))
     hosts = "Group1"
     ar = AdhocRunner(temphosts_dict)
     ar.run_adhoc(hosts, tasks)

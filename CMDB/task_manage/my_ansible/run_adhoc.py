@@ -19,13 +19,13 @@ class AdhocRunner(object):
         Options = namedtuple("Options", [
             "connection", "remote_user", "ask_sudo_pass", "verbosity", "ack_pass",
             "module_path", "forks", "become", "become_method", "become_user", "check",
-            "listhosts", "listtasks", "listtags", "syntax", "sudo_user", "sudo", "diff"
+            "listhosts", "listtasks", "listtags", "syntax", "sudo_user", "sudo", "diff", 'remote_tmp'
         ])
         self._options = Options(connection='smart', remote_user=None, ack_pass=None, sudo_user=None, forks=5, sudo=None,
                           ask_sudo_pass=False,
-                          verbosity=5, module_path=None, become=None, become_method=None, become_user=None, check=False,
+                          verbosity=5, module_path="", become=None, become_method=None, become_user=None, check=False,
                           diff=False,
-                          listhosts=None, listtasks=None, listtags=None, syntax=None)
+                          listhosts=None, listtasks=None, listtags=None, syntax=None, remote_tmp="/tmp/.ansible")
         self._passwords = dict(sshpass=None, becomepass=None)  # 这个可以为空，因为在hosts文件中
         self._loader = DataLoader()
         myinven = MyInventory(hosts_resource=hostsresource)
