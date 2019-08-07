@@ -15,7 +15,7 @@ from web.password_crypt import decrypt_p
 from task_manage.my_ansible.run_adhoc import AdhocRunner
 
 from CMDB import settings
-
+from crond.tasks import start_stop_restart_server
 # http://yshblog.com/blog/156
 # 也可以把{}等使用json序列化为字符串，存入缓存中
 class WebsshLogin(View):
@@ -502,64 +502,42 @@ class ManageServer(View):
 
 
 def start_server(request):
+    """
+    启动应用
+    :param request:
+    :return:
+    """
     host_ip_app_info = json.loads(request.body.decode()).get("host_ip_app_info")
     # host_ip_app_info = {'10.0.0.63': ['1', '2'], '10.0.0.61': ['1']}
-    print("--------------------",host_ip_app_info)
-    for host_ip, app_list in host_ip_app_info.items():
-        temphosts_dict = dict(start_server_group=dict(hosts=[]))
-        # temphosts_dict["cmd_group"]["hosts"] = []
+    # print("--------------------", host_ip_app_info)
+    start_stop_restart_server.delay(host_ip_app_info, "start_script")
+    res = {"success": True}
+    return JsonResponse(res)
 
-        host_obj = Host.objects.filter(ip=host_ip).first()
-        password = decrypt_p(HostLoginUser.objects.
-                             filter(host_login_user__ip=host_ip, name="root").first().password)
 
-        host_dict = dict(ip=host_obj.ip, port=host_obj.port, username="root", password=password)
-        temphosts_dict["start_server_group"]["hosts"].append(host_dict)
-        #     上面的循环是为了拼凑成下面的形式
-        # temphosts_dict = {
-        #     "cmd_group": {
-        #         "hosts": [{"ip": "10.0.0.62", "port": "22", "username": "root", "password": "123456"},
-        #                   {"ip": "10.0.0.61", "port": "22", "username": "root", "password": "123456"}],
-        #         "group_vars": {"var1": "ansible"}
-        #     },
-        #     # "Group2": {}
-        # }
-        print("-------------------------",temphosts_dict)
-        tasks = []
-        for app_id in app_list:
-            app_obj = Application.objects.get(id=app_id)
-            start_script = app_obj.start_script
-            app_name = app_obj.name
-            start_script_name = host_ip + app_name + ".sh"
-            start_script_asb_path = os.path.join(settings.TMP_DIR, start_script_name)
-            # /project/CMDB/tmp_dir/10.0.0.61应用3.sh
-            print("------------------------------", start_script_asb_path)
+def restart_server(request):
+    """
+    重启应用
+    :param request:
+    :return:
+    """
+    host_ip_app_info = json.loads(request.body.decode()).get("host_ip_app_info")
+    # host_ip_app_info = {'10.0.0.63': ['1', '2'], '10.0.0.61': ['1']}
+    # print("--------------------", host_ip_app_info)
+    start_stop_restart_server.delay(host_ip_app_info, "restart_script")
+    res = {"success": True}
+    return JsonResponse(res)
 
-            # 这里一定不能使用json写入文件，因为会转换为字符串，后端的文件内容为
-            # [root@m01 tmp_dir]# cat 10.0.0.61应用1.sh
-            # "#!/bin/bash\r\necho \"\u542f\u52a8-------------------------------------------------\"\r\ndf -h\r\nls -l"
-            # [root@m01 tmp_dir]# sh 10.0.0.61应用1.sh
-            # 10.0.0.61应用1.sh: line 1: #!/bin/bash\r\necho "\u542f\u"\r\ndf -h\r\nls -l: No such file or directory
-            fw = open(file=start_script_asb_path, mode="w", encoding="utf-8")
-            fw.write(start_script)
-            # 千万别忘记close
-            fw.close()
-            # 一定要执行dos2unix，否则报错
-            # stdout_lines': ['/bin/sh: /root/.ansible/tmp/ansible-tmp-1565177430.885/10.0.0.61应用1.sh:
-            # /bin/bash^M: bad interpreter: No such file or directory'
-            tasks.append(dict(action=dict(module="shell",
-                                          args='dos2unix %s' % start_script_asb_path,
-                                          warn=False)))
-            tasks.append(dict(action=dict(module="script",
-                                          args='%s' % start_script_asb_path,
-                                          warn=False)))
-        print("==================================",tasks)
-        hosts = "start_server_group"
-        ar = AdhocRunner(temphosts_dict)
-        ar.run_adhoc(hosts, tasks)
-        print("-----------", ar.get_adhoc_result())
-        failed = ar.get_adhoc_result().get("failed")
-        ok = ar.get_adhoc_result().get("ok")
 
-        unreachable = ar.get_adhoc_result().get("unreachable")
-    return JsonResponse({})
+def stop_server(request):
+    """
+    停止应用
+    :param request:
+    :return:
+    """
+    host_ip_app_info = json.loads(request.body.decode()).get("host_ip_app_info")
+    # host_ip_app_info = {'10.0.0.63': ['1', '2'], '10.0.0.61': ['1']}
+    # print("--------------------", host_ip_app_info)
+    start_stop_restart_server.delay(host_ip_app_info, "stop_script")
+    res = {"success": True}
+    return JsonResponse(res)

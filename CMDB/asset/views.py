@@ -251,12 +251,14 @@ class EditApplication(View):
         name = request.POST.get("name")
         start_script = request.POST.get("start_script")
         stop_script = request.POST.get("stop_script")
+        restart_script = request.POST.get("restart_script")
         app_set = Application.objects.filter(name=name,
                                              middleware=middleware)
         app_set.update(note=request.POST.get("note"),
                        log_path=request.POST.get("log_path"),
                        start_script=start_script,
-                       stop_script=stop_script)
+                       stop_script=stop_script,
+                       restart_script=restart_script)
         return redirect(reverse("asset:application"))
 
 

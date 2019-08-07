@@ -11,8 +11,9 @@ from asset.models import Host
 from CMDB.settings import MAX_POOL_SIZE, BASE_DIR
 from web.password_crypt import decrypt_p,encrypt_p
 from task_manage.my_ansible.run_adhoc import AdhocRunner
-from asset.models import Host, HostLoginUser
+from asset.models import *
 from web.utils import host_login_user_password
+from CMDB import settings
 # 自定义要执行的task任务
 # 一定要加上name,否则会报错Received unregistered task_manage
 # 在我这个版本整体中，不能使用@app.task_manage
@@ -213,9 +214,93 @@ def reset_host_login_user_password():
             #         报错信息或正确信息存到task_result表中
                 TaskResult.objects.create(task_id=task_id,
                                           result=result[host_ip],
-                                          task_name="reset_host_login_user_password")
+                                          task_name=host_ip + "_reset_host_login_user_password")
 
 
+@shared_task(name="start_stop_restart_server")
+def start_stop_restart_server(host_ip_app_info, start_or_stop_or_restart):
+    for host_ip, app_list in host_ip_app_info.items():
+
+        # temphosts_dict = dict(start_script=dict(hosts=[]))
+        # temphosts_dict["cmd_group"]["hosts"] = []
+        temphosts_dict = {start_or_stop_or_restart: {"hosts": []}}
+
+        host_obj = Host.objects.filter(ip=host_ip).first()
+        password = decrypt_p(HostLoginUser.objects.
+                             filter(host_login_user__ip=host_ip, name="root").first().password)
+
+        host_dict = dict(ip=host_obj.ip, port=host_obj.port, username="root", password=password)
+        temphosts_dict[start_or_stop_or_restart]["hosts"].append(host_dict)
+        #     上面的循环是为了拼凑成下面的形式
+        # temphosts_dict = {
+        #     "cmd_group": {
+        #         "hosts": [{"ip": "10.0.0.62", "port": "22", "username": "root", "password": "123456"},
+        #                   {"ip": "10.0.0.61", "port": "22", "username": "root", "password": "123456"}],
+        #         "group_vars": {"var1": "ansible"}
+        #     },
+        #     # "Group2": {}
+        # }
+
+        tasks = []
+        for app_id in app_list:
+            script_context = ""
+            app_obj = Application.objects.get(id=app_id)
+            # 脚本内容
+            if start_or_stop_or_restart == "start_script":
+                script_context = app_obj.start_script
+            elif start_or_stop_or_restart == "stop_script":
+                script_context = app_obj.stop_script
+            elif start_or_stop_or_restart == "restart_script":
+                script_context = app_obj.restart_script
+            app_name = app_obj.name
+            # 脚本名称
+            script_name = host_ip + app_name + start_or_stop_or_restart + ".sh"
+            # 脚本的绝对路径
+            script_asb_path = os.path.join(settings.TMP_DIR, script_name)
+            # /project/CMDB/tmp_dir/10.0.0.61应用3.sh
+            print("------------------------------", script_asb_path)
+
+            # 这里一定不能使用json写入文件，因为会转换为字符串，后端的文件内容为
+            # [root@m01 tmp_dir]# cat 10.0.0.61应用1.sh
+            # "#!/bin/bash\r\necho \"\u542f\u52a8-------------------------------------------------\"\r\ndf -h\r\nls -l"
+            # [root@m01 tmp_dir]# sh 10.0.0.61应用1.sh
+            # 10.0.0.61应用1.sh: line 1: #!/bin/bash\r\necho "\u542f\u"\r\ndf -h\r\nls -l: No such file or directory
+            fw = open(file=script_asb_path, mode="w", encoding="utf-8")
+            if script_context is None:
+                script_context = ""
+            fw.write(script_context)
+            # 千万别忘记close
+            fw.close()
+            # 一定要执行dos2unix，否则报错
+            # stdout_lines': ['/bin/sh: /root/.ansible/tmp/ansible-tmp-1565177430.885/10.0.0.61应用1.sh:
+            # /bin/bash^M: bad interpreter: No such file or directory'
+            tasks.append(dict(action=dict(module="shell",
+                                          args='dos2unix %s' % script_asb_path,
+                                          warn=False)))
+            tasks.append(dict(action=dict(module="script",
+                                          args='%s' % script_asb_path,
+                                          warn=False)))
+
+        hosts = start_or_stop_or_restart
+        ar = AdhocRunner(temphosts_dict)
+        ar.run_adhoc(hosts, tasks)
+        print("-----------", ar.get_adhoc_result())
+        failed = ar.get_adhoc_result().get("failed")
+        ok = ar.get_adhoc_result().get("ok")
+        unreachable = ar.get_adhoc_result().get("unreachable")
+        #         报错信息或正确信息存到task_result表中
+        task_id = host_ip + "_" + start_or_stop_or_restart + "_" + str(random.randrange(1, 9999999999999999999999999))
+        result = {}
+        if failed:
+            result[host_ip] = failed.get(host_ip).get("stderr")
+        if unreachable:
+            result[host_ip] = unreachable.get(host_ip).get("msg")
+        if ok:
+            result[host_ip] = ok.get(host_ip).get("stdout")
+        #         报错信息或正确信息存到task_result表中
+        TaskResult.objects.create(task_id=task_id,
+                                  result=result[host_ip],
+                                  task_name=host_ip + "_start_stop_restart_server")
 
 
 

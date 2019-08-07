@@ -43,6 +43,7 @@
                         <div>
                             <span class="btn btn-xs btn-primary start-server">启动</span>
                             <span class="btn btn-xs btn-primary stop-server">停止</span>
+                            <span class="btn btn-xs btn-primary restart-server">重启</span>
                             <hr>
                         </div>
                         <div id="jstree1">
@@ -87,7 +88,22 @@
                 </div>
             </div>
 
-
+{#            <div class="col-lg-12">#}
+{#                <div class="ibox">#}
+{#                    <div class="ibox-title">#}
+{#                        <h5>命令结果</h5>#}
+{#                        <div class="ibox-tools">#}
+{#                            <a class="collapse-link" href="">#}
+{#                                <i class="fa fa-chevron-up"></i>#}
+{#                            </a>#}
+{##}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="ibox-content cmd_result">#}
+{##}
+{#                    </div>#}
+{#                    </div>#}
+{#             </div>#}
 
         </div>
     </div>
@@ -101,10 +117,8 @@
     {#    $.cookie需要该js#}
     <script src="/static/js/jquery.cookie.js"></script>
     <script>
-    $(document).ready(function () {
-         CreateWebSocket();
-
-         $('#jstree1').jstree({
+  $(document).ready(
+             $('#jstree1').jstree({
             'core' : {
                 'check_callback' : true
             },
@@ -121,32 +135,7 @@
 
             }
         })
-    });
-
-
-    function CreateWebSocket() {
-        var socket = new WebSocket('ws://' + window.location.host + '/no_password/');
-        socket.onmessage = function (message) {
-            toastr.success("开始输出日志！");
-            var result = JSON.parse(message.data);
-            var status = result.status;
-            var data = result.data;
-            var output_html = '';
-            if (status === 0) {
-    {#            $('#output_append').empty();#}
-
-                output_html = data;
-            }
-            else if (status === 1) {
-
-                $('#output_append').empty();
-                output_html = data;
-            }
-            {#注意，这里不能把{1:2}这种字典类型的数据传进去，放不进去#}
-            $("#output_append").prepend(output_html);
-
-        }
-    }
+        );
 
     $(function () {
         $(".start-server").click(function () {
@@ -159,7 +148,6 @@
                     host_ip_app_info[ip].push(app_id)
                 }else{
                     host_ip_app_info[ip]=[app_id]
-
                 }
             });
             console.log("----------------",host_ip_app_info);
@@ -171,10 +159,63 @@
                     host_ip_app_info:host_ip_app_info
                 }),
                 success:function (res) {
-
+                    toastr.success("操作完成，到异步任务结果中查看日志！");
                 }
             })
-        })
+        });
+
+         $(".restart-server").click(function () {
+            let host_ip_app_info = {};
+            $("li.application[aria-selected='true']").each(function () {
+
+                let app_id = $(this).attr("value");
+                let ip = $(this).attr("host");
+                if (host_ip_app_info[ip]){
+                    host_ip_app_info[ip].push(app_id)
+                }else{
+                    host_ip_app_info[ip]=[app_id]
+                }
+            });
+            console.log("----------------",host_ip_app_info);
+            $.ajax({
+                url:'{% url "task_manage:restart_server" %}',
+                type:'post',
+                headers:{'X-CSRFtoken':$.cookie("csrftoken")},
+                data:JSON.stringify({
+                    host_ip_app_info:host_ip_app_info
+                }),
+                success:function (res) {
+                    toastr.success("操作完成，到异步任务结果中查看日志！");
+                }
+            })
+        });
+
+
+         $(".stop-server").click(function () {
+            let host_ip_app_info = {};
+            $("li.application[aria-selected='true']").each(function () {
+
+                let app_id = $(this).attr("value");
+                let ip = $(this).attr("host");
+                if (host_ip_app_info[ip]){
+                    host_ip_app_info[ip].push(app_id)
+                }else{
+                    host_ip_app_info[ip]=[app_id]
+                }
+            });
+            console.log("----------------",host_ip_app_info);
+            $.ajax({
+                url:'{% url "task_manage:stop_server" %}',
+                type:'post',
+                headers:{'X-CSRFtoken':$.cookie("csrftoken")},
+                data:JSON.stringify({
+                    host_ip_app_info:host_ip_app_info
+                }),
+                success:function (res) {
+                    toastr.success("操作完成，到异步任务结果中查看日志！");
+                }
+            })
+        });
 
     })
     </script>

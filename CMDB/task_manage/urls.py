@@ -24,6 +24,8 @@ urlpatterns = [
     # 服务管理，启动服务或停止服务
     path('manage_server/', login_required(views.ManageServer.as_view()), name="manage_server"),
     path('start_server/', views.start_server, name="start_server"),
+    path('restart_server/', views.restart_server, name="restart_server"),
+    path('stop_server/', views.stop_server, name="stop_server"),
 
 
 

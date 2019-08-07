@@ -76,6 +76,8 @@ class ApplicationForm(ModelForm):
                 attrs={'class': 'form-control'}),
             'stop_script': forms.Textarea(
                 attrs={'class': 'form-control'}),
+            'restart_script': forms.Textarea(
+                attrs={'class': 'form-control'}),
             'access_url': forms.TextInput(
                 attrs={'class': 'form-control'}),
             'note': forms.TextInput(

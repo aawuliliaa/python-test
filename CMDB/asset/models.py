@@ -76,6 +76,7 @@ class Application(models.Model):
     # Column length too big for column 'start_shell_script' (max = 21845) use BLOB or TEXT instead")
     start_script = models.CharField(verbose_name="启动脚本", max_length=1000, blank=True, null=True)
     stop_script = models.CharField(verbose_name="停止脚本", max_length=1000, blank=True, null=True)
+    restart_script = models.CharField(verbose_name="重启脚本", max_length=1000, blank=True, null=True)
     note = models.CharField(verbose_name="备注信息", max_length=255)
     create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
     update_time = models.DateTimeField(verbose_name="更新时间", auto_now=True)
