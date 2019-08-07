@@ -21,6 +21,9 @@ urlpatterns = [
     # 配置免密登录
     path('no_password_to_login/', login_required(views.NoPasswordToLogin.as_view()), name="no_password_to_login"),
     path('test_no_password/', login_required(views.TestNoPassword.as_view()), name="test_no_password"),
+    # 服务管理，启动服务或停止服务
+    path('manage_server/', login_required(views.ManageServer.as_view()), name="manage_server"),
+    path('start_server/', views.StartServer, name="start_server"),
 
 
 

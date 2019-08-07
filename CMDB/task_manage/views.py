@@ -487,3 +487,22 @@ class TestNoPassword(View):
             group_name = request.user.name + "nopassword"
             async_to_sync(channel_layer.group_send)(group_name, {"type": "user.message", 'text': result_all})
         return JsonResponse(res)
+
+
+class ManageServer(View):
+    """
+    服务管理，包含启动和停止
+    """
+    def get(self, request):
+        left_label_dic = get_label(request)
+        # print(request.path)# /privilege/
+        role_obj = Role.objects.filter(url=request.path).first()
+        sys_obj_set = System.objects.all()
+        return render(request, 'task_manage/manage_server.html', locals())
+
+
+def StartServer(request):
+    print("------------------------",json.loads(request.body.decode()).get("host_ip_app_info"))
+    # {'10.0.0.63': ['1', '2'], '10.0.0.61': ['1']}
+
+    return JsonResponse({})

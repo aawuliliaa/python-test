@@ -249,8 +249,14 @@ class EditApplication(View):
         # 由于不可为空和长度限制已经在前端限制好了，后端就不需要做检查了
         middleware = request.POST.get("middleware")
         name = request.POST.get("name")
-        app_set = Application.objects.filter(name=name, middleware=middleware)
-        app_set.update(note=request.POST.get("note"), log_path=request.POST.get("log_path"))
+        start_script = request.POST.get("start_script")
+        stop_script = request.POST.get("stop_script")
+        app_set = Application.objects.filter(name=name,
+                                             middleware=middleware)
+        app_set.update(note=request.POST.get("note"),
+                       log_path=request.POST.get("log_path"),
+                       start_script=start_script,
+                       stop_script=stop_script)
         return redirect(reverse("asset:application"))
 
 

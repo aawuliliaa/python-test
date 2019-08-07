@@ -320,7 +320,8 @@ http://10.0.0.61:8000/api/
 ![](.readme_images/8925ac81.png)
 ![](.readme_images/ae1427b4.png)
 ![](.readme_images/51438f0d.png)
-## 2.4前端中文，后端解码
+## 2.4前后端传值
+### 2.4.1前端cookie传入中文，后端解码
 ```
 前端
 jquery
@@ -349,6 +350,50 @@ from urllib.parse import unquote
 print(search_val)#'%25E6%25B5%258B%25E8%25AF%2595'
 print(unquote(search_val, "utf-8"))# %E6%B5%8B%E8%AF%95
 print(unquote(unquote(search_val,"utf-8")))# 测试
+```
+### 2.4.2前端传递多层字典（即object类型），后端解析
+```
+前端值类型
+{"10.0.0.61":[1,2,3]}
+前端要使用Json.Stringfy()进行序列化
+后端从body中获取值
+
+   $(function () {
+        $(".start-server").click(function () {
+             let host_ip_app_info = {};
+            $("li.application[aria-selected='true']").each(function () {
+
+                let app_id = $(this).attr("value");
+                let ip = $(this).attr("host");
+                if (host_ip_app_info[ip]){
+                    host_ip_app_info[ip].push(app_id)
+                }else{
+                    host_ip_app_info[ip]=[app_id]
+
+                }
+            });
+            console.log("----------------",host_ip_app_info);
+            $.ajax({
+                url:'{% url "task_manage:start_server" %}',
+                type:'post',
+                headers:{'X-CSRFtoken':$.cookie("csrftoken")},
+                data:JSON.stringify({
+                    host_ip_app_info:host_ip_app_info
+                }),
+                success:function (res) {
+
+                }
+            })
+        })
+
+    })
+		
+后端解析
+def StartServer(request):
+    print("------------------------",json.loads(request.body.decode()).get("host_ip_app_info"))
+    # {'10.0.0.63': ['1', '2'], '10.0.0.61': ['1']}
+
+    return JsonResponse({})
 ```
 ## 2.5celery定时任务
 ### 2.5.1celery软件架构

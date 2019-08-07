@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load mytags %}
+{% block head %}
+    <!-- Sweet Alert -->
+    <link href="/static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="/static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>{{ role_obj.child_menu_name }}</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'index' %}">首页</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a>{{ role_obj.parent_menu_name }}</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>{{ role_obj.child_menu_name }}</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>服务器信息</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <span class="btn btn-xs btn-primary start-server">启动</span>
+                            <span class="btn btn-xs btn-primary stop-server">停止</span>
+                            <hr>
+                        </div>
+                        <div id="jstree1">
+                            <ul>
+                                <li class="jstree-open">Admin theme
+                                    <ul>
+                                        {% for sys_obj in sys_obj_set %}
+                                            <li class="jstree-closed" value="{{ sys_obj.id }}">{{ sys_obj.name }}--{{ sys_obj.abs_name }}
+                                                <ul>
+                                                    {% for env_obj in sys_obj.environment.all%}
+                                                        <li class="jstree-closed" value="{{ env_obj.id }}">{{ env_obj.name }}--{{ env_obj.abs_name }}
+                                                            <ul>
+                                                                {% for host_obj in env_obj.host_environment.all %}
+                        {#                                                                    当前环境下的主机要与当前的系统_id相同，这块一定要注意#}
+                                                                    {% if host_obj.system.id == sys_obj.id %}
+                                                                        <li class="host jstree-closed" value="{{ host_obj.ip }}">{{ host_obj.ip }}
+                                                                            <ul>
+                                                                                {% for app_obj in host_obj.application.all %}
+                                                                                    <li class="application" value="{{ app_obj.id }}" host="{{ host_obj.ip }}">{{ app_obj.name }}</li>
+                                                                                {% endfor %}
+                                                                            </ul>
+
+                                                                        </li>
+                                                                    {% endif %}
+
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+{% endblock %}
+{% block foot_script %}
+
+    <!-- Sweet alert -->
+    <script src="/static/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="/static/js/plugins/jsTree/jstree.min.js"></script>
+    {#    $.cookie需要该js#}
+    <script src="/static/js/jquery.cookie.js"></script>
+    <script>
+    $(document).ready(function () {
+         CreateWebSocket();
+
+         $('#jstree1').jstree({
+            'core' : {
+                'check_callback' : true
+            },
+            'plugins' : [ 'types', 'dnd', "checkbox" ],
+             "checkbox": {
+                    "keep_selected_style": false,//是否默认选中
+                    "three_state": true,//父子级别级联选择
+                    "tie_selection": false
+                },
+            'types' : {
+                'default' : {
+                    'icon' : 'fa fa-folder'
+                },
+
+            }
+        })
+    });
+
+
+    function CreateWebSocket() {
+        var socket = new WebSocket('ws://' + window.location.host + '/no_password/');
+        socket.onmessage = function (message) {
+            toastr.success("开始输出日志！");
+            var result = JSON.parse(message.data);
+            var status = result.status;
+            var data = result.data;
+            var output_html = '';
+            if (status === 0) {
+    {#            $('#output_append').empty();#}
+
+                output_html = data;
+            }
+            else if (status === 1) {
+
+                $('#output_append').empty();
+                output_html = data;
+            }
+            {#注意，这里不能把{1:2}这种字典类型的数据传进去，放不进去#}
+            $("#output_append").prepend(output_html);
+
+        }
+    }
+
+    $(function () {
+        $(".start-server").click(function () {
+             let host_ip_app_info = {};
+            $("li.application[aria-selected='true']").each(function () {
+
+                let app_id = $(this).attr("value");
+                let ip = $(this).attr("host");
+                if (host_ip_app_info[ip]){
+                    host_ip_app_info[ip].push(app_id)
+                }else{
+                    host_ip_app_info[ip]=[app_id]
+
+                }
+            });
+            console.log("----------------",host_ip_app_info);
+            $.ajax({
+                url:'{% url "task_manage:start_server" %}',
+                type:'post',
+                headers:{'X-CSRFtoken':$.cookie("csrftoken")},
+                data:JSON.stringify({
+                    host_ip_app_info:host_ip_app_info
+                }),
+                success:function (res) {
+
+                }
+            })
+        })
+
+    })
+    </script>
+{% endblock %}
