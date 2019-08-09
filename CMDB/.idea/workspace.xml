@@ -2,36 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e37becd-34ea-4e0e-937f-7f84d4b62202" name="Default Changelist" comment="CMDB">
-      <change afterPath="$PROJECT_DIR$/monitor/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitor/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/add_edit_template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/image.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/index1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/jupyter_globe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/jupyter_lab.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/jupyter_notebook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/macro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/nteract.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/simple_chart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/simple_globe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/simple_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/monitor/templates/table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMDB/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMDB/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMDB/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/asset/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/monitor/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/monitor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/add_edit_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/add_edit_template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/12.library/library/.idea/dataSources/f9f94861-0344-4837-b7ab-d71d8272890a.xml" beforeDir="false" />
@@ -92,10 +66,64 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/monitor/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-577">
-              <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+            <state relative-caret-position="221">
+              <caret line="184" selection-start-line="184" selection-end-line="184" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/monitor/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/monitor/monitor_item.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-361">
+              <caret line="77" column="69" selection-start-line="77" selection-start-column="69" selection-end-line="77" selection-end-column="69" />
+              <folding>
+                <element signature="e#3461#3481#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/monitor/add_edit_monitor_item.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-969">
+              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/monitor/template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="77" column="130" selection-start-line="77" selection-start-column="130" selection-end-line="77" selection-end-column="130" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/monitor/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
+              <folding>
+                <element signature="e#81#109#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,7 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dataTables-example</find>
       <find>role_page_info</find>
       <find>disabled</find>
       <find>li.active</find>
@@ -145,10 +172,12 @@
       <find>restart-server</find>
       <find>BeautifulSoup</find>
       <find>env_obj</find>
+      <find>template_obj</find>
     </findStrings>
     <replaceStrings>
       <replace>get_adhoc_result</replace>
       <replace>template_obj</replace>
+      <replace>monitor_item_obj</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -157,8 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ewew.py" />
-        <option value="$PROJECT_DIR$/templates/task_manage/webssh_login.html" />
         <option value="$PROJECT_DIR$/task_manage/my_ansible/test_inventory.py" />
         <option value="$PROJECT_DIR$/task_manage/my_ansible/result_call_back.py" />
         <option value="$PROJECT_DIR$/task_manage/my_ansible/my_inventory.py" />
@@ -203,10 +230,12 @@
         <option value="$PROJECT_DIR$/asset/models.py" />
         <option value="$PROJECT_DIR$/CMDB/urls.py" />
         <option value="$PROJECT_DIR$/monitor/models.py" />
-        <option value="$PROJECT_DIR$/templates/monitor/add_edit_template.html" />
-        <option value="$PROJECT_DIR$/monitor/urls.py" />
         <option value="$PROJECT_DIR$/templates/monitor/template.html" />
         <option value="$PROJECT_DIR$/monitor/form.py" />
+        <option value="$PROJECT_DIR$/monitor/urls.py" />
+        <option value="$PROJECT_DIR$/templates/monitor/add_edit_monitor_item.html" />
+        <option value="$PROJECT_DIR$/templates/monitor/add_edit_template.html" />
+        <option value="$PROJECT_DIR$/templates/monitor/monitor_item.html" />
         <option value="$PROJECT_DIR$/monitor/views.py" />
       </list>
     </option>
@@ -231,11 +260,6 @@
             <path>
               <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="CMDB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
-              <item name="asset" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
@@ -486,14 +510,7 @@
       <workItem from="1564295791994" duration="42807000" />
       <workItem from="1564534603224" duration="19397000" />
       <workItem from="1564621419321" duration="3326000" />
-      <workItem from="1564975045647" duration="122049000" />
-    </task>
-    <task id="LOCAL-00018" summary="CMDB">
-      <created>1563897493246</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1563897493246</updated>
+      <workItem from="1564975045647" duration="123454000" />
     </task>
     <task id="LOCAL-00019" summary="CMDB">
       <created>1563899546039</created>
@@ -831,21 +848,29 @@
       <option name="project" value="LOCAL" />
       <updated>1565312742928</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="CMDB">
+      <created>1565322300184</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1565322300184</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="561400000" />
+    <option name="totallyTimeSpent" value="562805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.1757085" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.1757085" />
       <window_info id="Structure" order="1" sideWeight="0.50340134" side_tool="true" weight="0.1611336" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291592" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26833633" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32021466" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2665474" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -895,23 +920,6 @@
     <SUITE FILE_PATH="coverage/CMDB$password_crypt.coverage" NAME="password_crypt Coverage Results" MODIFIED="1564200205730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/INSPINIA管理后台框架最新版本v292/HTML5_Full_Version/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="2446" column="1" selection-start-line="2446" selection-start-column="1" selection-end-line="2446" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/INSPINIA管理后台框架最新版本v292/HTML5_Full_Version/js/inspinia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4948">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/INSPINIA管理后台框架最新版本v292/HTML5_Full_Version/js/plugins/flot/jquery.flot.time.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-597">
@@ -1166,29 +1174,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/monitor/add_edit_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1076">
-          <caret line="70" column="64" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="11" selection-end-column="89" />
           <folding>
             <element signature="e#60#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitor/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="69" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
-          <folding>
-            <element signature="e#81#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1209,26 +1200,6 @@
           <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
           <folding>
             <element signature="e#628#660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitor/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/monitor/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="77" column="130" selection-start-line="77" selection-start-column="130" selection-end-line="77" selection-end-column="130" />
-          <folding>
-            <element signature="e#3670#3690#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1263,10 +1234,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/monitor/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
+          <folding>
+            <element signature="e#81#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/monitor/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="77" column="130" selection-start-line="77" selection-start-column="130" selection-end-line="77" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/monitor/add_edit_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1026">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/monitor/add_edit_monitor_item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/monitor/monitor_item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-361">
+          <caret line="77" column="69" selection-start-line="77" selection-start-column="69" selection-end-line="77" selection-end-column="69" />
+          <folding>
+            <element signature="e#3461#3481#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monitor/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/monitor/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-577">
-          <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+        <state relative-caret-position="221">
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
