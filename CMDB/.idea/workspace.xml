@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e37becd-34ea-4e0e-937f-7f84d4b62202" name="Default Changelist" comment="CMDB">
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/asset/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crond/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/crond/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/12.library/library/.idea/dataSources/f9f94861-0344-4837-b7ab-d71d8272890a.xml" beforeDir="false" />
@@ -75,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../homework/13.blog/blog/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="291" column="25" lean-forward="true" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
+            <state relative-caret-position="5529">
+              <caret line="291" column="25" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -85,13 +83,51 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asset/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-323">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="18" />
+              <folding>
+                <element signature="e#60#88#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMDB/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-53">
+              <folding>
+                <element signature="e#628#660#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crond/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="273" column="47" selection-start-line="273" selection-start-column="47" selection-end-line="273" selection-end-column="47" />
-              <folding>
-                <element signature="e#25#34#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-5319">
+              <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMDB/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="178" column="14" lean-forward="true" selection-start-line="178" selection-start-column="14" selection-end-line="178" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -209,14 +245,14 @@
         <option value="$PROJECT_DIR$/templates/task_manage/manage_server.html" />
         <option value="$PROJECT_DIR$/asset/views.py" />
         <option value="$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py" />
-        <option value="$PROJECT_DIR$/crond/tasks.py" />
         <option value="$PROJECT_DIR$/asset/form.py" />
+        <option value="$PROJECT_DIR$/crond/tasks.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="243" />
-    <option name="y" value="22" />
+    <option name="x" value="304" />
+    <option name="y" value="82" />
     <option name="width" value="1584" />
     <option name="height" value="1032" />
   </component>
@@ -243,7 +279,18 @@
             <path>
               <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="CMDB" type="462c0819:PsiDirectoryNode" />
-              <item name="crond" type="462c0819:PsiDirectoryNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
@@ -473,14 +520,7 @@
       <workItem from="1564295791994" duration="42807000" />
       <workItem from="1564534603224" duration="19397000" />
       <workItem from="1564621419321" duration="3326000" />
-      <workItem from="1564975045647" duration="107799000" />
-    </task>
-    <task id="LOCAL-00016" summary="CMDB">
-      <created>1563895047428</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1563895047428</updated>
+      <workItem from="1564975045647" duration="113286000" />
     </task>
     <task id="LOCAL-00017" summary="CMDB">
       <created>1563897367015</created>
@@ -818,22 +858,28 @@
       <option name="project" value="LOCAL" />
       <updated>1565188407448</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="CMDB">
+      <created>1565191030481</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1565191030481</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="547150000" />
+    <option name="totallyTimeSpent" value="552637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.1757085" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.1757085" />
       <window_info id="Structure" order="1" sideWeight="0.50340134" side_tool="true" weight="0.1611336" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291592" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2862254" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13595706" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2665474" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -883,13 +929,6 @@
     <SUITE FILE_PATH="coverage/CMDB$password_crypt.coverage" NAME="password_crypt Coverage Results" MODIFIED="1564200205730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -972,13 +1011,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMDB/asgi.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMDB/routing.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1131,13 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMDB/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1211,16 +1236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="260" column="53" lean-forward="true" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/-1156481044/-798664301/django/forms/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1228,23 +1243,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task_manage/tasks.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/task_manage/my_ansible/test_adhoc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../homework/13.blog/blog/app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="291" column="25" lean-forward="true" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1255,13 +1257,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/task_manage/tasks.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/crond/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="273" column="47" selection-start-line="273" selection-start-column="47" selection-end-line="273" selection-end-column="47" />
+        <state relative-caret-position="-5319">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMDB/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="178" column="14" lean-forward="true" selection-start-line="178" selection-start-column="14" selection-end-line="178" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../homework/13.blog/blog/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5529">
+          <caret line="291" column="25" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
           <folding>
-            <element signature="e#25#34#0" expanded="true" />
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="e#60#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMDB/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-53">
+          <folding>
+            <element signature="e#628#660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="35" />
         </state>
       </provider>
     </entry>
