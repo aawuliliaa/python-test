@@ -1,16 +1,24 @@
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
-import os
-import datetime
-from web.password_crypt import encrypt_p, decrypt_p
+
+import hashlib
 from web.utils import *
 from web.page import *
 from django.views.generic import View
 from django.shortcuts import render, redirect, HttpResponse
 from django.http import JsonResponse
+import pymysql
 from monitor.models import Template, MonitorItem
 from monitor.form import *
-
+from monitor.utils import get_table_name
+#链接
+conn=pymysql.connect(host='10.0.0.61',
+                     user='root',
+                     password='123',
+                     database='cmdb',
+                     charset='utf8')
+#游标
+#cursor=conn.cursor() #执行完毕返回的结果集默认以元组显示
+cursor=conn.cursor(cursor=pymysql.cursors.DictCursor)
 
 class TemplateView(View):
     """
@@ -137,7 +145,22 @@ class AddMonitorItem(View):
     def post(self, request):
         left_label_dic = get_label(request)
         form = MonitorItemForm(request.POST)
+        name = request.POST.get("name")
         if form.is_valid():
+            table_name = get_table_name(name)
+
+            sql_createTb = """CREATE TABLE  IF NOT EXISTS %s (
+                             id INT NOT NULL AUTO_INCREMENT,
+                             get_data_time  datetime(6) NOT NULL,
+                             ip  varchar(255) NOT NULL,
+                             data  varchar(255) NOT NULL,
+                             warn  varchar(255) DEFAULT NULL,
+                             PRIMARY KEY(id))
+                             """ % table_name
+            # 防止sql注入，，使用execute来进行字符串拼接
+            # 这里不能使用execute拼接字符串，会添加一个'字符，怎样都报语法错误，所以就使用默认的字符串拼接了
+            res = cursor.execute(sql_createTb)
+
             form.save()
             return redirect(reverse("monitor:monitor_item"))
         return render(request, 'monitor/add_edit_monitor_item.html', locals())
@@ -149,7 +172,14 @@ class DelMonitorItem(View):
     """
     def get(self, request, **kwargs):
         # print("================2",kwargs)  #{'pk': 205}
-        MonitorItem.objects.filter(id=kwargs.get("pk")).delete()
+        monitor_item_set = MonitorItem.objects.filter(id=kwargs.get("pk"))
+        name = monitor_item_set.first().name
+        table_name = get_table_name(name)
+        # 删除该项对应的表
+        drop_table_sql = "drop table if exists %s" % table_name
+        cursor.execute(drop_table_sql)  # 如果表存在则删除
+        # 删除该条监控项
+        monitor_item_set.delete()
         return redirect(reverse("monitor:monitor_item"))
 
 
