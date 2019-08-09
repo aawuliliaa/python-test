@@ -1,6 +1,6 @@
-# from django.db import models
+from django.db import models
 import random
-from web.models import *
+from web.models import MyUser
 import time
 
 

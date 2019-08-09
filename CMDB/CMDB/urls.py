@@ -27,7 +27,8 @@ urlpatterns = [
     re_path(r'^api/', include('web.rest_urls')),
     path('privilege/', views.privilege, name="privilege"),
     path('role_export/', views.role_export, name="role_export"),
-
+    # 监控配置与信息查看
+    path('monitor/', include('monitor.urls', namespace="monitor")),
     # 定时任务
     path('crond/', include('crond.urls', namespace="crond")),
     # 资产信息

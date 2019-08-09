@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django_celery_results',
     'asset',
     'channels',
-
+    'monitor',
 ]
 
 MIDDLEWARE = [
