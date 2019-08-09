@@ -9,16 +9,9 @@ from django.http import JsonResponse
 import pymysql
 from monitor.models import Template, MonitorItem
 from monitor.form import *
-from monitor.utils import get_table_name
-#链接
-conn=pymysql.connect(host='10.0.0.61',
-                     user='root',
-                     password='123',
-                     database='cmdb',
-                     charset='utf8')
-#游标
-#cursor=conn.cursor() #执行完毕返回的结果集默认以元组显示
-cursor=conn.cursor(cursor=pymysql.cursors.DictCursor)
+from monitor.utils import get_table_name, get_pymysql_conn
+
+
 
 class TemplateView(View):
     """
@@ -159,7 +152,14 @@ class AddMonitorItem(View):
                              """ % table_name
             # 防止sql注入，，使用execute来进行字符串拼接
             # 这里不能使用execute拼接字符串，会添加一个'字符，怎样都报语法错误，所以就使用默认的字符串拼接了
+            conn = get_pymysql_conn()
+            # 游标
+            # cursor=conn.cursor() #执行完毕返回的结果集默认以元组显示
+            cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
             res = cursor.execute(sql_createTb)
+            # 使用完了就关闭
+            cursor.close()
+            conn.close()
 
             form.save()
             return redirect(reverse("monitor:monitor_item"))
