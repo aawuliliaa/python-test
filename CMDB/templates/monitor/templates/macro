@@ -21,7 +21,7 @@
 {%- endmacro %}
 
 {%- macro render_chart_dependencies(c) -%}
-<script type="text/javascript" src="/static/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-3.1.1.min.js"></script>
     {% for dep in c.dependencies %}
 
         <script type="text/javascript" src="{{ dep }}"></script>

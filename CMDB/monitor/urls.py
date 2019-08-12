@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 app_name = "monitor"
-from django.urls import path
+from django.urls import path, re_path
 from django.contrib.auth.decorators import login_required
 from monitor import views
 # /monitor/monitor_item/
@@ -15,5 +15,7 @@ urlpatterns = [
     path('add_monitor_item/', login_required(views.AddMonitorItem.as_view()), name="add_monitor_item"),
     path('del_monitor_item/<int:pk>/', login_required(views.DelMonitorItem.as_view()), name="del_monitor_item"),
     path('edit_monitor_item/<int:pk>/', login_required(views.EditMonitorItem.as_view()), name="edit_monitor_item"),
+    path('host_monitor/', login_required(views.HostMonitor.as_view()), name="host_monitor"),
+    re_path(r'show_host_monitor_data/(?P<ip>.*)/', views.show_host_monitor_data, name="show_host_monitor_data"),
 
 ]
