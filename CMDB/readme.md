@@ -752,6 +752,33 @@ pip3 install ansible==2.7.12
 https://lex-lee.blog.csdn.net/article/details/92837916
 我這裡就使用了2.7.的版本，最新版本稍后研究
 ```
+## 2.8pyecharts资源引用
+```
+官网
+https://pyecharts.org/#/zh-cn/assets_host
+pyecharts 使用的所有静态资源文件存放于 pyecharts-assets 项目中，默认挂载在 https://assets.pyecharts.org/assets/
+
+pyecharts 提供了更改全局 HOST 的快捷方式，下面以开发者启动本地 FILE SERVER 为例，操作如下。
+
+1.获取 pyecharts-assets 项目
+
+ $ git clone https://github.com/pyecharts/pyecharts-assets.git
+2.启动 HTTP file server
+
+ $ cd pyecharts-assets
+ $ python -m http.server 8001
+ # Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8001/) ...
+ # 默认会在本地 8000 端口启动一个文件服务器
+3.配置 pyecharts 全局 HOST
+
+ # 只需要在顶部声明 CurrentConfig.ONLINE_HOST 即可
+ from pyecharts.globals import CurrentConfig
+ CurrentConfig.ONLINE_HOST = "http://10.0.0.61:8001/assets/"
+
+ # 接下来所有图形的静态资源文件都会来自刚启动的服务器
+ from pyecharts.charts import Bar
+ bar = Bar()
+```
 ![](.readme_images/9c3d211b.png)
 ![](.readme_images/e29c6923.png)
 ![](.readme_images/2316a636.png)
