@@ -13,6 +13,9 @@ class Environment(models.Model):
     abs_name = models.CharField(verbose_name="环境名简称", max_length=32)
     note = models.CharField(verbose_name="环境名备注信息", max_length=255)
     create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
+    # auto_now=True自动更新，有一个条件，就是要通过django的model层。
+    # 如果是filter之后update方法，则直接调用的是sql，不会通过model层，
+    # 我们需要在使用filter的update更新的时候同时赋值时间  update_time=datetime.datetime.now()
     update_time = models.DateTimeField(verbose_name="更新时间", auto_now=True)
 
     class Meta:

@@ -94,7 +94,7 @@ class EditEnv(View):
         name = request.POST.get("name")
         abs_name = request.POST.get("abs_name")
         env_set = Environment.objects.filter(name=name, abs_name=abs_name)
-        env_set.update(note=request.POST.get("note"))
+        env_set.update(note=request.POST.get("note"), update_time=datetime.datetime.now())
 
         return redirect(reverse("asset:env"))
 
@@ -166,7 +166,9 @@ class EditSystem(View):
         abs_name = request.POST.get("abs_name")
         sys_set = System.objects.filter(name=name, abs_name=abs_name)
         sys_obj = sys_set.first()
-        sys_set.update(note=request.POST.get("note"), operate_person_id=request.POST.get("operate_person"))
+        sys_set.update(note=request.POST.get("note"),
+                       operate_person_id=request.POST.get("operate_person"),
+                       update_time=datetime.datetime.now())
         # 设置环境信息
         environment_list = request.POST.getlist("environment")
         # print("====================================", environment_list)  # ['1', '2', '3']
@@ -258,7 +260,8 @@ class EditApplication(View):
                        log_path=request.POST.get("log_path"),
                        start_script=start_script,
                        stop_script=stop_script,
-                       restart_script=restart_script)
+                       restart_script=restart_script,
+                       update_time=datetime.datetime.now())
         return redirect(reverse("asset:application"))
 
 
@@ -354,7 +357,8 @@ class EditHostLoginUser(View):
         # 如果没有上传文件,就更新数据
         if not file_obj:
             user_set.update(password=password,
-                            expire_date=request.POST.get("expire_date"),)
+                            expire_date=request.POST.get("expire_date"),
+                            update_time=datetime.datetime.now())
         else:
             # 如果上传了文件，就把旧数据删除，创建新数据，create_time保留
             create_time = user_set.first().create_time
@@ -478,7 +482,8 @@ class EditHost(View):
                         disk=request.POST.get("disk"),
                         expire_date=request.POST.get("expire_date"),
                         system_id=request.POST.get("system"),
-                        environment_id=request.POST.get("environment")
+                        environment_id=request.POST.get("environment"),
+                        update_time=datetime.datetime.now()
                         )
         application_list = request.POST.getlist("application")
         login_user_list = request.POST.getlist("login_user")
