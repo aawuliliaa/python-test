@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e37becd-34ea-4e0e-937f-7f84d4b62202" name="Default Changelist" comment="CMDB">
-      <change afterPath="$PROJECT_DIR$/.readme_images/fe6c0a7b.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monitor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/monitor/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monitor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/monitor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monitor_client/core/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/monitor_client/core/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebSocket/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise/.idea/workspace.xml" afterDir="false" />
@@ -70,11 +62,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
               <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="31" column="65" lean-forward="true" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,10 +188,10 @@
         <option value="$PROJECT_DIR$/monitor/views.py" />
         <option value="$PROJECT_DIR$/monitor_client/core/main.py" />
         <option value="$PROJECT_DIR$/monitor/models.py" />
-        <option value="$PROJECT_DIR$/web/views.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/web/views.py" />
       </list>
     </option>
   </component>
@@ -441,14 +445,7 @@
       <workItem from="1564534603224" duration="19397000" />
       <workItem from="1564621419321" duration="3326000" />
       <workItem from="1564975045647" duration="152964000" />
-      <workItem from="1565570725663" duration="24524000" />
-    </task>
-    <task id="LOCAL-00024" summary="CMDB">
-      <created>1563974393308</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1563974393308</updated>
+      <workItem from="1565570725663" duration="27479000" />
     </task>
     <task id="LOCAL-00025" summary="CMDB">
       <created>1563975112307</created>
@@ -786,21 +783,29 @@
       <option name="project" value="LOCAL" />
       <updated>1565592309809</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="CMDB-dashbord">
+      <created>1565601751797</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1565601751797</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="616839000" />
+    <option name="totallyTimeSpent" value="619794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.16842106" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49659863" visible="true" weight="0.16842106" />
       <window_info id="Structure" order="1" sideWeight="0.50340134" side_tool="true" weight="0.1611336" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291592" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3649374" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5474061" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2665474" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -826,7 +831,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CMDB" />
     <MESSAGE value="CMDB监控" />
-    <option name="LAST_COMMIT_MESSAGE" value="CMDB监控" />
+    <MESSAGE value="CMDB-dashbord" />
+    <option name="LAST_COMMIT_MESSAGE" value="CMDB-dashbord" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1176,16 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/asset/env.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1217,6 +1213,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="31" column="65" lean-forward="true" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

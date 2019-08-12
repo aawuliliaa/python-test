@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib import auth
 from django.urls import reverse
-import time
+import time, datetime
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from urllib.parse import unquote
@@ -28,11 +28,14 @@ def index(request):
     now = time.localtime()
     # 显示当天的告警信息
     # 测试的时候使用的
-    # filter(get_data_time__year=now.tm_year,
-    #                                               get_data_time__month=now.tm_mon,
-    #                                               get_data_time__day=now.tm_mday)
-    warn_table_set = WarnTable.objects.all().order_by("-get_data_time")
-    host_update_set = Host.objects.all().order_by("-update_time")
+    # 显示当日的告警信息
+    # datetime字段，查询当日数据
+    warn_table_set = WarnTable.objects.filter(get_data_time__gte=datetime.datetime.now().date()).order_by("-get_data_time")
+    print("========================", warn_table_set)
+
+    # 显示近一周的数据
+    host_update_set = Host.objects.filter(update_time__gt=datetime.datetime.now() - datetime.timedelta(7))\
+        .order_by("-update_time")
     return render(request, "index.html", locals())
 
 
