@@ -39,7 +39,7 @@ t.start()
 #
 # # 设置服务器所需信息
 # fromaddr = 'linuxengineerofwu@163.com'  # 邮件发送方邮箱地址
-# password = 'Aaa249400000'  # 密码(部分邮箱为授权码)
+# password = ''  # 密码(部分邮箱为授权码)
 # toaddrs = ['linuxengineerofwu@163.com']  # 邮件接受方邮箱地址，注意需要[]包裹，这意味着你可以写多个邮件地址群发
 #
 # # 设置email信息
