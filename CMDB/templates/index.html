@@ -1,76 +1,63 @@
 ﻿{% extends "base.html" %}
 {% block content %}
 <div class="row">
-    <div class="col-lg-4">
-        <div class="ibox ">
-            <div class="ibox-title">
-                <h5>New data for the report</h5> <span class="label label-primary">IN+</span>
-                <div class="ibox-tools">
-                    <a class="collapse-link" href="">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#" class="dropdown-item">Config option 1</a>
-                        </li>
-                        <li><a href="#" class="dropdown-item">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link" href="">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <div>
+            <div class="col-lg-6">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5 class="btn btn-warning">告警信息</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
 
-                    <div class="float-right text-right">
-
-                        <span class="bar_dashboard">1,0,9,5,6,8,3,2,1</span>
-                        <br/>
-                        <small class="font-bold">$ 20 054.43</small>
+                        </div>
                     </div>
-                    <h4>NYS report new data!
-                        <br/>
-                        <small class="m-r"><a href="graph_flot.html"> Check the stock price! </a> </small>
-                    </h4>
+                    <div class="ibox-content">
+                    <!-- List group -->
+                      <ul class="list-group">
+                          {% for warn_table_obj in warn_table_set %}
+                            <li class="list-group-item">
+                                时间:{{ warn_table_obj.get_data_time|date:"H:i" }} <br>
+                                监控项名称:{{ warn_table_obj.name }} <br>
+                                告警表达式:{{ warn_table_obj.warn_expression }}<br>
+                                数据:{{ warn_table_obj.data }}<br>
+                                IP:{{ warn_table_obj.ip }}<br>
+                            </li>
+                          {% endfor %}
+
+                      </ul>
                     </div>
                 </div>
             </div>
-    </div>
-        <div class="col-lg-4">
-            <div class="ibox ">
-                <div class="ibox-title">
-                    <h5>Your daily feed</h5>
-                    <div class="ibox-tools">
-                        <span class="label label-warning-light float-right">10 Messages</span>
-                       </div>
-                </div>
-                <div class="ibox-content">
 
-                    <div>
-                        <div class="feed-activity-list">
+            <div class="col-lg-6">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5 class="btn btn-warning">主机信息更新</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
 
-                            <div class="feed-element">
-                                <a class="float-left" href="profile.html">
-                                    <img alt="image" class="rounded-circle" src="img/profile.jpg">
-                                </a>
-                                <div class="media-body ">
-                                    <small class="float-right">5m ago</small>
-                                    <strong>Monica Smith</strong> posted a new blog. <br>
-                                    <small class="text-muted">Today 5:60 pm - 12.06.2014</small>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                    <!-- List group -->
+                      <ul class="list-group">
+                          {% for host_update_obj in host_update_set %}
+                            <li class="list-group-item">
+                                ip:{{ host_update_obj.ip }} <br>
+                                创建时间:{{ host_update_obj.create_time|date:"Y-m-d H:i" }} <br>
+                                更新时间:{{ host_update_obj.update_time|date:"Y-m-d H:i" }}<br>
 
-                                </div>
-                            </div>
+                            </li>
+                          {% endfor %}
 
-                        <button class="btn btn-primary btn-block m-t"><i class="fa fa-arrow-down"></i> Show More</button>
+                      </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
 </div>
 {% endblock %}
 

@@ -63,3 +63,22 @@ class Template(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class WarnTable(models.Model):
+    """
+    告警表
+    """
+    name = models.CharField(verbose_name="监控项名称", max_length=32)
+    get_data_time = models.DateTimeField(verbose_name="获取数据的时间")
+    warn_expression = models.CharField(verbose_name="告警表达式", max_length=1000, blank=True, null=True)
+    data = models.CharField(verbose_name="监控数据", max_length=32)
+    ip = models.CharField(verbose_name="ip", max_length=32)
+
+    class Meta:
+        # db_table = "System" db_table是指定自定义数据库表名的。默认是appname_classname,可以这样自定义表名
+        verbose_name = "告警信息"
+        verbose_name_plural = '告警信息'
+
+    def __str__(self):
+        return self.name

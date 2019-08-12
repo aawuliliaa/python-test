@@ -22,11 +22,13 @@ class ReportData(object):
         self.cursor = self.conn.cursor(cursor=pymysql.cursors.DictCursor)
 
     def pool_report_data_func(self, monitor_item_data_row):
-        print("1111111111111111",currentThread().getName())
+        print("1111111111111111", currentThread().getName())
         # 监控脚本的内容
         monitor_script = monitor_item_data_row.get("monitor_script")
         # 监控项的名称
         name = monitor_item_data_row.get("name")
+        # 报警表达式"load1<12 and load2<10"
+        warn_expression = monitor_item_data_row.get("warn_expression")
         # 该监控项对应的表名
         monitor_item_table_name = get_table_name(name)
         # 脚本名称
@@ -42,10 +44,30 @@ class ReportData(object):
         fw.close()
         os.popen("dos2unix %s" % script_asb_path)
         data = os.popen("sh %s" % script_asb_path).read()
+        # 处理是否进行报警,注意，这里报错不会输出到控制台，debug一下就会看到。。因为是在线程池中，报错被捕获了
+        data_list = data.split("_")  # ['load1:10', 'load2:23', 'load3:34']
+
+        # str = "load1<12 and load2<10"
+        for li in data_list:
+            li = "=".join(li.split(":"))
+            exec(li)
+        # print("========",warn_expression)
+        if warn_expression is not None:
+            warn_or_not = eval(warn_expression)
+        else:
+            warn_or_not = False
+
+        print("=================是否告警",warn_or_not)
+        if warn_or_not is True:
+            # 把数据添加到告警表中，dashbord显示告警信息
+            warn_insert_sql = 'insert into monitor_warntable (get_data_time,name,warn_expression,ip, data) VALUES(NOW(),"{name}","{warn_expression}", "{ip}","{data}")'. \
+                format(name=name, ip=self.ip, data=data, warn_expression=warn_expression,)  # 加个引号即可
+            self.cursor.execute(warn_insert_sql)
+            self.conn.commit()
         # 不能用防止sql注入的方式插入数据了，测试发现，
         # 表名是变量就会报语法错误''monitor_item_disk_75688b0220'，多了个引号，算了，就用这种方法把
-        insert_sql = 'insert into {tabel_name} (get_data_time, ip, data, warn ) VALUES(NOW(),"{ip}","{data}","{warn}")'. \
-            format(tabel_name=monitor_item_table_name, ip=self.ip, data=data, warn="")  # 加个引号即可
+        insert_sql = 'insert into {tabel_name} (get_data_time, ip, data, warn) VALUES(NOW(),"{ip}","{data}","{warn}")'. \
+            format(tabel_name=monitor_item_table_name, ip=self.ip, data=data, warn=warn_or_not)  # 加个引号即可
         self.cursor.execute(insert_sql)
         self.conn.commit()
 
@@ -114,7 +136,7 @@ class ReportData(object):
                 # 各自的上次汇报时间存放各自的，互不影响。。不能设置一个变量
                 self.last_report_data_time_dic[name] = time.time()
                 # 等所有的进程任务完成了，再继续主进程的代码
-        pool.shutdown(wait=False)
+        pool.shutdown(wait=True)
 
 
 if __name__ == '__main__':

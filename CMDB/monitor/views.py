@@ -335,6 +335,7 @@ def show_host_monitor_data(request, ip):
         # 测试的时候，使用该语句，
         select_sql = "select * from %s where to_days(get_data_time) <= to_days(now()); " % item_table_name
         # 实际应用时使用的语句
+        # 显示当日的数据
         # select * from monitor_item_cpu_d9747e2da3 where year(get_data_time)=year(now()) and month(get_data_time)=month(now()) and day(get_data_time)=day(now())
         cursor.execute(select_sql)  # 如果表存在则删除
         todays_data_rows = cursor.fetchall()

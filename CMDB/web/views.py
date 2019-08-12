@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib import auth
 from django.urls import reverse
+import time
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from urllib.parse import unquote
@@ -10,6 +11,8 @@ from web.models import *
 from web.utils import *
 from web.page import *
 from crond.tasks import reset_host_login_user_password
+from monitor.models import WarnTable
+from asset.models import Host
 
 @login_required
 def index(request):
@@ -22,6 +25,14 @@ def index(request):
 
     # reset_host_login_user_password()
     left_label_dic = get_label(request)
+    now = time.localtime()
+    # 显示当天的告警信息
+    # 测试的时候使用的
+    # filter(get_data_time__year=now.tm_year,
+    #                                               get_data_time__month=now.tm_mon,
+    #                                               get_data_time__day=now.tm_mday)
+    warn_table_set = WarnTable.objects.all().order_by("-get_data_time")
+    host_update_set = Host.objects.all().order_by("-update_time")
     return render(request, "index.html", locals())
 
 
