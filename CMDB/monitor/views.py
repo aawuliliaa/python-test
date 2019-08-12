@@ -247,8 +247,10 @@ class HostMonitor(View):
 
         data_obj_set = Host.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段
-        data_page_info = return_show_data(request, data_obj_set, *("name"))
+        data_page_info = return_show_data(request, data_obj_set, *("ip"))
         return render(request, "monitor/host_monitor.html", locals())
+
+
 def bar_base() -> Bar:
     js = """
     $(function () 
@@ -275,25 +277,7 @@ def bar_base() -> Bar:
     )
     return c
 
-def json_line_base() -> Line:
-    line = (
 
-        Line(init_opts=opts.InitOpts(height="200px", width="300px"))
-    .add_xaxis(["草莓", "芒果", "葡萄", "雪梨", "西瓜", "柠檬", "车厘子"])
-        .add_yaxis("商家A", Faker.values())
-        .add_yaxis("商家B", Faker.values())
-        .set_global_opts(title_opts=opts.TitleOpts(title="Line-基本示例"))
-        .dump_options()
-    )
-    return line
-
-
-class LineView(View):
-    def get(self, request, *args, **kwargs):
-        return MyJsonResponse(json.loads(json_line_base()))
-# class BarView(View):
-#     def get(self, request, *args, **kwargs):
-#         return JsonResponse(json.loads(json_bar_base()))
 
 
 
@@ -348,8 +332,9 @@ def show_host_monitor_data(request, ip):
         # 游标
         # cursor=conn.cursor() #执行完毕返回的结果集默认以元组显示
         cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
-        # 删除该项对应的表
+        # 测试的时候，使用该语句，
         select_sql = "select * from %s where to_days(get_data_time) <= to_days(now()); " % item_table_name
+        # 实际应用时使用的语句
         # select * from monitor_item_cpu_d9747e2da3 where year(get_data_time)=year(now()) and month(get_data_time)=month(now()) and day(get_data_time)=day(now())
         cursor.execute(select_sql)  # 如果表存在则删除
         todays_data_rows = cursor.fetchall()
