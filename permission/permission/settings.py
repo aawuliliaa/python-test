@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'web.md.check_permission.CheckPermissionMiddleware'
+    'rbac.middlewares.check_permission.CheckPermissionMiddleware'
 ]
 
 ROOT_URLCONF = 'permission.urls'
@@ -116,9 +116,12 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
+# ######################### 权限相关配置 ############################
 SESSION_PERMISSION_URL_LIST = "permission_url_list_key"
+SESSION_MENU_KEY = "session_menu_list_key"
 WHITE_LIST = ["/login/", "/admin/*"]
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 

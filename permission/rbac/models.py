@@ -9,6 +9,8 @@ class Permission(models.Model):
     """
     title = models.CharField(verbose_name="标题", max_length=32)
     url = models.CharField(verbose_name="含有正则的URL", max_length=255)
+    icon = models.CharField(verbose_name='图标', max_length=32, null=True, blank=True, help_text='菜单才设置图标')
+    is_menu = models.BooleanField(verbose_name='是否是菜单', default=False, null=True, blank=True)
 
     class Meta:
         # db_table = "System" db_table是指定自定义数据库表名的。默认是appname_classname,可以这样自定义表名

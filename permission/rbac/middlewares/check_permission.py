@@ -35,7 +35,7 @@ class CheckPermissionMiddleware(MiddlewareMixin):
         if session_permission_url_list is None:
             return HttpResponse("session中还没有url信息，请登录之后再访问！")
         # 循环用户可访问的菜单列表，如果当前路径在可访问的菜单列表中，就放行，否则就返回拒绝访问
-        print("---------------------", session_permission_url_list)
+        # print("---------------------", session_permission_url_list)
         # ['/customer/list/', '/customer/add/', '/payment/list/', '/payment/add/']
         flag = False
         for permission_url in session_permission_url_list:

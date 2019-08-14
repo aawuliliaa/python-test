@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load rbac %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -154,12 +155,7 @@
 <div class="pg-body">
     <div class="left-menu">
         <div class="menu-body">
-            <div class="static-menu">
-                <a href="{% url 'web:customer_list' %}" class="active">
-                    <span class="icon-wrap"><i class="fa fa-connectdevelop"></i></span> 客户管理</a>
-                <a href="{% url 'web:payment_list' %}">
-                    <span class="icon-wrap"><i class="fa fa-code-fork"></i></span> 账单管理</a>
-            </div>
+            {% menu request %}
 
         </div>
     </div>
