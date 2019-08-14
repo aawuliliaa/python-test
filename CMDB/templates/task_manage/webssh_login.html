@@ -84,7 +84,7 @@
                                                       <a>
 
 
-                                                          {#                                                  如果是root用户，但是当前系统登录人没有root_login的权限，就不显示root用户--即不能通过root用户访问webssh#}
+                                                          {#如果是root用户，但是当前系统登录人没有root_login的权限，就不显示root用户--即不能通过root用户访问webssh#}
                                                       {% if login_user_obj.name == "root" and not request.user.email|identify_privilege:"root_login" %}
 
                                                       {% else %}

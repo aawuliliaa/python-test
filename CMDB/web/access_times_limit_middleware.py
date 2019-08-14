@@ -11,6 +11,7 @@ from web.models import AccessLog
 class AccessTimesLimitMiddleware(MiddlewareMixin):
     """
     定义访问频率限制的中间件
+    中间件return none，会继续向下运行views.py中的函数
     """
     def process_request(self, request):
         # 这里只对登录做了限制，如果想对其他路径进行限制，可自行设置

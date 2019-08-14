@@ -28,7 +28,7 @@ class CrontabScheduleView(ListView):
                                                                          "day_of_month",
                                                                          "month_of_year"))
         left_label_dic = get_label(self.request)
-        role_obj = Role.objects.filter(url=self.request.path).first()
+        role_obj = Menu.objects.filter(url=self.request.path).first()
         context = {
             "data_page_info": data_page_info,
             "left_label_dic": left_label_dic,
@@ -92,7 +92,7 @@ class IntervalScheduleView(ListView):
                                                                          "period",
                                                                          ))
         left_label_dic = get_label(self.request)
-        role_obj = Role.objects.filter(url=self.request.path).first()
+        role_obj = Menu.objects.filter(url=self.request.path).first()
         context = {
             "data_page_info": data_page_info,
             "left_label_dic": left_label_dic,
@@ -154,7 +154,7 @@ class PeriodicTasksView(ListView):
         # 同样可以进行模糊查询
         data_page_info = return_show_data(self.request, self.queryset, *("name", "task_manage"))
         left_label_dic = get_label(self.request)
-        role_obj = Role.objects.filter(url=self.request.path).first()
+        role_obj = Menu.objects.filter(url=self.request.path).first()
         context = {
             "data_page_info": data_page_info,
             "left_label_dic": left_label_dic,
@@ -235,7 +235,7 @@ class TasksResultView(ListView):
         # 同样可以进行模糊查询
         data_page_info = return_show_data(self.request, self.queryset, *("task_name",))
         left_label_dic = get_label(self.request)
-        role_obj = Role.objects.filter(url=self.request.path).first()
+        role_obj = Menu.objects.filter(url=self.request.path).first()
         context = {
             "data_page_info": data_page_info,
             "left_label_dic": left_label_dic,

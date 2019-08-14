@@ -106,6 +106,26 @@ class Privilege(models.Model):
         return self.name
 
 
+class Menu(models.Model):
+    parent_menu_name = models.CharField(max_length=32, verbose_name="父级菜单名")
+    child_menu_name = models.CharField(max_length=32, verbose_name="子级菜单名")
+    url = models.CharField(max_length=255, verbose_name="url路径")
+    note = models.CharField(max_length=255, verbose_name="描述信息")
+    create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
+    update_time = models.DateTimeField(verbose_name="更新时间", auto_now=True)
+
+    class Meta:
+        verbose_name = '菜单表'
+        verbose_name_plural = "菜单表"
+        # 设置联合主键
+        unique_together = [
+            ('parent_menu_name', 'child_menu_name', 'url'),
+        ]
+
+    def __str__(self):
+        return self.url
+
+
 class Role(models.Model):
     """
     角色表
@@ -114,12 +134,9 @@ class Role(models.Model):
     # strip=True去除用户输入的空白
     name = models.CharField(max_length=32, verbose_name="角色名称")
     code = models.CharField(max_length=32, verbose_name="角色编码")
-    parent_menu_name = models.CharField(max_length=32, verbose_name="父级菜单名")
-    child_menu_name = models.CharField(max_length=32, verbose_name="子级菜单名")
-    url = models.CharField(max_length=255, verbose_name="url路径")
-    note = models.CharField(max_length=255, verbose_name="描述信息")
     users = models.ManyToManyField(to=MyUser, related_name='users_role')
     privileges = models.ManyToManyField(to=Privilege, blank=True)
+    menus = models.ManyToManyField(to=Menu, blank=True, related_name='menus_role')
     create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
     update_time = models.DateTimeField(verbose_name="更新时间", auto_now=True)
 
@@ -128,7 +145,7 @@ class Role(models.Model):
         verbose_name_plural = "角色表"
         # 设置联合主键
         unique_together = [
-            ('name', 'code', 'parent_menu_name', 'child_menu_name', 'url'),
+            ('name', 'code'),
         ]
 
     def __str__(self):

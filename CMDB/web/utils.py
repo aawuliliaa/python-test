@@ -12,6 +12,7 @@ from web.models import *
 from web.page import my_page
 from CMDB.settings import HOST_LOGIN_USER_PASSWORD_LENGTH
 
+
 def get_label(request):
     """
     base中左侧导航处的菜单
@@ -25,39 +26,15 @@ def get_label(request):
     # role1 pa_menu1 child_menu1 url1
     # role2 pa_menu1 child_menu1 url1
     if request.user.is_admin:
-        role_set_list = Role.objects.all()
+        menu_set_list = Menu.objects.all()
     else:
-        role_set_list = Role.objects.filter(users__email=email).all()
+        menu_set_list = Menu.objects.filter(menus_role__users__email=email).all().distinct()
     left_label_dic = {}
 
-    for role_obj in role_set_list:
-        left_label_dic[role_obj.parent_menu_name] = {}
-    for role_obj in role_set_list:
-        left_label_dic[role_obj.parent_menu_name][role_obj.child_menu_name] = role_obj.url
-    # ret = {'资产信息': {'系统信息': '/system/', '环境信息': '/env/', '主机信息': '/host/'}}
-    # 共有四次SQL查询
-    # b'SELECT * FROM `web_myuser` WHERE `web_myuser`.`id` = 37';args=(37,)
-    # b'SELECT * FROM `web_myuser` WHERE `web_myuser`.`id` = 37';args=(37,)
-
-    # b"SELECT * FROM `web_role` INNER JOIN `web_role_users` ON (`web_role`.`id` = `web_role_users`.`role_id`)
-    # INNER
-    # JOIN
-    # `web_myuser`
-    # ON(`web_role_users`.
-    # `myuser_id` = `web_myuser`.
-    # `id`) WHERE
-    # `web_myuser`.
-    # `email` = 'cc@qq.com'"; args=('cc@qq.com',)
-
-    # b"SELECT * FROM `web_role` INNER JOIN `web_role_users` ON (`web_role`.`id` = `web_role_users`.`role_id`)
-    # INNER
-    # JOIN
-    # `web_myuser`
-    # ON(`web_role_users`.
-    # `myuser_id` = `web_myuser`.
-    # `id`) WHERE
-    # `web_myuser`.
-    # `email` = 'cc@qq.com'"; args=('cc@qq.com',)
+    for menu_obj in menu_set_list:
+        left_label_dic[menu_obj.parent_menu_name] = {}
+    for menu_obj in menu_set_list:
+        left_label_dic[menu_obj.parent_menu_name][menu_obj.child_menu_name] = menu_obj.url
 
     return left_label_dic
 

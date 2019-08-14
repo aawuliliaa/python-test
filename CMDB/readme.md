@@ -705,7 +705,7 @@ Configuration ->
 task有修改，需要重启
 [root@m01 CMDB]# celery -A CMDB worker --loglevel=info >/project/celery_work.log 2>&1 &
 [1] 7071
-在celery调用ansible的时候，不管是定时任务还是一部任务，都得不到返回结果
+在celery调用ansible的时候，不管是定时任务还是异步任务，都得不到返回结果
 搜索之后，发现说是celery3.1以上的版本，不支持另起子线程，
 有两种方法解决这个问题，就是关闭assert：
 1.在celery 的worker启动窗口设置export PYTHONOPTIMIZE=1或打开celery这个参数-O OPTIMIZATION

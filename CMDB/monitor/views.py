@@ -43,7 +43,7 @@ class TemplateView(View):
         # Environment.objects.bulk_create(list)
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
 
         data_obj_set = Template.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段
@@ -132,7 +132,7 @@ class MonitorItemView(View):
         # Environment.objects.bulk_create(list)
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
 
         data_obj_set = MonitorItem.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段
@@ -243,7 +243,7 @@ class HostMonitor(View):
     def get(self, request):
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
 
         data_obj_set = Host.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段

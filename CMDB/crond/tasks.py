@@ -164,8 +164,8 @@ def reset_host_login_user_password():
     password = ""
     # 查找出密码过期的用户
     host_login_user_set = HostLoginUser.objects.filter(expire_date__year=time.localtime().tm_year,
-                                                      expire_date__month=time.localtime().tm_mon,
-                                                      expire_date__day=time.localtime().tm_mday)
+                                                       expire_date__month=time.localtime().tm_mon,
+                                                       expire_date__day=time.localtime().tm_mday)
     # host_login_user_set = HostLoginUser.objects.all()
     if host_login_user_set:
         for host_login_user_obj in host_login_user_set:

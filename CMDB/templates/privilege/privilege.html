@@ -55,12 +55,10 @@
 
                                 <th  data-toggle="true" >角色名称</th>
                                 <th>角色编码</th>
-                                <th>父级标签</th>
-                                <th>子级标签</th>
-                                <th>字标签URL</th>
-                                <th>权限</th>
                                 <th>提示信息</th>
                                 <th data-hide="all">该角色下的用户</th>
+                                <th data-hide="all">该角色下的菜单</th>
+                                <th data-hide="all">该角色下的权限</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -69,19 +67,8 @@
 
                                     <td>{{ role_obj.name }}</td>
                                     <td>{{ role_obj.code }}</td>
-                                    <td>{{ role_obj.parent_menu_name }}</td>
-                                    <td>{{ role_obj.child_menu_name }}</td>
-                                    <td>{{ role_obj.url }}</td>
-                                    <td>
-                                        {% for pri in role_obj.privileges.all %}
-                                            {% if forloop.last %}
-                                                {{ pri }}
-                                            {% else %}
-                                                {{ pri }},
-                                            {% endif %}
-                                        {% endfor %}
 
-                                    </td>
+
                                     <td>{{ role_obj.note }}</td>
                                     <td>
                                         {% if request.user.is_admin %}
@@ -95,6 +82,25 @@
                                         {% else %}
                                             {{ request.user.email }}
                                         {% endif %}
+
+                                    </td>
+                                <td>
+
+                                        {% for menu_obj in role_obj.menus.all %}
+                                            {{ menu_obj.parent_menu_name }}--{{ menu_obj.child_menu_name }}--{{ menu_obj.url }}
+                                            <br>
+                                        {% endfor %}
+
+
+                                    </td>
+                                <td>
+                                        {% for pri in role_obj.privileges.all %}
+                                            {% if forloop.last %}
+                                                {{ pri }}
+                                            {% else %}
+                                                {{ pri }},
+                                            {% endif %}
+                                        {% endfor %}
 
                                     </td>
                                 </tr>

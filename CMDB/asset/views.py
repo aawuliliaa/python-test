@@ -33,7 +33,7 @@ class Env(View):
         # Environment.objects.bulk_create(list)
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
 
         data_obj_set = Environment.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段
@@ -115,7 +115,7 @@ class SystemView(View):
         # Environment.objects.bulk_create(list)
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
 
         data_obj_set = System.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段
@@ -202,7 +202,7 @@ class ApplicationView(View):
         # Environment.objects.bulk_create(list)
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
 
         data_obj_set = Application.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段
@@ -291,7 +291,7 @@ class HostLoginUserView(View):
         # Environment.objects.bulk_create(list)
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
 
         data_obj_set = HostLoginUser.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段
@@ -410,7 +410,7 @@ class HostView(View):
         # Environment.objects.bulk_create(list)
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
 
         data_obj_set = Host.objects.all()
         # 这里和面的*("name", "abs_name")是前端的搜索功能，这里是搜索的字段

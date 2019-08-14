@@ -26,7 +26,7 @@ class WebsshLogin(View):
 
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
         # 从缓存获取
         # print('从redis中查询数据')
         host_obj_set = get_data_from_cache("Host")
@@ -139,7 +139,7 @@ class RunCmd(View):
 
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
         sys_obj_set = System.objects.all()
         return render(request, 'task_manage/run_cmd.html', locals())
 
@@ -227,7 +227,7 @@ class TailLog(View):
 
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
         sys_obj_set = System.objects.all()
         host_obj_set = Host.objects.all()
         return render(request, 'task_manage/tail_log.html', locals())
@@ -289,7 +289,7 @@ class TesterTailLog(View):
 
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
         sys_obj_set = System.objects.all()
         host_obj_set = Host.objects.all()
         return render(request, 'task_manage/tester_tail_log.html', locals())
@@ -340,7 +340,7 @@ class NoPasswordToLogin(View):
         """
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
         sys_obj_set = System.objects.all()
         host_obj_set = Host.objects.all()
         return render(request, 'task_manage/no_password_to_login.html', locals())
@@ -496,7 +496,7 @@ class ManageServer(View):
     def get(self, request):
         left_label_dic = get_label(request)
         # print(request.path)# /privilege/
-        role_obj = Role.objects.filter(url=request.path).first()
+        role_obj = Menu.objects.filter(url=request.path).first()
         sys_obj_set = System.objects.all()
         return render(request, 'task_manage/manage_server.html', locals())
 

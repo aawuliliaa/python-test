@@ -90,11 +90,20 @@ class UserAdmin(BaseUserAdmin):
 
 
 class RoleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'code', 'parent_menu_name', 'child_menu_name', 'url', 'note', 'create_time', 'update_time']
+    list_display = ['id', 'name', 'code',  'create_time', 'update_time']
     list_filter = ('name',)
     search_fields = ('name', 'code')
-    filter_horizontal = ('users', 'privileges')
+    filter_horizontal = ('users', 'privileges', 'menus')
     list_display_links = ('id', 'name')  # 点下这2个字段就跳到修改页
+    list_per_page = 20
+
+
+class MenuAdmin(admin.ModelAdmin):
+    list_display = ['id', 'parent_menu_name', 'child_menu_name', 'url', 'note', 'create_time', 'update_time']
+    list_filter = ('parent_menu_name', 'child_menu_name', 'url',)
+    search_fields = ('parent_menu_name', 'child_menu_name', 'url',)
+    # filter_horizontal = ('users', 'privileges', 'menus')
+    list_display_links = ('id',)  # 点下这2个字段就跳到修改页
     list_per_page = 20
 
 
@@ -120,5 +129,6 @@ admin.site.register(MyUser, UserAdmin)
 admin.site.unregister(Group)
 admin.site.register(Privilege, PrivilegeAdmin)
 admin.site.register(Role, RoleAdmin)
+admin.site.register(Menu, MenuAdmin)
 admin.site.register(AccessLog, AccessLogAdmin)
 

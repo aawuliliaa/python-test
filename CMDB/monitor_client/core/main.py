@@ -48,6 +48,7 @@ class ReportData(object):
         data_list = data.split("_")  # ['load1:10', 'load2:23', 'load3:34']
 
         # str = "load1<12 and load2<10"
+        # eval()有返回值，exec没有返回值
         for li in data_list:
             li = "=".join(li.split(":"))
             exec(li)
