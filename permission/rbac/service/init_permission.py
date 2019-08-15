@@ -18,8 +18,9 @@ def init_permission(request, current_user):
     permission_queryset = current_user.roles.filter(permissions__isnull=False).values('permissions__id',
                                                                                       'permissions__title',
                                                                                       'permissions__url',
-                                                                                      'permissions__is_menu',
-                                                                                      'permissions__icon'
+                                                                                      'permissions__menu__id',
+                                                                                      'permissions__menu__icon',
+                                                                                      'permissions__menu__title',
                                                                                       ).distinct()
     print("---------------", permission_queryset)
     # permission_set = models.Permission.objects.filter(role__userinfo__name=user)
@@ -27,18 +28,25 @@ def init_permission(request, current_user):
 
     # 获取权限中所有的URL
     permission_list = []
-    menu_list = []
+    menu_dict = {}
     for item in permission_queryset:
         permission_list.append(item['permissions__url'])
-        if item["permissions__is_menu"]:
-            tmp = {
-                'title': item['permissions__title'],
-                'icon': item['permissions__icon'],
-                'url': item['permissions__url']
-            }
-            menu_list.append(tmp)
+        menu_id = item["permissions__menu__id"]
+        if menu_id:
+            node = {'title': item['permissions__title'], 'url': item['permissions__url']}
+            if menu_id in menu_dict:
+                menu_dict[menu_id]["children"].append(node)
+            else:
+                menu_dict[menu_id] = {
+                    'title': item['permissions__menu__title'],
+                    'icon': item['permissions__menu__icon'],
+                    'children': [node]
+                }
+    print("----------------------------",menu_dict)
+    # {1: {'title': '信息管理', 'icon': 'fa-fire', 'children': [{'title': '客户列表', 'url': '/customer/list/'}]},
+    #  2: {'title': '用户管理', 'icon': 'fa-fire', 'children': [{'title': '账单列表', 'url': '/payment/list/'}]}}
     # query_set不能直接放入session中,转换为列表，存入session中
 
     # 存入session中
     request.session[settings.SESSION_PERMISSION_URL_LIST] = permission_list
-    request.session[settings.SESSION_MENU_KEY] = menu_list
+    request.session[settings.SESSION_MENU_KEY] = menu_dict
