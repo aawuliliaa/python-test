@@ -1,13 +1,15 @@
 {% extends 'layout.html' %}
-
+{% load rbac %}
 {% block content %}
 
     <div class="luffy-container">
-        <div style="margin: 5px 0;">
-            <a class="btn btn-success" href="{% url 'web:payment_add'%}">
-                <i class="fa fa-plus-square" aria-hidden="true"></i> 添加缴费记录
-            </a>
-        </div>
+        {% if request|has_permission:"payment_add" %}
+            <div style="margin: 5px 0;">
+                <a class="btn btn-success" href="/payment/add/">
+                    <i class="fa fa-plus-square" aria-hidden="true"></i> 添加缴费记录
+                </a>
+            </div>
+        {% endif %}
         <table class="table table-bordered table-hover">
             <thead>
             <tr>
@@ -15,7 +17,10 @@
                 <th>客户姓名</th>
                 <th>金额</th>
                 <th>付费时间</th>
-                <th>选项</th>
+
+                {% if request|has_permission:"payment_del" or request|has_permission:"payment_edit" %}
+                    <th>选项</th>
+                {% endif %}
             </tr>
             </thead>
             <tbody>
@@ -25,12 +30,18 @@
                     <td>{{ row.customer.name }}</td>
                     <td>{{ row.money }}</td>
                     <td>{{ row.create_time|date:"Y-m-d H:i:s" }}</td>
-                    <td>
-                        <a style="color: #333333;" href="{% url 'web:payment_edit' row.id %}">
-                            <i class="fa fa-edit" aria-hidden="true"></i></a>
-                        |
-                        <a style="color: #d9534f;" href="{% url 'web:payment_del' row.id %}"><i class="fa fa-trash-o"></i></a>
-                    </td>
+                    {% if request|has_permission:"payment_del" or request|has_permission:"payment_edit" %}
+                        <td>
+                            {% if request|has_permission:"payment_edit" %}
+                                <a style="color: #333333;" href="/payment/edit/{{ row.id }}/">
+                                    <i class="fa fa-edit" aria-hidden="true"></i></a>
+                            {% endif %}
+                            {% if request|has_permission:"payment_del" %}
+                                <a style="color: #d9534f;" href="/payment/del/{{ row.id }}/"><i
+                                        class="fa fa-trash-o"></i></a>
+                            {% endif %}
+                        </td>
+                    {% endif %}
 
                 </tr>
             {% endfor %}

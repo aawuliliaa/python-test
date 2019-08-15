@@ -93,6 +93,9 @@
             border-left: 2px solid #2F72AB;
         }
     </style>
+    {% block css %}
+
+    {% endblock css%}
 </head>
 <body>
 
@@ -161,14 +164,7 @@
         </div>
     </div>
     <div class="right-body">
-        <div>
-            <ol class="breadcrumb no-radius no-margin" style="border-bottom: 1px solid #ddd;">
-
-                <li><a href="#">首页</a></li>
-                <li class="active">客户管理</li>
-
-            </ol>
-        </div>
+        {% breadcrumb request %}
         {% block content %} {% endblock %}
     </div>
 </div>

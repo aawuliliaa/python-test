@@ -30,17 +30,35 @@ class CheckPermissionMiddleware(MiddlewareMixin):
             # 如果是白名单中的url，就放行
             if re.match(white_url_li, current_path):
                 return None
-        session_permission_url_list = request.session.get(settings.SESSION_PERMISSION_URL_LIST)
+        session_permission_url = request.session.get(settings.SESSION_PERMISSION_URL)
         # 如果用户没有登陆，session中是没有该key的，提示用户登录，登录后会把能够访问的菜单信息存入url中
-        if session_permission_url_list is None:
+        if session_permission_url is None:
             return HttpResponse("session中还没有url信息，请登录之后再访问！")
         # 循环用户可访问的菜单列表，如果当前路径在可访问的菜单列表中，就放行，否则就返回拒绝访问
-        # print("---------------------", session_permission_url_list)
-        # ['/customer/list/', '/customer/add/', '/payment/list/', '/payment/add/']
+        # print("---------------------session_permission_url_list", session_permission_url_list)
+        # [{'id': 1, 'url': '/customer/list/', 'pid': None}, {'id': 2, 'url': '/customer/add/', 'pid': 1},
+        # {'id': 7, 'url': '/payment/list/', 'pid': None}, {'id': 8, 'url': '/payment/add/', 'pid': 7}]
         flag = False
-        for permission_url in session_permission_url_list:
-            if re.match(permission_url, current_path):
+        # 用于路径导航
+        url_record = [{'title': "首页", "url": "#"}]
+        # [{'title': '首页', 'url': '#'},
+        # {'title': '客户列表', 'url': '/customer/list/'},
+        # {'title': '添加客户', 'url': '/customer/add/', 'class': 'active'}]
+        for permission_item in session_permission_url.values():
+            if re.match(permission_item["url"], current_path):
                 flag = True
+                request.current_selected_permission = permission_item['pid'] or permission_item['id']
+                if not permission_item["pid"]:
+                    url_record.append({'title': permission_item['title'],
+                                       'url': permission_item["url"],
+                                       'class': 'active'})
+                else:
+                    url_record.extend([{'title': permission_item['p_title'],
+                                        'url': permission_item["p_url"]},
+                                       {'title': permission_item['title'],
+                                        'url': permission_item["url"],
+                                        'class': 'active'}])
+                request.breadcrumb = url_record
 
         if flag is False:
             return HttpResponse("没有访问该菜单的权限")

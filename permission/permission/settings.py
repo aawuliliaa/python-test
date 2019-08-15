@@ -107,8 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
+# LANGUAGE_CODE = 'en-us'
+# modelForm中的报错信息显示中文
+LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -117,7 +118,7 @@ USE_L10N = True
 
 USE_TZ = True
 # ######################### 权限相关配置 ############################
-SESSION_PERMISSION_URL_LIST = "permission_url_list_key"
+SESSION_PERMISSION_URL = "permission_url_key"
 SESSION_MENU_KEY = "session_menu_list_key"
 WHITE_LIST = ["/login/", "/admin/*"]
 
