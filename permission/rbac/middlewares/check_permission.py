@@ -34,6 +34,9 @@ class CheckPermissionMiddleware(MiddlewareMixin):
         # 如果用户没有登陆，session中是没有该key的，提示用户登录，登录后会把能够访问的菜单信息存入url中
         if session_permission_url is None:
             return HttpResponse("session中还没有url信息，请登录之后再访问！")
+
+            # 此处代码进行判断
+
         # 循环用户可访问的菜单列表，如果当前路径在可访问的菜单列表中，就放行，否则就返回拒绝访问
         # print("---------------------session_permission_url_list", session_permission_url_list)
         # [{'id': 1, 'url': '/customer/list/', 'pid': None}, {'id': 2, 'url': '/customer/add/', 'pid': 1},
@@ -41,6 +44,14 @@ class CheckPermissionMiddleware(MiddlewareMixin):
         flag = False
         # 用于路径导航
         url_record = [{'title': "首页", "url": "#"}]
+        # 需要登录，但无需权限校验
+        for url in settings.NO_PERMISSION_LIST:
+            if re.match(url, request.path_info):
+                # 需要登录，但无需权限校验
+                request.current_selected_permission = 0
+                request.breadcrumb = url_record
+
+                return None
         # [{'title': '首页', 'url': '#'},
         # {'title': '客户列表', 'url': '/customer/list/'},
         # {'title': '添加客户', 'url': '/customer/add/', 'class': 'active'}]

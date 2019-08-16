@@ -120,9 +120,21 @@ USE_TZ = True
 # ######################### 权限相关配置 ############################
 SESSION_PERMISSION_URL = "permission_url_key"
 SESSION_MENU_KEY = "session_menu_list_key"
+# 不需要登录，就能访问的url
 WHITE_LIST = ["/login/", "/admin/*"]
-
-
+# 自动发现url,排出的URL
+AUTO_DISCOVER_EXCLUDE = [
+    '/admin/.*',
+    '/login/',
+    '/logout/',
+    '/index/',
+]
+# 需要登录，单不需要进行权限验证的
+NO_PERMISSION_LIST = [
+    '/index/',
+    '/logout/',
+]
+RBAC_USER_MODLE_CLASS = "rbac.models.UserInfo"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
