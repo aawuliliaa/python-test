@@ -381,3 +381,4 @@ def add_classes(request):
         res["title"] = classes_title
         res["success"] = True
     return JsonResponse(res)
+

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcd23b7e-6f12-4e85-a919-0ace368a7546" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CMDB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CMDB/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CMDB/CMDB/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CMDB/CMDB/settings.py" afterDir="false" />
@@ -20,13 +21,6 @@
       <change beforePath="$PROJECT_DIR$/../homework/7.ftp/client/core/ftpclient.py" beforeDir="false" afterPath="$PROJECT_DIR$/../homework/7.ftp/client/core/ftpclient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/7.ftp/server/core/ftpserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/../homework/7.ftp/server/core/ftpserver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crm.docx" beforeDir="false" afterPath="$PROJECT_DIR$/crm.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbac/forms/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/rbac/forms/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbac/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rbac/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbac/templates/rbac/menu_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbac/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rbac/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbac/views/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/rbac/views/menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pyechart_automatic_createline/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pyechart_automatic_createline/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/rbac/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
+              <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
               <folding>
                 <element signature="e#60#105#0" expanded="true" />
               </folding>
@@ -106,11 +100,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rbac/forms/menu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+            <state relative-caret-position="1273">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="e#45#69#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://3667d44a-cd9f-4241-b9e9-befa10d0c875/schema/main/table/rbac_permission">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -180,8 +185,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="151" />
-    <option name="y" value="42" />
+    <option name="x" value="1" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -327,7 +331,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565766302541</updated>
       <workItem from="1565766303661" duration="34416000" />
-      <workItem from="1565852642349" duration="17273000" />
+      <workItem from="1565852642349" duration="18490000" />
     </task>
     <task id="LOCAL-00001" summary="permission权限管理">
       <created>1565766510902</created>
@@ -371,17 +375,24 @@
       <option name="project" value="LOCAL" />
       <updated>1565864546399</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="permission权限管理-携带原搜索条件">
+      <created>1565881924709</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1565881924709</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51689000" />
+    <option name="totallyTimeSpent" value="52906000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="101" y="28" width="1280" height="720" extended-state="0" />
+    <frame x="1" y="0" width="1280" height="720" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14016393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14016393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -403,7 +414,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" />
       <window_info anchor="right" id="SciView" order="4" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.20163934" />
+      <window_info active="true" anchor="right" id="Database" order="5" visible="true" weight="0.20163934" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,19 +706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://3667d44a-cd9f-4241-b9e9-befa10d0c875/schema/main/table/rbac_permission">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rbac/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
+          <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
           <folding>
             <element signature="e#60#105#0" expanded="true" />
           </folding>
@@ -741,10 +743,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://3667d44a-cd9f-4241-b9e9-befa10d0c875/schema/main/table/rbac_permission">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rbac/forms/menu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+        <state relative-caret-position="1273">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="e#45#69#0" expanded="true" />
           </folding>

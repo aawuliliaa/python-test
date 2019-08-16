@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7afaf9e-d041-442d-9360-6c7b8c493048" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CMDB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CMDB/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/9.Django/1.myWebStruct/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/9.Django/1.myWebStruct/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/9.Django/1.myWebStruct/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/9.Django/1.myWebStruct/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/9.Django/Django.md" beforeDir="false" afterPath="$PROJECT_DIR$/9.Django/Django.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CMDB/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../CMDB/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CMDB/templates/privilege/privilege.html" beforeDir="false" afterPath="$PROJECT_DIR$/../CMDB/templates/privilege/privilege.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CMDB/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CMDB/web/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CMDB/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CMDB/web/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/12.library/library/.idea/dataSources/f9f94861-0344-4837-b7ab-d71d8272890a.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/12.library/library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../homework/12.library/library/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/12.library/library/library/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../homework/12.library/library/library/settings.py" afterDir="false" />
@@ -33,8 +35,8 @@
         <entry file="file://$PROJECT_DIR$/9.Django/Django.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="387">
-                <caret line="669" selection-start-line="669" selection-end-line="669" />
+              <first_editor relative-caret-position="463">
+                <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
               </first_editor>
               <second_editor />
             </state>
@@ -125,6 +127,8 @@
       <updated>1562381916980</updated>
       <workItem from="1562381918317" duration="24066000" />
       <workItem from="1563431602155" duration="642000" />
+      <workItem from="1563586891008" duration="628000" />
+      <workItem from="1563757611610" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="Django">
       <created>1562428154205</created>
@@ -140,17 +144,24 @@
       <option name="project" value="LOCAL" />
       <updated>1563431633064</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="celery定时任务">
+      <created>1563587033907</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1563587033907</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24708000" />
+    <option name="totallyTimeSpent" value="25343000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1562753" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13036437" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -201,8 +212,8 @@
     <entry file="file://$PROJECT_DIR$/9.Django/Django.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="387">
-            <caret line="669" selection-start-line="669" selection-end-line="669" />
+          <first_editor relative-caret-position="463">
+            <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>

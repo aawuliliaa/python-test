@@ -15,10 +15,10 @@ class UserForm(forms.Form):
                                # 设置为input控件,并为其添加样式
                                widget=widgets.TextInput(attrs={"class": "form-control"}))
     password = forms.CharField(label="密码",
-                               min_length=6,
+                               min_length=3,
                                max_length=32,
                                error_messages={"required": "密码不能为空",
-                                               "min_length": "密码不能少于6位",
+                                               "min_length": "密码不能少于3位",
                                                "max_length": "密码最长32位"},
                                widget=widgets.TextInput(attrs={"class": "form-control"}))
     re_password = forms.CharField(label="确认密码",

@@ -69,7 +69,7 @@ class FtpClient(object):
             """
             choice_list = {
                 "1": "create_user",
-                "2": "login",
+                "2": "1.login",
                 "3": "quit"
             }
             print_info(info)

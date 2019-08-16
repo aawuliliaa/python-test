@@ -32,7 +32,7 @@ class View:
                 account_data = self.account.getter(username, user_type)
                 if account_data is not None and account_data.user_type == user_type:
                     if account_data.password == password and account_data.username == username:
-                        print_info("login success!")
+                        print_info("1.login success!")
                         # 保存登录用户的对象到user_data中
                         self.user_data["is_authenticated"] = True
                         self.user_data["account_data"] = account_data

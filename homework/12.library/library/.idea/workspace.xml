@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00b92dfc-74e0-4e6c-bce9-96faf4cc343f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../CMDB/.readme_images/2316a636.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CMDB/.readme_images/3be34429.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CMDB/.readme_images/9c3d211b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CMDB/.readme_images/e29c6923.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicGrammer/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CMDB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CMDB/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CMDB/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CMDB/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CMDB/task_manage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CMDB/task_manage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CMDB/templates/task_manage/run_cmd.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CMDB/templates/task_manage/run_cmd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CMDB/templates/temp_example.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CMDB/templates/temp_example.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../excercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../excercise/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f9f94861-0344-4837-b7ab-d71d8272890a.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/my_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/my_js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../13.blog/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../13.blog/blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../13.blog/blog/app/my_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../13.blog/blog/app/my_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../13.blog/blog/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../13.blog/blog/app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../5.atm/auth/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.atm/auth/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../5.atm/shopping/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.atm/shopping/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../5.atm/utils/login_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.atm/utils/login_decorator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.select_courses/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.select_courses/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../7.ftp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../7.ftp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../7.ftp/client/core/ftpclient.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../7.ftp/client/core/ftpclient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../7.ftp/server/core/ftpserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../7.ftp/server/core/ftpserver.py" afterDir="false" />
     </list>
@@ -64,8 +78,62 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            <state relative-caret-position="257">
+              <caret line="326" column="8" selection-start-line="326" selection-start-column="8" selection-end-line="331" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/publish_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/book_add_modal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2375">
+              <caret line="125" column="40" selection-start-line="125" selection-start-column="40" selection-end-line="125" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/page.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2850">
+              <caret line="150" column="1" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -73,8 +141,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/my_js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="310" column="36" lean-forward="true" selection-start-line="310" selection-start-column="36" selection-end-line="310" selection-end-column="36" />
+            <state relative-caret-position="72">
+              <caret line="211" column="16" lean-forward="true" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -108,7 +176,6 @@
         <option value="$PROJECT_DIR$/library/__init__.py" />
         <option value="D:/software2/Python3/install/Lib/site-packages/django/db/backends/mysql/base.py" />
         <option value="D:/software2/Python3/install/Lib/site-packages/django/db/backends/mysql/operations.py" />
-        <option value="$PROJECT_DIR$/library/settings.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/templates/author_book.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
@@ -130,14 +197,17 @@
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/static/js/my_js.js" />
         <option value="$PROJECT_DIR$/app/views.py" />
+        <option value="$PROJECT_DIR$/venvP/Lib/site-packages/django/db/backends/mysql/base.py" />
+        <option value="$PROJECT_DIR$/venvP/Lib/site-packages/django/db/backends/mysql/operations.py" />
+        <option value="$PROJECT_DIR$/library/settings.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="105" />
-    <option name="y" value="9" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-12" />
+    <option name="y" value="45" />
     <option name="width" value="1584" />
-    <option name="height" value="1005" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -173,13 +243,12 @@
               <item name="library" type="b2602c69:ProjectViewProjectNode" />
               <item name="library" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="library" type="b2602c69:ProjectViewProjectNode" />
               <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -198,6 +267,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -258,7 +328,19 @@
       <option name="presentableId" value="Default" />
       <updated>1561772915252</updated>
       <workItem from="1561772921915" duration="43605000" />
-      <workItem from="1561860597393" duration="63524000" />
+      <workItem from="1561860597393" duration="67456000" />
+      <workItem from="1562423979841" duration="1470000" />
+      <workItem from="1562577586771" duration="561000" />
+      <workItem from="1562760918550" duration="1419000" />
+      <workItem from="1563291789262" duration="1209000" />
+      <workItem from="1563294400941" duration="64000" />
+      <workItem from="1563555032969" duration="94000" />
+      <workItem from="1563599712213" duration="58000" />
+      <workItem from="1563719618081" duration="116000" />
+      <workItem from="1563754888100" duration="616000" />
+      <workItem from="1563803860157" duration="8000" />
+      <workItem from="1563947320993" duration="611000" />
+      <workItem from="1564475913117" duration="1295000" />
     </task>
     <task id="LOCAL-00001" summary="图书管理为">
       <created>1561773483628</created>
@@ -407,21 +489,29 @@
       <option name="project" value="LOCAL" />
       <updated>1561990458008</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="图书管理">
+      <created>1562040207714</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1562040207714</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107129000" />
+    <option name="totallyTimeSpent" value="118582000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14736842" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20080972" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291592" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" visible="true" weight="0.28085867" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.3291592" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988764" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -430,14 +520,14 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3291592" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.4078712" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.42696628" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50040483" side_tool="true" weight="0.31484795" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.3291592" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.16032389" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.03562753" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,42 +555,10 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f9f94861-0344-4837-b7ab-d71d8272890a/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/auth_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/app_book_authors">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/app_publish">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/app_book">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/auth_user" />
+    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/app_book_authors" />
+    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/app_publish" />
+    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/app_book" />
     <entry file="file://$PROJECT_DIR$/../../../../../first_django/first_django/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -522,15 +580,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/app_author">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://f9f94861-0344-4837-b7ab-d71d8272890a/schema/main/table/app_author" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3ee4f82c-bb58-4c9e-aa27-1e41690388e0/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -548,22 +598,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-789">
-          <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3ee4f82c-bb58-4c9e-aa27-1e41690388e0/schema/db2/table/app_book_authors">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
@@ -600,29 +634,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/book_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/book_add_modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3ee4f82c-bb58-4c9e-aa27-1e41690388e0/schema/db2/table/app_book">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/book_add.html" />
     <entry file="das://3ee4f82c-bb58-4c9e-aa27-1e41690388e0/schema/db2/table/app_publish">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -632,38 +644,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/book_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="56" column="8" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/publish_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="20" column="20" lean-forward="true" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/publish_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/book_edit.html" />
+    <entry file="file://$PROJECT_DIR$/templates/publish_edit.html" />
     <entry file="file://$PROJECT_DIR$/templates/publish_edit_modal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="145" column="34" selection-start-line="145" selection-start-column="34" selection-end-line="145" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -674,27 +660,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -715,13 +684,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/author_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/author_edit.html" />
     <entry file="file://$PROJECT_DIR$/templates/author_edit_modal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -743,19 +706,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/未命名文件.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="309">
-            <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/未命名文件.jpg" />
     <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -763,17 +714,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://3ee4f82c-bb58-4c9e-aa27-1e41690388e0/schema/db2/table/app_book">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ee4f82c-bb58-4c9e-aa27-1e41690388e0/schema/db2/table/app_book_authors">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venvP/Lib/site-packages/django/db/backends/mysql/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="36" lean-forward="true" selection-start-line="34" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venvP/Lib/site-packages/django/db/backends/mysql/operations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="145" column="28" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="371">
+            <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/publish_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="150" column="1" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/book_add_modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2375">
+          <caret line="125" column="40" selection-start-line="125" selection-start-column="40" selection-end-line="125" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/my_js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="310" column="36" lean-forward="true" selection-start-line="310" selection-start-column="36" selection-end-line="310" selection-end-column="36" />
+        <state relative-caret-position="72">
+          <caret line="211" column="16" lean-forward="true" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        <state relative-caret-position="257">
+          <caret line="326" column="8" selection-start-line="326" selection-start-column="8" selection-end-line="331" selection-end-column="74" />
         </state>
       </provider>
     </entry>

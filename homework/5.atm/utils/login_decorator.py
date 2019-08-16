@@ -10,11 +10,11 @@ def login_required(func):
     :return:
     """
     def inner(*args, **kwargs):
-        if args[0]["login"] == "yes":
+        if args[0]["1.login"] == "yes":
             func(*args, **kwargs)
         else:
             # manage.main()
-            print("you must login first")
+            print("you must 1.login first")
 
     return inner
 
@@ -29,7 +29,7 @@ def test_dec(data):
     print(data)
 
 
-test_dec({"user_name": "vita", "password": "1234567", "lock_status": "no", "login": "no"})
+test_dec({"user_name": "vita", "password": "1234567", "lock_status": "no", "1.login": "no"})
 
 
 

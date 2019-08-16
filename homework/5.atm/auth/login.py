@@ -68,9 +68,9 @@ def user_login():
             user_data = load_db(login_user_file)
             if password == user_data["password"]:
                 if user_data["lock_status"] == "no":
-                    logger.info("Account [%s] has login in successful!" % user_name)
-                    # user_data = {"user_name": "vita", "password": "1234567", "login": "yes","lock_status":"no"}
-                    user_data["login"] = "yes"
+                    logger.info("Account [%s] has 1.login in successful!" % user_name)
+                    # user_data = {"user_name": "vita", "password": "1234567", "1.login": "yes","lock_status":"no"}
+                    user_data["1.login"] = "yes"
                     return user_data
                 else:
                     print_info("Account [%s] has been locked!" % user_name, "error")

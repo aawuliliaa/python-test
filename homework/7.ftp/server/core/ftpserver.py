@@ -18,7 +18,7 @@ from core.mythread import MyThread
 class FtpServer(object):
     MSG_SIZE = 1024
     STATUS_CODE = {
-        "100": "login success!",
+        "100": "1.login success!",
         "101": "your password is not correct",
         "102": "user not exist",
         "200": "file download starting!",

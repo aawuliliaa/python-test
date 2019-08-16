@@ -189,6 +189,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ["web.rest_auth.MyApiAuth", ],
     # 配置全局权限
     "DEFAULT_PERMISSION_CLASSES": ["web.rest_permission.MyApiPermission"],
+    # 设置访问频率
     "DEFAULT_THROTTLE_CLASSES": ["web.rest_throttle.MyThrottle"],
         "DEFAULT_THROTTLE_RATES":{
             'WD':'5/m',         #速率配置每分钟不能超过5次访问，WD是scope定义的值，

@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="47eedf73-fdcf-4bcd-a356-400feee4dbb7" name="Default Changelist" comment="todolist">
+      <change afterPath="$PROJECT_DIR$/excercise/9.Django/.Django_images/0c6df982.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excercise/9.Django/.Django_images/498ce32b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excercise/9.Django/.Django_images/5180d833.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excercise/9.Django/.Django_images/667cf2a3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/BasicGrammer/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excercise/9.Django/Django.md" beforeDir="false" afterPath="$PROJECT_DIR$/excercise/9.Django/Django.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/12.library/library/.idea/dataSources/f9f94861-0344-4837-b7ab-d71d8272890a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/12.library/library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homework/12.library/library/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/13.blog/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homework/13.blog/blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/13.blog/blog/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/13.blog/blog/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/5.atm/auth/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/5.atm/auth/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/5.atm/shopping/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/5.atm/shopping/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/5.atm/utils/login_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/5.atm/utils/login_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/6.select_courses/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/6.select_courses/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/7.ftp/client/core/ftpclient.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/7.ftp/client/core/ftpclient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/7.ftp/server/core/ftpserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/7.ftp/server/core/ftpserver.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="874">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="e#60#93#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>case</find>
+      <find>29</find>
+      <find>#</find>
+      <find>after</find>
+      <find>exampleInputEmail1</find>
+      <find>my-comment-close</find>
+      <find>ls</find>
+      <find>path</find>
+      <find>to_pytho</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/BasicGrammer/common.css" />
+        <option value="$PROJECT_DIR$/BasicGrammer/index.css" />
+        <option value="$PROJECT_DIR$/homework/xiaomi/readme.md" />
+        <option value="$PROJECT_DIR$/homework/xiaomi/index.html" />
+        <option value="$PROJECT_DIR$/homework/xiaomi/css/style.css" />
+        <option value="$PROJECT_DIR$/BasicGrammer/index.js" />
+        <option value="$PROJECT_DIR$/BasicGrammer/first.js" />
+        <option value="$PROJECT_DIR$/BasicGrammer/second.js" />
+        <option value="$PROJECT_DIR$/homework/10.todolist/index.html" />
+        <option value="$PROJECT_DIR$/homework/10.todolist/js/index.js" />
+        <option value="$PROJECT_DIR$/homework/10.todolist/readme.md" />
+        <option value="$PROJECT_DIR$/homework/10.todolist/css/style.css" />
+        <option value="$PROJECT_DIR$/homework/11.抽屉热榜/readme.md" />
+        <option value="$PROJECT_DIR$/homework/chouti/index.html" />
+        <option value="$PROJECT_DIR$/homework/chouti/css/style.css" />
+        <option value="$PROJECT_DIR$/homework/chouti/js/index.js" />
+        <option value="$PROJECT_DIR$/homework/11.chouti/js/index.js" />
+        <option value="$PROJECT_DIR$/homework/11.chouti/readme.md" />
+        <option value="$PROJECT_DIR$/homework/11.chouti/index.html" />
+        <option value="$PROJECT_DIR$/excercise/js特效集结站/1.图片切换.html" />
+        <option value="$PROJECT_DIR$/excercise/js特效集结站/2.显示和隐藏图片.html" />
+        <option value="$PROJECT_DIR$/excercise/js特效集结站/02.显示和隐藏图片.html" />
+        <option value="$PROJECT_DIR$/excercise/js特效集结站/03.衣服相册.html" />
+        <option value="$PROJECT_DIR$/excercise/js特效集结站/04.关闭小广告.html" />
+        <option value="$PROJECT_DIR$/excercise/js特效集结站/05.图片切换.html" />
+        <option value="$PROJECT_DIR$/excercise/8.js特效集结站/03.衣服相册.html" />
+        <option value="$PROJECT_DIR$/excercise/8.js特效集结站/06.百度换肤.html" />
+        <option value="$PROJECT_DIR$/excercise/8.js特效集结站/05.图片切换.html" />
+        <option value="$PROJECT_DIR$/excercise/8.js特效集结站/08.表单验证.py" />
+        <option value="$PROJECT_DIR$/excercise/8.js特效集结站/07.千千音乐盒.html" />
+        <option value="$PROJECT_DIR$/excercise/8.js特效集结站/08.表单验证.html" />
+        <option value="$PROJECT_DIR$/excercise/8.js特效集结站/09.上传图片验证.html" />
+        <option value="$PROJECT_DIR$/c.py" />
+        <option value="$PROJECT_DIR$/BasicGrammer/c.py" />
+        <option value="$PROJECT_DIR$/BasicGrammer/index.html" />
+        <option value="$PROJECT_DIR$/BasicGrammer/login.html" />
+        <option value="$PROJECT_DIR$/BasicGrammer/test.py" />
+        <option value="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/templates/index.html" />
+        <option value="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/templates/login.html" />
+        <option value="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/main.py" />
+        <option value="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/readme.md" />
+        <option value="D:/software2/Python3/install/Scripts/django-admin.py" />
+        <option value="$PROJECT_DIR$/homework/7.ftp/server/core/ftpserver.py" />
+        <option value="$PROJECT_DIR$/homework/13.blog/blog/readme.md" />
+        <option value="$PROJECT_DIR$/homework/13.blog/blog/blog/urls.py" />
+        <option value="$PROJECT_DIR$/excercise/9.Django/Django.md" />
+        <option value="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/urls.py" />
+        <option value="$PROJECT_DIR$/homework/13.blog/blog/static/js/article_detail.js" />
+        <option value="$PROJECT_DIR$/homework/13.blog/blog/app/views.py" />
+        <option value="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/views.py" />
+        <option value="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/models.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/python-test.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="python-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-test" type="462c0819:PsiDirectoryNode" />
+              <item name="excercise" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-test" type="462c0819:PsiDirectoryNode" />
+              <item name="excercise" type="462c0819:PsiDirectoryNode" />
+              <item name="9.Django" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-test" type="462c0819:PsiDirectoryNode" />
+              <item name="excercise" type="462c0819:PsiDirectoryNode" />
+              <item name="9.Django" type="462c0819:PsiDirectoryNode" />
+              <item name="1.myWebStruct" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-test" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-test" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/homework/13.blog/blog/.readme_images" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\PythonProject\new-python\python-test\BasicGrammer" />
+      <recent name="E:\PythonProject\new-python\python-test\homework\xiaomi\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\PythonProject\new-python\python-test\homework\13.blog\blog\.readme_images" />
+      <recent name="E:\PythonProject\new-python\python-test\excercise\9.Django\1.myWebStruct\templates" />
+      <recent name="E:\PythonProject\new-python\python-test\BasicGrammer" />
+      <recent name="E:\PythonProject\new-python\python-test\excercise\8.js特效集结站" />
+      <recent name="E:\PythonProject\new-python\python-test\excercise\js特效集结站" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/python-test/homework/10.todolist/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="c" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python-test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BasicGrammer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BasicGrammer/c.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python-test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python-test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BasicGrammer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BasicGrammer/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+      <module name="python-test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BasicGrammer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BasicGrammer/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Python.server" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.c" />
+      <item itemvalue="Python.main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.c" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="Python.server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="47eedf73-fdcf-4bcd-a356-400feee4dbb7" name="Default Changelist" comment="" />
+      <created>1558084474293</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558084474293</updated>
+      <workItem from="1558084475711" duration="70397000" />
+      <workItem from="1558485397717" duration="55213000" />
+      <workItem from="1558857753561" duration="7984000" />
+      <workItem from="1558938260000" duration="33741000" />
+      <workItem from="1559182514096" duration="41813000" />
+      <workItem from="1559342384547" duration="133386000" />
+      <workItem from="1559814004043" duration="2006000" />
+      <workItem from="1560068787665" duration="99699000" />
+      <workItem from="1560426947962" duration="98555000" />
+      <workItem from="1560735116511" duration="22631000" />
+      <workItem from="1560950288458" duration="1046000" />
+      <workItem from="1561016105914" duration="19517000" />
+      <workItem from="1561777723716" duration="2607000" />
+      <workItem from="1561860484524" duration="5108000" />
+      <workItem from="1562492887603" duration="14779000" />
+      <workItem from="1562686964024" duration="774000" />
+    </task>
+    <task id="LOCAL-00006" summary="习题">
+      <created>1558778206542</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558778206542</updated>
+    </task>
+    <task id="LOCAL-00007" summary="习题">
+      <created>1558800358329</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558800358329</updated>
+    </task>
+    <task id="LOCAL-00008" summary="习题">
+      <created>1558840862489</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1558840862489</updated>
+    </task>
+    <task id="LOCAL-00009" summary="习题">
+      <created>1558846835976</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1558846835976</updated>
+    </task>
+    <task id="LOCAL-00010" summary="习题">
+      <created>1558859086035</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558859086035</updated>
+    </task>
+    <task id="LOCAL-00011" summary="习题">
+      <created>1559053942720</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1559053942720</updated>
+    </task>
+    <task id="LOCAL-00012" summary="习题">
+      <created>1559054304689</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1559054304689</updated>
+    </task>
+    <task id="LOCAL-00013" summary="习题">
+      <created>1559610048544</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1559610048544</updated>
+    </task>
+    <task id="LOCAL-00014" summary="习题">
+      <created>1559627790421</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1559627790421</updated>
+    </task>
+    <task id="LOCAL-00015" summary="习题">
+      <created>1559634686667</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1559634686667</updated>
+    </task>
+    <task id="LOCAL-00016" summary="习题">
+      <created>1559646052326</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1559646052326</updated>
+    </task>
+    <task id="LOCAL-00017" summary="习题">
+      <created>1559646227835</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1559646227835</updated>
+    </task>
+    <task id="LOCAL-00018" summary="习题">
+      <created>1559655232878</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1559655232878</updated>
+    </task>
+    <task id="LOCAL-00019" summary="习题">
+      <created>1559655387095</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1559655387095</updated>
+    </task>
+    <task id="LOCAL-00020" summary="习题">
+      <created>1559656330032</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1559656330032</updated>
+    </task>
+    <task id="LOCAL-00021" summary="习题">
+      <created>1559657013361</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1559657013361</updated>
+    </task>
+    <task id="LOCAL-00022" summary="习题">
+      <created>1560417711960</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1560417711960</updated>
+    </task>
+    <task id="LOCAL-00023" summary="习题">
+      <created>1560417960185</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1560417960185</updated>
+    </task>
+    <task id="LOCAL-00024" summary="习题">
+      <created>1560418011106</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1560418011106</updated>
+    </task>
+    <task id="LOCAL-00025" summary="习题">
+      <created>1560418086032</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1560418086033</updated>
+    </task>
+    <task id="LOCAL-00026" summary="习题">
+      <created>1560418150019</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1560418150019</updated>
+    </task>
+    <task id="LOCAL-00027" summary="习题">
+      <created>1560418356721</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1560418356721</updated>
+    </task>
+    <task id="LOCAL-00028" summary="习题">
+      <created>1560418381898</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1560418381898</updated>
+    </task>
+    <task id="LOCAL-00029" summary="习题">
+      <created>1560418435237</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1560418435237</updated>
+    </task>
+    <task id="LOCAL-00030" summary="习题">
+      <created>1560418457545</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1560418457545</updated>
+    </task>
+    <task id="LOCAL-00031" summary="todolist">
+      <created>1560418686682</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1560418686682</updated>
+    </task>
+    <task id="LOCAL-00032" summary="todolist">
+      <created>1560489456167</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1560489456168</updated>
+    </task>
+    <task id="LOCAL-00033" summary="todolist">
+      <created>1560491674265</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1560491674265</updated>
+    </task>
+    <task id="LOCAL-00034" summary="todolist">
+      <created>1560495416283</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1560495416283</updated>
+    </task>
+    <task id="LOCAL-00035" summary="todolist">
+      <created>1560497358764</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1560497358764</updated>
+    </task>
+    <task id="LOCAL-00036" summary="todolist">
+      <created>1560669825923</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1560669825923</updated>
+    </task>
+    <task id="LOCAL-00037" summary="todolist">
+      <created>1560685822554</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1560685822554</updated>
+    </task>
+    <task id="LOCAL-00038" summary="todolist">
+      <created>1560687238843</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1560687238843</updated>
+    </task>
+    <task id="LOCAL-00039" summary="todolist">
+      <created>1560691463959</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1560691463959</updated>
+    </task>
+    <task id="LOCAL-00040" summary="todolist">
+      <created>1560691535930</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1560691535930</updated>
+    </task>
+    <task id="LOCAL-00041" summary="chouti">
+      <created>1560691998009</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1560691998009</updated>
+    </task>
+    <task id="LOCAL-00042" summary="chouti">
+      <created>1560692377902</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1560692377902</updated>
+    </task>
+    <task id="LOCAL-00043" summary="js特效">
+      <created>1560736527133</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1560736527133</updated>
+    </task>
+    <task id="LOCAL-00044" summary="todolist">
+      <created>1560739237825</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1560739237825</updated>
+    </task>
+    <task id="LOCAL-00045" summary="todolist">
+      <created>1560742287985</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1560742287985</updated>
+    </task>
+    <task id="LOCAL-00046" summary="todolist">
+      <created>1560756110130</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1560756110130</updated>
+    </task>
+    <task id="LOCAL-00047" summary="todolist">
+      <created>1560761263279</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1560761263280</updated>
+    </task>
+    <task id="LOCAL-00048" summary="todolist">
+      <created>1561102290780</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1561102290780</updated>
+    </task>
+    <task id="LOCAL-00049" summary="我的web框架">
+      <created>1561102545340</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1561102545340</updated>
+    </task>
+    <task id="LOCAL-00050" summary="diy web框架">
+      <created>1561102813415</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1561102813416</updated>
+    </task>
+    <task id="LOCAL-00051" summary="博客项目">
+      <created>1562119095966</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1562119095967</updated>
+    </task>
+    <task id="LOCAL-00052" summary="todolist">
+      <created>1562493458873</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1562493458874</updated>
+    </task>
+    <task id="LOCAL-00053" summary="博客">
+      <created>1562493524086</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1562493524086</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Boke">
+      <created>1562510150547</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1562510150547</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="609256000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="139" y="19" width="1056" height="670" extended-state="1" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.26506025" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Thumbnails" order="0" visible="true" weight="0.060822897" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.2846442" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32908162" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32480314" />
+      <window_info anchor="bottom" id="Python Console" order="5" weight="0.32806325" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32908162" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.2952756" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.3992095" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="13" weight="0.32806325" />
+      <window_info anchor="right" id="Database" order="0" weight="0.32951945" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="SciView" order="2" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="习题" />
+    <MESSAGE value="chouti" />
+    <MESSAGE value="js特效" />
+    <MESSAGE value="我的web框架" />
+    <MESSAGE value="diy web框架" />
+    <MESSAGE value="博客项目" />
+    <MESSAGE value="todolist" />
+    <MESSAGE value="博客" />
+    <MESSAGE value="Boke" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boke" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/python_test$stop_ftp.coverage" NAME="stop_ftp Coverage Results" MODIFIED="1558325889244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework/ftp" />
+    <SUITE FILE_PATH="coverage/python_test$run_server.coverage" NAME="run_server Coverage Results" MODIFIED="1558865359861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework/ftp/server/bin" />
+    <SUITE FILE_PATH="coverage/python_test$test.coverage" NAME="test Coverage Results" MODIFIED="1561097229662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BasicGrammer" />
+    <SUITE FILE_PATH="coverage/python_test$main.coverage" NAME="main Coverage Results" MODIFIED="1561102490040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/excercise/9.Django/1.myWebStruct" />
+    <SUITE FILE_PATH="coverage/python_test$server.coverage" NAME="server Coverage Results" MODIFIED="1559006591612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BasicGrammer" />
+    <SUITE FILE_PATH="coverage/python_test$c.coverage" NAME="c Coverage Results" MODIFIED="1561016301662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BasicGrammer" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/homework/11.chouti/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="356">
+            <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/7.多线程.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="289">
+            <caret line="177" column="10" selection-start-line="177" selection-start-column="10" selection-end-line="177" selection-end-column="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/01.图片切换.html" />
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/02.显示和隐藏图片.html" />
+    <entry file="file://$PROJECT_DIR$/homework/10.todolist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/10.todolist/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="65" column="1" lean-forward="true" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/04.关闭小广告.html" />
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/03.衣服相册.html" />
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/07.千千音乐盒.html" />
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/05.图片切换.html" />
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/06.百度换肤.html" />
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/08.表单验证.html" />
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/09.上传图片验证.html" />
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/01 图片切换.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/17 定时器回顾.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/18 transform的运用.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/19 数字时钟案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-722">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/8.js特效集结站/20 长图滚动效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="76" column="31" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/7.ftp/client/core/ftpclient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5586" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BasicGrammer/c.py" />
+    <entry file="file://$PROJECT_DIR$/BasicGrammer/server.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/software2/Python3/install/Lib/http/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3292">
+          <caret line="129" column="6" selection-start-line="129" selection-start-column="6" selection-end-line="129" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/software2/Python3/install/Lib/socketserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="218" column="8" selection-start-line="218" selection-start-column="8" selection-end-line="218" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BasicGrammer/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BasicGrammer/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/software2/Python3/install/Lib/wsgiref/simple_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="144" column="4" selection-start-line="144" selection-start-column="4" selection-end-line="144" selection-end-column="76" />
+          <folding>
+            <element signature="e#553#611#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BasicGrammer/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="37">
+            <caret line="2" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#60#105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/software2/Python3/install/Scripts/django-admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/11.chouti/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="153" column="26" lean-forward="true" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/7.ftp/server/core/ftpserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="244" column="9" lean-forward="true" selection-start-line="244" selection-start-column="9" selection-end-line="248" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/12.library/library/library/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="28" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/12.library/library/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/12.library/library/library/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/11.chouti/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="341" column="65" selection-start-line="341" selection-start-column="65" selection-end-line="341" selection-end-column="65" />
+          <folding>
+            <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#ul#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/12.library/library/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/13.blog/blog/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1216">
+            <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/13.blog/blog/blog/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/13.blog/blog/static/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-684" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/13.blog/blog/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-775" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/13.blog/blog/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/13.blog/blog/app/templatetags/my_tags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-228">
+          <folding>
+            <element signature="e#60#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/13.blog/blog/static/js/article_detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding>
+            <element signature="e#108#114#0" expanded="true" />
+            <element signature="e#114#120#0" expanded="true" />
+            <element signature="e#108#114#0" expanded="true" />
+            <element signature="e#114#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/13.blog/blog/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="381" column="29" lean-forward="true" selection-start-line="381" selection-start-column="29" selection-end-line="381" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/9.Django/Django.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="7030">
+            <caret line="370" column="25" lean-forward="true" selection-start-line="370" selection-start-column="25" selection-end-line="370" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#60#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise/9.Django/1.myWebStruct/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

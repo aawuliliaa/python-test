@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    <table border="1">
+        <thead>
+        <tr>
+            <th>标题</th>
+            <th>URL</th>
+            <th>NAME</th>
+            <th>菜单</th>
+            <th>父权限</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for form in formset %}
+            <tr>
+                {% for field in form %}
+                    {% if forloop.first %}
+                        {{ field }}
+                    {% else %}
+                        <td>{{ field }} <span style="color: red;">{{ field.errors.0 }}</span></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

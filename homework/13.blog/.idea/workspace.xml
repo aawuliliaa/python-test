@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="74603e4b-98ee-4a52-9921-1695d6b9a809" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../CMDB/.readme_images/1214c5a9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CMDB/.readme_images/72d5b16a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CMDB/.readme_images/984f196a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../excercise/9.Django/.Django_images/0c6df982.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../excercise/9.Django/.Django_images/498ce32b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../excercise/9.Django/.Django_images/5180d833.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../excercise/9.Django/.Django_images/667cf2a3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/13.blog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../BasicGrammer/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/.idea/CMDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/.idea/CMDB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/CMDB/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/CMDB/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/CMDB/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/CMDB/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/web/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../excercise/9.Django/1.myWebStruct/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../excercise/9.Django/1.myWebStruct/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../excercise/9.Django/1.myWebStruct/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../excercise/9.Django/1.myWebStruct/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../excercise/9.Django/Django.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../excercise/9.Django/Django.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12.library/library/.idea/dataSources/f9f94861-0344-4837-b7ab-d71d8272890a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12.library/library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.library/library/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12.library/library/library/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../12.library/library/library/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/my_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/my_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5.atm/auth/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/../5.atm/auth/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5.atm/shopping/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../5.atm/shopping/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5.atm/utils/login_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../5.atm/utils/login_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6.select_courses/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../6.select_courses/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7.ftp/client/core/ftpclient.py" beforeDir="false" afterPath="$PROJECT_DIR$/../7.ftp/client/core/ftpclient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7.ftp/server/core/ftpserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/../7.ftp/server/core/ftpserver.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/blog/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="121" selection-start-line="121" selection-end-line="121" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/app/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="138" column="31" selection-start-line="112" selection-start-column="4" selection-end-line="145" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="21" column="110" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="110" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/app/my_form.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+              <folding>
+                <element signature="e#60#84#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blog/templates/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="49" selection-start-line="49" selection-end-line="52" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/blog/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="50" selection-end-column="83" />
+              <folding>
+                <element signature="e#628#660#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/app/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/software2/Python3/install/Lib/site-packages/django/contrib/auth/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1135">
+              <caret line="299" column="6" selection-start-line="299" selection-start-column="6" selection-end-line="299" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/static/js/register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>my_reg_head</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/blog/app/my_form.py" />
+        <option value="$PROJECT_DIR$/blog/app/models.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="286" />
+    <option name="width" value="1584" />
+    <option name="height" value="1106" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="avatars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13.blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13.blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CMDB" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="74603e4b-98ee-4a52-9921-1695d6b9a809" name="Default Changelist" comment="" />
+      <created>1563155041351</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563155041351</updated>
+      <workItem from="1563155042511" duration="10688000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="10688000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20161943" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Remote Host" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/blog/blog/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="110" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/app/my_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding>
+            <element signature="e#60#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/blog/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="50" selection-end-column="83" />
+          <folding>
+            <element signature="e#628#660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="49" selection-start-line="49" selection-end-line="52" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/blog/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="121" selection-start-line="121" selection-end-line="121" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="138" column="31" selection-start-line="112" selection-start-column="4" selection-end-line="145" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/static/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/software2/Python3/install/Lib/site-packages/django/contrib/auth/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1135">
+          <caret line="299" column="6" selection-start-line="299" selection-start-column="6" selection-end-line="299" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

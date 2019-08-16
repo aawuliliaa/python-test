@@ -2,13 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="603963ba-5bc9-4754-bccb-39e3fe6ee99e" name="Default Changelist" comment="威威">
-      <change afterPath="$PROJECT_DIR$/../../excercise/.6.网络socket_images/3e81093c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../excercise/.6.网络socket_images/f2acb499.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../excercise/.6.网络socket_images/fb121eca.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../BasicGrammer/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../BasicGrammer/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../atm/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../atm/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMDB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CMDB/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebSocket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WebSocket/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../excercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../excercise/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12.library/library/.idea/dataSources/f9f94861-0344-4837-b7ab-d71d8272890a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12.library/library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12.library/library/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12.library/library/library/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../12.library/library/library/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../13.blog/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../13.blog/blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../13.blog/blog/app/my_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/../13.blog/blog/app/my_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../13.blog/blog/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../13.blog/blog/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5.atm/auth/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/../5.atm/auth/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5.atm/shopping/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../5.atm/shopping/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5.atm/utils/login_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../5.atm/utils/login_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6.select_courses/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../6.select_courses/core/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../select_courses/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../select_courses/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/core/ftpclient.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/core/ftpclient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/core/ftpserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/core/ftpserver.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,25 +27,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stop_ftp.py">
+        <entry file="file://$PROJECT_DIR$/server/core/mythread.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding>
-                <element signature="e#61#70#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/core/management.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/core/ftpclient.py">
+        <entry file="file://$PROJECT_DIR$/server/core/ftpserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1675">
-              <caret line="346" column="13" lean-forward="true" selection-start-line="346" selection-start-column="13" selection-end-line="346" selection-end-column="13" />
-            </state>
+            <state relative-caret-position="-1881" />
           </provider>
         </entry>
       </file>
@@ -64,10 +74,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="186" />
-    <option name="y" value="33" />
-    <option name="width" value="1695" />
-    <option name="height" value="963" />
+    <option name="x" value="424" />
+    <option name="y" value="25" />
+    <option name="width" value="1584" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -75,18 +85,41 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="ftp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp" type="462c0819:PsiDirectoryNode" />
+              <item name="7.ftp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7.ftp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7.ftp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7.ftp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7.ftp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7.ftp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7.ftp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7.ftp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="7.ftp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="7.ftp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -148,6 +181,10 @@
       <option name="presentableId" value="Default" />
       <updated>1558927355781</updated>
       <workItem from="1558927356958" duration="4097000" />
+      <workItem from="1563267934713" duration="615000" />
+      <workItem from="1563269045634" duration="231000" />
+      <workItem from="1563339750482" duration="747000" />
+      <workItem from="1564882669422" duration="619000" />
     </task>
     <task id="LOCAL-00001" summary="威威">
       <created>1558931156845</created>
@@ -174,21 +211,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4097000" />
+    <option name="totallyTimeSpent" value="6309000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21376519" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14979757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3291592" />
@@ -196,11 +227,17 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,33 +251,6 @@
     <SUITE FILE_PATH="coverage/ftp$stop_ftp.coverage" NAME="stop_ftp Coverage Results" MODIFIED="1558930017377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/stop_ftp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="e#61#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/core/mythread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/core/management.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/core/ftpserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6102" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -251,11 +261,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/conf/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/utils/print_write_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#60#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/core/ftpclient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1675">
-          <caret line="346" column="13" lean-forward="true" selection-start-line="346" selection-start-column="13" selection-end-line="346" selection-end-column="13" />
+        <state relative-caret-position="466">
+          <caret line="346" column="13" selection-start-line="346" selection-start-column="13" selection-end-line="346" selection-end-column="13" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stop_ftp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="e#61#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/core/management.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/core/mythread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/core/ftpserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1881" />
       </provider>
     </entry>
   </component>
