@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec4fd50e-9e8c-4fa2-84b5-fecdc5a4f350" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stark/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stark/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stark/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stark/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stark/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CMDB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CMDB/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app02/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app02/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_stark/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_stark/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../permission/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../permission/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/.idea/deployment.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/.idea/misc.xml" beforeDir="false" />
@@ -120,7 +112,6 @@
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/eo/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/es/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/es/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/es/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/es/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/es_AR/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/es_AR/LC_MESSAGES/django.po" beforeDir="false" />
@@ -150,7 +141,6 @@
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/eu/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/fa/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/fa/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/fa/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/fa/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/fi/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/fi/LC_MESSAGES/django.po" beforeDir="false" />
@@ -4400,16 +4390,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_stark/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app01/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -4520,7 +4510,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/stark" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -4576,7 +4566,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566007733509</updated>
-      <workItem from="1566007750262" duration="237000" />
+      <workItem from="1566007750262" duration="928000" />
     </task>
     <task id="LOCAL-00001" summary="stark">
       <created>1566007889732</created>
@@ -4585,17 +4575,25 @@
       <option name="project" value="LOCAL" />
       <updated>1566007889732</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="stark">
+      <created>1566008044901</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566008044901</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237000" />
+    <option name="totallyTimeSpent" value="928000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="31" width="1280" height="720" extended-state="0" />
+    <frame x="113" y="61" width="1145" height="577" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.281106" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -4646,13 +4644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app01/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="87" selection-start-line="17" selection-start-column="87" selection-end-line="17" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stark/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -4663,7 +4654,14 @@
     <entry file="file://$PROJECT_DIR$/my_stark/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app01/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="87" selection-start-line="17" selection-start-column="87" selection-end-line="17" selection-end-column="87" />
         </state>
       </provider>
     </entry>
