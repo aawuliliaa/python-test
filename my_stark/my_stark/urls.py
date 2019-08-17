@@ -1,21 +1,32 @@
-"""my_stark URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
+from stark.service.v1 import site
+# 方式三：
+#     urlpatterns = [
+#         url(r'^web/', ([
+#             url(r'^index/', views.index),
+#             url(r'^home/', views.home),
+#         ], app_name, namespace)), # 第一个参数是urls文件对象，通过此对象可以获取urls.patterns获取分发的路由。
+#     ]
 
+# site.urls------------ ([<URLPattern 'app01/depart/list/$'>,
+# <URLPattern 'app01/depart/add/$'>,
+# <URLPattern 'app01/depart/change/(\d+)/$'>,
+# <URLPattern 'app01/depart/del/(\d+)/$'>,
+# <URLPattern 'app01/userinfo/list/$'>,
+# <URLPattern 'app01/userinfo/add/$'>,
+# <URLPattern 'app01/userinfo/change/(\d+)/$'>,
+# <URLPattern 'app01/userinfo/del/(\d+)/$'>,
+# <URLPattern 'app02/host/list/$'>,
+# <URLPattern 'app02/host/add/$'>,
+# <URLPattern 'app02/host/change/(\d+)/$'>,
+# <URLPattern 'app02/host/del/(\d+)/$'>,
+# <URLPattern 'app02/role/list/$'>,
+# <URLPattern 'app02/role/add/$'>,
+# <URLPattern 'app02/role/change/(\d+)/$'>,
+# <URLPattern 'app02/role/del/(\d+)/$'>], 'stark', 'stark')
 urlpatterns = [
     path('admin/', admin.site.urls),
+    re_path(r'^stark/', site.urls),
 ]

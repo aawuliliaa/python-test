@@ -14,3 +14,10 @@ class Role(models.Model):
     角色
     """
     title = models.CharField(verbose_name='角色名称', max_length=32)
+
+
+class Project(models.Model):
+    """
+    项目表
+    """
+    title = models.CharField(verbose_name='项目名称', max_length=32)

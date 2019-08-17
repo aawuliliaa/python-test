@@ -1,90 +1,77 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+# from django.conf.urls import url
+# from django.shortcuts import HttpResponse
+# from stark.service.v1 import site, StarkHandler
+# from app01 import models
+
+
+# class DepartHandler(StarkHandler):
+#
+#     def extra_urls(self):
+#         """
+#         额外的增加URL
+#         :return:
+#         """
+#         return [
+#             url(r'^detail/(\d+)/$', self.detail_view)
+#         ]
+#
+#     def detail_view(self, request, pk):
+#         return HttpResponse('详细页面')
+
+
+# site.register(models.Depart, DepartHandler)
+
+#
+# class UserInfoHandler(StarkHandler):
+#
+#     def get_urls(self):
+#         """
+#         修改URL
+#         :return:
+#         """
+#         patterns = [
+#             url(r'^list/$', self.changelist_view),
+#             url(r'^add/$', self.add_view),
+#         ]
+#
+#         return patterns
+
+
+# class UserInfoHandler(StarkHandler):
+#     # 定制页面显示的列
+#     list_display = ['name', 'age', 'email']
+#     # pass
+#
+# site.register(models.UserInfo, UserInfoHandler)
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+from django.conf.urls import url
 from django.shortcuts import HttpResponse
-from stark.service.v1 import site
+from django.urls import reverse
+from django.utils.safestring import mark_safe
+from stark.service.v1 import site, StarkHandler, get_choice_text
 from app01 import models
 
 
-class DepartHandler(object):
-
-    def __init__(self, model_class):
-        self.model_class = model_class
-
-    def changelist_view(self, request):
-        """
-        列表页面
-        :param request:
-        :return:
-        """
-        return HttpResponse('部门列表页面')
-
-    def add_view(self, request):
-        """
-        添加页面
-        :param request:
-        :return:
-        """
-        pass
-
-    def change_view(self, request, pk):
-        """
-        编辑页面
-        :param request:
-        :param pk:
-        :return:
-        """
-        pass
-
-    def delete_view(self, request, pk):
-        """
-        删除页面
-        :param request:
-        :param pk:
-        :return:
-        """
-        pass
+# http://127.0.0.1:8000/stark/app01/depart/list/
+class DepartHandler(StarkHandler):
+    list_display = ['id', 'title', StarkHandler.display_edit, StarkHandler.display_del]
 
 
 site.register(models.Depart, DepartHandler)
 
 
-class UserInfoHandler(object):
-    def __init__(self, model_class):
-        self.model_class = model_class
-
-    def changelist_view(self, request):
-        """
-        列表页面
-        :param request:
-        :return:
-        """
-        return HttpResponse('用户列表页面')
-
-    def add_view(self, request):
-        """
-        添加页面
-        :param request:
-        :return:
-        """
-        pass
-
-    def change_view(self, request, pk):
-        """
-        编辑页面
-        :param request:
-        :param pk:
-        :return:
-        """
-        pass
-
-    def delete_view(self, request, pk):
-        """
-        删除页面
-        :param request:
-        :param pk:
-        :return:
-        """
-        pass
+# http://127.0.0.1:8000/stark/app01/userinfo/list/
+class UserInfoHandler(StarkHandler):
+    # 定制页面显示的列
+    list_display = ['name',
+                    get_choice_text('性别', 'gender'),
+                    get_choice_text('班级', 'classes'),
+                    'age', 'email', 'depart',
+                    StarkHandler.display_edit,
+                    StarkHandler.display_del]
 
 
 site.register(models.UserInfo, UserInfoHandler)
