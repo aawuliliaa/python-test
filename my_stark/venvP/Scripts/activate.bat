@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=E:\PythonProject\new-python\python-test\stark\venvP"
+set "VIRTUAL_ENV=E:\PythonProject\new-python\python-test\my_stark\venvP"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"

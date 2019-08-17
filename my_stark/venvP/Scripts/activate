@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="E:\PythonProject\new-python\python-test\stark\venvP"
+VIRTUAL_ENV="E:\PythonProject\new-python\python-test\my_stark\venvP"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
