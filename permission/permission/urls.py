@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-
+print("urls.py-------------------------------")
 # <URLResolver <URLPattern list> (admin:admin) 'admin/'>
 # <URLResolver <module 'web.urls' from 'E:\\PythonProject\\new-python\\python-test\\permission\\web\\urls.py'> (web:web) '^'>
 # <URLResolver <module 'rbac.urls' from 'E:\\PythonProject\\new-python\\python-test\\permission\\rbac\\urls.py'> (rbac:rbac) 'rbac/'>
@@ -26,3 +26,5 @@ urlpatterns = [
     re_path(r'rbac/', include('rbac.urls', namespace="rbac")),
 
 ]
+
+
