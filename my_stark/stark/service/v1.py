@@ -3,13 +3,94 @@
 import functools
 from types import FunctionType
 from django.conf.urls import url
-
+from django.db.models import Q
 from django import forms
 from django.urls import reverse
 from django.http import QueryDict
 from django.utils.safestring import mark_safe
-from django.shortcuts import HttpResponse, render
+from django.shortcuts import HttpResponse, render, redirect
 from stark.utils.pagination import Pagination
+from django.db.models import ForeignKey, ManyToManyField
+class SearchGroupRow(object):
+    def __init__(self, title, queryset_or_tuple, option):
+        """
+
+        :param title: 组合搜索的列名称
+        :param queryset_or_tuple: 组合搜索关联获取到的数据
+        :param option: 配置
+        """
+        self.title = title
+        self.queryset_or_tuple = queryset_or_tuple
+        self.option = option
+
+    def __iter__(self):
+        yield '<div class="whole">'
+        yield self.title
+        yield '</div>'
+
+        yield '<div class="others">'
+        yield "<a>全部</a>"
+        for item in self.queryset_or_tuple:
+            text = self.option.get_text(item)
+            yield "<a href='#'>%s</a>" % text
+
+        yield '</div>'
+
+
+class Option(object):
+    def __init__(self, field, db_condition=None, text_func=None):
+        """
+        :param field: 组合搜索关联的字段
+        :param db_condition: 数据库关联查询时的条件
+        :param text_func: 此函数用于显示组合搜索按钮页面文本
+        """
+        self.field = field
+        if not db_condition:
+            db_condition = {}
+        self.db_condition = db_condition
+        self.text_func = text_func
+
+        self.is_choice = False
+
+    def get_db_condition(self, request, *args, **kwargs):
+        return self.db_condition
+
+    def get_queryset_or_tuple(self, model_class, request, *args, **kwargs):
+        """
+        根据字段去获取数据库关联的数据
+        :return:
+        """
+        # 根据gender或depart字符串，去自己对应的Model类中找到 字段对象
+        field_object = model_class._meta.get_field(self.field)
+        title = field_object.verbose_name
+        # 获取关联数据
+        if isinstance(field_object, ForeignKey) or isinstance(field_object, ManyToManyField):
+            # FK和M2M,应该去获取其关联表中的数据： QuerySet
+            db_condition = self.get_db_condition(request, *args, **kwargs)
+            print(self.field, field_object.remote_field.model.objects.filter(**db_condition))
+            #     depart <QuerySet [<Depart: dep1>]>
+            return SearchGroupRow(title, field_object.remote_field.model.objects.filter(**db_condition), self)
+        else:
+            # 获取choice中的数据
+            print(self.field, field_object.choices)
+            #             gender ((1, '男'), (2, '女'))
+            # 获取choice中的数据：元组
+            self.is_choice = True
+            return SearchGroupRow(title, field_object.choices, self)
+
+    def get_text(self, field_object):
+        """
+        获取文本函数
+        :param field_object:
+        :return:
+        """
+        if self.text_func:
+            return self.text_func(field_object)
+
+        if self.is_choice:
+            return field_object[1]
+
+        return str(field_object)
 
 def get_choice_text(title, field):
     """
@@ -26,6 +107,14 @@ def get_choice_text(title, field):
         return getattr(obj, method)()
 
     return inner
+
+class StarkModelForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(StarkModelForm, self).__init__(*args, **kwargs)
+        # 统一给ModelForm生成字段添加样式
+        for name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+
 
 
 class StarkHandler(object):
@@ -53,6 +142,12 @@ class StarkHandler(object):
         return None
 
     def reverse_list_url(self):
+        """
+        添加，编辑，删除成功后，返回首页
+        带有原搜索条件，解包被打包的内容
+        :return:
+        """
+
         name = "%s:%s" % (self.site.namespace, self.get_list_url_name,)
         base_url = reverse(name)
         param = self.request.GET.get('_filter')
@@ -61,8 +156,48 @@ class StarkHandler(object):
         return "%s?%s" % (base_url, param,)
 
     def reverse_add_url(self):
+        """
+        带有原搜索条件，把原搜索条件打包
+        :return:
+        """
         name = "%s:%s" % (self.site.namespace, self.get_add_url_name,)
         base_url = reverse(name)
+        if not self.request.GET:
+            add_url = base_url
+        else:
+            param = self.request.GET.urlencode()
+            new_query_dict = QueryDict(mutable=True)
+            new_query_dict['_filter'] = param
+            add_url = "%s?%s" % (base_url, new_query_dict.urlencode())
+        return add_url
+
+    def reverse_change_url(self, *args, **kwargs):
+        """
+        生成带有原搜索条件的编辑URL
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        name = "%s:%s" % (self.site.namespace, self.get_change_url_name,)
+        base_url = reverse(name, args=args, kwargs=kwargs)
+        if not self.request.GET:
+            add_url = base_url
+        else:
+            param = self.request.GET.urlencode()
+            new_query_dict = QueryDict(mutable=True)
+            new_query_dict['_filter'] = param
+            add_url = "%s?%s" % (base_url, new_query_dict.urlencode())
+        return add_url
+
+    def reverse_delete_url(self, *args, **kwargs):
+        """
+        生成带有原搜索条件的删除URL
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        name = "%s:%s" % (self.site.namespace, self.get_delete_url_name,)
+        base_url = reverse(name, args=args, kwargs=kwargs)
         if not self.request.GET:
             add_url = base_url
         else:
@@ -81,15 +216,53 @@ class StarkHandler(object):
         """
         if is_header:
             return "编辑"
-        name = "%s:%s" % (self.site.namespace, self.get_change_url_name,)
-        return mark_safe('<a href="%s">编辑</a>' % reverse(name, args=(obj.pk,)))
+        return mark_safe('<a href="%s">编辑</a>' % self.reverse_change_url(pk=obj.pk))
 
     def display_del(self, obj=None, is_header=None):
         if is_header:
             return "删除"
         name = "%s:%s" % (self.site.namespace, self.get_delete_url_name,)
-        return mark_safe('<a href="%s">删除</a>' % reverse(name, args=(obj.pk,)))
-    def changelist_view(self, request):
+        return mark_safe('<a href="%s">删除</a>' % self.reverse_delete_url(pk=obj.pk))
+
+    order_list = []
+
+    def get_order_list(self):
+        return self.order_list or ['-id', ]
+
+    search_list = []
+
+    def get_search_list(self):
+        return self.search_list
+
+    def display_checkbox(self, obj=None, is_header=None):
+        """
+        :param obj:
+        :param is_header:
+        :return:
+        """
+        if is_header:
+            return "选择"
+        return mark_safe('<input type="checkbox" name="pk" value="%s" />' % obj.pk)
+    action_list = []
+
+    def get_action_list(self):
+        return self.action_list
+    def action_multi_delete(self, request, *args, **kwargs):
+        """
+        批量删除（如果想要定制执行成功后的返回值，那么就为action函数设置返回值即可。）
+        :return:
+        """
+        pk_list = request.POST.getlist('pk')
+        self.model_class.objects.filter(id__in=pk_list).delete()
+        # return redirect("http://www.baidu.com")
+
+    action_multi_delete.text = "批量删除"
+    search_group = []
+
+    def get_search_group(self):
+        return self.search_group
+
+    def changelist_view(self, request, *args, **kwargs):
         """
         列表页面
         :param request:
@@ -100,9 +273,33 @@ class StarkHandler(object):
         # 访问http://127.0.0.1:8000/stark/app02/role/list/； self.model_class = app02.models.Role
         # 访问http://127.0.0.1:8000/stark/app02/host/list/； self.model_class =app02.models.Host
         # self.models_class
+        # ########## 1. 处理Action ##########
+        action_list = self.get_action_list()
+        action_dict = {func.__name__: func.text for func in action_list}  # {'multi_delete':'批量删除','multi_init':'批量初始化'}
+        if request.method == 'POST':
+            # 批量操作，执行对应的函数
+            action_func_name = request.POST.get('action')
+            if action_func_name and action_func_name in action_dict:
+                # 如果该函数想批量操作完成后，跳转，可以给函数写返回值
+                action_response = getattr(self, action_func_name)(request, *args, **kwargs)
+                if action_response:
+                    # return redirect("http://www.baidu.com")
+                    return action_response
 
-        # ########## 1. 处理分页 ##########
-        all_count = self.model_class.objects.all().count()
+        search_list = self.get_search_list()
+        search_value = request.GET.get('q', '')
+        conn = Q()
+        conn.connector = 'OR'
+        if search_value:
+
+            for item in search_list:
+                conn.children.append((item, search_value))
+        # ########## 1. 获取排序 ##########
+        order_list = self.get_order_list()
+        queryset = self.model_class.objects.filter(conn).order_by(*order_list)
+        # ########## 2. 处理分页 ##########
+        all_count = queryset.count()
+
         # 默认是不可以被修改的
         query_params = request.GET.copy()
         # 该项设置为True，就可以修改了
@@ -116,7 +313,7 @@ class StarkHandler(object):
             per_page=self.per_page_count,
         )
 
-        data_list = self.model_class.objects.all()[pager.start:pager.end]
+        data_list = queryset[pager.start:pager.end]
 
         # ########## 2. 处理表格 ##########
         list_display = self.get_list_display()
@@ -159,6 +356,14 @@ class StarkHandler(object):
 
         # ##########3. 添加按钮 #########
         add_btn = self.get_add_btn()
+
+        # ########## 7. 组合搜索 #########
+        search_group_row_list = []
+        search_group = self.get_search_group()  # ['gender', 'depart']
+        for option_object in search_group:
+            row = option_object.get_queryset_or_tuple(self.model_class, request, *args, **kwargs)
+            search_group_row_list.append(row)
+
         return render(
             request,
             'stark/changelist.html',
@@ -167,9 +372,34 @@ class StarkHandler(object):
                 'header_list': header_list,
                 'body_list': body_list,
                 'pager': pager,
-                'add_btn': add_btn
+                'search_list': search_list,
+                'search_value': search_value,
+                'action_dict': action_dict,
+                'add_btn': add_btn,
+                'search_group_row_list': search_group_row_list
             }
         )
+    # 默认添加或编辑都是展示所有字段，可以自定义model_form_class，设置展示哪些字段
+    model_form_class = None
+
+    def get_model_form_class(self):
+        if self.model_form_class:
+            return self.model_form_class
+
+        class DynamicModelForm(StarkModelForm):
+            class Meta:
+                model = self.model_class
+                fields = "__all__"
+
+        return DynamicModelForm
+    def save(self, form, is_update=False):
+        """
+        在使用ModelForm保存数据之前预留的钩子方法
+        :param form:
+        :param is_update:
+        :return:
+        """
+        form.save()
 
     def add_view(self, request):
         """
@@ -177,8 +407,16 @@ class StarkHandler(object):
         :param request:
         :return:
         """
-        # self.models_class
-        return HttpResponse('添加页面')
+        model_form_class = self.get_model_form_class()
+        if request.method == 'GET':
+            form = model_form_class()
+            return render(request, 'stark/change.html', {'form': form})
+        form = model_form_class(data=request.POST)
+        if form.is_valid():
+            self.save(form, is_update=False)
+            # 在数据库保存成功后，跳转回列表页面(携带原来的参数)。
+            return redirect(self.reverse_list_url())
+        return render(request, 'stark/change.html', {'form': form})
 
     def change_view(self, request, pk):
         """
@@ -187,8 +425,20 @@ class StarkHandler(object):
         :param pk:
         :return:
         """
-        # self.models_class
-        return HttpResponse('编辑页面')
+        current_change_object = self.model_class.objects.filter(pk=pk).first()
+        if not current_change_object:
+            return HttpResponse('要修改的数据不存在，请重新选择！')
+
+        model_form_class = self.get_model_form_class()
+        if request.method == 'GET':
+            form = model_form_class(instance=current_change_object)
+            return render(request, 'stark/change.html', {'form': form})
+        form = model_form_class(data=request.POST, instance=current_change_object)
+        if form.is_valid():
+            self.save(form, is_update=False)
+            # 在数据库保存成功后，跳转回列表页面(携带原来的参数)。
+            return redirect(self.reverse_list_url())
+        return render(request, 'stark/change.html', {'form': form})
 
     def delete_view(self, request, pk):
         """
@@ -197,8 +447,12 @@ class StarkHandler(object):
         :param pk:
         :return:
         """
-        # self.models_class
-        return HttpResponse('删除页面')
+        origin_list_url = self.reverse_list_url()
+        if request.method == 'GET':
+            return render(request, 'stark/delete.html', {'cancel': origin_list_url})
+
+        self.model_class.objects.filter(pk=pk).delete()
+        return redirect(origin_list_url)
 
     def get_url_name(self, param):
         app_label, model_name = self.model_class._meta.app_label, self.model_class._meta.model_name
@@ -250,8 +504,8 @@ class StarkHandler(object):
         patterns = [
             url(r'^list/$', self.wrapper(self.changelist_view), name=self.get_list_url_name),
             url(r'^add/$', self.wrapper(self.add_view), name=self.get_add_url_name),
-            url(r'^change/(\d+)/$', self.wrapper(self.change_view), name=self.get_change_url_name),
-            url(r'^delete/(\d+)/$', self.wrapper(self.delete_view), name=self.get_delete_url_name),
+            url(r'^change/(?P<pk>\d+)/$', self.wrapper(self.change_view), name=self.get_change_url_name),
+            url(r'^delete/(?P<pk>\d+)/$', self.wrapper(self.delete_view), name=self.get_delete_url_name),
         ]
 
         patterns.extend(self.extra_urls())
