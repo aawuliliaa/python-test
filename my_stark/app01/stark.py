@@ -123,8 +123,10 @@ class UserInfoHandler(StarkHandler):
     # 姓名中含有关键字或邮箱中含有关键字
     search_list = ['name__contains', 'email__contains']
     search_group = [
-        Option('gender'),
-        MyOption('depart', {'id__gt': 2}),
+        Option('gender',is_multi=True),
+        Option('depart' ,is_multi=True, db_condition={'id__gt': 0})
+        # MyOption('depart', {'id__gt': 2}),
+        # Option('gender', text_func=lambda field_object: field_object[1] + '666'),
     ]
 
     has_add_btn = True
