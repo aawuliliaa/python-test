@@ -1,43 +1,125 @@
 {% extends  'rbac/base.html' %}
+{% block head %}
+    <style type="text/css">
+    .current_active{
+        border-left: orange solid 4px
+    }
+    </style>
+{% endblock %}
 {% block content %}
-<div class="row wrapper border-bottom white-bg page-heading">
-    <div class="ibox col-lg-12">
-        <div class="ibox-title">
-            <h5>数据列表</h5>
-            <div class="ibox-tools">
-                <a class="collapse-link">
-                    <i class="fa fa-chevron-up"></i>
-                </a>
-            </div>
-        </div>
-        <div class="ibox-content">
-            <a  class="btn btn-primary fa fa-plus-circle" href="{% url 'rbac:menu_add' %}">添加</a>
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>菜单名称</th>
-                    <th>图标</th>
-                    <th>创建时间</th>
-                    <th>修改时间</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for menu_obj in data_list %}
-                    <tr>
-                        <td>{{ menu_obj.title }}</td>
-                        <td><i class="fa {{ menu_obj.icon }}"></i></td>
-                        <td>{{ menu_obj.create_time|date:"Y-m-d H:i" }}</td>
-                        <td>{{ menu_obj.update_time|date:"Y-m-d H:i" }}</td>
-                        <td><a class="fa fa-edit" href="{% url 'rbac:menu_edit' pk=menu_obj.id%}"></a>
-                            <a class="fa fa-trash-o" style="color: red" href="{% url 'rbac:menu_del' pk=menu_obj.id %}"></a>
-                        </td>
-                    </tr>
-                {% endfor %}
+    <div class="col-md-3 float-left">
+    <div class="panel panel-info " style="margin-top: 5px">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            <i class="fa fa-book" aria-hidden="true"></i> 一级菜单
+            <a  class="btn btn-primary btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:menu_add' %}"> 添加</a>
 
-                </tbody>
-            </table>
         </div>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>图标</th>
+{#                        <th>创建时间</th>#}
+{#                        <th>修改时间</th>#}
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for menu_obj in menu_list %}
+{#mid == menu_obj.id|safe   menu_obj.id是整数类型，menu_obj.id|safe这样可以变为字符串类型。。。。mid也是字符串#}
+                <tr {% if mid == menu_obj.id|safe %}class="current_active" {% endif %}>
+                    <td><a href="?mid={{ menu_obj.pk }}">{{ menu_obj.title }}</a></td>
+                    <td><i class="fa {{ menu_obj.icon }}"></i></td>
+{#                            <td>{{ menu_obj.create_time|date:"Y-m-d H:i" }}</td>#}
+{#                            <td>{{ menu_obj.update_time|date:"Y-m-d H:i" }}</td>#}
+                    <td><a class="fa fa-edit" href="{% url 'rbac:menu_edit' pk=menu_obj.id%}"></a>
+                        <a class="fa fa-trash-o" style="color: red" href="{% url 'rbac:menu_del' pk=menu_obj.id %}"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
-</div>
+    </div>
+
+
+    <div class="col-md-4  float-left">
+    <div class="panel panel-info " style="margin-top: 5px">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            <i class="fa fa-book" aria-hidden="true"></i> 二级菜单
+            {% if mid %}
+                <a  class="btn btn-primary btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:menu_add' %}"> 添加</a>
+
+            {% endif %}
+
+        </div>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>URL</th>
+                <th>URL_name</th>
+{#                        <th>修改时间</th>#}
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for second_menu_obj in second_menu_list %}
+                <tr {% if sid == second_menu_obj.id|safe %}class="current_active" {% endif %}>
+                    <td><a href="?mid={{ mid }}&sid={{ second_menu_obj.pk }}">{{ second_menu_obj.title }}</a></td>
+                    <td>{{ second_menu_obj.url }}</td>
+                    <td>{{ second_menu_obj.name }}</td>
+                    <td>
+                        <a class="fa fa-edit" href="{% url 'rbac:menu_edit' pk=second_menu_obj.id%}"></a>
+                        <a class="fa fa-trash-o" style="color: red" href="{% url 'rbac:menu_del' pk=second_menu_obj.id %}"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <div class="col-md-5  float-left">
+    <div class="panel panel-info " style="margin-top: 5px">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            <i class="fa fa-book" aria-hidden="true"></i> 权限列表
+            {% if sid %}
+            <a  class="btn btn-primary btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:menu_add' %}"> 添加</a>
+
+            {% endif %}
+
+        </div>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>URL</th>
+                <th>URL_name</th>
+{#                        <th>修改时间</th>#}
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for permission_obj in permission_list %}
+                <tr>
+                    <td>{{ permission_obj.title }}</td>
+                    <td>{{ permission_obj.url }}</td>
+                    <td>{{ permission_obj.name }}</td>
+                    <td>
+                        <a class="fa fa-edit" href=""></a>
+                        <a class="fa fa-trash-o" style="color: red" href=""></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
 {% endblock content%}
