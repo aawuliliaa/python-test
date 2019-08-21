@@ -6,8 +6,10 @@ class Menu(models.Model):
     """
     一级菜单表
     """
-    title = models.CharField(verbose_name="一级菜单名称", max_length=32, default="")
-    icon = models.CharField(verbose_name="菜单的图标样式", max_length=32, default="")
+    title = models.CharField(verbose_name="菜单名称", help_text="一级菜单名称", max_length=32, default="")
+    icon = models.CharField(verbose_name="图标", help_text="菜单的图标样式", max_length=32, default="")
+    create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
+    update_time = models.DateTimeField(verbose_name="更新时间", auto_now=True)
 
     class Meta:
         # db_table = "System" db_table是指定自定义数据库表名的。默认是appname_classname,可以这样自定义表名
