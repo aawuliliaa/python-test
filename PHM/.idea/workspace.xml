@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="211d9bd2-aa4f-44a1-a786-b747c612dcb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/PHM.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CMDB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CMDB/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MY_CRM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MY_CRM/stark/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/stark/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHM/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PHM/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../my_stark/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../my_stark/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../permission/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../permission/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../permission/crm.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../permission/crm.docx" afterDir="false" />
@@ -285,7 +283,6 @@
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/pt/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/pt_BR/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/pt_BR/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/pt_BR/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/pt_BR/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/ro/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/ro/LC_MESSAGES/django.po" beforeDir="false" />
@@ -293,11 +290,9 @@
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/ro/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/ru/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/ru/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/ru/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/ru/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sk/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sk/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sk/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sk/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sl/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sl/LC_MESSAGES/django.po" beforeDir="false" />
@@ -313,7 +308,6 @@
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sr/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sr_Latn/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sr_Latn/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sr_Latn/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sr_Latn/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sv/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/sv/LC_MESSAGES/django.po" beforeDir="false" />
@@ -331,7 +325,6 @@
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/te/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/th/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/th/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/th/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/th/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/tr/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/tr/LC_MESSAGES/django.po" beforeDir="false" />
@@ -343,13 +336,11 @@
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/udm/LC_MESSAGES/django.po" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/uk/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/uk/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/uk/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/uk/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/ur/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/ur/LC_MESSAGES/django.po" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/vi/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/vi/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/vi/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/vi/formats.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/zh_Hans/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/locale/zh_Hans/LC_MESSAGES/django.po" beforeDir="false" />
@@ -4425,44 +4416,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PHM/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHM/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-              <folding>
-                <element signature="e#627#659#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sign/templates/sign/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="44" column="108" selection-start-line="44" selection-start-column="108" selection-end-line="44" selection-end-column="108" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sign/views/sign_action.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#60#114#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-29">
+              <caret line="152" column="8" selection-start-line="152" selection-start-column="10" selection-end-line="165" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -4505,10 +4463,10 @@
         <option value="$PROJECT_DIR$/sign/templates/sign/login.html" />
         <option value="$PROJECT_DIR$/sign/templates/sign/register.html" />
         <option value="$PROJECT_DIR$/rbac/models.py" />
-        <option value="$PROJECT_DIR$/PHM/settings.py" />
         <option value="$PROJECT_DIR$/PHM/urls.py" />
-        <option value="$PROJECT_DIR$/sign/templates/sign/base.html" />
         <option value="$PROJECT_DIR$/sign/views/sign_action.py" />
+        <option value="$PROJECT_DIR$/sign/templates/sign/base.html" />
+        <option value="$PROJECT_DIR$/PHM/settings.py" />
       </list>
     </option>
   </component>
@@ -4553,25 +4511,6 @@
               <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHM" type="462c0819:PsiDirectoryNode" />
               <item name="sign" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="sign" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="sign" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="sign" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="sign" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -4650,12 +4589,20 @@
       <option name="presentableId" value="Default" />
       <updated>1566350976221</updated>
       <workItem from="1566350977336" duration="1285000" />
-      <workItem from="1566353680697" duration="9256000" />
+      <workItem from="1566353680697" duration="10268000" />
     </task>
+    <task id="LOCAL-00001" summary="PHM登录">
+      <created>1566363916023</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566363916023</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10541000" />
+    <option name="totallyTimeSpent" value="11553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -4688,6 +4635,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="PHM登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="PHM登录" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/rbac/static.py" />
@@ -4776,13 +4727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sign/templates/sign/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="67" column="61" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sign/templates/sign/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -4816,13 +4760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHM/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHM/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -4850,13 +4787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sign/templates/sign/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="44" column="108" selection-start-line="44" selection-start-column="108" selection-end-line="44" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/software2/Python3/install/Lib/site-packages/django/contrib/auth/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-111">
@@ -4864,13 +4794,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sign/templates/sign/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="67" column="61" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sign/templates/sign/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="90" column="56" selection-start-line="90" selection-start-column="56" selection-end-line="90" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sign/views/sign_action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="-361">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
           <folding>
             <element signature="e#60#114#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHM/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="152" column="8" selection-start-line="152" selection-start-column="10" selection-end-line="165" selection-end-column="12" />
         </state>
       </provider>
     </entry>
