@@ -2,13 +2,13 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 from django.conf.urls import re_path
-from rbac.views import menu
+from rbac.views import menu, role
 app_name = "rbac"
 urlpatterns = [
-    # re_path(r'^role/list/$', role.role_list, name='role_list'),  # rbac:role_list
-    # re_path(r'^role/add/$', role.role_add, name='role_add'),  # rbac:role_add
-    # re_path(r'^role/edit/(?P<pk>\d+)/$', role.role_edit, name='role_edit'),  # rbac:role_edit
-    # re_path(r'^role/del/(?P<pk>\d+)/$', role.role_del, name='role_del'),  # rbac:role_del
+    re_path(r'^role/list/$', role.RoleView.as_view(), name='role_list'),  # rbac:role_list
+    re_path(r'^role/add/$', role.RoleAddView.as_view(), name='role_add'),  # rbac:role_add
+    re_path(r'^role/edit/(?P<pk>\d+)/$', role.RoleEditView.as_view(), name='role_edit'),  # rbac:role_edit
+    re_path(r'^role/del/(?P<pk>\d+)/$', role.RoleDelView.as_view(), name='role_del'),  # rbac:role_del
     #
     #
     # # re_path(r'^user/list/$', user.user_list, name='user_list'),

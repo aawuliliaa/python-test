@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 from django.urls import reverse_lazy, reverse
-from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from rbac.models import Menu
 from rbac.forms.menu import MenuModelForm
 

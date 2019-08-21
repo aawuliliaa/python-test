@@ -11,26 +11,25 @@
             </div>
         </div>
         <div class="ibox-content">
-            <a  class="btn btn-primary fa fa-plus-circle" href="{% url 'rbac:menu_add' %}">添加</a>
+            <a  class="btn btn-primary fa fa-plus-circle" href="{% url 'rbac:role_add' %}">添加</a>
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>菜单名称</th>
-                    <th>图标</th>
+                    <th>角色名称</th>
+
                     <th>创建时间</th>
                     <th>修改时间</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for menu_obj in data_list %}
+                {% for role_obj in data_list %}
                     <tr>
-                        <td>{{ menu_obj.title }}</td>
-                        <td><i class="fa {{ menu_obj.icon }}"></i></td>
-                        <td>{{ menu_obj.create_time|date:"Y-m-d H:i" }}</td>
-                        <td>{{ menu_obj.update_time|date:"Y-m-d H:i" }}</td>
-                        <td><a class="fa fa-edit" href="{% url 'rbac:menu_edit' pk=menu_obj.id%}"></a>
-                            <a class="fa fa-trash-o" style="color: red" href="{% url 'rbac:menu_del' pk=menu_obj.id %}"></a>
+                        <td>{{ role_obj.title }}</td>
+                        <td>{{ role_obj.create_time|date:"Y-m-d H:i" }}</td>
+                        <td>{{ role_obj.update_time|date:"Y-m-d H:i" }}</td>
+                        <td><a class="fa fa-edit" href="{% url 'rbac:role_edit' pk=role_obj.id%}"></a>
+                            <a class="fa fa-trash-o" style="color: red" href="{% url 'rbac:role_del' pk=role_obj.id %}"></a>
                         </td>
                     </tr>
                 {% endfor %}

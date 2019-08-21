@@ -52,6 +52,8 @@ class Role(models.Model):
     角色表
     """
     title = models.CharField(verbose_name="角色名称", max_length=32, default="")
+    create_time = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
+    update_time = models.DateTimeField(verbose_name="更新时间", auto_now=True)
     permissions = models.ManyToManyField(verbose_name="角色拥有的权限",
                                          blank=True,
                                          to=Permission)
