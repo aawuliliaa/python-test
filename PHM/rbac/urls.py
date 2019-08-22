@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 from django.conf.urls import re_path
-from rbac.views import menu, role, second_menu, permission, multi_config_permission
+from rbac.views import menu, role, second_menu, permission, multi_config_permission, distribute_permission
 app_name = "rbac"
 urlpatterns = [
     re_path(r'^role/list/$', role.RoleView.as_view(), name='role_list'),  # rbac:role_list
@@ -23,5 +23,5 @@ urlpatterns = [
     re_path(r'^multi/permissions/$', multi_config_permission.multi_config_permission, name='multi_permissions'),
     re_path(r'^multi/permissions/del/(?P<pk>\d+)/$',
             multi_config_permission.multi_permissions_del, name='multi_permissions_del'),
-    # re_path(r'^distribute/permissions/$', menu.distribute_permissions, name='distribute_permissions'),
+    re_path(r'^distribute/permissions/$', distribute_permission.distribute_permission, name='distribute_permissions'),
 ]

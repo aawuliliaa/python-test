@@ -110,7 +110,7 @@ AUTO_DISCOVER_EXCLUDE = [
     '.*/index/',
     '.*/register/',
 ]
-
+RBAC_USER_MODLE_CLASS = "sign.models.UserInfo"
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 

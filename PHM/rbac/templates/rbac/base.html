@@ -61,9 +61,10 @@
                          <a href=""><i class="fa fa-diamond"></i> <span class="nav-label">权限管理</span><span class="fa arrow"></span></a>
 {#                           展开时，ul添加属性  aria-expanded="true"#}
                          <ul class="nav nav-second-level collapse">
-                            <li><a href="{% url 'rbac:menu_list' %}"  class="child_label">一级菜单</a></li>
-                            <li><a href="{% url 'rbac:role_list' %}"  class="child_label">角色信息</a></li>
+                             <li><a href="{% url 'rbac:menu_list' %}"  class="child_label">一级菜单</a></li>
+                             <li><a href="{% url 'rbac:role_list' %}"  class="child_label">角色信息</a></li>
                              <li><a href="{% url 'rbac:multi_permissions' %}"  class="child_label">批量权限管理</a></li>
+                             <li><a href="{% url 'rbac:distribute_permissions' %}"  class="child_label">分配权限</a></li>
                         </ul>
                      </li>
 {#                    {% for parent_label_name_key,parent_label_value in left_label_dic.items%}#}

@@ -1,10 +1,9 @@
+
 {% extends  'rbac/base.html' %}
+{% load staticfiles %}
+
 {% block head %}
-    <style type="text/css">
-    .current_active{
-        border-left: orange solid 4px
-    }
-    </style>
+    <link rel="stylesheet" href="{% static 'rbac/css/my_style.css' %}">
 {% endblock %}
 {% block content %}
     <div class="col-md-3 float-left">
@@ -12,7 +11,7 @@
         <!-- Default panel contents -->
         <div class="panel-heading">
             <i class="fa fa-book" aria-hidden="true"></i> 一级菜单
-            <a  class="btn btn-primary btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:menu_add' %}"> 添加</a>
+            <a  class="btn btn-warning btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:menu_add' %}"> 添加</a>
 
         </div>
 
@@ -51,7 +50,7 @@
         <div class="panel-heading">
             <i class="fa fa-book" aria-hidden="true"></i> 二级菜单
             {% if mid %}
-                <a  class="btn btn-primary btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:second_menu_add' menu_id=mid%}"> 添加</a>
+                <a  class="btn btn-warning btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:second_menu_add' menu_id=mid%}"> 添加</a>
 
             {% endif %}
 
@@ -90,7 +89,7 @@
         <div class="panel-heading">
             <i class="fa fa-book" aria-hidden="true"></i> 权限列表
             {% if sid %}
-            <a  class="btn btn-primary btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:permission_add' second_menu_id=sid%}"> 添加</a>
+            <a  class="btn btn-warning btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:permission_add' second_menu_id=sid%}"> 添加</a>
 
             {% endif %}
 

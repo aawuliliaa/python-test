@@ -1,4 +1,4 @@
-.my_reg_head{
-    height: 50px;
-    width: 50px;
-}
+.current_active{
+        border-left: orange solid 4px
+    }
+

@@ -58,7 +58,7 @@ def multi_config_permission(request):
                     # models.Permission.objects.create(**row)
                     # print(e)  # UNIQUE constraint failed: app01_permission.name
                     row_object = Permission.objects.filter(id=permission_id).first()
-                    for k,v in row_dict.items():
+                    for k, v in row_dict.items():
                         setattr(row_object, k, v)
                     row_object.validate_unique()
                     row_object.save()
