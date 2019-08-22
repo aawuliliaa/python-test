@@ -1,4 +1,4 @@
 from django.test import TestCase
 
 # Create your tests here.
-print({1,2,3}-{3})
+print({"id":1,"name":"3"}.get("id"))

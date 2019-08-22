@@ -23,6 +23,55 @@ def multi_config_permission(request):
 
     generate_formset = None
     update_formset = None
+    # 新加url
+    if request.method == 'POST' and post_type == 'generate':
+        # pass # 批量添加
+        formset = generate_formset_class(data=request.POST)
+        if formset.is_valid():
+            object_list = []
+            post_row_list = formset.cleaned_data
+            has_error = False
+            for i in range(0, formset.total_form_count()):
+                row_dict = post_row_list[i]
+                try:
+                    new_object = Permission(**row_dict)
+                    new_object.validate_unique()
+                    object_list.append(new_object)
+                except Exception as e:
+                    formset.errors[i].update(e)
+                    generate_formset = formset
+                    has_error = True
+            if not has_error:
+                Permission.objects.bulk_create(object_list, batch_size=100)
+        else:
+            generate_formset = formset
+    # 更新url
+    if request.method == "POST" and post_type == "update":
+        formset = update_formset_class(data=request.POST)
+        if formset.is_valid():
+            post_row_list = formset.cleaned_data
+            for i in range(0, formset.total_form_count()):
+                row_dict = post_row_list[i]
+                permission_id = row_dict.get("id")
+                try:
+                    # 如果联合唯一索引报错，能捕捉到报错信息，但是报错信息是一个字符串，没有携带字段，无法把报错信息添加到formset.errors中。所以没有使用create()
+                    # models.Permission.objects.create(**row)
+                    # print(e)  # UNIQUE constraint failed: app01_permission.name
+                    row_object = Permission.objects.filter(id=permission_id).first()
+                    for k,v in row_dict.items():
+                        setattr(row_object, k, v)
+                    row_object.validate_unique()
+                    row_object.save()
+                except Exception as e:
+                    # 这种方式报错信息携带字段，能够方便的把报错信息存储到formset.errors中
+                    # print(e)  # {'name': ['具有 URL别名 的 Permission 已存在。']}
+                    formset.errors[i].update(e)
+                    # print("formset.errors--------------------------",formset.errors)
+                    # [{'name': ['具有 URL别名 的 Permission 已存在。']}, {}]
+                    update_formset = formset
+
+        else:
+            update_formset = formset
     # 1.获取项目中所有的URL
     all_url_dict = get_all_url_dict()
     """
