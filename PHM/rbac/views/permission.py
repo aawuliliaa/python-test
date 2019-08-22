@@ -31,9 +31,10 @@ class PermissionAddView(CreateView):
         else:
             return self.form_invalid(form)
 
+
 class PermissionEditView(UpdateView):
     """
-    编辑二级菜单
+    编辑权限，即二级菜单中的按钮
     组件确实很方便呀，内部已经对get和POST方法做了处理
     同时已经自动做了form.save
     """

@@ -102,7 +102,14 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+# 自动发现url,排出的URL
+AUTO_DISCOVER_EXCLUDE = [
+    '/admin/.*',
+    '.*/login/',
+    '.*/logout/',
+    '.*/index/',
+    '.*/register/',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/

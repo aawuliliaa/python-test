@@ -5,6 +5,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from rbac.models import Menu, Permission
 from rbac.forms.menu import MenuModelForm
+from rbac.service.auto_discover_url import get_all_url_dict
 
 
 class MenuView(ListView):
@@ -37,6 +38,7 @@ class MenuView(ListView):
             "sid": sid
         }
         kwargs.update(context)
+
         return super().get_context_data(**kwargs)
 
 
@@ -58,8 +60,6 @@ class MenuAddView(CreateView):
 
         :return:
         """
-
-
         return reverse('rbac:menu_list')
 
 
