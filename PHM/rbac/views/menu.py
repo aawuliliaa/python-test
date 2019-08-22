@@ -13,7 +13,7 @@ class MenuView(ListView):
     """
     template_name = 'rbac/menu_list.html'
     model = Menu
-    context_object_name = "data_list"
+    # context_object_name = "data_list"
     queryset = Menu.objects.all()
     ordering = ('-id',)
 
@@ -49,7 +49,18 @@ class MenuAddView(CreateView):
     model = Permission
     template_name = "rbac/add_edit.html"
     form_class = MenuModelForm
-    success_url = reverse_lazy('rbac:menu_list')
+    # success_url = reverse_lazy('rbac:menu_list')
+
+    def get_success_url(self):
+        """
+        Return the URL to redirect to after processing a valid form.
+        这里是因为添加或删除成功后，页面中还总是不显示，我觉得可能是reverse_lazy()捣的鬼，就自己重写该方法了
+
+        :return:
+        """
+
+
+        return reverse('rbac:menu_list')
 
 
 class MenuEditView(UpdateView):
