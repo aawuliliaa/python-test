@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="{% static 'rbac/css/my_style.css' %}">
 {% endblock %}
 {% block content %}
+    <div style="margin-top: 5px">
     <div class="col-md-3 float-left">
-    <div class="panel panel-info " style="margin-top: 5px">
+    <div class="panel panel-info " >
         <!-- Default panel contents -->
         <div class="panel-heading">
             <i class="fa fa-book" aria-hidden="true"></i> 一级菜单
@@ -45,7 +46,7 @@
 
 
     <div class="col-md-4  float-left">
-    <div class="panel panel-info " style="margin-top: 5px">
+    <div class="panel panel-info " >
         <!-- Default panel contents -->
         <div class="panel-heading">
             <i class="fa fa-book" aria-hidden="true"></i> 二级菜单
@@ -84,7 +85,7 @@
     </div>
 
     <div class="col-md-5  float-left">
-    <div class="panel panel-info " style="margin-top: 5px">
+    <div class="panel panel-info " >
         <!-- Default panel contents -->
         <div class="panel-heading">
             <i class="fa fa-book" aria-hidden="true"></i> 权限列表
@@ -121,4 +122,6 @@
         </table>
     </div>
     </div>
+    </div>
+
 {% endblock content%}
