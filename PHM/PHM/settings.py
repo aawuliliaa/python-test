@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'rbac.MD.check_permission_md.CheckPermissionMiddleware',
 
 ]
 
@@ -102,6 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+############################rbac组件内容#####################
 # 自动发现url,排出的URL
 AUTO_DISCOVER_EXCLUDE = [
     '/admin/.*',
@@ -111,12 +113,24 @@ AUTO_DISCOVER_EXCLUDE = [
     '.*/register/',
 ]
 RBAC_USER_MODLE_CLASS = "sign.models.UserInfo"
+# ######################### 权限相关配置 ############################
+SESSION_PERMISSION_URL = "permission_url_key"
+SESSION_MENU_KEY = "session_menu_list_key"
+# 不需要登录，就能访问的url
+WHITE_LIST = [".*/login/", "/admin/*", ".*/register/"]
+
+# 需要登录，但不需要进行权限验证的
+NO_PERMISSION_LIST = [
+    '.*/index/',
+    '.*/logout/',
+]
+############################rbac组件内容#####################
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 

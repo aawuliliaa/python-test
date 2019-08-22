@@ -1,0 +1,14 @@
+<ol class="breadcrumb">
+    {% for record_li in record_list %}
+        {% if record_li.class %}
+            <li class="breadcrumb-item {{ record_li.class }}">
+                {{ record_li.title }}
+            </li>
+        {% else %}
+        <li class="breadcrumb-item">
+            <a href="{{ record_li.url }}">{{ record_li.title }}</a>
+        </li>
+        {% endif %}
+
+    {% endfor %}
+</ol>

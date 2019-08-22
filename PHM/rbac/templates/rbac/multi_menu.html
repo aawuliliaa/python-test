@@ -1,0 +1,21 @@
+
+ {% for menu in menu_dict.values %}
+  <li class="{{ menu.class }}">
+
+        <a href=""><i class="fa {{ menu.icon }}"></i> <span class="nav-label">{{ menu.title }}</span><span class="fa arrow"></span></a>
+{#                           展开时，ul添加属性  aria-expanded="true"#}
+
+       <ul class="nav nav-second-level collapse " aria-expanded="{{ menu.expanded }}">
+           {% for per in menu.children %}
+           <li><a href="{{ per.url }}"  class="child_label {{ per.class }}">{{ per.title }}</a></li>
+           {% endfor %}
+{#           #}
+{#             <li><a href="{% url 'rbac:menu_list' %}"  class="child_label">一级菜单</a></li>#}
+{#             <li><a href="{% url 'rbac:role_list' %}"  class="child_label">角色信息</a></li>#}
+{#             <li><a href="{% url 'rbac:multi_permissions' %}"  class="child_label">批量权限管理</a></li>#}
+{#             <li><a href="{% url 'rbac:distribute_permissions' %}"  class="child_label">分配权限</a></li>#}
+        </ul>
+
+
+</li>
+ {% endfor %}

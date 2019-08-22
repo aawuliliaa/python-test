@@ -1,6 +1,7 @@
 {% extends 'rbac/base.html' %}
 {% block content %}
-        <form method="post" action="?type=generate">
+
+    <form method="post" action="?type=generate" >
             {% csrf_token %}
             {{ generate_formset.management_form }}
             <div class="panel panel-info">
@@ -42,6 +43,8 @@
                 </table>
             </div>
         </form>
+
+
 
         <div class="panel panel-info">
             <!-- Default panel contents -->

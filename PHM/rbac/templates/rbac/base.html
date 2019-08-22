@@ -5,6 +5,7 @@
 *
 -->
 {% load staticfiles %}
+{% load rbac %}
 <!DOCTYPE html>
 <html  lang="en">
 
@@ -28,6 +29,7 @@
 
     <link href="{% static '/rbac/css/animate.css' %}" rel="stylesheet">
     <link href="{% static '/rbac/css/style.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'rbac/css/my_style.css' %}">
 {% block head %}
 
 {% endblock %}
@@ -53,30 +55,11 @@
                             PHM
                         </div>
                     </li>
-                    <li class="active">
+                    <li >
                         <a href="{% url 'sign:index' %}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
                     </li>
-                     <li>
+                     {% multi_menu request %}
 
-                         <a href=""><i class="fa fa-diamond"></i> <span class="nav-label">权限管理</span><span class="fa arrow"></span></a>
-{#                           展开时，ul添加属性  aria-expanded="true"#}
-                         <ul class="nav nav-second-level collapse">
-                             <li><a href="{% url 'rbac:menu_list' %}"  class="child_label">一级菜单</a></li>
-                             <li><a href="{% url 'rbac:role_list' %}"  class="child_label">角色信息</a></li>
-                             <li><a href="{% url 'rbac:multi_permissions' %}"  class="child_label">批量权限管理</a></li>
-                             <li><a href="{% url 'rbac:distribute_permissions' %}"  class="child_label">分配权限</a></li>
-                        </ul>
-                     </li>
-{#                    {% for parent_label_name_key,parent_label_value in left_label_dic.items%}#}
-{#                        <li>#}
-{#                            <a href=""><i class="fa fa-diamond"></i> <span class="nav-label">{{ parent_label_name_key }}</span><span class="fa arrow"></span></a>#}
-{#                            <ul class="nav nav-second-level collapse">#}
-{#                                {% for child_label_name_key,child_label_url_value in parent_label_value.items %}#}
-{#                                    <li><a href="{{ child_label_url_value }}"  class="child_label">{{ child_label_name_key }}</a></li>#}
-{#                                {% endfor %}#}
-{#                            </ul>#}
-{#                        </li>#}
-{#                    {% endfor %}#}
                 </ul>
 
             </div>
@@ -114,17 +97,7 @@
                     <div class="row wrapper border-bottom white-bg page-heading">
                         <div class="col-lg-10">
                             <h2>{{ role_obj.child_menu_name }}</h2>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="{% url 'sign:index' %}">首页</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a>qwqw</a>
-                                </li>
-                                <li class="breadcrumb-item active">
-                                    <strong>qwqwqw</strong>
-                                </li>
-                            </ol>
+                            {% breadcrumb request %}
                         </div>
                         <div class="col-lg-2">
                         </div>

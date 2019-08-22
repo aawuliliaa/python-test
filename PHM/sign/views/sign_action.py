@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect, reverse
 from django.http import JsonResponse
 from sign.forms.reg_form import UserForm
 from sign.models import UserInfo
-
+from rbac.service.init_permission import init_permission
 
 def index(request):
     return render(request, "sign/base.html")
@@ -26,6 +26,8 @@ def login(request):
             # auth.login(request, user)
             request.session["current_user"] = {"email": email, "avatar": user.avatar.name}
             res["user"] = email
+            # 初始化权限信息，把可访问的菜单信息存到session中
+            init_permission(request, user)
         else:
             res["info"] = "用户名或密码不正确"
         return JsonResponse(res)
