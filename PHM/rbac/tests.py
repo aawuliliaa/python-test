@@ -1,5 +1,5 @@
 from django.test import TestCase
-li = [{"tile":"wewe"}]
-# Create your tests here.
-li[0]["tile"] = "new"
+li = [{"title":"wewe"}]
+dict = {"1":li[0]}
+dict["1"]["title"]="new"
 print(li)  # [{'tile': 'new'}]
