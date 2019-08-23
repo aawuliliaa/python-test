@@ -17,8 +17,6 @@
       <change beforePath="$PROJECT_DIR$/../MY_CRM/rbac/templates/rbac/menu_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/rbac/templates/rbac/menu_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MY_CRM/stark/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/stark/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MY_CRM/web/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/web/views/account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbac/templates/rbac/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/rbac/templates/rbac/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbac/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/rbac/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../formset/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../formset/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../my_stark/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../my_stark/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../permission/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../permission/.idea/workspace.xml" afterDir="false" />
@@ -365,7 +363,6 @@
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/urls/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/urls/i18n.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/conf/urls/static.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/contrib/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/contrib/admin/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/contrib/admin/actions.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stark/venvP/Lib/site-packages/django/contrib/admin/apps.py" beforeDir="false" />
@@ -4426,50 +4423,7 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbac/forms/multi_config_permission.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="35" selection-start-line="35" selection-end-line="39" selection-end-column="5" />
-              <folding>
-                <element signature="e#60#84#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbac/templates/rbac/multi_config_permission.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rbac/views/distribute_permission.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="117" column="54" lean-forward="true" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="54" />
-              <folding>
-                <element signature="e#60#118#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbac/tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -4758,7 +4712,7 @@
       <updated>1566350976221</updated>
       <workItem from="1566350977336" duration="1285000" />
       <workItem from="1566353680697" duration="20776000" />
-      <workItem from="1566379561943" duration="65180000" />
+      <workItem from="1566379561943" duration="66018000" />
     </task>
     <task id="LOCAL-00001" summary="PHM登录">
       <created>1566363916023</created>
@@ -4858,22 +4812,28 @@
       <option name="project" value="LOCAL" />
       <updated>1566523027746</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="批量权限配置">
+      <created>1566541488331</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1566541488331</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87241000" />
+    <option name="totallyTimeSpent" value="88079000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12793522" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12793522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291592" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22003578" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22003578" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.43828264" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -5098,13 +5058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbac/templates/rbac/distribute_permission.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rbac/templates/rbac/role_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -5301,10 +5254,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rbac/templates/rbac/distribute_permission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1672">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rbac/views/distribute_permission.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="117" column="54" lean-forward="true" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="54" />
+        <state relative-caret-position="2071">
+          <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="36" />
           <folding>
             <element signature="e#60#118#0" expanded="true" />
           </folding>
