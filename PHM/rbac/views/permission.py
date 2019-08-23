@@ -6,6 +6,7 @@ from django.shortcuts import HttpResponse
 from django.views.generic import CreateView, UpdateView, DeleteView
 from rbac.models import Permission
 from rbac.forms.second_menu import PermissionModelForm
+from rbac.service.urls import memory_reverse
 
 
 class PermissionAddView(CreateView):
@@ -16,8 +17,17 @@ class PermissionAddView(CreateView):
     """
     model = Permission
     template_name = "rbac/add_edit.html"
-    success_url = reverse_lazy('rbac:menu_list')
+
     form_class = PermissionModelForm
+
+    def get_success_url(self):
+        """
+        Return the URL to redirect to after processing a valid form.
+        这里是因为添加或删除成功后，页面中还总是不显示，我觉得可能是reverse_lazy()捣的鬼，就自己重写该方法了
+
+        :return:
+        """
+        return memory_reverse(self.request, 'rbac:menu_list')
 
     def post(self, request, *args, **kwargs):
         second_menu_id = kwargs.get("second_menu_id")
@@ -41,7 +51,15 @@ class PermissionEditView(UpdateView):
     model = Permission
     template_name = "rbac/add_edit.html"
     form_class = PermissionModelForm
-    success_url = reverse_lazy('rbac:menu_list')
+
+    def get_success_url(self):
+        """
+        Return the URL to redirect to after processing a valid form.
+        这里是因为添加或删除成功后，页面中还总是不显示，我觉得可能是reverse_lazy()捣的鬼，就自己重写该方法了
+
+        :return:
+        """
+        return memory_reverse(self.request, 'rbac:menu_list')
 
 
 class PermissionDelView(DeleteView):
@@ -53,7 +71,15 @@ class PermissionDelView(DeleteView):
     model = Permission
     template_name = "rbac/del.html"
     form_class = PermissionModelForm
-    success_url = reverse_lazy('rbac:menu_list')
+
+    def get_success_url(self):
+        """
+        Return the URL to redirect to after processing a valid form.
+        这里是因为添加或删除成功后，页面中还总是不显示，我觉得可能是reverse_lazy()捣的鬼，就自己重写该方法了
+
+        :return:
+        """
+        return memory_reverse(self.request, 'rbac:menu_list')
 
     def get_context_data(self, **kwargs):
         #

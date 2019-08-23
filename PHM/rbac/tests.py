@@ -1,4 +1,5 @@
 from django.test import TestCase
-
+li = [{"tile":"wewe"}]
 # Create your tests here.
-print({"id":1,"name":"3"}.get("id"))
+li[0]["tile"] = "new"
+print(li)  # [{'tile': 'new'}]

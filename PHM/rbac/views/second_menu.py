@@ -6,6 +6,8 @@ from django.views.generic import CreateView, UpdateView, DeleteView
 from rbac.models import Menu, Permission
 from rbac.forms.second_menu import SecondMenuModelForm
 
+from rbac.service.urls import memory_reverse
+
 
 class SecondMenuAddView(CreateView):
     """
@@ -15,7 +17,15 @@ class SecondMenuAddView(CreateView):
     """
     model = Permission
     template_name = "rbac/add_edit.html"
-    success_url = reverse_lazy('rbac:menu_list')
+
+    def get_success_url(self):
+        """
+        Return the URL to redirect to after processing a valid form.
+        这里是因为添加或删除成功后，页面中还总是不显示，我觉得可能是reverse_lazy()捣的鬼，就自己重写该方法了
+
+        :return:
+        """
+        return memory_reverse(self.request, 'rbac:menu_list')
 
     def __init__(self):
         super().__init__()
@@ -48,7 +58,15 @@ class SecondMenuEditView(UpdateView):
     model = Permission
     template_name = "rbac/add_edit.html"
     form_class = SecondMenuModelForm
-    success_url = reverse_lazy('rbac:menu_list')
+
+    def get_success_url(self):
+        """
+        Return the URL to redirect to after processing a valid form.
+        这里是因为添加或删除成功后，页面中还总是不显示，我觉得可能是reverse_lazy()捣的鬼，就自己重写该方法了
+
+        :return:
+        """
+        return memory_reverse(self.request, 'rbac:menu_list')
 
 
 class SecondMenuDelView(DeleteView):
@@ -60,7 +78,15 @@ class SecondMenuDelView(DeleteView):
     model = Permission
     template_name = "rbac/del.html"
     form_class = SecondMenuModelForm
-    success_url = reverse_lazy('rbac:menu_list')
+
+    def get_success_url(self):
+        """
+        Return the URL to redirect to after processing a valid form.
+        这里是因为添加或删除成功后，页面中还总是不显示，我觉得可能是reverse_lazy()捣的鬼，就自己重写该方法了
+
+        :return:
+        """
+        return memory_reverse(self.request, 'rbac:menu_list')
 
     def get_context_data(self, **kwargs):
         #

@@ -5,7 +5,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from rbac.models import Menu, Permission
 from rbac.forms.menu import MenuModelForm
-from rbac.service.auto_discover_url import get_all_url_dict
+from rbac.service.urls import memory_reverse
 
 
 class MenuView(ListView):
@@ -60,7 +60,7 @@ class MenuAddView(CreateView):
 
         :return:
         """
-        return reverse('rbac:menu_list')
+        return memory_reverse(self.request, 'rbac:menu_list')
 
 
 class MenuEditView(UpdateView):
@@ -72,7 +72,16 @@ class MenuEditView(UpdateView):
     model = Menu
     template_name = "rbac/add_edit.html"
     form_class = MenuModelForm
-    success_url = reverse_lazy('rbac:menu_list')
+    # success_url = reverse_lazy('rbac:menu_list')
+
+    def get_success_url(self):
+        """
+        Return the URL to redirect to after processing a valid form.
+        这里是因为添加或删除成功后，页面中还总是不显示，我觉得可能是reverse_lazy()捣的鬼，就自己重写该方法了
+
+        :return:
+        """
+        return memory_reverse(self.request, 'rbac:menu_list')
 
 
 class MenuDelView(DeleteView):
@@ -84,7 +93,15 @@ class MenuDelView(DeleteView):
     model = Menu
     template_name = "rbac/del.html"
     form_class = MenuModelForm
-    success_url = reverse_lazy('rbac:menu_list')
+
+    def get_success_url(self):
+        """
+        Return the URL to redirect to after processing a valid form.
+        这里是因为添加或删除成功后，页面中还总是不显示，我觉得可能是reverse_lazy()捣的鬼，就自己重写该方法了
+
+        :return:
+        """
+        return memory_reverse(self.request, 'rbac:menu_list')
 
     def get_context_data(self, **kwargs):
         context = {

@@ -5,8 +5,9 @@ import re
 from django.template import Library
 from collections import OrderedDict
 from django.conf import settings
-# from rbac.service import urls
+from rbac.service import urls
 register = Library()
+
 
 @register.inclusion_tag("rbac/multi_menu.html")
 def multi_menu(request):
@@ -23,6 +24,11 @@ def multi_menu(request):
     # 空的有序字典
     ordered_dict = OrderedDict()
     # 这里是二级菜单的显示效果，只展开当前访问的路径的菜单，其余菜单是关闭状态
+    # li = [{"tile":"wewe"}]
+    # # Create your tests here.
+    # li[0]["tile"] = "new"
+    # print(li)  # [{'tile': 'new'}]
+    # 利用了字典是可变类型，一处修改了，原来的内容也跟着变了
     for key in key_list:
         val = menu_dict[key]
         val['class'] = ""
@@ -58,13 +64,13 @@ def has_permission(request, name):
     if name in request.session[settings.SESSION_PERMISSION_URL]:
         return True
 
-#
-# @register.simple_tag
-# def memory_url(request, name, *args, **kwargs):
-#     """
-#     生成带有原搜索条件的URL（替代了模板中的url）
-#     :param request:
-#     :param name:
-#     :return:
-#     """
-#     return urls.memory_url(request, name, *args, **kwargs)
+
+@register.simple_tag
+def memory_url(request, name, *args, **kwargs):
+    """
+    生成带有原搜索条件的URL（替代了模板中的url）
+    :param request:
+    :param name:
+    :return:
+    """
+    return urls.memory_url(request, name, *args, **kwargs)

@@ -1,7 +1,7 @@
 
 {% extends  'rbac/base.html' %}
 {% load staticfiles %}
-
+{% load rbac %}
 
 {% block content %}
     <div class="top_length">
@@ -10,7 +10,7 @@
         <!-- Default panel contents -->
         <div class="panel-heading">
             <i class="fa fa-book" aria-hidden="true"></i> 一级菜单
-            <a  class="btn btn-warning btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:menu_add' %}"> 添加</a>
+            <a  class="btn btn-warning btn-xs pull-right fa fa-plus-circle" href="{% memory_url request 'rbac:menu_add' %}"> 添加</a>
 
         </div>
 
@@ -32,8 +32,8 @@
                     <td><i class="fa {{ menu_obj.icon }}"></i></td>
 {#                            <td>{{ menu_obj.create_time|date:"Y-m-d H:i" }}</td>#}
 {#                            <td>{{ menu_obj.update_time|date:"Y-m-d H:i" }}</td>#}
-                    <td><a class="fa fa-edit" href="{% url 'rbac:menu_edit' pk=menu_obj.id%}"></a>
-                        <a class="fa fa-trash-o" style="color: red" href="{% url 'rbac:menu_del' pk=menu_obj.id %}"></a>
+                    <td><a class="fa fa-edit" href="{% memory_url request 'rbac:menu_edit' pk=menu_obj.id%}"></a>
+                        <a class="fa fa-trash-o" style="color: red" href="{% memory_url request 'rbac:menu_del' pk=menu_obj.id %}"></a>
                     </td>
                 </tr>
             {% endfor %}
@@ -49,7 +49,7 @@
         <div class="panel-heading">
             <i class="fa fa-book" aria-hidden="true"></i> 二级菜单
             {% if mid %}
-                <a  class="btn btn-warning btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:second_menu_add' menu_id=mid%}"> 添加</a>
+                <a  class="btn btn-warning btn-xs pull-right fa fa-plus-circle" href="{% memory_url request 'rbac:second_menu_add' menu_id=mid%}"> 添加</a>
 
             {% endif %}
 
@@ -72,8 +72,8 @@
                     <td>{{ second_menu_obj.url }}</td>
                     <td>{{ second_menu_obj.name }}</td>
                     <td>
-                        <a class="fa fa-edit" href="{% url 'rbac:second_menu_edit' pk=second_menu_obj.id%}"></a>
-                        <a class="fa fa-trash-o" style="color: red" href="{% url 'rbac:second_menu_del' pk=second_menu_obj.id %}"></a>
+                        <a class="fa fa-edit" href="{% memory_url request 'rbac:second_menu_edit' pk=second_menu_obj.id%}"></a>
+                        <a class="fa fa-trash-o" style="color: red" href="{% memory_url request 'rbac:second_menu_del' pk=second_menu_obj.id %}"></a>
                     </td>
                 </tr>
             {% endfor %}
@@ -88,7 +88,7 @@
         <div class="panel-heading">
             <i class="fa fa-book" aria-hidden="true"></i> 权限列表
             {% if sid %}
-            <a  class="btn btn-warning btn-xs pull-right fa fa-plus-circle" href="{% url 'rbac:permission_add' second_menu_id=sid%}"> 添加</a>
+            <a  class="btn btn-warning btn-xs pull-right fa fa-plus-circle" href="{% memory_url request 'rbac:permission_add' second_menu_id=sid%}"> 添加</a>
 
             {% endif %}
 
@@ -111,8 +111,8 @@
                     <td>{{ permission_obj.url }}</td>
                     <td>{{ permission_obj.name }}</td>
                     <td>
-                        <a class="fa fa-edit" href="{% url 'rbac:permission_edit' pk=permission_obj.id%}"></a>
-                        <a class="fa fa-trash-o" style="color: red" href="{% url 'rbac:permission_del' pk=permission_obj.id%}"></a>
+                        <a class="fa fa-edit" href="{% memory_url request 'rbac:permission_edit' pk=permission_obj.id%}"></a>
+                        <a class="fa fa-trash-o" style="color: red" href="{% memory_url request 'rbac:permission_del' pk=permission_obj.id%}"></a>
                     </td>
                 </tr>
             {% endfor %}
