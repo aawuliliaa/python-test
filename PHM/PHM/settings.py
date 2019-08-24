@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rbac.apps.RbacConfig',
     'sign.apps.SignConfig',
+    'stark.apps.StarkConfig',
 ]
 
 MIDDLEWARE = [
@@ -103,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-############################rbac组件内容#####################
+# ###########################rbac组件内容#####################
 # 自动发现url,排出的URL
 AUTO_DISCOVER_EXCLUDE = [
     '/admin/.*',
@@ -124,7 +125,7 @@ NO_PERMISSION_LIST = [
     '.*/index/',
     '.*/logout/',
 ]
-############################rbac组件内容#####################
+# ###########################rbac组件内容#####################
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -198,7 +199,7 @@ LOGGING = {
             'propagate': True,
         },
         'django.request ': {
-            'handlers': ['console',],
+            'handlers': ['console', ],
             'level': 'INFO',  # 配合上面的将警告log写入到另外一个文件
             'propagate': True,
         },
