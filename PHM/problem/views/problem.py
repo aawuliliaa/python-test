@@ -3,7 +3,7 @@
 # Author: vita
 from stark.service.StarkHandler import StarkHandler
 from stark.service.get_text import *
-from stark.service.StarkHandler import Option
+from stark.service.Option import Option
 
 
 class ProblemHandler(StarkHandler):

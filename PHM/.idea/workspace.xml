@@ -19,16 +19,9 @@
       <change beforePath="$PROJECT_DIR$/../MY_CRM/stark/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/stark/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MY_CRM/web/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/web/views/account.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MY_CRM/web/views/class_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/web/views/class_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHM/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PHM/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/problem/views/problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/views/problem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stark/service/StarkHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/service/StarkHandler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stark/static/stark/css/my_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/stark/static/stark/css/my_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stark/templates/stark/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/stark/templates/stark/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stark/templates/stark/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/stark/templates/stark/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stark/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../formset/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../formset/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/13.blog/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../homework/13.blog/blog/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../my_stark/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../my_stark/.idea/workspace.xml" afterDir="false" />
@@ -4429,11 +4422,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stark/service/StarkHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10241">
-              <caret line="572" column="13" lean-forward="true" selection-start-line="572" selection-start-column="13" selection-end-line="572" selection-end-column="13" />
+            <state relative-caret-position="184">
+              <caret line="330" column="31" selection-start-line="330" selection-start-column="31" selection-end-line="330" selection-end-column="31" />
               <folding>
                 <element signature="e#60#76#0" expanded="true" />
               </folding>
@@ -4453,8 +4446,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/problem/views/problem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="266">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding>
                 <element signature="e#60#111#0" expanded="true" />
               </folding>
@@ -4463,34 +4456,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stark/templates/stark/list.html">
+        <entry file="file://$PROJECT_DIR$/stark/utils/pagination.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" selection-start-column="23" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/stark/static/stark/css/my_style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+            <state relative-caret-position="-665">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stark/templates/stark/base.html">
+        <entry file="file://$PROJECT_DIR$/stark/service/Option.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="84" column="43" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="43" />
+            <state relative-caret-position="76">
+              <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#4777#4783#0#HTML" expanded="true" />
+                <element signature="e#60#116#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stark/service/SearchGroupRow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-917">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -4517,14 +4507,15 @@
       <find>_meta</find>
       <find>sign</find>
       <find>url</find>
+      <find>in</find>
     </findStrings>
     <replaceStrings>
       <replace>sign</replace>
       <replace>Role</replace>
       <replace>role</replace>
       <replace>permission</replace>
-      <replace>Permission</replace>
       <replace>stark</replace>
+      <replace>Permission</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -4533,8 +4524,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/rbac/models.py" />
-        <option value="$PROJECT_DIR$/rbac/forms/role.py" />
         <option value="$PROJECT_DIR$/rbac/templates/rbac/role_list.html" />
         <option value="$PROJECT_DIR$/rbac/forms/second_menu.py" />
         <option value="$PROJECT_DIR$/rbac/forms/menu.py" />
@@ -4579,17 +4568,19 @@
         <option value="$PROJECT_DIR$/stark/service/get_text.py" />
         <option value="$PROJECT_DIR$/PHM/settings.py" />
         <option value="$PROJECT_DIR$/stark/tests.py" />
-        <option value="$PROJECT_DIR$/problem/views/problem.py" />
-        <option value="$PROJECT_DIR$/stark/service/StarkHandler.py" />
         <option value="$PROJECT_DIR$/stark/templates/stark/list.html" />
         <option value="$PROJECT_DIR$/stark/templates/stark/base.html" />
         <option value="$PROJECT_DIR$/stark/static/stark/css/my_style.css" />
+        <option value="$PROJECT_DIR$/stark/service/SearchGroupRow.py" />
+        <option value="$PROJECT_DIR$/stark/service/Option.py" />
+        <option value="$PROJECT_DIR$/problem/views/problem.py" />
+        <option value="$PROJECT_DIR$/stark/service/StarkHandler.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="159" />
-    <option name="y" value="453" />
+    <option name="x" value="99" />
+    <option name="y" value="427" />
     <option name="width" value="1508" />
     <option name="height" value="923" />
   </component>
@@ -4617,6 +4608,12 @@
               <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHM" type="462c0819:PsiDirectoryNode" />
               <item name="stark" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHM" type="462c0819:PsiDirectoryNode" />
+              <item name="stark" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -4639,6 +4636,12 @@
               <item name="PHM" type="462c0819:PsiDirectoryNode" />
               <item name="stark" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHM" type="462c0819:PsiDirectoryNode" />
+              <item name="stark" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
@@ -4780,7 +4783,7 @@
       <updated>1566350976221</updated>
       <workItem from="1566350977336" duration="1285000" />
       <workItem from="1566353680697" duration="20776000" />
-      <workItem from="1566379561943" duration="112148000" />
+      <workItem from="1566379561943" duration="113193000" />
     </task>
     <task id="LOCAL-00001" summary="PHM登录">
       <created>1566363916023</created>
@@ -4908,22 +4911,29 @@
       <option name="project" value="LOCAL" />
       <updated>1566708560027</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="批量权限配置">
+      <created>1566745878076</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1566745878076</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134209000" />
+    <option name="totallyTimeSpent" value="135254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4973545" visible="true" weight="0.1708502" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4973545" visible="true" weight="0.1708502" />
       <window_info id="Structure" order="1" sideWeight="0.5026455" side_tool="true" weight="0.16032389" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291592" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29874778" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37567085" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.24865831" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -4951,28 +4961,16 @@
     <MESSAGE value="PHM权限表" />
     <MESSAGE value="PHM菜单表" />
     <MESSAGE value="PHM角色信息" />
-    <MESSAGE value="批量权限配置" />
     <MESSAGE value="stark" />
     <MESSAGE value="stark组件" />
-    <option name="LAST_COMMIT_MESSAGE" value="stark组件" />
+    <MESSAGE value="批量权限配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="批量权限配置" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PHM$tests.coverage" NAME="tests Coverage Results" MODIFIED="1566540853224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rbac" />
     <SUITE FILE_PATH="coverage/PHM$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1566741339270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stark" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/699f4a9e-0959-4417-8040-39eb8f0be925/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://699f4a9e-0959-4417-8040-39eb8f0be925/schema/main/table/rbac_menu">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://699f4a9e-0959-4417-8040-39eb8f0be925/schema/main/table/rbac_role">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -5201,13 +5199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stark/utils/pagination.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1436">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stark/service/StarkSite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-180">
@@ -5303,33 +5294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/problem/views/problem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-          <folding>
-            <element signature="e#60#111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stark/service/StarkHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10241">
-          <caret line="572" column="13" lean-forward="true" selection-start-line="572" selection-start-column="13" selection-end-line="572" selection-end-column="13" />
-          <folding>
-            <element signature="e#60#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stark/templates/stark/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stark/templates/stark/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -5343,10 +5307,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/stark/templates/stark/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/stark/static/stark/css/my_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+        <state relative-caret-position="399">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/utils/pagination.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-665">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/service/Option.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+          <folding>
+            <element signature="e#60#116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/service/SearchGroupRow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-917">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/problem/views/problem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding>
+            <element signature="e#60#111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/service/StarkHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="330" column="31" selection-start-line="330" selection-start-column="31" selection-end-line="330" selection-end-column="31" />
+          <folding>
+            <element signature="e#60#76#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
