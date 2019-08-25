@@ -5,7 +5,7 @@ from sign.models import UserInfo
 class Problem(models.Model):
     desc = models.CharField(verbose_name="问题描述", max_length=255)
     # 详情，使用kindeditor
-    detail = models.TextField()
+    detail = models.TextField(verbose_name="详情")
     create_person = models.ForeignKey(verbose_name="问题提出人",
                                       to=UserInfo,
                                       on_delete=models.CASCADE,

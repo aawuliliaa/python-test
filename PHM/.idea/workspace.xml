@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="211d9bd2-aa4f-44a1-a786-b747c612dcb2" name="Default Changelist" comment="批量权限配置">
-      <change afterPath="$PROJECT_DIR$/problem/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/problem/models.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../formset/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BasicGrammer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicGrammer/.idea/workspace.xml" afterDir="false" />
@@ -20,622 +18,17 @@
       <change beforePath="$PROJECT_DIR$/../MY_CRM/stark/service/v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/stark/service/v1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MY_CRM/stark/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/stark/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MY_CRM/web/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/web/views/account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MY_CRM/web/views/class_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MY_CRM/web/views/class_list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PHM/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PHM/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHM/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PHM/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/forms/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/forms/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/media/avatar/default.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/media/avatar/default.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/service/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/animate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/my_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/my_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/congruent_pentagon.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/congruent_pentagon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/header-profile-skin-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/header-profile-skin-1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/header-profile-skin-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/header-profile-skin-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/header-profile-skin-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/header-profile-skin-3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/header-profile.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/header-profile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/otis_redding.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/otis_redding.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/shattered.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/shattered.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/patterns/triangular.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/patterns/triangular.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/css/blueimp-gallery-indicator.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/css/blueimp-gallery-indicator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/css/blueimp-gallery-video.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/css/blueimp-gallery-video.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/css/blueimp-gallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/css/blueimp-gallery.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/css/blueimp-gallery.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/css/blueimp-gallery.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/css/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/css/demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/img/error.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/img/error.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/img/error.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/img/error.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/img/loading.gif" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/img/loading.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/img/play-pause.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/img/play-pause.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/img/play-pause.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/img/play-pause.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/img/video-play.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/img/video-play.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/blueimp/img/video-play.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/blueimp/img/video-play.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/bootstrap-markdown/bootstrap-markdown.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/bootstrap-markdown/bootstrap-markdown.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/bootstrap-rtl/bootstrap-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/bootstrap-rtl/bootstrap-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/bootstrap-rtl/bootstrap-rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/bootstrap-rtl/bootstrap-rtl.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/bootstrap-rtl/bootstrap-rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/bootstrap-rtl/bootstrap-rtl.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/bootstrapSocial/bootstrap-social.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/bootstrapSocial/bootstrap-social.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/bootstrapTour/bootstrap-tour.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/bootstrapTour/bootstrap-tour.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/c3/c3.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/c3/c3.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/chartist/chartist.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/chartist/chartist.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/chosen/bootstrap-chosen.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/chosen/bootstrap-chosen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/chosen/chosen-sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/chosen/chosen-sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/chosen/chosen-sprite@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/chosen/chosen-sprite@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/chosen/chosen.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/chosen/chosen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/clockpicker/clockpicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/clockpicker/clockpicker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/codemirror/ambiance.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/codemirror/ambiance.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/codemirror/codemirror.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/codemirror/codemirror.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/colorpicker/bootstrap-colorpicker.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/colorpicker/bootstrap-colorpicker.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/cropper/cropper.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/cropper/cropper.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/dataTables/datatables.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/dataTables/datatables.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/datapicker/datepicker3.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/datapicker/datepicker3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/daterangepicker/daterangepicker-bs3.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/daterangepicker/daterangepicker-bs3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/dropzone/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/dropzone/basic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/dropzone/dropzone.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/dropzone/dropzone.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/dualListbox/bootstrap-duallistbox.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/dualListbox/bootstrap-duallistbox.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/footable/fonts/footable.eot" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/footable/fonts/footable.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/footable/fonts/footable.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/footable/fonts/footable.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/footable/fonts/footable.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/footable/fonts/footable.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/footable/fonts/footable.woff" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/footable/fonts/footable.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/footable/footable.core.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/footable/footable.core.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/fullcalendar/fullcalendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/fullcalendar/fullcalendar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/fullcalendar/fullcalendar.print.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/fullcalendar/fullcalendar.print.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/iCheck/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/iCheck/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/iCheck/green.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/iCheck/green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/iCheck/green@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/iCheck/green@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/bootstrap-colorpicker/alpha-horizontal.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/bootstrap-colorpicker/alpha-horizontal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/bootstrap-colorpicker/alpha.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/bootstrap-colorpicker/alpha.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/bootstrap-colorpicker/hue-horizontal.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/bootstrap-colorpicker/hue-horizontal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/bootstrap-colorpicker/hue.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/bootstrap-colorpicker/hue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/bootstrap-colorpicker/saturation.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/bootstrap-colorpicker/saturation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/sort.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/sort.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/sort_asc.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/sort_asc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/sort_desc.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/sort_desc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/sprite-skin-flat.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/sprite-skin-flat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/sprite-skin-flat2.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/sprite-skin-flat2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/sprite-skin-nice.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/sprite-skin-nice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/sprite-skin-simple.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/sprite-skin-simple.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/spritemap.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/spritemap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/images/spritemap@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/images/spritemap@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/ionRangeSlider/ion.rangeSlider.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/ionRangeSlider/ion.rangeSlider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/ionRangeSlider/ion.rangeSlider.skinNice.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/ionRangeSlider/ion.rangeSlider.skinNice.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/ionRangeSlider/ion.rangeSlider.skinSimple.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/ionRangeSlider/ion.rangeSlider.skinSimple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/animated-overlay.gif" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/animated-overlay.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-bg_flat_0_aaaaaa_40x100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-bg_flat_75_ffffff_40x100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_55_fbf9ee_1x400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_65_ffffff_1x400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_75_dadada_1x400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_75_e6e6e6_1x400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-icons_222222_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-icons_222222_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-icons_2e83ff_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-icons_454545_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-icons_454545_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-icons_888888_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-icons_888888_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jQueryUI/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jQueryUI/jquery-ui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jasny/jasny-bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jasny/jasny-bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jqGrid/ui.jqgrid.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jqGrid/ui.jqgrid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jsTree/32px.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jsTree/32px.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jsTree/39px.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jsTree/39px.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jsTree/40px.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jsTree/40px.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jsTree/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jsTree/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jsTree/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jsTree/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/jsTree/throbber.gif" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/jsTree/throbber.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/ladda/ladda-themeless.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/ladda/ladda-themeless.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/ladda/ladda.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/ladda/ladda.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/morris/morris-0.4.3.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/morris/morris-0.4.3.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/nouslider/jquery.nouislider.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/nouslider/jquery.nouislider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/select2/select2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/select2/select2.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/slick/ajax-loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/slick/ajax-loader.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/slick/fonts/slick.eot" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/slick/fonts/slick.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/slick/fonts/slick.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/slick/fonts/slick.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/slick/fonts/slick.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/slick/fonts/slick.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/slick/fonts/slick.woff" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/slick/fonts/slick.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/slick/slick-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/slick/slick-theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/slick/slick.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/slick/slick.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/social-buttons/social-buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/social-buttons/social-buttons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/steps/jquery.steps.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/steps/jquery.steps.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/summernote/font/summernote.eot" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/summernote/font/summernote.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/summernote/font/summernote.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/summernote/font/summernote.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/summernote/font/summernote.woff" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/summernote/font/summernote.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/summernote/summernote-bs4.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/summernote/summernote-bs4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/sweetalert/sweetalert.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/sweetalert/sweetalert.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/switchery/switchery.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/switchery/switchery.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/textSpinners/spinners.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/textSpinners/spinners.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/toastr/toastr.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/toastr/toastr.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/plugins/touchspin/jquery.bootstrap-touchspin.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/plugins/touchspin/jquery.bootstrap-touchspin.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fa-brands.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fa-brands.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fa-brands.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fa-brands.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fa-regular.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fa-regular.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fa-regular.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fa-regular.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fa-solid.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fa-solid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fa-solid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fa-solid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fontawesome-all.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fontawesome-all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fontawesome-all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fontawesome-all.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fontawesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fontawesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/css/fontawesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/css/fontawesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_animated.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_animated.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_bordered-pulled.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_bordered-pulled.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_core.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_core.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_fixed-width.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_fixed-width.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_larger.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_larger.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_list.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_list.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_rotated-flipped.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_rotated-flipped.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_screen-reader.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_screen-reader.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_stacked.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_stacked.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/_variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/_variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/animated.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/animated.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/bordered-pulled.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/bordered-pulled.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/core.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/core.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/fa-brands.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/fa-brands.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/fa-regular.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/fa-regular.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/fa-solid.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/fa-solid.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/fixed-width.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/fixed-width.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/font-awesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/font-awesome.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/fontawesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/fontawesome.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/larger.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/larger.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/list.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/list.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/path.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/path.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/rotated-flipped.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/rotated-flipped.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/screen-reader.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/screen-reader.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/stacked.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/stacked.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/less/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/less/variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_animated.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_animated.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_core.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_fixed-width.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_fixed-width.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_larger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_larger.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_path.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_path.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_screen-reader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_screen-reader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_stacked.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_stacked.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/fa-brands.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/fa-brands.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/fa-regular.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/fa-regular.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/fa-solid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/fa-solid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/font-awesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/font-awesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/scss/fontawesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/scss/fontawesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-brands-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-brands-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-brands-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-brands-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-regular-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-regular-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/font-awesome/webfonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/font-awesome/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/img/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/img/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/api/typehead_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/api/typehead_collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/bootstrap.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/bootstrap.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/demo/chartjs-demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/demo/chartjs-demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/demo/dashboard-demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/demo/dashboard-demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/demo/flot-demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/demo/flot-demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/demo/flot-demo2.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/demo/flot-demo2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/demo/morris-demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/demo/morris-demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/demo/peity-demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/demo/peity-demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/demo/rickshaw-demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/demo/rickshaw-demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/demo/sparkline-demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/demo/sparkline-demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/inspinia.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/inspinia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/jquery-2.1.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/jquery-2.1.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/jquery-3.1.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/jquery-3.1.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/jquery.cookie.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/jquery.cookie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/my_footable_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/my_footable_page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/blueimp/jquery.blueimp-gallery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/blueimp/jquery.blueimp-gallery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/bootstrap-markdown/bootstrap-markdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/bootstrap-markdown/bootstrap-markdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/bootstrap-markdown/markdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/bootstrap-markdown/markdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/bootstrapTour/bootstrap-tour.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/bootstrapTour/bootstrap-tour.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/c3/c3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/c3/c3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/chartJs/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/chartJs/Chart.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/chartist/chartist.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/chartist/chartist.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/chartist/chartist.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/chartist/chartist.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/chosen/chosen.jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/chosen/chosen.jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/clipboard/clipboard.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/clipboard/clipboard.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/clockpicker/clockpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/clockpicker/clockpicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/codemirror.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/apl/apl.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/apl/apl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/apl/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/apl/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/asterisk/asterisk.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/asterisk/asterisk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/asterisk/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/asterisk/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/clike/clike.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/clike/clike.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/clike/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/clike/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/clike/scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/clike/scala.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/clojure/clojure.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/clojure/clojure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/clojure/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/clojure/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/cobol/cobol.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/cobol/cobol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/cobol/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/cobol/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/coffeescript/coffeescript.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/coffeescript/coffeescript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/coffeescript/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/coffeescript/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/commonlisp/commonlisp.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/commonlisp/commonlisp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/commonlisp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/commonlisp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/css/css.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/css/css.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/css/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/css/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/css/less.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/css/less.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/css/less_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/css/less_test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/css/scss.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/css/scss.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/css/scss_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/css/scss_test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/css/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/css/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/cypher/cypher.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/cypher/cypher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/cypher/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/cypher/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/d/d.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/d/d.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/d/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/d/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/diff/diff.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/diff/diff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/diff/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/diff/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/django/django.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/django/django.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/django/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/django/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/dtd/dtd.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/dtd/dtd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/dtd/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/dtd/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/dylan/dylan.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/dylan/dylan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/dylan/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/dylan/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/ecl/ecl.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/ecl/ecl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/ecl/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/ecl/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/eiffel/eiffel.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/eiffel/eiffel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/eiffel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/eiffel/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/erlang/erlang.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/erlang/erlang.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/erlang/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/erlang/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/fortran/fortran.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/fortran/fortran.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/fortran/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/fortran/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/gas/gas.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/gas/gas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/gas/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/gas/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/gfm/gfm.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/gfm/gfm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/gfm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/gfm/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/gfm/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/gfm/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/gherkin/gherkin.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/gherkin/gherkin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/gherkin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/gherkin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/go/go.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/go/go.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/go/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/go/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/groovy/groovy.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/groovy/groovy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/groovy/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/groovy/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/haml/haml.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/haml/haml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/haml/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/haml/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/haml/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/haml/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/haskell/haskell.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/haskell/haskell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/haskell/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/haskell/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/haxe/haxe.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/haxe/haxe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/haxe/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/haxe/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/htmlembedded/htmlembedded.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/htmlembedded/htmlembedded.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/htmlembedded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/htmlembedded/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/htmlmixed/htmlmixed.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/htmlmixed/htmlmixed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/htmlmixed/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/htmlmixed/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/http/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/http/http.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/http/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/http/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/jade/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/jade/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/jade/jade.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/jade/jade.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/javascript/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/javascript/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/javascript/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/javascript/javascript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/javascript/json-ld.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/javascript/json-ld.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/javascript/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/javascript/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/javascript/typescript.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/javascript/typescript.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/jinja2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/jinja2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/jinja2/jinja2.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/jinja2/jinja2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/julia/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/julia/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/julia/julia.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/julia/julia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/kotlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/kotlin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/kotlin/kotlin.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/kotlin/kotlin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/livescript/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/livescript/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/livescript/livescript.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/livescript/livescript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/lua/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/lua/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/lua/lua.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/lua/lua.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/markdown/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/markdown/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/markdown/markdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/markdown/markdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/markdown/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/markdown/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/meta.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/meta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/mirc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/mirc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/mirc/mirc.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/mirc/mirc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/mllike/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/mllike/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/mllike/mllike.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/mllike/mllike.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/modelica/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/modelica/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/modelica/modelica.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/modelica/modelica.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/nginx/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/nginx/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/nginx/nginx.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/nginx/nginx.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/ntriples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/ntriples/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/ntriples/ntriples.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/ntriples/ntriples.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/octave/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/octave/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/octave/octave.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/octave/octave.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/pascal/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/pascal/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/pascal/pascal.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/pascal/pascal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/pegjs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/pegjs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/pegjs/pegjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/pegjs/pegjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/perl/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/perl/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/perl/perl.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/perl/perl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/php/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/php/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/php/php.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/php/php.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/php/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/php/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/pig/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/pig/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/pig/pig.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/pig/pig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/properties/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/properties/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/properties/properties.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/properties/properties.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/puppet/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/puppet/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/puppet/puppet.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/puppet/puppet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/python/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/python/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/python/python.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/python/python.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/q/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/q/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/q/q.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/q/q.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/r/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/r/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/r/r.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/r/r.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/rpm/changes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/rpm/changes/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/rpm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/rpm/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/rpm/rpm.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/rpm/rpm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/rst/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/rst/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/rst/rst.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/rst/rst.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/ruby/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/ruby/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/ruby/ruby.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/ruby/ruby.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/ruby/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/ruby/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/rust/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/rust/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/rust/rust.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/rust/rust.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/sass/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/sass/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/sass/sass.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/sass/sass.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/scheme/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/scheme/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/scheme/scheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/scheme/scheme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/shell/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/shell/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/shell/shell.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/shell/shell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/shell/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/shell/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/sieve/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/sieve/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/sieve/sieve.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/sieve/sieve.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/slim/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/slim/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/slim/slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/slim/slim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/slim/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/slim/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/smalltalk/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/smalltalk/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/smalltalk/smalltalk.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/smalltalk/smalltalk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/smarty/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/smarty/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/smarty/smarty.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/smarty/smarty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/smartymixed/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/smartymixed/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/smartymixed/smartymixed.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/smartymixed/smartymixed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/solr/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/solr/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/solr/solr.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/solr/solr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/sparql/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/sparql/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/sparql/sparql.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/sparql/sparql.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/sql/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/sql/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/sql/sql.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/sql/sql.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/stex/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/stex/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/stex/stex.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/stex/stex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/stex/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/stex/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tcl/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tcl/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tcl/tcl.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tcl/tcl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/textile/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/textile/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/textile/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/textile/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/textile/textile.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/textile/textile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tiddlywiki/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tiddlywiki/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tiddlywiki/tiddlywiki.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tiddlywiki/tiddlywiki.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tiddlywiki/tiddlywiki.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tiddlywiki/tiddlywiki.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tiki/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tiki/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tiki/tiki.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tiki/tiki.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tiki/tiki.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tiki/tiki.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/toml/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/toml/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/toml/toml.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/toml/toml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tornado/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tornado/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/tornado/tornado.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/tornado/tornado.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/turtle/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/turtle/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/turtle/turtle.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/turtle/turtle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/vb/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/vb/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/vb/vb.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/vb/vb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/vbscript/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/vbscript/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/vbscript/vbscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/vbscript/vbscript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/velocity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/velocity/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/velocity/velocity.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/velocity/velocity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/verilog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/verilog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/verilog/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/verilog/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/verilog/verilog.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/verilog/verilog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/xml/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/xml/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/xml/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/xml/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/xml/xml.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/xml/xml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/xquery/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/xquery/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/xquery/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/xquery/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/xquery/xquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/xquery/xquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/yaml/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/yaml/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/yaml/yaml.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/yaml/yaml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/z80/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/z80/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/codemirror/mode/z80/z80.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/codemirror/mode/z80/z80.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/colorpicker/bootstrap-colorpicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/colorpicker/bootstrap-colorpicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/cropper/cropper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/cropper/cropper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/d3/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/d3/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/d3/d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/d3/d3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/dataTables/dataTables.bootstrap4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/dataTables/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/dataTables/datatables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/dataTables/datatables.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/datamaps/datamaps.all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/datamaps/datamaps.all.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/datapicker/bootstrap-datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/datapicker/bootstrap-datepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/daterangepicker/daterangepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/daterangepicker/daterangepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/diff_match_patch/COPYING" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/diff_match_patch/COPYING" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/diff_match_patch/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/diff_match_patch/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/diff_match_patch/javascript/diff_match_patch.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/diff_match_patch/javascript/diff_match_patch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/dotdotdot/jquery.dotdotdot.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/dotdotdot/jquery.dotdotdot.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/dropzone/dropzone.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/dropzone/dropzone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/dualListbox/jquery.bootstrap-duallistbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/dualListbox/jquery.bootstrap-duallistbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/easypiechart/easypiechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/easypiechart/easypiechart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/easypiechart/jquery.easypiechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/easypiechart/jquery.easypiechart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/flot/curvedLines.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/flot/curvedLines.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/flot/excanvas.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/flot/excanvas.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/flot/jquery.flot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/flot/jquery.flot.pie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/flot/jquery.flot.resize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/flot/jquery.flot.spline.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/flot/jquery.flot.spline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/flot/jquery.flot.symbol.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/flot/jquery.flot.symbol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/flot/jquery.flot.time.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/flot/jquery.flot.time.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/flot/jquery.flot.tooltip.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/footable/footable.all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/footable/footable.all.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/fullcalendar/fullcalendar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/fullcalendar/fullcalendar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/fullcalendar/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/fullcalendar/moment.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/gritter/images/gritter-light.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/gritter/images/gritter-light.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/gritter/images/gritter-long.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/gritter/images/gritter-long.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/gritter/images/gritter.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/gritter/images/gritter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/gritter/images/ie-spacer.gif" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/gritter/images/ie-spacer.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/gritter/jquery.gritter.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/gritter/jquery.gritter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/gritter/jquery.gritter.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/gritter/jquery.gritter.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/i18next/i18next.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/i18next/i18next.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/iCheck/icheck.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/iCheck/icheck.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/idle-timer/idle-timer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/idle-timer/idle-timer.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jasny/jasny-bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jasny/jasny-bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jeditable/jquery.jeditable.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jeditable/jquery.jeditable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-bg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-bg1251.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-bg1251.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-cat.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-cat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-cn.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-cn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-cs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-da.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-da.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-de.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-dk.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-dk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-el.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-el.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-en.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-en.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-es.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-es.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-fa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-fi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-fr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-gl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-he.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-he.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-hr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-hr1250.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-hr1250.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-hu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-id.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-id.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-is.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-is.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-it.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-it.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ja.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-kr.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-kr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-lt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-mne.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-mne.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-nl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-no.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-no.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-pl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-pt-br.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-pt-br.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-pt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ru.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-sk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-sr-latin.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-sr-latin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-sr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-sv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-th.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-th.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-tr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-tw.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-tw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ua.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-ua.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/i18n/grid.locale-vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/i18n/grid.locale-vi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jqGrid/jquery.jqGrid.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jqGrid/jquery.jqGrid.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jquery-ui/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jquery-ui/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jquery-ui/images/ui-icons_444444_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jquery-ui/images/ui-icons_444444_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jquery-ui/images/ui-icons_555555_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jquery-ui/images/ui-icons_555555_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jquery-ui/images/ui-icons_777620_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jquery-ui/images/ui-icons_777620_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jquery-ui/images/ui-icons_777777_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jquery-ui/images/ui-icons_777777_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jquery-ui/images/ui-icons_cc0000_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jquery-ui/images/ui-icons_cc0000_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jquery-ui/images/ui-icons_ffffff_256x240.png" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jquery-ui/images/ui-icons_ffffff_256x240.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jquery-ui/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jquery-ui/jquery-ui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jquery-ui/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jquery-ui/jquery-ui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jsKnob/jquery.knob.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jsKnob/jquery.knob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jsTree/jstree.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jsTree/jstree.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/justified-gallery/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/justified-gallery/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/justified-gallery/jquery.justifiedgallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/justified-gallery/jquery.justifiedgallery.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/justified-gallery/jquery.justifiedgallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/justified-gallery/jquery.justifiedgallery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/justified-gallery/jquery.justifiedgallery.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/justified-gallery/jquery.justifiedgallery.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/justified-gallery/jquery.justifiedgallery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/justified-gallery/jquery.justifiedgallery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/justified-gallery/loading.gif" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/justified-gallery/loading.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jvectormap/jquery-jvectormap-2.0.2.css" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jvectormap/jquery-jvectormap-2.0.2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/ladda/ladda.jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/ladda/ladda.jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/ladda/ladda.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/ladda/ladda.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/ladda/spin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/ladda/spin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/masonary/masonry.pkgd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/masonary/masonry.pkgd.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/metisMenu/jquery.metisMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/metisMenu/jquery.metisMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/morris/morris.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/morris/morris.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/morris/raphael-2.1.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/morris/raphael-2.1.0.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/nestable/jquery.nestable.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/nestable/jquery.nestable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/nouslider/jquery.nouislider.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/nouslider/jquery.nouislider.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/pace/pace.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/pace/pace.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/pdfjs/pdf.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/pdfjs/pdf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/pdfjs/pdf.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/pdfjs/pdf.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/pdfjs/pdf.worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/pdfjs/pdf.worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/pdfjs/pdf.worker.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/pdfjs/pdf.worker.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/peity/jquery.peity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/peity/jquery.peity.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/pwstrength/pwstrength-bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/pwstrength/pwstrength-bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/pwstrength/zxcvbn.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/pwstrength/zxcvbn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/rickshaw/rickshaw.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/rickshaw/rickshaw.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/rickshaw/vendor/d3.v3.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/rickshaw/vendor/d3.v3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/select2/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/select2/select2.full.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/slick/slick.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/slick/slick.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/slimscroll/jquery.slimscroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/slimscroll/jquery.slimscroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/slimscroll/jquery.slimscroll.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/slimscroll/jquery.slimscroll.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/sparkline/jquery.sparkline.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/sparkline/jquery.sparkline.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/steps/jquery.steps.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/steps/jquery.steps.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/summernote/summernote-bs4.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/summernote/summernote-bs4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/sweetalert/sweetalert.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/sweetalert/sweetalert.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/switchery/switchery.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/switchery/switchery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/tinycon/tinycon.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/tinycon/tinycon.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/toastr/toastr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/toastr/toastr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/topojson/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/topojson/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/topojson/topojson.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/topojson/topojson.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/touchpunch/jquery.ui.touch-punch.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/touchpunch/jquery.ui.touch-punch.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/typehead/bootstrap3-typeahead.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/typehead/bootstrap3-typeahead.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/validate/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/validate/jquery.validate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/video/responsible-video.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/video/responsible-video.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/plugins/wow/wow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/plugins/wow/wow.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/popper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/static/stark/js/sys_env_host_related.js" beforeDir="false" afterPath="$PROJECT_DIR$/problem/static/stark/js/sys_env_host_related.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/templates/stark/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/templates/stark/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/templates/stark/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/templates/stark/500.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/templates/stark/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/templates/stark/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/templates/stark/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/templates/stark/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/templates/stark/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/problem/templates/stark/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poblem/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/views/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stark/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stark/service/StarkForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/service/StarkForm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem/views/problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem/views/problem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stark/service/StarkHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/service/StarkHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stark/service/StarkSite.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/service/StarkSite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stark/static/stark/css/my_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/stark/static/stark/css/my_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stark/templates/stark/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/stark/templates/stark/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stark/templates/stark/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/stark/templates/stark/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stark/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../formset/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../formset/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../homework/13.blog/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../homework/13.blog/blog/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../my_stark/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../my_stark/.idea/workspace.xml" afterDir="false" />
@@ -5036,11 +4429,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stark/service/StarkHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="96" column="62" selection-start-line="96" selection-start-column="62" selection-end-line="96" selection-end-column="62" />
+            <state relative-caret-position="10241">
+              <caret line="572" column="13" lean-forward="true" selection-start-line="572" selection-start-column="13" selection-end-line="572" selection-end-column="13" />
               <folding>
                 <element signature="e#60#76#0" expanded="true" />
               </folding>
@@ -5049,13 +4442,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/problem/stark.py">
+        <entry file="file://$PROJECT_DIR$/stark/service/get_text.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-              <folding>
-                <element signature="e#60#100#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="437">
+              <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -5063,17 +4453,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/problem/views/problem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+            <state relative-caret-position="304">
+              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+              <folding>
+                <element signature="e#60#111#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/software2/Python3/install/Lib/site-packages/django/core/handlers/base.py">
+        <entry file="file://$PROJECT_DIR$/stark/templates/stark/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="114" selection-start-line="114" selection-end-line="114" />
+            <state>
+              <caret column="23" selection-start-column="23" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stark/static/stark/css/my_style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stark/templates/stark/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="84" column="43" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="43" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#4777#4783#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -5097,6 +4514,9 @@
       <find>Menu</find>
       <find>permission_list</find>
       <find>SecondMenu</find>
+      <find>_meta</find>
+      <find>sign</find>
+      <find>url</find>
     </findStrings>
     <replaceStrings>
       <replace>sign</replace>
@@ -5104,6 +4524,7 @@
       <replace>role</replace>
       <replace>permission</replace>
       <replace>Permission</replace>
+      <replace>stark</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -5112,10 +4533,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/rbac/rbac_forms/menu.py" />
-        <option value="$PROJECT_DIR$/rbac/templates/rbac/del.html" />
-        <option value="$PROJECT_DIR$/rbac/templates/rbac/add_edit.html" />
-        <option value="$PROJECT_DIR$/rbac/views/role.py" />
         <option value="$PROJECT_DIR$/rbac/models.py" />
         <option value="$PROJECT_DIR$/rbac/forms/role.py" />
         <option value="$PROJECT_DIR$/rbac/templates/rbac/role_list.html" />
@@ -5150,26 +4567,30 @@
         <option value="$PROJECT_DIR$/poblem/models.py" />
         <option value="$PROJECT_DIR$/poblem/stark.py" />
         <option value="$PROJECT_DIR$/poblem/apps.py" />
-        <option value="$PROJECT_DIR$/PHM/settings.py" />
         <option value="$PROJECT_DIR$/stark/apps.py" />
-        <option value="$PROJECT_DIR$/problem/models.py" />
         <option value="$PROJECT_DIR$/PHM/urls.py" />
         <option value="$PROJECT_DIR$/stark/service/StarkModelForm.py" />
         <option value="$PROJECT_DIR$/stark/service/StarkForm.py" />
         <option value="$PROJECT_DIR$/stark/utils/pagination.py" />
-        <option value="$PROJECT_DIR$/stark/templates/stark/list.html" />
         <option value="$PROJECT_DIR$/problem/stark.py" />
-        <option value="$PROJECT_DIR$/problem/views/problem.py" />
         <option value="$PROJECT_DIR$/stark/service/StarkSite.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/problem/models.py" />
+        <option value="$PROJECT_DIR$/stark/service/get_text.py" />
+        <option value="$PROJECT_DIR$/PHM/settings.py" />
+        <option value="$PROJECT_DIR$/stark/tests.py" />
+        <option value="$PROJECT_DIR$/problem/views/problem.py" />
         <option value="$PROJECT_DIR$/stark/service/StarkHandler.py" />
+        <option value="$PROJECT_DIR$/stark/templates/stark/list.html" />
+        <option value="$PROJECT_DIR$/stark/templates/stark/base.html" />
+        <option value="$PROJECT_DIR$/stark/static/stark/css/my_style.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="330" />
-    <option name="y" value="82" />
-    <option name="width" value="1431" />
+    <option name="x" value="159" />
+    <option name="y" value="453" />
+    <option name="width" value="1508" />
     <option name="height" value="923" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -5190,65 +4611,34 @@
             <path>
               <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="problem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="problem" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="rbac" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="rbac" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="rbac" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="rbac" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
               <item name="stark" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHM" type="462c0819:PsiDirectoryNode" />
               <item name="stark" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHM" type="462c0819:PsiDirectoryNode" />
               <item name="stark" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="stark" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHM" type="462c0819:PsiDirectoryNode" />
+              <item name="stark" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="stark" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHM" type="462c0819:PsiDirectoryNode" />
               <item name="stark" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHM" type="462c0819:PsiDirectoryNode" />
-              <item name="stark" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PHM" type="b2602c69:ProjectViewProjectNode" />
@@ -5302,7 +4692,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django server.PHM">
+  <component name="RunManager" selected="Python.tests (1)">
+    <configuration name="tests (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PHM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stark" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stark/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PHM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -5351,6 +4763,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tests (1)" />
         <item itemvalue="Python.tests" />
       </list>
     </recent_temporary>
@@ -5367,7 +4780,7 @@
       <updated>1566350976221</updated>
       <workItem from="1566350977336" duration="1285000" />
       <workItem from="1566353680697" duration="20776000" />
-      <workItem from="1566379561943" duration="97601000" />
+      <workItem from="1566379561943" duration="112148000" />
     </task>
     <task id="LOCAL-00001" summary="PHM登录">
       <created>1566363916023</created>
@@ -5488,22 +4901,29 @@
       <option name="project" value="LOCAL" />
       <updated>1566634598193</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="stark组件">
+      <created>1566708560027</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1566708560027</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119662000" />
+    <option name="totallyTimeSpent" value="134209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16032389" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4973545" visible="true" weight="0.1708502" />
+      <window_info id="Structure" order="1" sideWeight="0.5026455" side_tool="true" weight="0.16032389" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291592" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3237925" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29874778" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.24865831" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -5520,7 +4940,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32955465" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32955465" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.23238866" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.1271255" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -5533,79 +4953,14 @@
     <MESSAGE value="PHM角色信息" />
     <MESSAGE value="批量权限配置" />
     <MESSAGE value="stark" />
-    <option name="LAST_COMMIT_MESSAGE" value="stark" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/stark/service/StarkHandler.py</url>
-          <line>118</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/stark/service/StarkHandler.py</url>
-          <line>86</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/stark/service/StarkHandler.py</url>
-          <line>127</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="stark组件" />
+    <option name="LAST_COMMIT_MESSAGE" value="stark组件" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PHM$tests.coverage" NAME="tests Coverage Results" MODIFIED="1566540853224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rbac" />
+    <SUITE FILE_PATH="coverage/PHM$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1566741339270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stark" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rbac/templates/rbac/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="46" column="109" selection-start-line="46" selection-start-column="109" selection-end-line="46" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sign/templates/sign/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbac/templates/rbac/menu_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbac/MD/check_permission_md.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding>
-            <element signature="e#60#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbac/service/init_permission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="73" column="20" lean-forward="true" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/699f4a9e-0959-4417-8040-39eb8f0be925/console_1.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -5734,9 +5089,6 @@
     <entry file="file://$PROJECT_DIR$/stark/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/stark/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/stark/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -5778,13 +5130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHM/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -5856,45 +5201,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stark/templates/stark/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="70" lean-forward="true" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stark/utils/pagination.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1436">
           <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://699f4a9e-0959-4417-8040-39eb8f0be925/schema/main/table/problem_problem">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/problem/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://699f4a9e-0959-4417-8040-39eb8f0be925/schema/main/table/rbac_permission">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
@@ -5908,18 +5218,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://699f4a9e-0959-4417-8040-39eb8f0be925/schema/main/table/rbac_permission">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/problem/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://D:/software2/Python3/install/Lib/site-packages/django/core/handlers/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
+        <state relative-caret-position="558">
           <caret line="114" selection-start-line="114" selection-end-line="114" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/problem/views/problem.py">
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/1131030557/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+        <state relative-caret-position="116">
+          <caret line="3604" column="8" selection-start-line="3604" selection-start-column="8" selection-end-line="3604" selection-end-column="8" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/software2/Python3/install/Lib/site-packages/django/utils/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbac/templates/rbac/role_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/problem/stark.py">
@@ -5932,13 +5273,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PHM/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="140" column="14" selection-start-line="140" selection-start-column="14" selection-end-line="140" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/service/get_text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://699f4a9e-0959-4417-8040-39eb8f0be925/schema/main/table/problem_problem">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/problem/views/problem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding>
+            <element signature="e#60#111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/stark/service/StarkHandler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="96" column="62" selection-start-line="96" selection-start-column="62" selection-end-line="96" selection-end-column="62" />
+        <state relative-caret-position="10241">
+          <caret line="572" column="13" lean-forward="true" selection-start-line="572" selection-start-column="13" selection-end-line="572" selection-end-column="13" />
           <folding>
             <element signature="e#60#76#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/templates/stark/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/templates/stark/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="84" column="43" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4777#4783#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/static/stark/css/my_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
         </state>
       </provider>
     </entry>
