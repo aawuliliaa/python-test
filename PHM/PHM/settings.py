@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rbac.apps.RbacConfig',
     'sign.apps.SignConfig',
     'stark.apps.StarkConfig',
+    'problem.apps.ProblemConfig',
 ]
 
 MIDDLEWARE = [

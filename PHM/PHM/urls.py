@@ -17,12 +17,17 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.static import serve
 from django.conf import settings
+from stark.service.StarkSite import site
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^rbac/', include('rbac.urls', namespace='rbac')),
     re_path(r'^sign/', include('sign.urls', namespace='sign')),
-# media配置:只有配置了这里，Index页面中才能显示出头像
+    re_path(r'^stark/', site.urls),
+    # media配置:只有配置了这里，Index页面中才能显示出头像
     # 这里要注意，当url多了的时候，就会出现匹配的顺序问题，
     # 当不显示图片的时候，要查看下是否被上面的url给匹配了
     re_path(r"media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
 ]
+# print("----------------------",site.urls)
+#  ([<URLResolver <URLPattern list> (None:None) '^problem/problem'>], 'stark', 'stark')

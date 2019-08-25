@@ -1,14 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author: vita
-
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
-# Author: vita
 from django import forms
 
 
-class StarkModelForm(forms.Form):
+class StarkModelForm(forms.ModelForm):
     """
     给所有字段添加form-control样式
     """
