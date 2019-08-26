@@ -32,7 +32,7 @@
         function fetchTodayData() {
             $.ajax({
                 type: "GET",
-                url: "{% url 'problem:problem_count_json' %}?date=today",
+                url: "{% url 'problem:problem_deal_time_json' %}?date=today",
                 dataType: 'json',
                 success: function (result) {
                     today_chart.setOption(result.data);
@@ -42,7 +42,7 @@
         function fetchThisMonthData() {
             $.ajax({
                 type: "GET",
-                url: "{% url 'problem:problem_count_json' %}?date=this_month",
+                url: "{% url 'problem:problem_deal_time_json' %}?date=this_month",
                 dataType: 'json',
                 success: function (result) {
                     this_month_chart.setOption(result.data);
@@ -52,7 +52,7 @@
         function fetchThisYearData() {
             $.ajax({
                 type: "GET",
-                url: "{% url 'problem:problem_count_json' %}?date=this_year",
+                url: "{% url 'problem:problem_deal_time_json' %}?date=this_year",
                 dataType: 'json',
                 success: function (result) {
                     this_year_chart.setOption(result.data);
