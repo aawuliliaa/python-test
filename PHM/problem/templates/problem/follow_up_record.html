@@ -1,0 +1,43 @@
+{% extends "problem/base.html" %}
+{% block content %}
+    <div class="ibox-content inspinia-timeline">
+    {% if add_btn and not finish%}
+        <div >
+            {{ add_btn|safe }}
+
+        </div>
+    {% endif %}
+        {% for data_obj in data_list %}
+            <div class="timeline-item">
+            <div class="row">
+                <div class="col-3 date">
+                    <i class="fa fa-file-text"></i>
+                    {{ data_obj.create_time|date:"Y-m-d H:i" }}
+                    <br/>
+{#                    <small class="text-navy">3 hour ago</small>#}
+                </div>
+                <div class="col-7 content">
+                    <p class="m-b-xs"><strong>{{ data_obj.create_person }}</strong></p>
+                    <p>{{ data_obj.detail }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    <div class="timeline-item">
+            <div class="row">
+                <div class="col-3 date">
+                </div>
+                <div class="col-7">
+                    {% if not finish %}
+                    <form action="" class="row" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">完成</button>
+                    </form>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

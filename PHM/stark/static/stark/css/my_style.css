@@ -2,6 +2,16 @@
     height: 50px;
     width: 50px;
 }
+.current_active{
+        border-left: orange solid 4px
+    }
+
+.top_length{
+    margin-top: 5px;
+}
+.breadcrumb > .active {
+    color: orange;
+}
 .search-group .row .whole {
     min-width: 40px;
     float: left;

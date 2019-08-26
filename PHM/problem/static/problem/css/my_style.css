@@ -1,0 +1,14 @@
+.my_reg_head{
+    height: 50px;
+    width: 50px;
+}
+.current_active{
+        border-left: orange solid 4px
+    }
+
+.top_length{
+    margin-top: 5px;
+}
+.breadcrumb > .active {
+    color: orange;
+}

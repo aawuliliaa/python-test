@@ -2,7 +2,6 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 import functools
-from django.db.models import ForeignKey, ManyToManyField
 from types import FunctionType
 from django.utils.safestring import mark_safe
 from django.urls import re_path, reverse
@@ -164,7 +163,7 @@ class StarkHandler(object):
         :return:
         """
         name = "%s:%s" % (self.site.namespace, self.get_list_url_name)
-        base_url = reverse(name, *args, **kwargs)
+        base_url = reverse(name, args=args, kwargs=kwargs)
         if self.request.GET.get("_filter"):
             return "%s?%s" % (base_url, self.request.GET.get("_filter"))
         else:

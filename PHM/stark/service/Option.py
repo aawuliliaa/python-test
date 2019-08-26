@@ -4,6 +4,7 @@
 from django.db.models import ForeignKey, ManyToManyField
 from stark.service.SearchGroupRow import SearchGroupRow
 
+
 class Option(object):
     def __init__(self, field, is_multi=False, db_condition=None, text_func=None, value_func=None):
         """

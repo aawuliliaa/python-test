@@ -29,6 +29,7 @@
 
     <link href="{% static '/stark/css/animate.css' %}" rel="stylesheet">
     <link href="{% static '/stark/css/style.css' %}" rel="stylesheet">
+<link href="{% static '/stark/css/plugins/bootstrap-markdown/bootstrap-markdown.min.css' %}" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'stark/css/my_style.css' %}">
 {% block head %}
 
@@ -156,6 +157,9 @@
     <!-- Toastr -->
     <script src='{% static "/stark/js/plugins/toastr/toastr.min.js" %} '></script>
 
+    <!-- Bootstrap markdown -->
+    <script src="{% static "/stark/js/plugins/bootstrap-markdown/bootstrap-markdown.js" %}"></script>
+    <script src="{% static "/stark/js/plugins/bootstrap-markdown/markdown.js" %}"></script>
     <script>
 
 toastr.options = {
