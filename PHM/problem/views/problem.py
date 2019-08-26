@@ -45,12 +45,12 @@ class ProblemHandler(StarkHandler):
         if is_header:
             return '跟进记录'
         record_url = reverse('stark:problem_followuprecord_list', kwargs={'problem_id': obj.pk})
-        return mark_safe('<a target="_blank" href="%s">跟进记录</a>' % record_url)
+        return mark_safe('<a  href="%s">跟进记录</a>' % record_url)
 
     list_display = [StarkHandler.display_checkbox, "desc", "detail", "create_person", "deal_person",
                     get_datetime_text("问题创建时间", "create_time", time_format='%Y-%m-%d %H:%I:%M'),
-                    get_datetime_text("问题开始处理时间", "start_deal_time"),
-                    get_datetime_text("问题完成时间", "stop_deal_time"),
+                    get_datetime_text("问题开始处理时间", "start_deal_time", time_format='%Y-%m-%d %H:%I:%M'),
+                    get_datetime_text("问题完成时间", "stop_deal_time", time_format='%Y-%m-%d %H:%I:%M'),
                     get_choice_text("状态", "status"),
                     display_follow_up_record]
     search_list = ['detail', 'desc', ]

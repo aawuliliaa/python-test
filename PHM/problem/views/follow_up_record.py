@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 # Author: vita
 from django.urls import re_path
+import datetime
 from django.shortcuts import render
 from django.shortcuts import redirect
 from problem.models import FollowUpRecord, Problem
@@ -36,7 +37,7 @@ class FollowUpRecordHandler(StarkHandler):
             finish = True
         if request.method == "POST":
 
-            Problem.objects.filter(id=problem_id).update(status="3")
+            Problem.objects.filter(id=problem_id).update(status="3", stop_deal_time=datetime.datetime.now())
             finish = True
         data_list = self.get_queryset(request, *args, **kwargs)
         add_btn = self.get_add_btn(request, *args, **kwargs)
@@ -67,7 +68,11 @@ class FollowUpRecordHandler(StarkHandler):
             # 这里是为了设置问题提出人
             user_id = UserInfo.objects.filter(email=email).first().id
             problem_id = kwargs["problem_id"]
-            Problem.objects.filter(id=problem_id).update(status="2")
+            problem_set = Problem.objects.filter(id=problem_id)
+            status = problem_set.first().status
+            if status == 1:
+                # 如果状态是未处理，设置开始处理时间和状态为处理中
+                problem_set.update(status=2, start_deal_time=datetime.datetime.now(), deal_person=user_id)
             FollowUpRecord.objects.filter(id=res.id).update(create_person_id=user_id, problem_id=kwargs["problem_id"])
             return redirect(self.reverse_list_url(*args, **kwargs))
         return render(request, self.add_template or "stark/add_edit.html", {"form": form})
