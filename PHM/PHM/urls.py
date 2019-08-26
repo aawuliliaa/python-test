@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^rbac/', include('rbac.urls', namespace='rbac')),
     re_path(r'^sign/', include('sign.urls', namespace='sign')),
+    re_path(r'^problem/', include('problem.urls', namespace='problem')),
     re_path(r'^stark/', site.urls),
     # media配置:只有配置了这里，Index页面中才能显示出头像
     # 这里要注意，当url多了的时候，就会出现匹配的顺序问题，

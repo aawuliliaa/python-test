@@ -113,6 +113,7 @@ AUTO_DISCOVER_EXCLUDE = [
     '.*/logout/',
     '.*/index/',
     '.*/register/',
+    '.*/problem/json/.*',
 ]
 RBAC_USER_MODLE_CLASS = "sign.models.UserInfo"
 # ######################### 权限相关配置 ############################
@@ -125,6 +126,7 @@ WHITE_LIST = [".*/login/", "/admin/*", ".*/register/"]
 NO_PERMISSION_LIST = [
     '.*/index/',
     '.*/logout/',
+    '.*/problem/json/.*',
 ]
 # ###########################rbac组件内容#####################
 # Internationalization

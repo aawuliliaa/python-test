@@ -1,0 +1,31 @@
+
+{% extends "problem/base.html" %}
+{% block content %}
+<div id="bar" style="width:1000px; height:300px;">
+wwwwwwwwwwwwwww
+</div>
+
+{% endblock %}
+{% block foot_script %}
+
+<script>
+        var chart = echarts.init(document.getElementById('bar'), 'white', {renderer: 'canvas'});
+
+        $(
+            function () {
+                fetchData(chart);
+            }
+        );
+
+        function fetchData() {
+            $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:8881/problem/json/problem_count",
+                dataType: 'json',
+                success: function (result) {
+                    chart.setOption(result.data);
+                }
+            });
+        }
+    </script>
+{% endblock %}
