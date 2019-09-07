@@ -779,6 +779,59 @@ pyecharts 提供了更改全局 HOST 的快捷方式，下面以开发者启动�
  from pyecharts.charts import Bar
  bar = Bar()
 ```
+## 2.9supervisor
+```
+1.安装
+[root@m01 etc]# pip3 install supervisor
+Collecting supervisor
+  Downloading https://files.pythonhosted.org/packages/a5/27/03ee384818f4fc5f678743bb20ac49c5b4fc9f531bd404dec4b61a8b5d42/supervisor-4.0.4-py2.py3-none-any.whl (296kB)
+    100% |████████████████████████████████| 307kB 20kB/s 
+Collecting meld3>=1.0.0 (from supervisor)
+  Downloading https://files.pythonhosted.org/packages/25/bb/442bf0a5e61678f0c1d2252350d2824322c58c0d8c56753bde776ce83344/meld3-2.0.0-py2.py3-none-any.whl
+Installing collected packages: meld3, supervisor
+Successfully installed meld3-2.0.0 supervisor-4.0.4
+You are using pip version 9.0.1, however version 19.2.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+2.生成配置文件
+[root@m01 etc]# echo_supervisord_conf >/etc/supervisor/supervisord.conf
+
+[root@m01 etc]# cat /etc/supervisor/supervisord.conf 
+
+[inet_http_server]         ; inet (TCP) server disabled by default
+port=10.0.0.61:9001        ; ip_address:port specifier, *:port for all iface
+username=user              ; default is no username (open server)
+password=123               ; default is no password (open server)
+
+[program:celery-worker]
+; 启动命令
+command=celery -A CMDB worker -l info
+; 项目绝对路径
+directory=/project/CMDB
+; 项目虚拟环境
+enviroment=PATH="/usr/local/python3/lib/python3.6/site-packages"
+; 输出日志
+stdout_logfile=/opt/celery.worker.log
+; 错误日志
+stderr_logfile=/opt/celery.worker.log
+; 自动启动
+autostart=false
+; 重启
+autorestart=false
+; 进程启动后跑了几秒钟，才被认定为成功启动，默认1
+startsecs=10
+; 进程结束后60秒才被认定结束
+stopwatisecs=60
+; 优先级
+priority=997
+
+3.启动supervisor
+[root@m01 etc]# supervisord -c /etc/supervisor/supervisord.conf 
+
+所有的启动重启，都可以加入进配置文件，就可以通过通过点击进行程序的管理啦。。是不是很方便呀。。。
+
+```
+![](.readme_images/9248cfad.png)
+
 ![](.readme_images/9c3d211b.png)
 ![](.readme_images/e29c6923.png)
 ![](.readme_images/2316a636.png)
