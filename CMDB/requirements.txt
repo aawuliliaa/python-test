@@ -21,7 +21,7 @@ chardet==3.0.4
 constantly==15.1.0
 cryptography==2.7
 daphne==2.3.0
-Django==2.2.3
+Django==2.2.13
 django-bootstrap3==11.1.0
 django-celery-beat==1.5.0
 django-celery-results==1.1.2
