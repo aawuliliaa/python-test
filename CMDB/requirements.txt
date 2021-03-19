@@ -30,7 +30,7 @@ django-jet==1.0.8
 django-pure-pagination==0.3.0
 django-redis==4.10.0
 django-timezone-field==3.0
-djangorestframework==3.10.0
+djangorestframework==3.11.2
 feedparser==5.2.1
 hiredis==1.0.0
 hyperlink==19.0.0
