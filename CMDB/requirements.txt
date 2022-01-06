@@ -13,7 +13,7 @@ bcrypt==3.1.7
 beautifulsoup4==4.8.0
 billiard==3.5.0.5
 bs4==0.0.1
-celery==4.1.1
+celery==5.2.2
 cffi==1.12.3
 channels==2.2.0
 channels-redis==2.4.0
